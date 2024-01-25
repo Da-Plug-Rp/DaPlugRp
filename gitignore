@@ -1,0 +1,7 @@
+artifacts/
+txdata/default
+txdata/server/cache
+txdata/server/db
+start_7257_default.bat
+*bat
+
