@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./assets/index-308fbcd5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/index-d3b53354.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
+    <script>
+        var audioPlayer = null;
+        window.addEventListener('message', function(event) {
+            if (event.data.transactionType == "playSound") {
+                if (audioPlayer != null) {
+                    audioPlayer.pause();
+                }
+                audioPlayer = new Howl({ src: ["./sounds/" + event.data.transactionFile + ".ogg"] });
+                audioPlayer.volume(event.data.transactionVolume);
+                audioPlayer.play();
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>

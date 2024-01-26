@@ -1,0 +1,22 @@
+INSERT INTO `items` (`name`, `label`) VALUES
+('cupchocolate', 'Chocolate Cup'),
+('cuplimao', 'Limao Cup'),
+('cupmorango', 'Morango Cup'),
+('gechocolate', 'Chocolate Ge'),
+('gemorango', 'Morango Ge'),
+('mufchocolate', 'Chocolate Muf'),
+('panutela', 'Panutela'),
+('paoreo', 'Paoreo'),
+('amoras', 'Amoras'),
+('chocolate', 'Chocolate'),
+('graoscafe', 'Graos Cafe'),
+('morangos', 'Morangos'),
+('nutela', 'Nutela'),
+('oreo', 'Oreo'),
+('pfrango', 'Pfrango'),
+('btamora', 'Btamora'),
+('btmenta', 'Btmenta'),
+('btmorango', 'Btmorango'),
+('mschocolate', 'Ms Chocolate'),
+('msmorango', 'Ms Morango')
+;
