@@ -269,6 +269,7 @@ if ESX.GetConfig().Multichar then
 	AddEventHandler('esx:playerLoaded', function(playerData, isNew, skin)
 		local spawn = playerData.coords or Config.Spawn
 		if isNew or not skin or #skin == 1 then
+			TriggerEvent('0R:Motels:Client:SetPlayerRandomRoom')
 			local finished = false
 			skin = Config.Default[playerData.sex]
 			skin.sex = playerData.sex == "m" and 0 or 1

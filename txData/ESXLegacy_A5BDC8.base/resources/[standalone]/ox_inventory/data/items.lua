@@ -19717,4 +19717,15 @@ client = {
 		stack = true,
 		description = "" --Put what ever u want
 	},
+	['motelcard'] = {
+		label = 'Motel Card',
+		weight = 200,
+		stack = false
+	},
+	
+	['doorlockpick'] = {
+		label = 'Lockpick',
+		weight = 200,
+		stack = false
+	},
 }
