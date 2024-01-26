@@ -1,0 +1,49 @@
+--[[I suggest adding this in the citizen menu :) but feel free to add it wherever]]
+
+{
+    id = 'hygiene',
+    title = 'Hygiene',
+    icon = 'poo',
+    items = {
+        {
+            id = 'pee',
+            title = 'Take a piss',
+            icon = 'droplet',
+            type = 'client',
+            event = 'k_hygiene:pee',
+            shouldClose = true
+        },
+        {
+            id = 'poo',
+            title = 'Take a poo',
+            icon = 'poop',
+            type = 'client',
+            event = 'k_hygiene:shitOnGround',
+            shouldClose = true
+        },
+        {
+            id = 'potty',
+            title = 'Porta Potty',
+            icon = 'door-closed',
+            type = 'client',
+            event = 'k_hygiene:potty',
+            shouldClose = true
+        },
+        {
+            id = 'toilet',
+            title = 'Use nearby toilet',
+            icon = 'toilet',
+            type = 'client',
+            event = 'k_hygiene:toilet',
+            shouldClose = true
+        },
+        {
+            id = 'bath',
+            title = 'Use nearby bath',
+            icon = 'bath',
+            type = 'client',
+            event = 'k_hygiene:bath',
+            shouldClose = true
+        },
+    }
+},

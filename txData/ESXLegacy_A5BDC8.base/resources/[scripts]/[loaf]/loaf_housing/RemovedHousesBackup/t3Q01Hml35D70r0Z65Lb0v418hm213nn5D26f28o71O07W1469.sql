@@ -1,0 +1,2 @@
+-- BACKUP FOR IDENTIFIER char1:1cdcac1cfbf486f7f4f65b383bedcd44a01a1cbd, PROPERTY #334, UNIQUE PROPERTY ID GW-4006
+INSERT INTO `loaf_properties` (`last_entered`, `id`, `propertyid`, `furniture`, `owner`, `shell`) VALUES (1706066510000.0, "GW-4006", 334, "[]", "char1:1cdcac1cfbf486f7f4f65b383bedcd44a01a1cbd", "Lowtier apartment 1");
