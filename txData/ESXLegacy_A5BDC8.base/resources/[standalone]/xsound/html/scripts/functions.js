@@ -21,11 +21,15 @@ function isReady(divId, howler){
             if(sound.loaded() == false){
 
                 sound.setLoaded(true);
+                $.post('https://xsound/events', JSON.stringify(
+                {
+                    type: "onPlay",
+                    id: sound.getName(),
+                }));
 
                 var time = 0;
                 if(sound.getAudioPlayer() != null){time = sound.getAudioPlayer()._duration;}
-			    if(sound.isDynamic()) sound.setVolume(0);
-			    if(!sound.isDynamic()) sound.setVolume(sound.getVolume());
+                if(sound.isDynamic()) sound.setVolume(0);
 
                 $.post('https://xsound/data_status', JSON.stringify(
                 {
@@ -33,15 +37,6 @@ function isReady(divId, howler){
                     type: "maxDuration",
                     id: sound.getName(),
                 }));
-
-                $.post('https://xsound/events', JSON.stringify(
-                {
-                    type: "onPlay",
-                    id: sound.getName(),
-                }));
-		    
-		        addToCache();
-		        updateVolumeSounds();
                 break;
             }
         }
@@ -51,6 +46,12 @@ function isReady(divId, howler){
 	{
 		var sound = soundList[soundName];
         if(sound.getDivId() === divId){
+            $.post('https://xsound/events', JSON.stringify(
+            {
+                type: "onPlay",
+                id: sound.getName(),
+            }));
+
             var time = 0;
             if(sound.getYoutubePlayer() != null){time = sound.getYoutubePlayer().getDuration();}
 			if(sound.isDynamic()) sound.setVolume(0);
@@ -63,18 +64,8 @@ function isReady(divId, howler){
                 id: sound.getName(),
             }));
 
-            $.post('https://xsound/events', JSON.stringify(
-            {
-                type: "onPlay",
-                id: sound.getName(),
-            }));
-
             sound.isYoutubeReady(true);
-
-	        addToCache();
-	        updateVolumeSounds();
-
-            if(!sound.isDynamic()) sound.setVolume(sound.getVolume());
+            if(!sound.isDynamic()) sound.setVolume(sound.getVolume())
             break;
         }
 	}

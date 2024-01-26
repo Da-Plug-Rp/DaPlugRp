@@ -71,7 +71,12 @@
       }
     },
     "permissions": [
-      "all_permissions"
+      "menu.viewids",
+      "players.warn",
+      "players.kick",
+      "players.ban",
+      "players.heal",
+      "players.spectate"
     ]
   },
   {

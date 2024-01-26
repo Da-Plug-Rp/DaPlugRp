@@ -1,19 +1,12 @@
 var soundList = [];
 var closeToPlayer = [];
-var isMutedAll = false;
 
 var playerPos = [-90000,-90000,-90000];
 $(function(){
-
-    $.post('https://xsound/init');
-
 	window.addEventListener('message', function(event) {
 		var item = event.data;
         switch(item.status)
         {
-            case "init":
-                setInterval(updateVolumeSounds, item.time);
-                break;
             case "position":
                 playerPos = [item.x,item.y,item.z];
                 break;
@@ -42,31 +35,7 @@ $(function(){
                     sound.setMaxVolume(item.volume);
                 }
                 break;
-            /*
-            case "textSpeech":
-                var sound = soundList[item.name];
 
-                if(sound != null)
-                {
-                    sound.destroyYoutubeApi();
-                    sound.delete();
-                    sound = null;
-                }
-
-                var sd = new SoundPlayer();
-                sd.IsTextToSpeech(true)
-                sd.setName(item.name);
-                sd.setTextToSpeech(item.text)
-                sd.setTextToSpeechLang(item.lang)
-                sd.setDynamic(item.dynamic);
-                sd.setLocation(item.x,item.y,item.z);
-                sd.create();
-
-                sd.setVolume(item.volume);
-                sd.play();
-                soundList[item.name] = sd;
-                break;
-            */
             case "url":
                 var sound = soundList[item.name];
 
@@ -140,7 +109,6 @@ $(function(){
                 {
                     sound.destroyYoutubeApi();
                     sound.delete();
-                    delete soundList[item.name];
                 }
                 break;
             case "repeat":
@@ -155,7 +123,6 @@ $(function(){
                 var sound = soundList[item.name];
                 if(sound != null)
                 {
-                    sound.unmute()
                     sound.setDynamic(item.bool);
                     sound.setVolume(sound.getMaxVolume());
                 }
@@ -181,24 +148,18 @@ $(function(){
                 }
                 break;
             case "unmuteAll":
-                isMutedAll = false;
                 for (var soundName in soundList)
                 {
                     sound = soundList[soundName];
-                    if(sound.isDynamic()){
-                        sound.unmuteSilent();
-                    }
+                    sound.unmuteSilent();
                 }
                 updateVolumeSounds();
                 break;
             case "muteAll":
-                isMutedAll = true;
                 for (var soundName in soundList)
                 {
                     sound = soundList[soundName];
-                    if(sound.isDynamic()){
-                        sound.mute();
-                    }
+                    sound.mute();
                 }
                 break;
 		}
@@ -218,27 +179,25 @@ function Between(loc1,loc2)
 function addToCache()
 {
     closeToPlayer = [];
-    if(!isMutedAll){
-        var sound = null;
-        for (var soundName in soundList)
-        {
-            sound = soundList[soundName];
-            if(sound.isDynamic())
-            {
-                var distance = Between(playerPos,sound.getLocation());
-                var distance_max = sound.getDistance();
-                if(distance < distance_max + 40)
-                {
-                    closeToPlayer[soundName] = soundName;
+    var sound = null;
+	for (var soundName in soundList)
+	{
+		sound = soundList[soundName];
+		if(sound.isDynamic())
+		{
+			var distance = Between(playerPos,sound.getLocation());
+			var distance_max = sound.getDistance();
+			if(distance < distance_max + 40)
+			{
+                closeToPlayer[soundName] = soundName;
+			}
+			else
+			{
+                if(sound.loaded()) {
+                    sound.mute();
                 }
-                else
-                {
-                    if(sound.loaded()) {
-                        sound.mute();
-                    }
-                }
-            }
-        }
+			}
+		}
 	}
 }
 
@@ -246,24 +205,22 @@ setInterval(addToCache, 1000);
 
 function updateVolumeSounds()
 {
-    if(!isMutedAll){
-        var sound = null;
-        for (var name in closeToPlayer)
+    var sound = null;
+    for (var name in closeToPlayer)
+    {
+        sound = soundList[name];
+        if(sound.isDynamic())
         {
-            sound = soundList[name];
-            if(sound != null){
-                if(sound.isDynamic())
-                {
-                    var distance = Between(playerPos,sound.getLocation());
-                    var distance_max = sound.getDistance();
-                    if(distance < distance_max)
-                    {
-                        sound.updateVolume(distance,distance_max);
-                        continue;
-                    }
-                    sound.mute();
-                }
+            var distance = Between(playerPos,sound.getLocation());
+            var distance_max = sound.getDistance();
+            if(distance < distance_max)
+            {
+                sound.updateVolume(distance,distance_max);
+                continue;
             }
+            sound.mute();
         }
     }
 }
+
+setInterval(updateVolumeSounds, refreshTime);

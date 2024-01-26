@@ -15,6 +15,11 @@ const AVAILABLE_JOBS = [
     templateGrades: [4],
     logo: '/web/build/mechaniclogo.jpg',
   },
+  {
+    job: 'tunners',
+    templateGrades: [4],
+    logo: '/web/build/mechaniclogo.jpg',
+  },
 ]
 
 // These templates are visible to all players. If you don't want
