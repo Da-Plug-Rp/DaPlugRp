@@ -1,0 +1,73 @@
+
+
+/* ! KEEP THE COLORS IN THIS FORMAT ! */
+:root {
+    --main-color: 66, 153, 225;
+    --dark-color: 12, 41, 77;
+}
+
+body,
+html {
+    height: 100%;
+    overflow: auto;
+    background: transparent;
+}
+
+.top-left {
+    position: absolute!important;
+    top: 0!important;
+    left: 0!important;
+}
+
+.top-middle {
+    position: absolute!important;
+    top: 0!important;
+    left: 50%!important;
+    transform: translateX(-50%)!important;
+}
+
+.top-right {
+    position: absolute!important;
+    top: 0!important;
+    right: 0!important;
+}
+
+.middle-left {
+    position: absolute!important;
+    top: 50% !important;
+    left: 0!important;
+    transform: translateY(-50%)!important;
+}
+
+.middle-middle {
+    position: absolute!important;
+    top: 50% !important;
+    left: 50%!important;
+    transform: translate(-50%,-50%)!important;
+}
+
+.middle-right {
+    position: absolute!important;
+    top: 50% !important;
+    right: 0!important;
+    transform: translateY(-50%)!important;
+}
+
+.bottom-left {
+    position: absolute!important;
+    bottom: 0!important;
+    left: 0!important;
+}
+
+.bottom-middle {
+    position: absolute!important;
+    bottom: 0!important;
+    left: 50%!important;
+    transform: translateX(-50%)!important;
+}
+
+.bottom-right {
+    position: absolute!important;
+    bottom: 0!important;
+    right: 0!important;
+}

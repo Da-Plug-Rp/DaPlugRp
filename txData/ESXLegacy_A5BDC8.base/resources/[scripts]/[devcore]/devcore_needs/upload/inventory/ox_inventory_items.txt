@@ -1,0 +1,170 @@
+	
+	['burger'] = {
+		label = 'Hamburger',
+		stack = false,
+		weight = 220,
+		close = true,
+	},
+
+	['chaser'] = {
+		label = 'Chaser Choco Bar',
+		stack = false,
+		weight = 70,
+		close = true,
+	},
+
+	['meteorite'] = {
+		label = 'Meteorite Choco Bar',
+		stack = false,
+		weight = 80,
+		close = true,
+	},
+
+	['hotdog'] = {
+		label = 'Hotdog',
+		stack = false,
+		weight = 120,
+		close = true,
+	},
+
+	['taco'] = {
+		label = 'Taco',
+		stack = false,
+		weight = 100,
+		close = true,
+	},
+	
+	['piswasser'] = {
+		label = 'Pißwasser',
+		stack = false,
+		weight = 500,
+		close = true,
+	},
+
+	['mount_whiskey'] = {
+		label = 'The Mount Whiskey',
+		stack = false,
+		weight = 700,
+		close = true,
+	},
+
+	['tequila'] = {
+		label = 'Tequilya',
+		stack = false,
+		weight = 700,
+		close = true,
+	},
+
+	['nogo_vodka'] = {
+		label = 'Nogo Vodka',
+		stack = false,
+		weight = 700,
+		close = true,
+	},
+
+	['raine'] = {
+		label = 'Raine Water',
+		stack = false,
+		weight = 500,
+		close = true,
+	},
+
+	['energy_drink'] = {
+		label = 'Energy drink',
+		stack = false,
+		weight = 500,
+		close = true,
+	},
+
+	['alcotester'] = {
+		label = 'Alcohol Tester',
+		stack = false,
+		weight = 20,
+		close = true,
+	},
+
+	['sprunk'] = {
+		label = 'Sprunk',
+		stack = false,
+		weight = 330,
+		close = true,
+	},
+
+	['coffe'] = {
+		label = 'Coffe',
+		stack = false,
+		weight = 330,
+		close = true,
+	},
+
+	['cola'] = {
+		label = 'Cola',
+		stack = false,
+		weight = 330,
+		close = true,
+	},
+
+
+	['costa_del_perro'] = {
+		label = 'Costa Del Perro',
+		stack = false,
+		weight = 500,
+		close = true,
+	},
+
+	['rockford_hill'] = {
+		label = 'Rockford Hill Reserve',
+		stack = false,
+		weight = 500,
+		close = true,
+	},
+
+	['vinewood_red'] = {
+		label = 'Vinewood Red Zinfadel',
+		stack = false,
+		weight = 500,
+		close = true,
+	},
+
+	['vinewood_blanc'] = {
+		label = 'Vinewood Sauvignon Blanc',
+		stack = false,
+		weight = 500,
+		close = true,
+	},
+
+	['bleuterd'] = {
+		label = 'Bleuterd Champagne',
+		stack = false,
+		weight = 700,
+		close = true,
+	},
+
+	
+	['shot_glass'] = {
+		label = 'Glass for shot',
+		stack = false,
+		weight = 50,
+		close = true,
+	},
+	
+	['wine_glass'] = {
+		label = 'Glass for wine',
+		stack = false,
+		weight = 250,
+		close = true,
+	},
+
+	['flute_glass'] = {
+		label = 'Glass for champagne',
+		stack = false,
+		weight = 250,
+		close = true,
+	},
+
+	['whiskey_glass'] = {
+		label = 'Glass for whiskey',
+		stack = false,
+		weight = 250,
+		close = true,
+	},

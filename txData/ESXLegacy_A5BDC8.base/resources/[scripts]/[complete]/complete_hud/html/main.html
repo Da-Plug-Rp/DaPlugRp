@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Complete Hud</title>
+    <meta name="description" content="Complete Hud" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="settings.js" defer></script>
+
+    <script src="https://unpkg.com/@tabler/core@1.0.0-beta3/dist/js/tabler.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@tabler/core@1.0.0-beta3/dist/css/tabler.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://preview.tabler.io/dist/css/tabler.min.css?1661943614" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+
+<body class="antialiased" style="overflow-x: hidden; overflow-y: hidden; background: transparent !important;">
+    <div id="hud-app" class="h-100">
+        <div v-if="!display_pause && hud_initialized" class="wrapper" id="main_hud" style="overflow-x: hidden; overflow-y: hidden; width: 100%; height: 100%; color: #ffffff;">
+            <div class="bottom-left">
+                <div v-if="timeAboveMap && display_minimap && streetAboveMap" id="time_div" class="time animate__animated animate__fadeInLeft">
+                    <div class="row">
+                        <div class="col-6" style="display: flex; flex-direction: column;">
+                            <strong style="font-size: 20px; margin-bottom: 0;">{{time}}</strong>
+                            <strong style="margin-right: 0.5rem; font-size: 15px; color: #ebebeb; line-height: 8px; margin-bottom: 0px; font-weight: 400;">{{day}}</strong>
+                        </div>
+                        <div v-if="showStreet && streetAboveMap" class="col-6" style="display: flex; flex-direction: row; align-items: flex-end; justify-content: flex-end; margin-bottom: -0.6vh !important;">
+                            <i style="color: rgba(255, 255, 255, 0.55); margin-right: 10px; margin-left: 1.3px; font-size: medium; margin-bottom: 0.4vh;" class="fa-solid fa-location-arrow"></i>
+                            <strong style="font-size: 15px; margin-bottom: 0; color: #ebebeb;">{{current_street}}</strong>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="timeAboveMap && display_minimap && !streetAboveMap" id="time_div" class="time animate__animated animate__fadeInLeft">
+                    <div class="row">
+                        <div class="col-12" style="display: flex; flex-direction: row; align-items: flex-end;">
+                            <strong style="font-size: 20px; margin-bottom: -0.8vh; margin-right: 10px;">{{time}}</strong>
+                            <strong style="margin-right: 0.5rem; font-size: 15px; color: #ebebeb; line-height: 8px; margin-bottom: 0px; font-weight: 400;">{{day}}</strong>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="!timeAboveMap && display_minimap && showStreet && streetAboveMap" class="time animate__animated animate__fadeInLeft">
+                    <div class="row">
+                        <div class="col-12" style="display: flex; flex-direction: row; align-items: flex-end; margin-bottom: -0.6vh !important;">
+                            <i style="color: rgba(255, 255, 255, 0.55); margin-right: 10px; margin-left: 1.3px; font-size: medium; margin-bottom: 0.4vh;" class="fa-solid fa-location-arrow"></i>
+                            <strong style="font-size: medium; margin-bottom: 0; color: #ebebeb;">{{current_street}}</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="minimap-open" id="status_div">
+                    <div class="svg-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+                            <circle cx="50%" cy="50%" r="30" fill="#ffffff29" stroke-width="5" stroke-dasharray="1000.0" stroke-linecap="round" :style="`transition: all 1.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; opacity: 1; backdrop-filter: blur(10px); stroke: ${mainColor}52;`"></circle>
+                            <circle id="status_healt_stroke" fill="transparent" cx="50%" cy="50%" r="30" stroke-width="5" stroke-dasharray="200.0 1000" stroke-linecap="round" :style="`opacity: 1; transition: all 0.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; stroke: ${mainColor};`"></circle>
+                        </svg>
+                        <i id="status_healt_icon" style="position: absolute; margin-top: 2px; margin-left: 0.5px; --fa-animation-duration: 1.5s;" class="fa-solid fa-lg fa-heart fa-beat"></i>
+                    </div>
+                    <div class="svg-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+                            <circle cx="50%" cy="50%" r="30" fill="#ffffff29" stroke-width="5" stroke-dasharray="1000.0" stroke-linecap="round" :style="`transition: all 1.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; opacity: 1; backdrop-filter: blur(10px); stroke: ${mainColor}52;`"></circle>
+                            <circle id="status_armor_stroke" fill="transparent" cx="50%" cy="50%" r="30" stroke-width="5" stroke-dasharray="200.0 1000" stroke-linecap="round" :style="`opacity: 1; transition: all 0.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; stroke: ${mainColor};`"></circle>
+                        </svg>
+                        <i id="status_armor_icon" style="position: absolute; margin-top: 2px; --fa-animation-duration: 1.0s;" class="fa-solid fa-lg fa-shield"></i>
+                    </div>
+                    <div class="svg-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+                            <circle cx="50%" cy="50%" r="30" fill="#ffffff29" stroke-width="5" stroke-dasharray="1000.0" stroke-linecap="round" :style="`transition: all 1.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; opacity: 1; backdrop-filter: blur(10px); stroke: ${mainColor}52;`"></circle>
+                            <circle id="status_hunger_stroke" fill="transparent" cx="50%" cy="50%" r="30" stroke-width="5" stroke-dasharray="200.0 1000" stroke-linecap="round" :style="`opacity: 1; transition: all 0.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; stroke: ${mainColor};`"></circle>
+                        </svg>
+                        <i id="status_hunger_icon" style="position: absolute; margin-top: 2px; --fa-animation-duration: 1.0s;" class="fa-solid fa-lg fa-drumstick-bite"></i>
+                    </div>
+                    <div class="svg-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+                            <circle cx="50%" cy="50%" r="30" fill="#ffffff29" stroke-width="5" stroke-dasharray="1000.0" stroke-linecap="round" :style="`transition: all 1.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; opacity: 1; backdrop-filter: blur(10px); stroke: ${mainColor}52;`"></circle>
+                            <circle id="status_thirst_stroke" fill="transparent" cx="50%" cy="50%" r="30" stroke-width="5" stroke-dasharray="200.0 1000" stroke-linecap="round" :style="`opacity: 1; transition: all 0.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; stroke: ${mainColor};`"></circle>
+                        </svg>
+                        <i id="status_thirst_icon" style="position: absolute; margin-top: 2px; --fa-animation-duration: 1.0s;" class="fa-solid fa-lg fa-droplet"></i>
+                    </div>
+                    <div class="svg-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+                            <circle cx="50%" cy="50%" r="30" fill="#ffffff29" stroke-width="5" stroke-dasharray="1000.0" stroke-linecap="round" :style="`transition: all 1.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; opacity: 1; backdrop-filter: blur(10px); stroke: ${mainColor}52;`"></circle>
+                            <circle id="status_last_stroke" fill="transparent" cx="50%" cy="50%" r="30" stroke-width="5" stroke-dasharray="200.0 1000" stroke-linecap="round" :style="`opacity: 1; transition: all 0.2s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s; stroke: ${mainColor};`"></circle>
+                        </svg>
+                        <i id="status_last_icon" style="position: absolute; margin-top: 2px; --fa-animation-duration: 1.0s;" :class="['fa-solid', 'fa-lg', last_value_icon]"></i>
+                    </div>
+                </div>
+                <div class="outline" id="mimimap_outline">
+                    <center>
+                        <div class="borderr"></div>
+                    </center>
+                </div>
+                <div v-if="showStreet && display_minimap && !streetAboveMap" class="minimap-location animate__animated animate__fadeInLeft mb-1" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                    <i style="color: rgba(255, 255, 255, 0.55); margin-right: 10px; margin-left: 1.3px; font-size: medium;" class="fa-solid fa-location-arrow"></i>
+                    <strong style="font-size: 15px; margin-bottom: 0; color: #ebebeb;">{{current_street}}</strong>
+                </div>
+            </div>
+            <div id="server_announcements_container" style="color: #ebebeb; z-index: 10; top: 10%!important; position: absolute!important; left: 50%!important; transform: translateX(-50%)!important; zoom: 100.3%; -webkit-font-smoothing: subpixel-antialiased; margin-top: 5px;">
+                
+            </div>
+            <div class="d-flex top-right" style="flex-direction: column; margin-top: 1.3%; margin-right: 1.3%;">
+                <div class="card" style="background-color: transparent; box-shadow: none; border: none;">
+                    <div class="card-body" style="padding:0; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                        <div class="row g-2 align-items-center animate__animated animate__fadeIn">
+                            <div class="col" style="display: flex; align-items: center; justify-content: flex-end;">
+                                <div class="row">
+                                    <div class="col-12 ms-auto d-print-none" style="display: flex; align-items: center; justify-content: flex-end; width: -webkit-fill-available;">
+                                        <h4 class="card-title" style="display: flex; align-items: center; margin-bottom: 0;">
+                                            <i v-if="ping >= 80" style="color: rgba(221, 0, 0, 0.55); margin-top: 3px;" class="fa-solid fa-sm fa-signal me-1"></i>
+                                            <i v-if="ping < 80" style="color: rgba(255, 255, 255, 0.55); margin-top: 3px;" class="fa-solid fa-sm fa-signal me-1"></i>
+                                            <strong style="color: #ebebeb;">{{ping}}</strong>
+                                        </h4>
+                                        <h4 class="card-title" style="display: flex; align-items: center; margin-left: 1.5rem; margin-bottom: 0;">
+                                            <i style="color: rgba(255, 255, 255, 0.55); margin-top: 3px;" class="fa-solid fa-sm fa-id-card me-1"></i>
+                                            <strong style="color: #ebebeb;">{{id}}</strong>
+                                        </h4>
+                                        <h4 class="card-title" style="display: flex; align-items: center; margin-left: 1.5rem; margin-bottom: 0;">
+                                            <i style="color: rgba(255, 255, 255, 0.55); margin-top: 2px;" class="fa-solid fa-sm fa-user-group me-1"></i>
+                                            <strong style="color: #ebebeb;">{{total_players}}</strong>
+                                        </h4>
+                                    </div>
+                                    <div v-if="showLogoLink" class="col-12" style="display: flex; align-items: center; justify-content: flex-end; width: -webkit-fill-available;">
+                                        <strong style="font-size: 1.02rem; color: #ebebeb;" id="server_display_text">{{server_text}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto" style="display: flex; align-items: center; justify-content: flex-end;">
+                                <img id="server_logo" :src="'./img/' + logo_img" style="max-width: 100; max-height: 50px;">
+                            </div>
+                        </div>
+                        <div v-if="showMoney" class="card mt-4" style="background-color: transparent; box-shadow: none; border: none;">
+                            <h4 class="d-flex animate__animated money-h4" id="money_h4">
+                                {{currency}}<span id="money_container"></span>
+                            </h4>
+                        </div>
+                        <div id="weapon_img_container" class="mt-4 animate__animated animate__fadeOutRight" style="display: none;">
+                            <div style="display: flex;justify-content: flex-end;flex-direction: column;align-items: flex-end;">
+                                <img id="weapon_img" src="" style="height: 40px !important; transform: scaleX(-1); width: fit-content;">
+                                <h4 id="weapon_ammo_container" class="card-title mb-0 animate__animated animate__fadeOutRight" style="width: 200px; text-align: right; right: 6.5%; margin-right: calc(10%); display: none;">
+                                    <strong id="weapon_loaded_ammo" :style="`color: ${mainColor}; font-size: 1.6rem; font-weight: 700; letter-spacing: -1.5px; text-align: right; width: 100px; margin-right: 0.25rem;`">{{weapon_loaded_ammo}}</strong>
+                                    <strong style="opacity: 50%; font-size: 1.1rem; font-weight: 400; color: #ebebeb; margin-right: 0.1rem;">/</strong>
+                                    <strong id="weapon_total_ammo" style="color: #ebebeb; opacity: 80%; font-size: 1.1rem; font-weight: 600; text-align: right; width: 100px;">{{weapon_total_ammo}}</strong>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="showCompass" class="top-middle" style="background-color: transparent; box-shadow: none; border: none;">
+                <div class="compass-container animate__animated animate__fadeInDown" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <svg class="compass mt-0" id="compass">
+                        <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill= "white">N</text>
+                        <text x="360" y="0" dominant-baseline="middle" text-anchor="middle" fill= "white">N</text>
+                        <text x="90" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">E</text>
+                        <text x="180" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">S</text>
+                        <text x="270" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">W</text>
+                        <text style="font-size: 0.7vh !important; letter-spacing: 0px !important; font-weight: 500 !important; filter: opacity(0.85);" x="315" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">NW</text>
+                        <text style="font-size: 0.7vh !important; letter-spacing: 0px !important; font-weight: 500 !important; filter: opacity(0.85);" x="-45" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">NW</text>
+                        <text style="font-size: 0.7vh !important; letter-spacing: 0px !important; font-weight: 500 !important; filter: opacity(0.85);" x="45" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">NE</text>
+                        <text style="font-size: 0.7vh !important; letter-spacing: 0px !important; font-weight: 500 !important; filter: opacity(0.85);" x="405" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">NE</text>
+                        <text style="font-size: 0.7vh !important; letter-spacing: 0px !important; font-weight: 500 !important; filter: opacity(0.85);" x="225" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">SW</text>
+                        <text style="font-size: 0.7vh !important; letter-spacing: 0px !important; font-weight: 500 !important; filter: opacity(0.85);" x="135" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">SE</text>
+
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="15" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">15</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="30" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">30</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="375" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">15</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="390" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">30</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="60" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">60</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="75" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">75</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="420" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">60</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="435" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">75</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="105" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">105</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="120" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">120</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="150" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">150</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="165" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">165</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="195" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">195</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="210" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">210</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="240" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">240</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="255" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">255</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="285" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">285</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="300" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">300</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="-75" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">285</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="-60" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">300</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="330" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">330</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="345" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">345</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="-15" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">330</text>
+                        <text style="font-size: 0.65vh !important; letter-spacing: -0.4px !important; font-weight: 400 !important; filter: opacity(0.8);" x="-30" y="-1" dominant-baseline="middle" text-anchor="middle" fill="white">345</text>
+                    </svg>
+
+                    <svg class="degrees" id="degrees">
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="-90"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="-45"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="45"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="135"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="225"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="315"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="405"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="450"/>
+
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="15"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="30"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="375"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="390"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="60"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="75"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="105"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="120"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="150"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="165"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="195"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="210"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="240"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="255"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="285"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="300"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="-60"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="-75"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="330"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="345"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="-15"/>
+                        <rect width="1" fill="white" stroke-width="0.5" fill-opacity="0.5" height="5" dominant-baseline="middle" text-anchor="middle" x="-30"/>
+                    </svg>
+                    
+                    <i class="fa-solid fa-caret-up compass-pointer mt-1"></i>
+                </div>
+            </div>
+            <div class="card middle-left" style="background-color: transparent; box-shadow: none; border: none; margin-left: 1.3%; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.55));">
+                <ul class="list-unstyled space-y-1 mb-0">
+                    <li v-if="showStreet && !display_minimap" class="animate__animated animate__fadeInLeft" style="display: flex; align-items: baseline;">
+                        <i style="color: rgba(255, 255, 255, 0.55); margin-right: 15px; margin-left: 1.3px;" class="fa-solid fa-lg fa-location-arrow"></i>
+                        <strong style="font-size: 15px; color: #ebebeb;">{{current_street}}</strong>
+                    </li>
+                    <li v-if="!timeAboveMap || !display_minimap" class="animate__animated animate__fadeInLeft" style="display: flex; align-items: baseline;">
+                        <i style="color: rgba(255, 255, 255, 0.55); margin-right: 15px; margin-left: 1.3px;" class="fa-solid fa-clock"></i>
+                        <strong style="font-size: 15px; margin-bottom: 0; color: #ebebeb;" id="minimap_time_moved">{{time}}</strong>
+                        <strong style="margin-left: 0.5rem; font-size: 15px; color: #ebebeb; line-height: 18px; margin-bottom: 5px; font-weight: 400;" id="minimap_day_moved">{{day}}</strong>
+                    </li>
+                    <li style="display: flex; align-items: center;" class="animate__animated animate__fadeInLeft">
+                        <i style="color: rgba(255, 255, 255, 0.55); margin-right: 16px; margin-left: 1.3px;" class="fa-solid fa-lg fa-microphone"></i>
+                        <div id="microphone_activity" :style="`filter: drop-shadow(${mainColor}52 0px 4px 4px); display: flex; margin-left: -2px;`"></div>
+                    </li>
+                    <li class="mb-2" class="animate__animated animate__fadeInLeft" style="display: flex; align-items: center; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                        <i style="color: rgba(255, 255, 255, 0.55); margin-right: 10px;" class="fa-solid fa-lg fa-walkie-talkie"></i>
+                        <span id="radio_status" class="status-indicator status-red status-indicator-animated" style="--tblr-status-indicator-size: 1.5rem;">
+                            <span class="status-indicator-circle" style="--tblr-status-circle-size: 0.6rem;"></span>
+                            <span class="status-indicator-circle" style="--tblr-status-circle-size: 0.6rem;"></span>
+                            <span class="status-indicator-circle" style="--tblr-status-circle-size: 0.6rem;"></span>
+                        </span>
+                        <strong style="margin-left: 0.25rem; color: #ffffff;" id="radio_hz">{{radio_hz}}</strong>
+                    </li>
+                    <div v-if="showRadioPlayers" id="radio_players_list" style="color: #ffffff;"></div>
+                </ul>
+            </div>
+            <div class="card middle-right" style="margin-right: 20px; background-color: transparent; box-shadow: none; border: none; filter: drop-shadow(rgba(0, 0, 0, 0.247) 0px 4px 4px);">
+                <div id="key_container" class="animate__animated animate__fadeOutRight" style="display: none;">
+                    <ul class="list-unstyled space-y-1 mb-0" id="key_list"></ul>
+                </div>
+            </div>
+            <div v-if="showBodyHealth && display_body" class="card bottom-right" style="background-color: transparent; box-shadow: none; border: none; filter: drop-shadow(rgba(0, 0, 0, 0.247) 0px 4px 4px); margin-right: 1%; margin-bottom: 0.8%;">
+                <div class="player-image" style="height: 240px; width: 100px; padding: 0; position: relative;">
+                    <img id="player_image" src="/html/img/player_body.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); filter: opacity(0.75); position: absolute;">
+                    <div class="flash-image">
+                        <img v-if="head" src="/html/img/head.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="chest" src="/html/img/chest.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="left_arm" src="/html/img/left_arm.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="left_leg" src="/html/img/left_hand.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="left_hand" src="/html/img/left_leg.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="left_foot" src="/html/img/left_foot.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="right_arm" src="/html/img/right_arm.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="right_leg" src="/html/img/right_leg.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="right_hand" src="/html/img/right_foot.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                        <img v-if="right_foot" src="/html/img/right_hand.png" style="width: 100%; height: 100%; object-fit: contain; transform: scaleX(-1); position: absolute;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div v-if="display_pause" class="wrapper d-flex align-items-center pause-menu-background" id="main_pause_menu" style="overflow-x: hidden; overflow-y: hidden; width: 100%; height: 100%; color: #ffffff; background-color: rgba(0, 0, 0, 0.503);">
+            <div class="page-wrapper h-100 justify-content-center mt-0" id="pause_menu_page">
+                <div class="page-header d-print-none">
+                    <div class="container-xxl" style="max-width: 85% !important;">
+                        <div class="row g-2 align-items-center">
+                            <div class="col">
+                                <h2 class="page-title" style="font-size: xx-large !important; font-weight: 800;">
+                                    Hello, {{name}}
+                                </h2>
+                            </div>
+                            <div class="col-auto ms-auto d-print-none">
+                                <div class="btn-list">
+                                    <a href="#" @click="closePauseMenu" class="btn d-none d-sm-inline-block" style="color: #ebebeb; background: linear-gradient(0deg, rgba(234, 234, 234, 0.20) 0%, rgba(234, 234, 234, 0.20) 100%); box-shadow: 28px -41px 50px rgba(154.04, 154.04, 154.04, 0.25) inset; border-radius: 5px;; border: none !important; ">
+                                        <i class="fa-solid fa-arrow-left" style="margin-right: 0.2rem;"></i>
+                                        Return to game
+                                    </a>
+                                    <a href="#" @click="disconnect" class="btn btn-danger d-none d-sm-inline-block">
+                                        <i class="fa-solid fa-door-open" style="margin-right: 0.2rem;"></i>
+                                        Disconnect
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-body">
+                    <div class="container-xxl" style="max-width: 85% !important;">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="Group11" style="width: 573px; height: 743px; position: relative">
+                                    <div class="player-info-rect p-2" style="max-width: 210px; min-width: 180px; left: 41vh; top: 33vh; position: absolute; background: linear-gradient(0deg, rgba(234, 234, 234, 0.20) 0%, rgba(234, 234, 234, 0.20) 100%); box-shadow: 28px -41px 50px rgba(154.04, 154.04, 154.04, 0.25) inset; border-radius: 15px;">
+                                        <div class="row" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                                            <div class="col-3 d-flex align-items-center justify-content-center" style="padding-right: 0 !important;">
+                                                <i :class="['fa-solid', pause_info1[1]]" style="color: rgba(255, 255, 255, 0.55); font-size: large;"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="pause-infos-title">{{pause_info1[0]}}</div>
+                                                <div class="pause-infos-sub">{{pause_info1[2]}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="player-info-rect p-2" style="max-width: 210px; min-width: 180px; left: 8vh; top: 20vh; position: absolute; background: linear-gradient(0deg, rgba(234, 234, 234, 0.20) 0%, rgba(234, 234, 234, 0.20) 100%); box-shadow: 28px -41px 50px rgba(154.04, 154.04, 154.04, 0.25) inset; border-radius: 15px;">
+                                        <div class="row" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                                            <div class="col-3 d-flex align-items-center justify-content-center" style="padding-right: 0 !important;">
+                                                <i :class="['fa-solid', pause_info2[1]]" style="color: rgba(255, 255, 255, 0.55); font-size: large;"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="pause-infos-title">{{pause_info2[0]}}</div>
+                                                <div class="pause-infos-sub">{{pause_info2[2]}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="player-info-rect p-2" style="max-width: 210px; min-width: 180px; left: 5vh; top: 53vh; position: absolute; background: linear-gradient(0deg, rgba(234, 234, 234, 0.20) 0%, rgba(234, 234, 234, 0.20) 100%); box-shadow: 28px -41px 50px rgba(154.04, 154.04, 154.04, 0.25) inset; border-radius: 15px;">
+                                        <div class="row" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                                            <div class="col-3 d-flex align-items-center justify-content-center" style="padding-right: 0 !important;">
+                                                <i :class="['fa-solid', pause_info3[1]]" style="color: rgba(255, 255, 255, 0.55); font-size: large;"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="pause-infos-title">{{pause_info3[0]}}</div>
+                                                <div class="pause-infos-sub">{{pause_info3[2]}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="player-info-rect p-2" style="max-width: 210px; min-width: 180px; left: 40vh; top: 62vh; position: absolute; background: linear-gradient(0deg, rgba(234, 234, 234, 0.20) 0%, rgba(234, 234, 234, 0.20) 100%); box-shadow: 28px -41px 50px rgba(154.04, 154.04, 154.04, 0.25) inset; border-radius: 15px;">
+                                        <div class="row" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                                            <div class="col-3 d-flex align-items-center justify-content-center" style="padding-right: 0 !important;">
+                                                <i :class="['fa-solid', pause_info4[1]]" style="color: rgba(255, 255, 255, 0.55); font-size: large;"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="pause-infos-title">{{pause_info4[0]}}</div>
+                                                <div class="pause-infos-sub">{{pause_info4[2]}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="player-info-rect p-2" style="max-width: 210px; min-width: 180px; left: 2vh; top: 40vh; position: absolute; background: linear-gradient(0deg, rgba(234, 234, 234, 0.20) 0%, rgba(234, 234, 234, 0.20) 100%); box-shadow: 28px -41px 50px rgba(154.04, 154.04, 154.04, 0.25) inset; border-radius: 15px;">
+                                        <div class="row" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                                            <div class="col-3 d-flex align-items-center justify-content-center" style="padding-right: 0 !important;">
+                                                <i :class="['fa-solid', pause_info5[1]]" style="color: rgba(255, 255, 255, 0.55); font-size: large;"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="pause-infos-title">{{pause_info5[0]}}</div>
+                                                <div class="pause-infos-sub">{{pause_info5[2]}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="player-info-rect p-2" style="max-width: 210px; min-width: 180px; left: 35vh; top: 13vh; position: absolute; background: linear-gradient(0deg, rgba(234, 234, 234, 0.20) 0%, rgba(234, 234, 234, 0.20) 100%); box-shadow: 28px -41px 50px rgba(154.04, 154.04, 154.04, 0.25) inset; border-radius: 15px;">
+                                        <div class="row" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));">
+                                            <div class="col-3 d-flex align-items-center justify-content-center" style="padding-right: 0 !important;">
+                                                <i :class="['fa-solid', pause_info6[1]]" style="color: rgba(255, 255, 255, 0.55); font-size: large;"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="pause-infos-title">{{pause_info6[0]}}</div>
+                                                <div class="pause-infos-sub">{{pause_info6[2]}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                <div class="row w-100">
+                                    <div class="col-8">
+                                        <div class="pb-3">
+                                            <a href="#" @click="openCard(1)" style="text-decoration: none !important;">
+                                                <div class="category-1 p-3" :style="`border: 3px solid ${mainColor};`">
+                                                    <h1 class="card-pause-title" :style="`color: ${mainColor};`">{{pause_cards[0]}}</h1>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 pb-3">
+                                                <a href="#" @click="openCard(3)" style="text-decoration: none !important;">
+                                                    <div class="category-3 p-3" :style="`border: 3px solid ${mainColor};`">
+                                                        <h1 class="card-pause-title" :style="`color: ${mainColor};`">{{pause_cards[2]}}</h1>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6 pb-3">
+                                                <a href="#" @click="openCard(4)" style="text-decoration: none !important;">
+                                                    <div class="category-4 p-3" :style="`border: 3px solid ${mainColor};`">
+                                                        <h1 class="card-pause-title" :style="`color: ${mainColor};`">{{pause_cards[3]}}</h1>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="row h-100">
+                                            <div class="col-md-12 pb-3">
+                                                <a href="#" @click="openCard(2)" style="text-decoration: none !important;">
+                                                    <div class="category-2 p-3 h-100" :style="`border: 3px solid ${mainColor};`">
+                                                        <h1 class="card-pause-title" :style="`color: ${mainColor};`">{{pause_cards[1]}}</h1>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-12 pb-3">
+                                                <a href="#" @click="openCard(5)" style="text-decoration: none !important;">
+                                                    <div class="category-5 p-3 h-100" :style="`border: 3px solid ${mainColor};`">
+                                                        <h1 class="card-pause-title" :style="`color: ${mainColor};`">{{pause_cards[4]}}</h1>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="settings-app">
+        <div class="modal" id="settings-modal" tabindex="-1" style="display: none;" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static" data-bs-theme="dark">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Settings</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="closeSettings"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label class="form-label">Display minimap</label>
+                        <div class="form-selectgroup-boxes row mb-3">
+                            <div class="col-lg-6">
+                                <label class="form-selectgroup-item h-100">
+                                    <input type="radio" v-model="alwaysOnMap" @change="alwaysOnMapHandler" value="true" class="form-selectgroup-input">
+                                    <span class="form-selectgroup-label d-flex align-items-center p-3 h-100">
+                                        <span class="me-3">
+                                            <span class="form-selectgroup-check"></span>
+                                        </span>
+                                        <span class="form-selectgroup-label-content">
+                                            <span class="form-selectgroup-title strong mb-1">Always</span>
+                                            <span class="d-block text-secondary">Always display the minimap</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="form-selectgroup-item h-100">
+                                    <input type="radio" v-model="alwaysOnMap" @change="alwaysOnMapHandler" value="false" class="form-selectgroup-input">
+                                    <span class="form-selectgroup-label d-flex align-items-center p-3 h-100">
+                                        <span class="me-3">
+                                            <span class="form-selectgroup-check"></span>
+                                        </span>
+                                        <span class="form-selectgroup-label-content">
+                                            <span class="form-selectgroup-title strong mb-1">Driving</span>
+                                            <span class="d-block text-secondary">Only display the minimap while driving</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <label class="form-label">Date and time</label>
+                        <div class="form-selectgroup-boxes row mb-3">
+                            <div class="col-lg-6">
+                                <label class="form-selectgroup-item h-100">
+                                    <input type="radio" v-model="timeAboveMap" @change="timeAboveMapHandler" value="true" class="form-selectgroup-input" checked="">
+                                    <span class="form-selectgroup-label d-flex align-items-center p-3 h-100">
+                                        <span class="me-3">
+                                            <span class="form-selectgroup-check"></span>
+                                        </span>
+                                        <span class="form-selectgroup-label-content">
+                                            <span class="form-selectgroup-title strong mb-1">Over the minimap</span>
+                                            <span class="d-block text-secondary">The time will be displayed over the minimap</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="form-selectgroup-item h-100">
+                                    <input type="radio" v-model="timeAboveMap" @change="timeAboveMapHandler" value="false" class="form-selectgroup-input">
+                                    <span class="form-selectgroup-label d-flex align-items-center p-3 h-100">
+                                        <span class="me-3">
+                                            <span class="form-selectgroup-check"></span>
+                                        </span>
+                                        <span class="form-selectgroup-label-content">
+                                            <span class="form-selectgroup-title strong mb-1">Over the voice level</span>
+                                            <span class="d-block text-secondary">The time will be displayed over the voice level icon</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <label class="form-label">Street position</label>
+                        <div class="form-selectgroup-boxes row mb-3">
+                            <div class="col-lg-6">
+                                <label class="form-selectgroup-item h-100">
+                                    <input type="radio" v-model="streetAboveMap" @change="streetAboveMapHandler" value="true" class="form-selectgroup-input" checked="">
+                                    <span class="form-selectgroup-label d-flex align-items-center p-3 h-100">
+                                        <span class="me-3">
+                                            <span class="form-selectgroup-check"></span>
+                                        </span>
+                                        <span class="form-selectgroup-label-content">
+                                            <span class="form-selectgroup-title strong mb-1">Over the minimap</span>
+                                            <span class="d-block text-secondary">The street name will be displayed over the minimap</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="form-selectgroup-item h-100">
+                                    <input type="radio" v-model="streetAboveMap" @change="streetAboveMapHandler" value="false" class="form-selectgroup-input">
+                                    <span class="form-selectgroup-label d-flex align-items-center p-3 h-100">
+                                        <span class="me-3">
+                                            <span class="form-selectgroup-check"></span>
+                                        </span>
+                                        <span class="form-selectgroup-label-content">
+                                            <span class="form-selectgroup-title strong mb-1">Inside the minimap</span>
+                                            <span class="d-block text-secondary">The street name will be displayed inside the minimap</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <div class="form-label">Options</div>
+                            <div>
+                                <label class="form-check">
+                                    <input class="form-check-input" v-model="showBodyHealth" type="checkbox" @change="showBodyHealthHandler">
+                                    <span class="form-check-label">Show body health</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" v-model="showRadioPlayers" type="checkbox" @change="showRadioPlayersHandler">
+                                    <span class="form-check-label">Show players in the radio</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" v-model="showMoney" type="checkbox" @change="showMoneyHandler">
+                                    <span class="form-check-label">Show money</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" v-model="showStreet" type="checkbox" @change="showStreetHandler">
+                                    <span class="form-check-label">Show street</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" v-model="showCompass" type="checkbox" @change="showCompassHandler">
+                                    <span class="form-check-label">Show compass</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" v-model="showLogoLink" type="checkbox" @change="showLogoLinkHandler">
+                                    <span class="form-check-label">Show the logo link</span>
+                                </label>
+                                <div class="mb-3">
+                                    <div class="row g-2">
+                                        <div class="col-auto">
+                                            <label class="form-label">HUD main color</label>
+                                            <input type="color" class="form-control form-control-color" v-model="mainColor" @change="mainColorHandler">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row g-2">
+                                        <div class="col-auto">
+                                            <label class="form-label">Reset the HUD settings</label>
+                                            <button href="#" class="btn btn-danger w-100" @click="resetHud">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
