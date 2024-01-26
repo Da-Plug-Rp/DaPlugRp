@@ -1,0 +1,20 @@
+* {
+    font-family: 'Nunito', sans-serif;
+    
+    color: white;
+}
+
+/* Main page stuff */
+.medium-container {
+    position: absolute;
+    left:37.5vw;
+    top: 25vh;
+
+    width: 25vw !important;
+
+    background-color: #222;
+    
+    border-radius: 1vw;
+
+    display: none;
+}
