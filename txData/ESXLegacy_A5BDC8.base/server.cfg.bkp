@@ -1,0 +1,125 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+#    ___ _____  __  _    ___ ___   _   _____   __   #
+#   | __/ __\ \/ / | |  | __/ __| /_\ / __\ \ / /   #
+#   | _|\__ \>  <  | |__| _| (_ |/ _ \ (__ \ V /    #
+#   |___|___/_/\_\ |____|___\___/_/ \_\___| |_|     #
+#                                                   #
+#     Discord: http://discord.esx-framework.org/     #
+#     Website: https://esx-framework.org/           #
+#     CFG Docs: https://aka.cfx.re/server-commands  #
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+# Editable Settings
+# -----------------
+# You can edit the following:
+
+endpoint_add_tcp "0.0.0.0:30121"
+endpoint_add_udp "0.0.0.0:30121"
+
+# Set Tags
+sets tags "default, deployer, esx, esx legacy, legacy, official, roleplay"
+
+# Optional Editable Settings
+# --------------------------
+# You may edit the following:
+
+sv_licenseKey "cfxk_5p3zJsPpo5p5W6xkGWwu_2sio5w"
+sv_hostname "Da Plug Rp"
+sets sv_projectName " Da Plug Rp"
+sets sv_projectDesc "Where The Real Rp Happens"
+set mysql_connection_string "mysql://root@localhost/ESXLegacy_A5BDC8?charset=utf8mb4"
+load_server_icon daplugrpLogo.png
+sv_maxclients 48
+sv_tebexSecret e3598d60f41f6ef0c9772f1cb0411d198e3e9b5b
+# System Administrators
+# ---------------------
+# Add system admins
+## lux discord
+add_ace resource.luxudiscord command allow
+
+## Lux Admin
+add_ace group.admin luxuadmin.explodeplayer deny
+add_ace group.admin luxuadmin.openmenu allow
+
+add_ace group.admin luxuadmin.revive allow
+
+add_ace group.admin luxuadmin.reviveplayer allow
+
+add_ace group.admin luxuadmin.kick allow
+
+add_ace group.admin luxuadmin.ban allow
+
+add_ace group.god luxuadmin allow
+
+## Permissions ##
+add_ace group.admin command allow # allow all commands
+
+add_principal identifier.license:59eeca7796e103fa95670f17246cf763c51173be group.admin #KingGoCrazii
+add_principal identifier.fivem:6928201 group.admin #Unknown_Development
+add_principal identifier.fivem:10316175 group.admin #drips
+add_principal identifier.fivem:5817688 group.admin #atrix 
+
+# Resources
+
+# Gods
+
+# Inheritance
+
+##Drug Creator Perms
+add_ace identifier.license:59eeca7796e103fa95670f17246cf763c51173be drugs_creator allow # 'KingGoCrazii'
+add_ace identifier.license:788fb9df9334249865ed81c278804e8180a10ebf drugs_creator allow 
+# Add permission to 'moxle' Rockstar license
+add_ace identifier.license:d37bd8bf5b1bf416f8bfa1143e8a6de635cb3315 drugs_creator allow # 'Drips'
+## Job Creator
+add_ace identifier.license:d37bd8bf5b1bf416f8bfa1143e8a6de635cb3315 drugs_creator allow #Drips
+add_ace identifier.license:59eeca7796e103fa95670f17246cf763c51173be jobcreator allow #king
+add_ace identifier.license:788fb9df9334249865ed81c278804e8180a10ebf jobcreator allow # Add permission to 'Unknown_Development' Rockstar license
+
+# pma-voice Config
+# ----------------
+setr voice_enableRadioAnim 1
+setr voice_useNativeAudio true
+setr voice_useSendingRangeOnly true
+
+# ESX Language (edit to change the language of ESX)
+# -----------------------------------------------------------
+setr esx:locale "en"
+
+# Default & Standalone Resources
+# ------------------------------
+ensure oxmysql
+ensure spawnmanager
+ensure es_extended
+ensure esx_menu_default
+ensure esx_menu_list
+ensure esx_menu_dialog
+ensure hardcap
+ensure ox_lib
+ensure ox_target
+ensure bob74_ipl
+# ESX Legacy Core
+ensure [core]
+# ----------
+ensure LuxuModules
+# luxu resources
+ensure LuxuAdmin
+ensure LuxuCEX
+ensure LuxuCM   
+# ESX Addons
+# ----------
+ensure [standalone]
+ensure [esx_addons]
+ensure [scripts]
+ensure [mlo]
+ensure [cars]
+ensure [props]
+ensure [clothing]
+ensure kyros-weapon-pack-v1
+ensure keep-harmony 
+ensure [standalone]
+ensure cdev_lib
+ensure cdev_vehicleshop
+# Additional Resource
+# -------------------
+ensure pma-voice

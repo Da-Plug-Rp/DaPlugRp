@@ -1,0 +1,16 @@
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
+('WEAPON_GARDONE', 'H&L Gardone', 1, 0, 1),
+('WEAPON_G30', 'Glock 30', 2, 0, 1),
+('WEAPON_PAINTBALL', 'PaintBall Gun', 2, 0, 1),
+('WEAPON_DRACO', 'Mini Drac', 1, 0, 1),
+('WEAPON_MAC', 'Mac 10', 3, 0, 1),
+('WEAPON_TEC9', 'TEC-9', 3, 0, 1),
+('WEAPON_P226', 'P226R', 2, 0, 1),
+('WEAPON_SIG516', 'SIG516', 1, 0, 1),
+('WEAPON_MP5', 'MP5', 1, 0, 1),
+('WEAPON_G17', 'Glock 17', 1, 0, 1),
+('WEAPON_BARRETT', 'Barrett 50', 1, 0, 1),
+('WEAPON_G18C', 'Glock 18C', 1, 0, 1),
+('WEAPON_FNX', 'FNX', 1, 0, 1),
+('WEAPON_NSR', 'NSR', 1, 0, 1),
+('WEAPON_M870', 'Remington M870', 1, 0, 1);
