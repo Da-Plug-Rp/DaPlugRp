@@ -1,0 +1,2 @@
+insert into jobs (name,label,whitelisted) Values ('lcryptominer','CryptoMiner',0);
+insert into job_grades (job_name,grade,name,label,salary,skin_male,skin_female) values ('lcryptominer',0,'lcryptominer','CryptoMiner',0,'{}','{}');

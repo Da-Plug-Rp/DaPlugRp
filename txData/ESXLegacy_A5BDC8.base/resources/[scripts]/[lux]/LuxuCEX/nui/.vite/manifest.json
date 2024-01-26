@@ -1,0 +1,43 @@
+{
+  "index.html": {
+    "assets": [
+      "assets/pop-QW4gluAL.mp3",
+      "assets/error-QLEyEs-N.mp3",
+      "assets/success-MqYT-L6a.mp3",
+      "assets/warning-OAl4fc7g.mp3",
+      "assets/transfer-m2AExL1b.mp3",
+      "assets/bg-l8TSo387.png"
+    ],
+    "file": "assets/index-EJSMhO3r.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "src/assets/imgs/bg.png": {
+    "file": "assets/bg-l8TSo387.png",
+    "src": "src/assets/imgs/bg.png"
+  },
+  "src/assets/sounds/error.mp3": {
+    "file": "assets/error-QLEyEs-N.mp3",
+    "src": "src/assets/sounds/error.mp3"
+  },
+  "src/assets/sounds/pop.mp3": {
+    "file": "assets/pop-QW4gluAL.mp3",
+    "src": "src/assets/sounds/pop.mp3"
+  },
+  "src/assets/sounds/success.mp3": {
+    "file": "assets/success-MqYT-L6a.mp3",
+    "src": "src/assets/sounds/success.mp3"
+  },
+  "src/assets/sounds/transfer.mp3": {
+    "file": "assets/transfer-m2AExL1b.mp3",
+    "src": "src/assets/sounds/transfer.mp3"
+  },
+  "src/assets/sounds/warning.mp3": {
+    "file": "assets/warning-OAl4fc7g.mp3",
+    "src": "src/assets/sounds/warning.mp3"
+  },
+  "style.css": {
+    "file": "assets/style--gov1Ty0.css",
+    "src": "style.css"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "index.html": {
+    "file": "script/script.js",
+    "src": "index.html",
+    "isEntry": true
+  },
+  "style.css": {
+    "file": "assets/style.2e0b4fb8.css",
+    "src": "style.css"
+  }
+}

@@ -1,0 +1,2361 @@
+<!-- <head>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    type="module"></script>
+</head> -->
+
+<div class="cex-content">
+  <div class="cex-header">
+    <div class="logo">CE<span>X</span></div>
+  </div>
+  <div class="cex-body" id="cexbody">
+    <div class="cex-bull">
+      <div>The number 1 exchange</div>
+      <div>Track, Trade and Transfer the most popular cryptocurrencies.</div>
+      <div class="bullbearcontainer">
+        <img
+          src="https://i.ibb.co/f8q0jgt/LE61is7.jpg"
+          alt="bullbear"
+          class="bullbearimg" />
+      </div>
+    </div>
+    <div id="goToMarketBTN">Explore The Markets</div>
+  </div>
+  <div class="cex-footer">
+    <div class="cex-footer-container">
+      <div onclick="goHome()" class="cex-nav-btn cex-nav-active" id="nav-home">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        <span>Home</span>
+      </div>
+      <div onclick="goMarkets()" id="nav-markets" class="cex-nav-btn">
+        <i class="fas fa-chart-bar baricon"></i>
+        <span>Markets</span>
+      </div>
+      <div onclick="goTrade()" id="nav-trade" class="cex-nav-btn">
+        <i class="fas fa-exchange-alt"></i>
+        <span>Trade</span>
+      </div>
+      <div onclick="goWallet()" id="nav-wallet" class="cex-nav-btn">
+        <i class="fas fa-user"></i>
+        <span>Account</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* LuxuCEX folder name */
+  const resource = "LuxuCEX";
+
+  const cexAppEl = document.querySelector(".cex-app");
+  if (cexAppEl) {
+    cexAppEl.style.backgroundColor = "black";
+  }
+
+  function addScript(src, callback) {
+    var s = document.createElement("script");
+    s.setAttribute("src", src);
+    s.onload = callback;
+    document.body.appendChild(s);
+  }
+
+  addScript("https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js");
+
+  const chartDays = 14;
+
+  /* input Els IDS */
+  const newAddressEl = "cryptoaddress-input";
+  const transferCryptoAmountEl = "tc-input-amount";
+  const transferCryptoAddressEl = "tc-input-address";
+  const dwAmountEl = "dw-input";
+  const cryptoTotalValueEl = "totalCryptoValue";
+  const exchangeBalanceEl = "exchangeBalanceValue";
+  const currentCryptoAddressEl = "currentCEXAddress";
+  const tradeSelectEl = "cex-trade-option-select";
+  const tradeinputEl = "tradeinputcex";
+  /* selects ID */
+  const tcSelectEl = "tc-option-select";
+
+  const cryptoList = [
+    {
+      currency: "Bitcoin",
+      pair: "BTCUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+    },
+    {
+      currency: "Ethereum",
+      pair: "ETHUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png",
+    },
+    {
+      currency: "Solana",
+      pair: "SOLUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png",
+    },
+    {
+      currency: "Dogecoin",
+      pair: "DOGEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/74.png",
+    },
+    {
+      currency: "Litecoin",
+      pair: "LTCUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2.png",
+    },
+    {
+      currency: "XRP",
+      pair: "XRPUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/52.png",
+    },
+    {
+      currency: "Aptos",
+      pair: "APTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/21794.png",
+    },
+    {
+      currency: "BNB",
+      pair: "BNBUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png",
+    },
+    {
+      currency: "Chainlink",
+      pair: "LINKUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1975.png",
+    },
+    {
+      currency: "dYdX",
+      pair: "DYDXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/11156.png",
+    },
+    {
+      currency: "Polygon",
+      pair: "MATICUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png",
+    },
+    {
+      currency: "Mask Network",
+      pair: "MASKUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/8536.png",
+    },
+    {
+      currency: "Cardano",
+      pair: "ADAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2010.png",
+    },
+    {
+      currency: "STEPN",
+      pair: "GMTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/18069.png",
+    },
+    {
+      currency: "Ethereum Classic",
+      pair: "ETCUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1321.png",
+    },
+    {
+      currency: "Metal DAO",
+      pair: "MTLUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1788.png",
+    },
+    {
+      currency: "Axie Infinity",
+      pair: "AXSUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6783.png",
+    },
+    {
+      currency: "Filecoin",
+      pair: "FILUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2280.png",
+    },
+    {
+      currency: "JasmyCoin",
+      pair: "JASMYUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/8425.png",
+    },
+    {
+      currency: "Chiliz",
+      pair: "CHZUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4066.png",
+    },
+    {
+      currency: "Curve DAO Token",
+      pair: "CRVUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6538.png",
+    },
+    {
+      currency: "Polkadot",
+      pair: "DOTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6636.png",
+    },
+    {
+      currency: "Waves",
+      pair: "WAVESUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1274.png",
+    },
+    {
+      currency: "ApeCoin",
+      pair: "APEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png",
+    },
+    {
+      currency: "Dent",
+      pair: "DENTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1886.png",
+    },
+    {
+      currency: "Cosmos",
+      pair: "ATOMUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3794.png",
+    },
+    {
+      currency: "TRON",
+      pair: "TRXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png",
+    },
+    {
+      currency: "Algorand",
+      pair: "ALGOUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4030.png",
+    },
+    {
+      currency: "Ocean Protocol",
+      pair: "OCEANUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3911.png",
+    },
+    {
+      currency: "Avalanche",
+      pair: "AVAXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5805.png",
+    },
+    {
+      currency: "iExec RLC",
+      pair: "RLCUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1637.png",
+    },
+    {
+      currency: "Fantom",
+      pair: "FTMUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3513.png",
+    },
+    {
+      currency: "The Sandbox",
+      pair: "SANDUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6210.png",
+    },
+    {
+      currency: "EOS",
+      pair: "EOSUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1765.png",
+    },
+    {
+      currency: "Bitcoin Cash",
+      pair: "BCHUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1831.png",
+    },
+    {
+      currency: "Ren",
+      pair: "RENUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2539.png",
+    },
+    {
+      currency: "Kava",
+      pair: "KAVAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4846.png",
+    },
+    {
+      currency: "NEAR Protocol",
+      pair: "NEARUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6535.png",
+    },
+    {
+      currency: "Quant",
+      pair: "QNTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3155.png",
+    },
+    {
+      currency: "Gala",
+      pair: "GALAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7080.png",
+    },
+    {
+      currency: "Optimism",
+      pair: "OPUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/11840.png",
+    },
+    {
+      currency: "Band Protocol",
+      pair: "BANDUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4679.png",
+    },
+    {
+      currency: "SushiSwap",
+      pair: "SUSHIUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6758.png",
+    },
+    {
+      currency: "Decentraland",
+      pair: "MANAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1966.png",
+    },
+    {
+      currency: "Compound",
+      pair: "COMPUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5692.png",
+    },
+    {
+      currency: "Monero",
+      pair: "XMRUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/328.png",
+    },
+    {
+      currency: "Aave",
+      pair: "AAVEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7278.png",
+    },
+    {
+      currency: "BinaryX",
+      pair: "BNXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/9891.png",
+    },
+    {
+      currency: "Celo",
+      pair: "CELOUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5567.png",
+    },
+    {
+      currency: "API3",
+      pair: "API3USDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7737.png",
+    },
+    {
+      currency: "Hedera",
+      pair: "HBARUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4642.png",
+    },
+    {
+      currency: "Dash",
+      pair: "DASHUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/131.png",
+    },
+    {
+      currency: "Kyber Network Crystal Legacy",
+      pair: "KNCUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1982.png",
+    },
+    {
+      currency: "Litentry",
+      pair: "LITUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6833.png",
+    },
+    {
+      currency: "SXP",
+      pair: "SXPUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4279.png",
+    },
+    {
+      currency: "Kusama",
+      pair: "KSMUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5034.png",
+    },
+    {
+      currency: "Aragon",
+      pair: "ANTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1680.png",
+    },
+    {
+      currency: "LeverFi",
+      pair: "LEVERBUSD",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/20873.png",
+    },
+    {
+      currency: "Uniswap",
+      pair: "UNIUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7083.png",
+    },
+    {
+      currency: "ConstitutionDAO",
+      pair: "PEOPLEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/14806.png",
+    },
+    {
+      currency: "1inch Network",
+      pair: "1INCHUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/8104.png",
+    },
+    {
+      currency: "Reserve Rights",
+      pair: "RSRUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3964.png",
+    },
+    {
+      currency: "Alpha Venture DAO",
+      pair: "ALPHAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7232.png",
+    },
+    {
+      currency: "Flow",
+      pair: "FLOWUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4558.png",
+    },
+    {
+      currency: "THORChain",
+      pair: "RUNEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4157.png",
+    },
+    {
+      currency: "Unifi Protocol DAO",
+      pair: "UNFIUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7672.png",
+    },
+    {
+      currency: "yearn.finance",
+      pair: "YFIUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5864.png",
+    },
+    {
+      currency: "Theta Network",
+      pair: "THETAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2416.png",
+    },
+    {
+      currency: "Ethereum Name Service",
+      pair: "ENSUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/13855.png",
+    },
+    {
+      currency: "Livepeer",
+      pair: "LPTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3640.png",
+    },
+    {
+      currency: "MultiversX (Elrond)",
+      pair: "EGLDUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6892.png",
+    },
+    {
+      currency: "Synthetix",
+      pair: "SNXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2586.png",
+    },
+    {
+      currency: "Coin98",
+      pair: "C98USDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/10903.png",
+    },
+    {
+      currency: "Holo",
+      pair: "HOTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2682.png",
+    },
+    {
+      currency: "ImmutableX",
+      pair: "IMXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/10603.png",
+    },
+    {
+      currency: "Stellar",
+      pair: "XLMUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/512.png",
+    },
+    {
+      currency: "Zcash",
+      pair: "ZECUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1437.png",
+    },
+    {
+      currency: "Tezos",
+      pair: "XTZUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2011.png",
+    },
+    {
+      currency: "The Graph",
+      pair: "GRTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6719.png",
+    },
+    {
+      currency: "Tellor",
+      pair: "TRBUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4944.png",
+    },
+    {
+      currency: "SafePal",
+      pair: "SFPUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/8119.png",
+    },
+    {
+      currency: "IOST",
+      pair: "IOSTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2405.png",
+    },
+    {
+      currency: "Maker",
+      pair: "MKRUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1518.png",
+    },
+    {
+      currency: "MyNeighborAlice",
+      pair: "ALICEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/8766.png",
+    },
+    {
+      currency: "Arweave",
+      pair: "ARUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5632.png",
+    },
+    {
+      currency: "Enjin Coin",
+      pair: "ENJUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2130.png",
+    },
+    {
+      currency: "Galxe",
+      pair: "GALUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/11877.png",
+    },
+    {
+      currency: "OMG Network",
+      pair: "OMGUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1808.png",
+    },
+    {
+      currency: "Linear Finance",
+      pair: "LINAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7102.png",
+    },
+    {
+      currency: "0x",
+      pair: "ZRXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1896.png",
+    },
+    {
+      currency: "Loopring",
+      pair: "LRCUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1934.png",
+    },
+    {
+      currency: "Neo",
+      pair: "NEOUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1376.png",
+    },
+    {
+      currency: "Ankr",
+      pair: "ANKRUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3783.png",
+    },
+    {
+      currency: "COTI",
+      pair: "COTIUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3992.png",
+    },
+    {
+      currency: "WOO Network",
+      pair: "WOOUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7501.png",
+    },
+    {
+      currency: "VeChain",
+      pair: "VETUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3077.png",
+    },
+    {
+      currency: "Internet Computer",
+      pair: "ICPBUSD",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/8916.png",
+    },
+    {
+      currency: "Harmony",
+      pair: "ONEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3945.png",
+    },
+    {
+      currency: "Gitcoin",
+      pair: "GTCUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/10052.png",
+    },
+    {
+      currency: "Zilliqa",
+      pair: "ZILUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2469.png",
+    },
+    {
+      currency: "Oasis Network",
+      pair: "ROSEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7653.png",
+    },
+    {
+      currency: "Reef",
+      pair: "REEFUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6951.png",
+    },
+    {
+      currency: "Spell Token",
+      pair: "SPELLUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/11289.png",
+    },
+    {
+      currency: "Ontology",
+      pair: "ONTUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2566.png",
+    },
+    {
+      currency: "NEM",
+      pair: "XEMUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/873.png",
+    },
+    {
+      currency: "Horizen",
+      pair: "ZENUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1698.png",
+    },
+    {
+      currency: "StormX",
+      pair: "STMXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2297.png",
+    },
+    {
+      currency: "Chromia",
+      pair: "CHRUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3978.png",
+    },
+    {
+      currency: "Shentu",
+      pair: "CTKUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4807.png",
+    },
+    {
+      currency: "Basic Attention Token",
+      pair: "BATUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1697.png",
+    },
+    {
+      currency: "SKALE",
+      pair: "SKLUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5691.png",
+    },
+    {
+      currency: "DigiByte",
+      pair: "DGBUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/109.png",
+    },
+    {
+      currency: "Klaytn",
+      pair: "KLAYUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4256.png",
+    },
+    {
+      currency: "IoTeX",
+      pair: "IOTXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2777.png",
+    },
+    {
+      currency: "NKN",
+      pair: "NKNUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2780.png",
+    },
+    {
+      currency: "Origin Protocol",
+      pair: "OGNUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5117.png",
+    },
+    {
+      currency: "Balancer",
+      pair: "BALUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5728.png",
+    },
+    {
+      currency: "Qtum",
+      pair: "QTUMUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1684.png",
+    },
+    {
+      currency: "BakeryToken",
+      pair: "BAKEUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7064.png",
+    },
+    {
+      currency: "Storj",
+      pair: "STORJUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1772.png",
+    },
+    {
+      currency: "Bluzelle",
+      pair: "BLZUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2505.png",
+    },
+    {
+      currency: "Ravencoin",
+      pair: "RVNUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2577.png",
+    },
+    {
+      currency: "Celer Network",
+      pair: "CELRUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/3814.png",
+    },
+    {
+      currency: "IOTA",
+      pair: "IOTAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/1720.png",
+    },
+    {
+      currency: "Bella Protocol",
+      pair: "BELUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/6928.png",
+    },
+    {
+      currency: "Cartesi",
+      pair: "CTSIUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/5444.png",
+    },
+    {
+      currency: "Injective",
+      pair: "INJUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7226.png",
+    },
+    {
+      currency: "Dusk Network",
+      pair: "DUSKUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4092.png",
+    },
+    {
+      currency: "Automata Network",
+      pair: "ATAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/10188.png",
+    },
+    {
+      currency: "ARPA",
+      pair: "ARPAUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/4039.png",
+    },
+    {
+      currency: "ICON",
+      pair: "ICXUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2099.png",
+    },
+    {
+      currency: "Flamingo",
+      pair: "FLMUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7150.png",
+    },
+    {
+      currency: "Stargate Finance",
+      pair: "STGUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/18934.png",
+    },
+    {
+      currency: "Audius",
+      pair: "AUDIOUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7455.png",
+    },
+    {
+      currency: "Lido DAO",
+      pair: "LDOBUSD",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/8000.png",
+    },
+    {
+      currency: "Mines of Dalarnia",
+      pair: "DARUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/11374.png",
+    },
+    {
+      currency: "TomoChain",
+      pair: "TOMOUSDT",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/2570.png",
+    },
+    {
+      currency: "DODO",
+      pair: "DODOBUSD",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/7224.png",
+    },
+    {
+      currency: "Alien Worlds",
+      pair: "TLMBUSD",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/9119.png",
+    },
+    {
+      currency: "Convex Finance",
+      pair: "CVXBUSD",
+      src: "https://s2.coinmarketcap.com/static/img/coins/128x128/9903.png",
+    },
+  ];
+
+  /**
+   * A map of cryptocurrencies for efficient lookup.
+   * The keys are the `pair` values of the cryptocurrencies.
+   * The values are objects with properties `name`, `pair`, `id`, `price`, `balance`, `price_change_percent`, `high_price`, `low_price`, and `img_src`.
+   *
+   * @type {Map<string, {name: string, pair: string, id: string, price: number, balance: number, price_change_percent: number, high_price: number, low_price: number, img_src: string}>}
+   */
+  const cryptoMap = new Map(
+    cryptoList.map((crypto) => {
+      let id = crypto.pair
+        .replace(/USDT/g, "")
+        .replace(/BUSD/g, "")
+        .replace(/USD/g, "");
+
+      const info = {
+        name: crypto.currency,
+        pair: crypto.pair,
+        id: id,
+        price: 0,
+        balance: 0,
+        price_change_percent: 0,
+        high_price: 0,
+        low_price: 0,
+        img_src: crypto.src,
+      };
+
+      return [crypto.pair, info];
+    })
+  );
+
+  /* Variables */
+  let canProceed = true;
+  let TradeAmount = 0;
+  let TradeDetails = {
+    id: undefined,
+    name: "",
+    amount: 0,
+    type: undefined,
+  };
+
+  /* Pages */
+
+  const homePageHtml = ` <div class="cex-bull">
+  <div>The number 1 exchange</div>
+  <div>
+    Track, Trade and Transfer the most popular cryptocurrencies.
+  </div>
+  <div class="bullbearcontainer">
+    <img src="https://i.imgur.com/LE61is7.jpeg" alt="bullbear" class="bullbearimg" />
+  </div>
+  </div>
+  <div id="goToMarketBTN">Explore The Markets</div>`;
+
+  const tradePageHtml = `<div class="cex-trade-info">
+  <div class="cex-trade-info-container">
+    <div class="tradelogo">
+      <img id='tradedCoinImg'
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
+        alt="btcimg"
+      />
+    </div>
+    <div class="trade-coin-name" id='tradedCoinName'>Bitcoin</div>
+    <div class="trade-coin-info">
+      <div class="price">
+        Price: $<span id="coinPrice">10</span>
+      </div>
+      <div class="high">High: $<span id="coinHigh">2424</span></div>
+      <div class="low">Low: $<span id="coinLow">42424</span></div>
+      <div class="change">
+        Change: <span id="coinChange">5</span>%
+      </div>
+    </div>
+    <div class="trade-user-balance">
+      <div class="user-coin-balance">
+        💰 Wallet: <span id="coin-balance">1000</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <select
+  name="cex-trade-option-select"
+  title="buysellselect"
+  id="cex-trade-option-select"
+  ></select>
+  <canvas id="myChart" width="400" height="400"></canvas>
+  <div  id="cex-trade-form">
+  <input
+    type="number"
+    min="0"
+    placeholder="amount..."
+    required
+    class="tradeinputcex"
+    id="tradeinputcex"
+  />
+  <div class="cex-trade-form-buttons">
+    <div class="button-success" onclick="CEXbuyCrypto()">buy</div>
+    <div class="button-primary" onclick="CEXsellCrypto()">sell</div>
+  </div>
+  </div>
+
+  <!-- Trade Confirmation Modal -->
+  </div>
+  <div id="cex-modal" class="cex-modal">
+  <!-- Modal content -->
+  <div class="cex-modal-content">
+  <span
+    class="cex-close-btn"
+    id="closetrademodal"
+    onclick="closemodal()"
+    >&times;</span
+  >
+  <div class="cex-modal-confirmation">
+    <div class="cex-moda-confirmation-title">Please Confirm:</div>
+    <div class="cex-bold-text">
+      Coin: <span id="trade-modal-crypto-name">BTC</span>
+    </div>
+    <div class="cex-bold-text">
+      <div id="trade-modal-buyorsell">Buy</div>
+      <span id="trade-modal-crypto-amount">424</span>
+    </div>
+    <div class="cex-bold-text">
+      <div id="trade-modal-buyorsell">Total Value: </div>
+      <span id="trade-modal-crypto-cost">$0</span>
+    </div>
+    <div
+      class="cex-modal-button-success cex-w-full"
+      onclick="acceptTradeModal()"
+    >
+      ACCEPT
+    </div>
+  </div>
+  </div>`;
+
+  const marketPageHtml = `
+  <div class='cex-table-container'>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>$ Price</th>
+      <th>% Change</th>
+    </thead>
+    <tbody id='cex-markets-tablebody'>
+    </tbody>
+  </table></div>`;
+
+  const accountPageHtml = ` <div class="account-text-title" >Account Overview</div>
+  <div class="cex-balance-container">
+    <div class="cex-balance-info" id="exchangeBalance">
+      <div>Exchange Balance</div>
+      <div id="exchangeBalanceValue">1000</div>
+    </div>
+    <div class="cex-balance-info" id="cryptoValue">
+      <div>Crypto Worth</div>
+      <div id="totalCryptoValue">2000</div>
+    </div>
+  </div>
+
+
+
+  <div  id="dw-form">
+      <div class="account-text-title" >Deposit & Withdraw</div>
+    <input type="number" id="dw-input" required min="0" step="0.1" placeholder="amount..." />
+    <div class="dw-button-container">
+      <div
+        class="dw-button
+        id="exchangeBalance" onclick="CEXdeposit()"
+      >
+        Deposit
+      </div>
+      <div class="dw-button" id="cryptoValue" onclick="CEXwithdraw()">
+       Withdraw
+      </div>
+    </div>
+  </div>
+
+
+  <div id="transferCrypto">
+      <div class="account-text-title">Transfer Crypto</div>
+      <div class="transfercrypto-container">
+          <select name="tc-option-select" id="tc-option-select">
+          </select>
+          <input type="number" min="0" id="tc-input-amount" required placeholder="amount...">
+      </div>
+      <div class="transfercrypto-container">
+          <input type="text" id="tc-input-address" required placeholder="cryptoaddress: 0xjohndoe...">
+          <div class="tc-button" onclick="CEXtransferingCrypto()">SEND</div>
+      </div>
+  </div>
+
+
+
+  <div id="cryptoaddress-form">
+      <div class="account-text-title">Change crypto adddress</div>
+      <div class="change-address-input-container">
+          <div class="cryptoprefix">0x</div>
+          <input type="text" id="cryptoaddress-input" required placeholder="cryptoaddress...">
+          <div class="crypotaddress-button" onclick="changeCryptoAddress()">Change</div>
+      </div>
+      <div class="current-address-container">
+          <div class="">Current Crypto Address: </div>
+          <span class="current-crypto-address" id="currentCEXAddress">0xLuxu</span>
+      </div>
+  </div>`;
+
+  const marketsTableBody = "cex-markets-tablebody";
+
+  /* Utils */
+  async function fetchNUI(event, data = {}) {
+    return await fetch(`https://${resource}/${event}`, {
+      method: "post",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(data),
+    });
+  }
+
+  document
+    .getElementById("goToMarketBTN")
+    ?.addEventListener("click", function () {
+      document.getElementById("cexbody").html = marketPageHtml;
+      addInfoToTable();
+    });
+  /* Notify */
+
+  function notify(typex, msgx, delayx) {
+    canProceed = false;
+    let delay = delayx || 2000;
+    let type = typex || "success";
+    let msg = msgx || "notification";
+    QS.Phone.Notifications.Add("./img/apps/cex.png", "CEX", msgx);
+
+    setTimeout(() => {
+      canProceed = true;
+    }, delay);
+  }
+
+  const formatter = new Intl.NumberFormat("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 8,
+  });
+  function FixedDecimals(num) {
+    return formatter.format(num);
+  }
+
+  /* Player Info */
+
+  let PlayerName = "John Doe";
+  let BankBalance = null;
+  let player_cryptoaddress = "0xjohndoe";
+  let cexAssets;
+  let cexBalance;
+
+  function RefreshPlayerInfo() {
+    fetchNUI("getPlayerDetails")
+      .then((resp) => resp.json())
+      .then((resp) => {
+        PlayerName = resp.name;
+        player_cryptoaddress = resp.cryptoaddress;
+        cexAssets = JSON.parse(resp.cexAssets);
+        cexBalance = resp.cexBalance;
+      })
+      .catch((err) => {
+        console.log("Phone Error getting player data form LuxuCEX" + err);
+      });
+  }
+
+  function addInfoToTable() {
+    const tableBodyEl = document.getElementById(marketsTableBody);
+    if (!tableBodyEl) return;
+    let htmlString = "";
+    for (const crypto of Array.from(cryptoMap.values())) {
+      htmlString += `<tr>
+        <td id='cex-${crypto.pair}' class='cex-table-name'><img src='${crypto.img_src}' />${crypto.name}</td>
+        <td id='cex-${crypto.pair}-price' class='cex-table-price'>${crypto.price}</td>
+        <td id='cex-${crypto.pair}-priceChange' class='cex-table-pricechange'>${crypto.price_change_percent}%</td>
+      </tr>`;
+    }
+    tableBodyEl.innerHTML = htmlString;
+  }
+
+  /**
+   * UpdateTable function
+   *
+   * @param {string} s - The pair of the cryptocurrency to get the history of.
+   */
+  function UpdateTable(s) {
+    if (s) {
+      const crypto = cryptoMap.get(s);
+      if (!crypto) return;
+
+      let current_price = Number($(`#cex-${crypto.pair}-price`).html());
+      let newPrice = crypto.price;
+      let change = crypto.price_change_percent;
+
+      const priceEl = document.getElementById(`cex-${crypto.pair}-price`);
+      const priceChangeEl = document.getElementById(
+        `cex-${crypto.pair}-priceChange`
+      );
+
+      if (!priceEl || !priceChangeEl) return;
+
+      priceEl.innerHTML = FixedDecimals(newPrice);
+      newPrice - current_price > 0;
+
+      priceChangeEl.innerHTML = crypto.price_change_percent.toFixed(2);
+
+      if (change < 0) {
+        priceChangeEl.classList.add("cex-price-down");
+        priceChangeEl.classList.remove("cex-price-up");
+      } else {
+        priceChangeEl.classList.add("cex-price-up");
+        priceChangeEl.classList.remove("cex-price-down");
+      }
+    }
+  }
+
+  let myChart;
+
+  function ChangeActiveNav(newActive) {
+    if (!document.getElementById(newActive)) return;
+    /* Change navbar active */
+    $(".cex-nav-active").removeClass("cex-nav-active");
+    $(`#${newActive}`).addClass("cex-nav-active");
+    /* Change body Contents */
+    $("#cexbody").empty();
+    /* Home */
+    if (newActive == "nav-home") {
+      $("#cexbody").html(homePageHtml);
+      $("#goToMarketBTN").on("click", function () {
+        $("#cexbody").html(marketPageHtml);
+        addInfoToTable();
+      });
+    } else if (newActive == "nav-markets") {
+      /* Markets */
+      $("#cexbody").html(marketPageHtml);
+      addInfoToTable();
+    } else if (newActive == "nav-trade") {
+      /* Trade */
+      $("#cexbody").html(tradePageHtml);
+      const ctx = document.getElementById("myChart").getContext("2d");
+      myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: "Bitcoin",
+              data: [],
+              fill: true,
+              cubicInterpolationMode: "monotone",
+              backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+              borderColor: ["rgba(255, 99, 132, 1)"],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          pointBackgroundColor: "#fff",
+        },
+      });
+
+      addTradeOptions();
+      getHistory("BTCUSDT", "bitcoin");
+      UpdateTradedCoinInfo(cryptoMap.get("BTCUSDT"));
+
+      $("#" + tradeSelectEl).change(function () {
+        let selected = $("#" + tradeSelectEl + " option:selected").val(); // get the current value of the selected option.
+        let pair;
+        let selectedCryptoInfo;
+        Array.from(cryptoMap.values()).forEach((crypto) => {
+          if (selected === crypto.name) {
+            pair = crypto.pair;
+            selectedCryptoInfo = crypto;
+          }
+        });
+        getHistory(pair);
+        UpdateTradedCoinInfo(selectedCryptoInfo);
+      });
+    } else if (newActive == "nav-wallet") {
+      /* Account */
+      $("#cexbody").html(accountPageHtml);
+      updateExchangeAndCryptoBalancesOverview();
+    }
+  }
+
+  function goHome() {
+    ChangeActiveNav("nav-home");
+  }
+  function goMarkets() {
+    ChangeActiveNav("nav-markets");
+  }
+  function goTrade() {
+    ChangeActiveNav("nav-trade");
+  }
+  function goWallet() {
+    ChangeActiveNav("nav-wallet");
+    addTransferOptions();
+  }
+
+  function addTransferOptions() {
+    const selectEl = document.getElementById(tcSelectEl);
+    selectEl.innerHTML = "";
+    Array.from(cryptoMap.values()).forEach((crypto) => {
+      selectEl.insertAdjacentHTML(
+        "beforeend",
+        `<option name=${crypto.name}>${crypto.name}</option>`
+      );
+    });
+  }
+
+  function addTradeOptions() {
+    const selectEl = document.getElementById(tradeSelectEl);
+    selectEl.innerHTML = "";
+    Array.from(Array.from(cryptoMap.values())).forEach((crypto) => {
+      selectEl.insertAdjacentHTML(
+        "beforeend",
+        `<option name=${crypto.name}>${crypto.name}</option>`
+      );
+    });
+  }
+
+  function formattt(num) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(num);
+  }
+
+  function updateExchangeAndCryptoBalancesOverview() {
+    fetchNUI("getPlayerDetails")
+      .then((resp) => resp.json())
+      .then((resp) => {
+        cexAssets = JSON.parse(resp.cexAssets);
+        cexBalance = resp.cexBalance;
+        cryptoaddress = resp.cryptoaddress;
+
+        let totalCryptoBalance = 0;
+
+        for (const crypto of Array.from(cryptoMap.values())) {
+          let id = crypto.id;
+          let balance = cexAssets[id];
+          if (balance) {
+            crypto.balance = balance;
+            cryptoMap.set(crypto.pair, crypto);
+            totalCryptoBalance += balance * crypto.price;
+          }
+        }
+
+        $("#" + exchangeBalanceEl).html(formattt(cexBalance));
+
+        $("#" + cryptoTotalValueEl).html(formattt(totalCryptoBalance));
+        $("#" + currentCryptoAddressEl).html(cryptoaddress || "null");
+      })
+      .catch((err) => {
+        console.log("Phone Error getting player data form LuxuCEX" + err);
+      });
+  }
+
+  function CEXdeposit() {
+    if (!canProceed) return;
+    let amount = $("#" + dwAmountEl).val();
+    amount = Number(amount);
+    if (!amount) return;
+    fetchNUI("Deposit", amount)
+      .then((resp) => resp.json())
+      .then((resp) => {
+        if (resp) {
+          notify("success", "Success", 2000);
+        } else {
+          notify("error", "Not enough funds", 2000);
+        }
+      });
+    RefreshPlayerInfo();
+    updateExchangeAndCryptoBalancesOverview();
+  }
+
+  function CEXwithdraw() {
+    if (!canProceed) return;
+    let amount = $("#" + dwAmountEl).val();
+    amount = Number(amount);
+    if (!amount) return;
+    fetchNUI("Withdraw", amount)
+      .then((resp) => resp.json())
+      .then((resp) => {
+        if (resp) {
+          notify("success", "Success", 2000);
+        } else {
+          notify("error", "Not enough funds", 2000);
+        }
+      });
+    RefreshPlayerInfo();
+    updateExchangeAndCryptoBalancesOverview();
+  }
+
+  function CEXtransferingCrypto() {
+    if (!canProceed) return;
+    if (!document.getElementById(tcSelectEl)) return;
+    let selectedCrypto = $("#" + tcSelectEl)
+      .find(":selected")
+      .val();
+    let amount = Number($("#" + transferCryptoAmountEl).val());
+    let address = $("#" + transferCryptoAddressEl).val();
+    if (!selectedCrypto || !amount || !address) return;
+    if (!address) return; // check if ok
+
+    let selCrypto = Array.from(cryptoMap.values())
+      .find((crypto) => {
+        if (crypto.name === selectedCrypto) return true;
+      })
+      .pair.replace("USDT", "");
+    let data = { amount: amount, selCrypto: selCrypto, receiver: address };
+    fetchNUI("transfer", data)
+      .then((resp) => resp.json())
+      .then((resp) => {
+        if (resp === true) {
+          notify("success", "Success", 2000);
+          RefreshPlayerInfo();
+          updateExchangeAndCryptoBalancesOverview();
+        } else if (resp === "userNotFound") {
+          notify("error", "User not found", 2000);
+        } else if (resp === "notEnoughFunds") {
+          notify("error", "Not enough crypto", 2000);
+        }
+      });
+  }
+
+  function changeCryptoAddress() {
+    if (!canProceed) return;
+    let newAddress = $("#" + newAddressEl).val();
+    if (!newAddress) return;
+    newAddress = "0x" + newAddress;
+    fetchNUI("changecryptoaddress", newAddress)
+      .then((resp) => resp.json())
+      .then((resp) => {
+        if (resp) {
+          $("#" + currentCryptoAddressEl).html(resp);
+        } else {
+          notify("error", "Address already taken", 2000);
+        }
+      });
+  }
+
+  function CEXbuyCrypto() {
+    let amount = Number($("#" + tradeinputEl).val());
+    let cryptoName = $("#" + tradeSelectEl + " option:selected").val();
+    if (!amount || !cryptoName) return;
+    let cryptoDetail = Array.from(cryptoMap.values()).find(
+      (crypto) => crypto.name === cryptoName
+    );
+    TradeDetails.name = cryptoName;
+    TradeDetails.amount = amount;
+    TradeDetails.type = "buy";
+    TradeDetails.id = cryptoDetail.pair.replace("USDT", "");
+    $("#trade-modal-crypto-name").html(TradeDetails.name);
+    $("#trade-modal-buyorsell").text("Buy: ");
+    $("#trade-modal-crypto-amount").html(TradeDetails.amount);
+    $("#trade-modal-crypto-cost").html(
+      new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(TradeDetails.amount * cryptoDetail.price)
+    );
+    openmodal();
+  }
+
+  function CEXsellCrypto() {
+    let amount = Number($("#" + tradeinputEl).val());
+    let cryptoName = $("#" + tradeSelectEl + " option:selected").val();
+    if (!amount || !cryptoName) return;
+    let cryptoDetail = Array.from(cryptoMap.values()).find(
+      (crypto) => crypto.name === cryptoName
+    );
+    TradeDetails.name = cryptoName;
+    TradeDetails.amount = amount;
+    TradeDetails.type = "sell";
+    TradeDetails.id = cryptoDetail.pair.replace("USDT", "");
+    $("#trade-modal-crypto-name").html(TradeDetails.name);
+    $("#trade-modal-buyorsell").text("Sell: ");
+    $("#trade-modal-crypto-amount").html(TradeDetails.amount);
+    $("#trade-modal-crypto-cost").html(
+      new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(TradeDetails.amount * cryptoDetail.price)
+    );
+    openmodal();
+  }
+
+  function openmodal() {
+    /* Setting up info */
+
+    let modal = document.getElementById("cex-modal");
+    modal.style.display = "block";
+  }
+  function closemodal() {
+    let modal = document.getElementById("cex-modal");
+    modal.style.display = "none";
+  }
+  window.onclick = function (event) {
+    let modal = document.getElementById("cex-modal");
+
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  function acceptTradeModal() {
+    let modal = document.getElementById("cex-modal");
+    modal.style.display = "none";
+    $("#" + tradeinputEl).val("");
+    let cryptoInfo = Array.from(cryptoMap.values()).find(
+      (element) => element.name === TradeDetails.name
+    );
+    if (TradeDetails.type === "buy") {
+      /* Buy */
+      let price = cryptoInfo.price;
+      let data = {
+        name: TradeDetails.id,
+        amount: TradeDetails.amount,
+        price: price,
+      };
+      fetchNUI("buy", data)
+        .then((resp) => resp.json())
+        .then((resp) => {
+          if (resp) {
+            notify("success", "Success", 2000);
+            setTimeout(() => {
+              UpdateTradedCoinInfo(cryptoInfo);
+            }, 1000);
+          } else {
+            notify("error", "Not enough funds", 2000);
+          }
+        });
+    } else if (TradeDetails.type === "sell") {
+      /* Sell */
+      let price = cryptoInfo.price;
+      let data = {
+        name: TradeDetails.id,
+        amount: TradeDetails.amount,
+        price: price,
+      };
+      fetchNUI("sell", data)
+        .then((resp) => resp.json())
+        .then((resp) => {
+          if (resp) {
+            notify("success", "Success", 2000);
+            setTimeout(() => {
+              UpdateTradedCoinInfo(cryptoInfo);
+            }, 1000);
+          } else {
+            notify("error", "Not enough crypto", 2000);
+          }
+        });
+    } else return;
+  }
+
+  let symbol;
+  let coinData;
+  let coinName;
+  let dataX = [];
+  let lastprice;
+  let updownStyle = "same";
+  let amount;
+
+  function getHistory(pair, name) {
+    fetch(
+      `https://api.binance.us/api/v3/klines?symbol=${pair}&interval=1d&limit=${chartDays}`
+    )
+      .then((resp) => resp.json())
+      .then((resp) => {
+        const cryptoData = resp?.map((d) => {
+          return {
+            time: d[0],
+            open: parseFloat(
+              d[1]
+            ) /* change to open if using candlestick or value if using area */,
+            high: parseFloat(d[2]),
+            low: parseFloat(d[3]),
+            close: parseFloat(d[4]),
+          };
+        });
+        dataX = cryptoData;
+      })
+      .then(() => {
+        if (document.getElementById("myChart")) UpdateChart(pair);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  function UpdateChart(pair) {
+    let time = [];
+    let close = [];
+    dataX.forEach((value) => {
+      time = [
+        ...time,
+        new Date(value.time)
+          .toISOString()
+          .replace("-", "/")
+          .split("T")[0]
+          .replace("-", "/")
+          .toString(),
+      ];
+      close = [...close, value.close];
+    });
+    myChart.data.labels = [...time];
+    myChart.data.datasets[0].data = [...close];
+    myChart.data.datasets[0].label = pair;
+    myChart.update();
+  }
+
+  function UpdateTradedCoinInfo(crypto) {
+    /* Trade Page */
+    fetchNUI("getPlayerDetails")
+      .then((resp) => resp.json())
+      .then((resp) => {
+        PlayerName = resp.name;
+        player_cryptoaddress = resp.cryptoaddress;
+        cexAssets = JSON.parse(resp.cexAssets);
+        cexBalance = resp.cexBalance;
+
+        let selCoinBalance = cexAssets[crypto.pair.replace("USDT", "")];
+        $("#coinPrice").text(crypto.price);
+        $("#coinHigh").text(crypto.high_price);
+        $("#coinLow").text(crypto.low_price);
+        $("#coinChange").text(crypto.price_change_percent);
+        $("#tradedCoinImg").attr("src", crypto.img_src);
+        $("#tradedCoinName").html(crypto.name);
+        $("#coin-balance").html(
+          selCoinBalance
+            ? new Intl.NumberFormat("en-IN", {
+                maximumFractionDigits: 6,
+              }).format(selCoinBalance)
+            : 0
+        );
+      })
+      .catch((err) => {
+        console.log("Phone Error getting player data form LuxuCEX" + err);
+      });
+  }
+
+  function connect() {
+    const tickers = Array.from(cryptoMap.values()).map(
+      (crypto) => crypto.pair.toLowerCase() + "@ticker"
+    );
+
+    const ws = new WebSocket("wss://data-stream.binance.com/ws/bookTicker");
+    ws.onopen = () => {
+      ws.send(
+        JSON.stringify({
+          method: "SUBSCRIBE",
+          params: tickers,
+          id: 1,
+        })
+      );
+    };
+
+    ws.onmessage = (event) => {
+      try {
+        const obj = JSON.parse(event.data);
+        const { s, c, P, h, l } = obj;
+        const crypto = cryptoMap.get(s);
+        if (crypto) {
+          crypto.price = JSON.parse(c);
+          crypto.price_change_percent = JSON.parse(P);
+          crypto.high_price = JSON.parse(h);
+          crypto.low_price = JSON.parse(l);
+          cryptoMap.set(s, crypto);
+          UpdateTable(s);
+        }
+      } catch (error) {
+        console.error("Error handling message:", error);
+      }
+    };
+
+    ws.onclose = function (e) {
+      console.log(
+        "Socket is closed. Reconnect will be attempted in 1 second.",
+        e.reason
+      );
+      setTimeout(function () {
+        connect();
+      }, 1000);
+    };
+
+    ws.onerror = function (err) {
+      console.error("Socket encountered error: ", err, "Closing socket");
+      ws.close();
+    };
+  }
+
+  (() => {
+    connect();
+    console.log("loadedc");
+  })();
+</script>
+
+<style>
+  :root {
+    --text-xl: 2vw;
+    --p: 342 61% 46%;
+    --pf: 342 61% 37%;
+    --sf: 186 71% 57%;
+    --af: 244 55% 58%;
+    --nf: 207 11% 13%;
+    --b2: 228 10% 18%;
+    --b3: 228 10% 16%;
+    --bc: 228 27% 84%;
+    --sc: 186 100% 14%;
+    --ac: 244 100% 15%;
+    --nc: 207 23% 83%;
+    --inc: 214 100% 91%;
+    --suc: 150 100% 87%;
+    --wac: 45 100% 11%;
+    --erc: 343 100% 91%;
+    --rounded-box: 1rem;
+    --rounded-btn: 0.5rem;
+    --rounded-badge: 1.9rem;
+    --animation-btn: 0.25s;
+    --animation-input: 0.2s;
+    --btn-text-case: uppercase;
+    --btn-focus-scale: 0.95;
+    --border-btn: 1px;
+    --tab-border: 1px;
+    --tab-radius: 0.5rem;
+    --s: 186 71% 72%;
+    --pc: 0 0% 100%;
+    --a: 244 55% 73%;
+    --n: 207 11% 16%;
+    --b1: 228 10% 20%;
+    --in: 214 56% 54%;
+    --su: 150 76% 33%;
+    --wa: 45 93% 54%;
+    --er: 343 72% 53%;
+    --tw-bg-opacit: 1;
+
+    --base300: 5, 5, 5;
+    --base200: 41, 43, 50;
+    --primary: 189, 46, 89;
+    --success: 45, 189, 98;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .cex-content {
+    font-family: "Inter", sans-serif !important;
+    font-size: var(--text-xl);
+    color: white;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-areas:
+      "🅰️"
+      "📃"
+      "👽";
+    grid-template-rows: 15% auto 15%;
+  }
+
+  .cex-header {
+    grid-area: 🅰️;
+    border-radius: var(--rounded-box) var(--rounded-box) 0 0 !important;
+    background-color: rgb(var(--base300));
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 4rem;
+    position: relative;
+  }
+  .cex-header span {
+    color: rgb(var(--primary));
+  }
+
+  .logo {
+    margin-top: 4rem;
+  }
+
+  .cex-body {
+    grid-area: 📃;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: relative;
+    padding: 1.2rem;
+    background-color: rgb(12, 12, 12);
+    overflow-x: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cex-footer {
+    grid-area: 👽;
+    background-color: rgb(var(--base300));
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cex-footer-container {
+    height: 100%;
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cex-btn {
+    background-color: rgb(var(--primary));
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    transition: all 0.15s ease;
+    display: grid;
+    place-content: center;
+  }
+
+  .cex-btn:active {
+    transform: scale(0.9);
+  }
+
+  .flex-grow {
+    flex-grow: 1;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+  .body-body {
+    padding: 1.2rem;
+  }
+  .cex-nav-btn {
+    cursor: pointer !important;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    align-items: center;
+    transition: all 0.15s ease;
+  }
+
+  .cex-nav-btn:active {
+    transform: scale(0.9);
+  }
+
+  .cex-nav-active {
+    color: rgb(var(--primary)) !important;
+  }
+
+  .cex-balance-container {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    gap: 1.2rem;
+  }
+  .cex-balance-info {
+    width: 45%;
+    padding: 1.2rem;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    text-align: center;
+    background-color: rgb(var(--base300));
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .cex-body input {
+    outline: none;
+    border: none;
+    color: black;
+  }
+
+  #dw-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  #dw-input {
+    border-radius: 0.4rem;
+    padding: 1.2rem;
+  }
+
+  .dw-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 1.2rem;
+  }
+
+  .dw-button {
+    flex-grow: 1;
+    background-color: rgb(var(--primary));
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1.2rem;
+  }
+  .dw-button:active {
+    transform: scale(0.9);
+  }
+
+  #transferCrypto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .transfercrypto-container {
+    display: flex;
+    flex-direction: row !important;
+    width: 100%;
+  }
+
+  #tc-input-amount {
+    padding: 1.2rem;
+    width: 80%;
+    border-radius: 0 0.8rem 0.8rem 0;
+  }
+  #tc-input-address {
+    padding: 1.2rem;
+    flex-grow: 1;
+    border-radius: 0.8rem 0 0 0.4rem;
+  }
+
+  .tc-button {
+    width: 20%;
+    padding: 1.2rem;
+    background-color: rgb(var(--primary));
+    border-radius: 0 0.8rem 0.8rem 0;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .tc-button:active {
+    filter: brightness(0.8);
+  }
+
+  #tc-option-select {
+    outline: none;
+    border: none;
+    padding: 1.2rem;
+    color: white;
+    background-color: rgb(var(--primary));
+    border-radius: 0.8rem 0 0 0.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 40%;
+  }
+
+  .account-text-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .change-address-input-container {
+    display: flex;
+    flex: 1;
+  }
+
+  .baricon {
+    transform: scaley(-1) rotate(90deg);
+  }
+  #cryptoaddress-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  #cryptoaddress-input {
+    padding: 1.2rem;
+    flex-grow: 1;
+  }
+
+  .crypotaddress-button {
+    width: 20%;
+    padding: 1.2rem;
+    background-color: rgb(var(--primary));
+    border-radius: 0 0.8rem 0.8rem 0;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .crypotaddress-button:active {
+    filter: brightness(0.8);
+  }
+
+  .cryptoprefix {
+    width: 5%;
+    padding: 1.2rem;
+    background-color: rgb(var(--primary));
+    border-radius: 0.8rem 0 0 0.4rem;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .current-address-container {
+    display: flex !important;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .current-crypto-address {
+    color: rgb(var(--primary));
+    font-weight: 800;
+  }
+
+  .cex-trade-info {
+    display: grid;
+    background-color: black;
+    height: fit-content;
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  .cex-trade-info-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+      "🪙 ⚠️ ⚠️"
+      "🪙 ⚠️ ⚠️"
+      "🅱️ 👤 👤";
+  }
+
+  .tradelogo {
+    display: grid;
+    place-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    grid-area: 🪙;
+    margin-bottom: 1rem;
+  }
+  .tradelogo img {
+    width: 6rem;
+    border-radius: 1.2rem;
+  }
+
+  .trade-coin-name {
+    grid-area: 🅱️;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .trade-coin-info {
+    grid-area: ⚠️;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 1.1.2rem;
+    font-weight: 600;
+  }
+  .trade-user-balance {
+    grid-area: 👤;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(var(--primary));
+  }
+  #coin-balance {
+    color: white !important;
+  }
+  .button-success {
+    background-color: hsl(var(--su));
+    font-weight: 600;
+    text-transform: uppercase;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    transition: all 0.15s ease;
+    flex-grow: 1;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .button-success:active {
+    transform: scale(0.9);
+  }
+  .button-primary {
+    background-color: hsl(var(--p));
+    flex-grow: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .cex-trade-form-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  .button-primary:active {
+    transform: scale(0.9);
+  }
+
+  .tradeinputcex {
+    border-radius: 0.4rem;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+  }
+
+  #cex-trade-option-select {
+    outline: none;
+    width: 100%;
+    border: none;
+    padding: 1.2rem;
+    color: white;
+    background-color: rgb(var(--primary));
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--p));
+    border-radius: 0.625rem;
+    transition: 0.25s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background-color: hsl(var(--p));
+    transition: 0.25s;
+  }
+
+  /* Modal */
+
+  .cex-modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 100%; /* Full width */
+    height: inherit; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: transparent;
+  }
+
+  /* Modal Content/Box */
+  .cex-modal-content {
+    background-color: #0f0f0f;
+    color: rgb(231, 234, 238);
+    margin: 25% auto; /* 15% from the top and centered */
+    padding: 2rem;
+    border-radius: 1.2rem;
+    width: 80%; /* Could be more or less, depending on screen size */
+    position: relative;
+  }
+
+  /* The Close Button */
+  .cex-close-btn {
+    color: rgb(0, 0, 0);
+    padding: 0 0.9rem 0 1rem;
+    background-color: white;
+    border-radius: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    right: 5%;
+  }
+
+  .cex-close-btn:hover,
+  .cex-close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .cex-modal-confirmation {
+    display: grid;
+    gap: 1rem;
+  }
+  .cex-moda-confirmation-title {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .cex-bold-text {
+    font-weight: 700;
+    color: rgb(var(--primary));
+    font-size: 1.5rem;
+  }
+  .cex-bold-text span {
+    color: white;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+
+  .cex-w-full {
+    width: 100%;
+  }
+
+  #trade-modal-buyorsell {
+    display: inline;
+  }
+
+  .cex-modal-button-success {
+    background-color: hsl(var(--su));
+    font-weight: 600;
+    text-transform: uppercase;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    transition: all 0.15s ease;
+    font-size: 1.2rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Table */
+
+  .cex-table-container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: auto;
+  }
+
+  .cex-body table {
+    border-radius: 1.2rem;
+    background-color: rgb(var(--primary));
+    color: rgb(238, 233, 233);
+    text-align: left;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+    text-transform: capitalize;
+  }
+
+  .cex-body tbody td,
+  .cex-body th {
+    padding: 0.8rem;
+  }
+
+  .cex-body th {
+    font-size: 1.2rem;
+  }
+
+  .cexbody table,
+  .cexbody th,
+  .cexbody td {
+    border: none;
+  }
+
+  .cex-body tbody tr {
+    background-color: rgb(12, 12, 12);
+    width: 100%;
+  }
+
+  .cex-body tbody tr:nth-child(even) {
+    background-color: rgb(21, 21, 21);
+  }
+  .cex-body tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 1.2rem;
+  }
+  .cex-body tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 1.2rem;
+  }
+
+  .cex-body tbody tr:hover {
+    background-color: hsl(var(--b1));
+    transition: all 0.15s ease;
+  }
+
+  .cex-table-pricechange {
+    width: 25%;
+  }
+
+  .cex-table-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cex-table-price {
+    width: 50%;
+  }
+
+  .cex-table-name img {
+    width: 2rem;
+  }
+
+  .cex-price-down {
+    color: red;
+  }
+
+  .cex-price-up {
+    color: rgb(14, 173, 14);
+  }
+  .cex-glass {
+    display: grid;
+    place-items: center;
+    flex: 1;
+    background: linear-gradient(
+      108.61deg,
+      rgba(233, 233, 240, 0.15) 0.38%,
+      rgba(221, 221, 221, 0.03) 100%
+    );
+    border: 0.2rem solid rgba(200, 200, 200, 0.19);
+    backdrop-filter: blur(0.2rem);
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  #glassbtn {
+    padding: 1.2rem;
+    background: linear-gradient(
+      108.61deg,
+      rgba(233, 233, 240, 0.15) 0.38%,
+      rgba(221, 221, 221, 0.03) 100%
+    );
+    border: 0.2rem solid rgba(200, 200, 200, 0.19);
+    border-radius: 1.2rem;
+    display: grid;
+    place-items: center;
+    transition: all 0.15s ease-out;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  #glassbtn::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.2rem;
+    background: linear-gradient(
+      140.61deg,
+      rgba(233, 233, 240, 0.15) 0.38%,
+      rgba(221, 221, 221, 0.03) 100%
+    );
+    transition: opacity 0.5s ease-out;
+    z-index: 2;
+    opacity: 0;
+  }
+  #glassbtn:hover::after {
+    opacity: 1;
+  }
+  #glassbtn:active {
+    transform: scale(0.9);
+    transition: all 0.2s ease-out;
+  }
+  #glassbtn > span {
+    z-index: 3;
+  }
+
+  .cex-bull {
+    width: 100%;
+    height: 75%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.5rem;
+    overflow: hidden;
+  }
+
+  .bullbearcontainer {
+    width: 100%;
+    border-radius: 2rem;
+    position: relative;
+    height: 50%;
+    border: 1rem solid black;
+    margin-top: 25%;
+  }
+  .bullbearcontainer::after {
+    box-shadow: inset 0px 0px 63px 41px #000000;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .bullbearimg {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #goToMarketBTN {
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgb(var(--primary));
+    border-radius: 1rem;
+    padding: 1.2rem;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  #goToMarketBTN:hover {
+    transform: scale(0.95);
+  }
+</style>

@@ -1,0 +1,26 @@
+:root {
+  --back-img: url("./bogs.png");
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+#canv {
+  width: 100%;
+  height: 100%;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: var(--back-img);
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+}

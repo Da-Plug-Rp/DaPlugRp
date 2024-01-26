@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrix Effect | Luxu.gg - Cryto Mining Job</title>
+    <link rel="stylesheet" href="cinema_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="btc" id="btc">
+      <img src="./btc.png" alt="btc" />
+      <span>Bitcoin: </span>
+      <span id="btcprice"></span>
+    </div>
+    <canvas id="canv"></canvas>
+    <script src="cinema_script.js"></script>
+    <style>
+      * {
+        font-family: "Inter", sans-serif !important;
+      }
+      body {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .btc {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: white;
+        font-weight: 800;
+        font-size: 2rem;
+      }
+      .btc img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+    </style>
+  </body>
+</html>

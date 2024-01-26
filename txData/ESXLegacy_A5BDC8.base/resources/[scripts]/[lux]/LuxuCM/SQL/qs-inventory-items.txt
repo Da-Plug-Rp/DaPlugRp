@@ -1,0 +1,66 @@
+--Miner Luxu
+["antminers9"] = {
+    ["name"] = "antminers9",
+    ["label"] = "AntminerS9",
+    ["weight"] = 1,
+    ["type"] = "item",
+    ["image"] = "antminers9.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["shouldClose"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Dispositivo de minería de criptomonedas diseñado y fabricado por la empresa Bitmain."
+   
+},
+["asic_miner_fan"] = {
+    ["name"] = "asic_miner_fan",
+    ["label"] = "Ventilador Asic mineria",
+    ["weight"] = 1,
+    ["type"] = "item",
+    ["image"] = "Fans.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["shouldClose"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Dispositivo para disipar el calor y mantener una temperatura óptima."
+   
+},
+["asic_miner_hashing_board"] = {
+    ["name"] = "asic_miner_hashing_board",
+    ["label"] = "Placa de mineria",
+    ["weight"] = 1,
+    ["type"] = "item",
+    ["image"] = "HashingBoard.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["shouldClose"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Placa especializada utilizada en dispositivos de minería ASIC para realizar cálculos de hashing necesarios para la minería de criptomonedas."
+   
+},
+["miner_s9shell"] = {
+    ["name"] = "miner_s9shell",
+    ["label"] = "Dispositivo de gestion",
+    ["weight"] = 1,
+    ["type"] = "item",
+    ["image"] = "s9shell.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["shouldClose"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Este dispositivo de usa para llevar el control de los dispositivos de mineria."
+   
+},
+["miner_pcb"] = {
+    ["name"] = "miner_pcb",
+    ["label"] = "Placa de Circuito para Minero",
+    ["weight"] = 1,
+    ["type"] = "item",
+    ["image"] = "PCB.png",
+    ["unique"] = false,
+    ["useable"] = true,
+    ["shouldClose"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Esta placa es fundamental en los dispositivos de minería de criptomonedas y se encarga de coordinar los cálculos necesarios para la minería."
+   
+},
