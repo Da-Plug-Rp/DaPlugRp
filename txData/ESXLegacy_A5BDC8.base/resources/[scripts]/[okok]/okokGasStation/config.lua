@@ -10,7 +10,7 @@ Config.UseOkokNotify = true -- true = okokNotify | false = qb-notify ( You can c
 
 Config.UseOkokTextUI = true -- true = okokTextUI | false = qb-drawtext 
 
-Config.UseOkokRequests = false -- true = okokRequests | false = Hire right away
+Config.UseOkokRequests = true -- true = okokRequests | false = Hire right away
 
 Config.UseOkokBanking = true -- true = The transactions will be registered on okokBanking
 
