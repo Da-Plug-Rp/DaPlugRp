@@ -1,0 +1,3315 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+@font-face {
+    font-family: "Bebas Nue";
+    src: url("fonts/BebasNeuePro-Regular.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: "Bebas Nue";
+    src: url("fonts/BebasNeuePro-Thin.ttf") format("truetype");
+    font-weight: 100
+}
+
+@font-face {
+    font-family: "Bebas Nue";
+    src: url("fonts/BebasNeuePro-Light.ttf") format("truetype");
+    font-weight: 200
+}
+
+@font-face {
+    font-family: "Bebas Nue";
+    src: url("fonts/BebasNeuePro-Middle.ttf") format("truetype");
+    font-weight: 300
+}
+
+@font-face {
+    font-family: "Bebas Nue";
+    src: url("fonts/BebasNeuePro-Italic.ttf") format("truetype");
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Bebas Nue";
+    src: url("fonts/BebasNeuePro-Bold.ttf") format("truetype");
+    font-weight: 700
+}
+
+
+/*
+.buy {
+    width: 800px;
+    height: 525px;
+    background: url(s4.png);
+    background-size: cover;
+    opacity: .9;
+} */
+
+.buy {
+    width: 1000px;
+    height: 625px;
+    background-size: cover;
+    opacity: .9;
+    background: black;
+    border-radius: 30px;
+}
+
+.buy .layer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #009aff9e, transparent);
+    position: absolute;
+    border-radius: 50px;
+}
+
+.housemenu {
+    width: 20%;
+    height: 90%;
+    background-color: rgba(57, 5, 7, 0.822);
+    position: absolute;
+    left: 5%;
+    top: 0.2%;
+    border-bottom-right-radius: 50px;
+    /* border-left: 3px solid #00ff15;
+
+    border-right: 3px solid #00ff15; */
+}
+
+.housemenu span {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 19%;
+    height: 170px;
+    width: 50%;
+    border-right: 2px solid #00ff55d3;
+}
+
+.housemenu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 160px;
+    width: 50%;
+    border-left: 2px solid #00ff55d3;
+}
+
+.housemenu a {
+    width: 240%;
+    display: block;
+    font-family: 'Bebas Nue';
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding-bottom: 90px;
+    margin-top: 120%;
+    margin-right: 50px;
+    letter-spacing: 20px;
+    font-size: 50px;
+    opacity: .9;
+    font-weight: 400;
+    transition: .6s;
+    transform: rotate(-90deg);
+    transform-origin: 30%;
+}
+
+.hbg {
+    background: url(properties/2.png);
+    background-size: cover;
+    filter: blur(8px);
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    position: fixed;
+    border-radius: 50px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ev {
+    width: 200px;
+    height: 200px;
+    background: url(properties/4.png);
+    background-size: cover;
+    position: absolute;
+    left: 32%;
+    top: 7%;
+    box-shadow: 0px 0px 20px black;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 30px;
+}
+
+.stars {
+    position: absolute;
+    left: -2%;
+    top: 0%;
+    font-size: 24px;
+}
+
+.nostar {
+    margin-left: 10px;
+    background: -webkit-linear-gradient(#515359, #515359);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 4px #666666;
+}
+
+.star {
+    margin-left: 10px;
+    background: #F0AD01;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 4px #F0AD01;;
+}
+
+.evb {
+    z-index: 5;
+    width: 110px;
+    height: 40px;
+    background: linear-gradient(0deg, #ffd132, #fbd233);
+    position: absolute;
+    left: 32%;
+    top: 3%;
+    border-radius: 30px;
+    box-shadow: 0px 0px 18px #fbd233;
+}
+
+.evb i {
+    position: relative;
+    top: 34%;
+    left: 12%;
+    font-size: 16px;
+}
+
+.evb i span {
+    position: absolute;
+    font-size: 18px;
+    left: 40px;
+    top: -1px;
+    letter-spacing: 2px;
+}
+
+.property_info {
+    position: absolute;
+    width: 350px;
+    height: 150px;
+    left: 35%;
+    top: -33%;
+}
+
+.garage_info {
+    position: absolute;
+    width: 450px;
+    height: 50px;
+    left: 45%;
+    bottom: 142%;
+}
+
+.property_info a {
+    display: block;
+    color: rgba(245, 245, 245, 0.76);
+    padding-left: 5px;
+    font-family: "Bebas Nue";
+    font-size: 15px;
+}
+
+.g {
+    display: inline-block;
+    font-family: "Bebas Nue";
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+.g i {
+    margin-right: 5px;
+}
+
+.create_house {
+    position: absolute;
+    top: 46%;
+    width: 50%;
+    height: 60%;
+    border: 2px solid red;
+    border-radius: 30px;
+}
+
+.create_house span {
+    position: absolute;
+    width: 100%;
+    height: 12%;
+    background-color: rgba(44, 47, 212, 0.37);
+    color: white;
+    text-align: center;
+    font-family: "Bebas Nue";
+    font-size: 40px;
+    border-radius: 30px;
+}
+
+.create_house .ele {
+    top: -17%;
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    font-size: 40px;
+    border: 0px;
+    left: 90%;
+}
+
+.create_house .ele:hover {
+    color: rgb(255, 0, 0);
+    background: rgba(255, 255, 255, 0);
+}
+
+.create_house img {
+    position: relative;
+    width: 25%;
+    height: 40%;
+    top: 15%;
+    left: 38%;
+    border: 3px solid rgb(0, 255, 0);
+    border-radius: 30px;
+}
+
+.create_house input {
+    position: relative;
+    width: 25%;
+    height: 5%;
+    top: -7%;
+    left: 68%;
+    border-radius: 15px;
+}
+
+select {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18vw;
+    height: 2vw;
+    transform: translate(-50%, -50%);
+    color: #D1D1D1;
+    background: transparent;
+    outline: none;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .6771vw;
+    border: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18vw;
+    height: 2vw;
+    transform: translate(-50%, -50%);
+    color: #D1D1D1;
+    background: transparent;
+    outline: none;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .6771vw;
+    border: none;
+}
+
+.select select,
+.select::after {
+    grid-area: select;
+}
+
+.select:not(.select--multiple)::after {
+    content: "";
+    justify-self: end;
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--select-arrow);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select:focus+.focus {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 2px solid var(--select-focus);
+    border-radius: inherit;
+}
+
+select[multiple] {
+    padding-right: 0;
+    /* * Safari will not reveal an option * unless the select height has room to * show all of it * Firefox and Chrome allow showing * a partial option */
+    height: 6rem;
+    /* * Experimental - styling of selected options * in the multiselect * Not supported crossbrowser */
+}
+
+select * {
+    background-color: rgba(12, 12, 12, 0.785);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+select[multiple] option {
+    white-space: normal;
+    outline-color: var(--select-focus);
+}
+
+.select--disabled {
+    cursor: not-allowed;
+    background-color: #eee;
+    background-image: linear-gradient(to top, #ddd, #eee 33%);
+}
+
+label {
+    position: relative;
+    width: 25%;
+    top: -5%;
+    left: -15%;
+    font-size: 2.125rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.select+label {
+    margin-top: 2rem;
+}
+
+.garage_info a {
+    display: inline-block;
+    width: 90px;
+    height: 17px;
+    text-align: center;
+    font-family: 'Bebas Nue';
+    color: white;
+    text-decoration: none;
+    padding: 1px;
+    border: 2px solid rgb(0, 255, 0);
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin: 15px;
+    font-size: 15px;
+    opacity: .9;
+    text-shadow: 0px 0px 15px white;
+    font-weight: 300;
+    transition: .6s;
+}
+
+.garage_info a:hover {
+    background: white;
+    color: #dd4d38;
+    box-shadow: 0px 0px 14px white;
+}
+
+.house_info {
+    position: absolute;
+    top: 37%;
+    right: 4%;
+    width: 630px;
+    height: 400px;
+    padding-top: 40px;
+}
+
+.house_info span {
+    padding-left: 5px;
+    font-size: 32px;
+    font-family: 'Bebas Nue';
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.house_info h1 {
+    font-family: 'Bebas Nue';
+    letter-spacing: 5px;
+    color: #00ff15;
+    text-transform: uppercase;
+    font-size: 33px;
+    margin-top: 8px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.buttons {
+    float: right;
+    width: 120%;
+    margin-right: -1%;
+}
+
+.buttons a {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgb(0, 255, 0);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 36px;
+    font-family: 'Bebas Nue';
+    letter-spacing: 3px;
+    font-weight: 300;
+    margin-left: 15px;
+    padding: 1px;
+    text-transform: uppercase;
+    margin-right: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .6s;
+}
+
+.buttons a:hover {
+    background: #fff;
+    color: red;
+    box-shadow: 0px 0px 14px white;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.bg {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    position: fixed;
+    /* background: radial-gradient(#3bb16c8f, #0000008c); */
+}
+
+#h_buy {
+    color: #fff;
+}
+
+#h_buy:hover {
+    background: #fff;
+    color: #dd4d38;
+    box-shadow: 0px 0px 14px #fff;
+}
+
+.friends {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+
+.modal,
+.loading,
+.sellmodal,
+.garagemodal,
+.manage {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    background: #000000c9;
+    height: 100%;
+    width: 100%;
+    /* backdrop-filter: blur(10px); */
+}
+
+.modal h1,
+.sellmodal h1,
+.friends h1 {
+    color: white;
+    font-family: 'Bebas Nue';
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+}
+
+.ic {
+    width: 50%;
+    height: 70%;
+    margin-top: 8%
+}
+
+.players {
+    margin-left: 3.5%;
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+
+.players h1 {
+    background: #dada25;
+    color: black;
+    margin: 0;
+}
+
+.plylst {
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+    overflow-y: auto;
+}
+
+.pl {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: white;
+    display: block;
+    font-family: 'Bebas Nue';
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+    line-height: 50px;
+    transition: .6s;
+}
+
+.pl:hover {
+    background: black;
+    color: white;
+}
+
+.pl i {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+}
+
+y {
+    color: #dada25;
+}
+
+.xcd {
+    position: absolute!important;
+    top: 3%;
+    left: 26.7%;
+    display: block;
+    text-align: center;
+    background: #ffffffed;
+    color: black;
+    text-decoration: none;
+    border-radius: 1px;
+    font-size: 24px;
+    font-family: 'Bebas Nue';
+    letter-spacing: 3px;
+    font-weight: 300;
+    margin-left: 2px;
+    margin-top: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+    margin-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: .6s;
+    border: 1px solid white;
+}
+
+.modal a,
+.sellmodal a {
+    position: relative;
+    display: block;
+    text-align: center;
+    background: #ffffffed;
+    color: black;
+    text-decoration: none;
+    border-radius: 1px;
+    font-size: 24px;
+    font-family: 'Bebas Nue';
+    letter-spacing: 3px;
+    font-weight: 300;
+    margin-left: 2px;
+    margin-top: 10px;
+    padding: 5px;
+    text-transform: uppercase;
+    margin-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: .6s;
+    border: 1px solid white;
+}
+
+.modal a:hover,
+.sellmodal a:hover,
+.active {
+    background: #00000012!important;
+    color: #ffffffed!important;
+    border: 1px solid white!important;
+}
+
+.modal a i,
+.sellmodal a i {
+    position: absolute;
+    left: 6%;
+    top: 15%;
+}
+
+.fa-spin {
+    color: white;
+    font-size: 24px;
+}
+
+.icgm {
+    width: 70%;
+    height: 85%;
+}
+
+.icgm h1 {
+    font-family: 'Bebas Nue';
+    color: white;
+    text-transform: uppercase;
+    font-size: 48px;
+    letter-spacing: 8px;
+    width: fit-content;
+    background: red;
+}
+
+.sgdiv {
+    position: absolute;
+    left: 10%;
+    top: 14.5%;
+    width: 75px;
+    height: 55.7%;
+    /* border: 1px solid white; */
+}
+
+.ele {
+    margin: 5%;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 3vh;
+    padding: 1vh;
+    color: white;
+    margin-top: 10%;
+    transition: .2s;
+}
+
+.ele:hover {
+    color: black;
+    background: white;
+}
+
+w {
+    background: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    text-shadow: 0px 0px 0px black;
+}
+
+.cars {
+    width: -webkit-fill-available;
+    min-height: 687px;
+    height: 64vh;
+    border: 2px dashed white;
+}
+
+.car {
+    float: left;
+    width: 300px;
+    height: 200px;
+    background: #ffffff26;
+    margin-left: 16px;
+    margin-top: 20px;
+    border: 1px dashed white;
+    position: relative;
+}
+
+.car img {
+    width: 70%;
+    margin: 12px;
+}
+
+.car i {
+    color: white;
+    font-size: 3vh;
+    position: relative;
+    bottom: 30px;
+    right: 10px;
+    float: right;
+}
+
+.car .alt {
+    width: -webkit-fill-available;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px dashed white;
+    overflow: hidden;
+}
+
+.car h2 {
+    font-size: 28px;
+    margin: 0;
+    color: white;
+    font-family: 'Bebas Nue';
+    letter-spacing: 2px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.fa-garage-car {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    color: #183153;
+    background: #ffffffe8;
+    height: 100%;
+    width: 50px;
+    text-align: center;
+    line-height: 50px!important;
+    transition: .6s;
+}
+
+.fa-garage-car:hover {
+    color: #ffffffe8;
+    background: #183153;
+}
+
+.fa-empty-set {
+    font-size: 72px;
+    color: white;
+}
+
+.w {
+    position: absolute;
+    right: 0;
+    padding-left: 15px;
+    transition: .1s;
+}
+
+.w:hover {
+    /* transform: skew(345deg); */
+    box-shadow: 5px 5px 0px 0px red;
+}
+
+.walls,
+.tables,
+.esyaal,
+.house,
+.garaj,
+.qr {
+    width: 100%;
+    height: 600px;
+    border: 1px solid white;
+}
+
+.qr {
+    position: relative;
+    overflow: hidden;
+}
+
+#ph {
+    position: absolute;
+    width: 110%;
+    right: -10%;
+}
+
+.scrl6 h3 {
+    color: white;
+    position: absolute;
+    font-size: 6vh;
+    font-family: 'Bebas Nue';
+    top: 4%;
+    left: 3%;
+    margin: 0;
+    font-style: italic;
+}
+
+.scrl6 h2 {
+    color: white;
+    padding-right: 10%;
+    padding-left: 2%;
+    font-family: 'Bebas Nue';
+    position: absolute;
+    bottom: 16%;
+    left: 2%;
+}
+
+.sag_ {
+    float: left;
+    margin-right: 5%;
+    display: inline;
+    position: absolute;
+    right: 0;
+}
+
+.yar {
+    position: absolute;
+    right: 0;
+    width: 156px;
+    height: 50px;
+    background: #ffffff;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 23% 100%);
+    text-align: center;
+    z-index: 100;
+}
+
+.yar h2 {
+    font-family: 'Bebas Nue';
+    font-size: 44px;
+    margin: 0;
+    margin-left: 25px;
+    margin-right: 0px;
+    color: red;
+    font-style: italic;
+}
+
+.prop_yon {
+    position: absolute;
+    /* bottom: 1vh;
+    top: 80%; */
+    min-width: 10vw;
+    min-height: 20vh;
+}
+
+#multiplier {
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 2vh;
+    background: unset;
+    border: 2px solid white;
+    color: white;
+    position: absolute;
+    top: -15%;
+    left: 25%;
+    max-width: 3vw;
+    text-align: center;
+}
+
+.yonler .ust {
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .rot_left {
+    position: absolute;
+    left: -30%;
+    top: 10%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .rot_right {
+    position: absolute;
+    left: -30%;
+    top: 35%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .rot_up {
+    position: absolute;
+    left: -30%;
+    top: 60%;
+    font-size: 2.7vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .rot_yat_up {
+    position: absolute;
+    left: -60%;
+    top: 35%;
+    font-size: 2.7vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .rot_yat_down {
+    position: absolute;
+    left: -60%;
+    top: 60%;
+    font-size: 2.7vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .reset {
+    position: absolute;
+    left: -30%;
+    top: 85%;
+    font-size: 2.7vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .ustt {
+    position: absolute;
+    right: -30%;
+    top: 20%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .altt {
+    position: absolute;
+    right: -30%;
+    top: 60%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .sol {
+    position: absolute;
+    left: 15%;
+    top: 40%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .sag {
+    position: absolute;
+    right: 15%;
+    top: 40%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .alt {
+    position: absolute;
+    right: 35%;
+    top: 60%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler .ok {
+    position: absolute;
+    right: 35%;
+    top: 85%;
+    font-size: 3vh;
+    background: white;
+    color: black;
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 2.5vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.yonler * {
+    transition: .2s;
+}
+
+.yonler *:hover {
+    background: black;
+    color: white;
+}
+
+.wall,
+.table {
+    width: 300px;
+    height: 250px;
+    border: 1px dashed white;
+    margin-left: 15px;
+    margin-top: 15px;
+    background: url(./interiors/aqua.png);
+    background-size: cover;
+    float: left;
+    position: relative;
+    transition: .6s;
+    z-index: 50;
+}
+
+.wall i {
+    color: white;
+    font-size: 3vh;
+    position: absolute;
+    left: 1.5vh;
+    top: 1.5vh;
+}
+
+.wall h2 {
+    text-align: center;
+    color: white;
+    font-size: 3vh;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: 'Bebas Nue';
+    margin-top: 1vh;
+}
+
+.category {
+    position: absolute;
+    width: 50vh;
+    height: 6vh;
+    right: 0;
+    top: 0;
+}
+
+.category .ele {
+    float: right;
+    margin: 0;
+    padding-left: 1vw;
+    padding-right: 0.6vw;
+    height: 3vh;
+    margin-left: 1%;
+}
+
+.garaj {
+    height: 820px;
+    /*overflow-y: hidden;
+    overflow-x: scroll;
+    height: 290px;
+    display: -webkit-inline-box; */
+}
+
+.scrl5 h2 {
+    color: white;
+    padding-right: 10%;
+    padding-left: 2%;
+    font-family: 'Bebas Nue';
+}
+
+.scrl5 h4 {
+    width: 40%;
+    position: absolute;
+    text-align: center;
+    display: block;
+    color: #23cd23;
+    text-shadow: black 0px 0px 20px;
+    font-family: "Bebas Nue";
+    font-size: 17vh;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 800;
+    text-decoration: unset;
+    transition: all 0.6s ease 0s;
+    letter-spacing: 2px;
+    right: 10%;
+    bottom: -7%;
+}
+
+.scrl5 a {
+    width: 40%;
+    position: absolute;
+    text-align: center;
+    display: block;
+    color: black;
+    text-shadow: 0px 0px 20px black;
+    font-family: 'Bebas Nue';
+    font-size: 38px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 800;
+    text-decoration: unset;
+    background: white;
+    transition: .6s;
+    letter-spacing: 2px;
+    right: 10%;
+    bottom: 25%;
+}
+
+.scrl3 {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.scrl4 {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 600px;
+}
+
+#qrcode {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f155;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.wall a,
+.table a,
+.hname a {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    display: block;
+    color: black;
+    text-shadow: 0px 0px 20px black;
+    font-family: 'Bebas Nue';
+    font-size: 38px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 800;
+    text-decoration: unset;
+    background: white;
+    transition: .6s;
+    letter-spacing: 2px;
+}
+
+.wall a:hover,
+.table a:hover,
+.hname a:hover,
+.scrl5 a:hover {
+    background: black;
+    color: white;
+    text-shadow: 0px 0px 20px white;
+}
+
+.table input,
+.hname input {
+    width: -webkit-fill-available;
+    font-size: 24px;
+    font-family: 'Bebas Nue';
+    font-style: italic;
+    position: absolute;
+    text-align: center;
+    background: #ffffff;
+    border: none;
+    padding: 5px;
+}
+
+.hname input {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+    font-size: 40px;
+    background: unset;
+    border: 2px solid white;
+    color: white;
+}
+
+.door_handle img {
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    width: 12%;
+    height: 95%;
+}
+
+.door_handle::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 10px;
+    width: 13%;
+    border-top: 2px solid #00ff55d3;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.notif {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 95px;
+    border: 1px solid rgba(255, 255, 255, 0.356);
+    background: #000000c9;
+}
+
+.notif a {
+    float: right;
+    text-align: center;
+    display: block;
+    color: white;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-shadow: 0px 0px 20px white;
+    font-family: 'Bebas Nue';
+    font-size: 38px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 800;
+    text-decoration: unset;
+    border: 2px solid green;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: .6s;
+    letter-spacing: 2px;
+    position: relative;
+    top: 25%;
+    margin-right: 2%;
+}
+
+.notif a:hover {
+    color: black;
+    text-shadow: 0px 0px 20px black;
+    border: 2px solid white;
+    background: white;
+}
+
+.notif a i {
+    float: left;
+    margin-right: 15px;
+    font-size: 28px;
+    line-height: 43px;
+}
+
+.gs {
+    padding-left: 1%;
+    padding-right: 1.5%;
+}
+
+.gs i {
+    float: unset!important;
+    margin-right: unset!important;
+    line-height: unset!important;
+}
+
+.hname {
+    z-index: 1000;
+    width: 60%;
+    height: 300px;
+    position: absolute;
+    background: #000000a3;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 18px 1px black;
+    border: 2px solid #ffffffad;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Safari iÃ§in */
+}
+
+.items {
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+
+.item {
+    width: 100px;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.props_menuResul {
+    width: 120vh!important;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+}
+
+.resul_category {
+    position: absolute;
+    top: 20%;
+    right: 100%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+    height: 95px;
+}
+
+.managament-menu {
+    background: rgb(13, 13, 19);
+    border: 1px;
+    border-radius: .5vh;
+    width: 700px;
+    display: none;
+    height: 500px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.kibra-emlak-sidebar {
+    background-color: rgb(5, 5, 7);
+    position: relative;
+    left: 2%;
+    top: 2%;
+    width: 95%;
+    height: 15%;
+    border-radius: .5vh;
+}
+
+.kibra-emlak-menu-opt {
+    background: rgb(209, 218, 226);
+    position: relative;
+    left: 3%;
+    cursor: pointer;
+    top: 15%;
+    font-family: 'Roboto', sans-serif;
+    border-radius: .5vh;
+    font-size: 15px;
+    display: inline-block;
+    font-weight: 500;
+    width: 23%;
+    height: 50px;
+    border: 1px;
+}
+
+.kibra-emlak-menu-opt:hover {
+    background: transparent;
+    transition: 0.5s;
+    color: rgb(0, 153, 255);
+    border: 1px solid rgb(0, 153, 255);
+}
+
+.money-managment {
+    background-color: rgb(5, 5, 7);
+    position: relative;
+    left: 2%;
+    top: 1%;
+    width: 95%;
+    height: 75%;
+    border-radius: .5vh;
+}
+
+.para-islem-header {
+    color: rgb(207, 207, 207);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.input-emlak {
+    background: rgb(13, 13, 19);
+    position: relative;
+    left: 1%;
+    top: 1%;
+    border-radius: .5vh;
+    width: 90%;
+    height: 20%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(207, 207, 207);
+    border: 1px;
+    padding: 10px 10px;
+    outline: none;
+}
+
+input.input-emlak::-webkit-outer-spin-button,
+input.input-emlak::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number].input-emlak {
+    -moz-appearance: textfield;
+}
+
+.input-emlak:active {
+    border: none;
+    outline: none;
+}
+
+.money-menu {
+    background: rgb(0, 0, 0);
+    position: relative;
+    left: 1%;
+    margin-left: 6%;
+    top: 5%;
+    display: inline-block;
+    width: 40%;
+    height: 80%;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.button-paracekyatir {
+    background: rgb(227, 227, 233);
+    position: relative;
+    left: 5%;
+    cursor: pointer;
+    top: 5%;
+    border-radius: .5vh;
+    width: 90%;
+    font-weight: 500;
+    font-size: 17px;
+    height: 20%;
+    font-family: 'Roboto', sans-serif;
+    border: 1px;
+}
+
+.button-paracekyatir:hover {
+    background: transparent;
+    color: rgb(0, 153, 255);
+    border: 1px solid rgb(0, 153, 255);
+    transition: 0.5s;
+}
+
+.g {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: rgb(207, 207, 207);
+    text-align: center;
+}
+
+.manage-employees {
+    background-color: rgb(5, 5, 7);
+    position: relative;
+    left: 2%;
+    display: none;
+    top: 4%;
+    width: 95%;
+    height: 75%;
+    border-radius: .5vh;
+    overflow-x: auto;
+}
+
+.manage-employees ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.manage-employees li {
+    background-color: #FFF;
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-left: 18px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/*
+.manage-employees-listbox {
+    margin-left: 10px;
+    width: 20%;
+    border: 3px solid red;
+    border-radius: 30px;
+    text-align: center;
+} */
+
+
+/* Style the employee information */
+
+.manage-employees li span {
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+.manage-employees li .position {
+    color: #888;
+}
+
+.manage-employees li .salary {
+    color: #00C853;
+    font-weight: bold;
+}
+
+
+/* Add some hover effects */
+
+.manage-employees li:hover {
+    background-color: #F1F1F1;
+    cursor: pointer;
+}
+
+.manage-employees li:hover .salary {
+    color: #009624;
+}
+
+.emlak-degistir-menu {
+    background: rgb(13, 13, 19);
+    position: relative;
+    margin-left: 1%;
+    left: 3%;
+    top: 8%;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    border-radius: .5vh;
+}
+
+.baslik {
+    color: rgb(207, 207, 207);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    top: 5%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.input-degistir {
+    background: rgb(27, 27, 39);
+    color: rgb(228, 228, 228);
+    font-size: 18px;
+    position: relative;
+    left: 10%;
+    top: 10%;
+    width: 240px;
+    padding: 10px 10px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border: 1px;
+    border-radius: .5vh;
+}
+
+.gg {
+    position: relative;
+    left: 5%;
+    top: 20%;
+    color: rgb(202, 202, 202);
+    font-weight: 400;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.paramoney {
+    position: relative;
+    left: 34%;
+    top: 3%;
+    font-weight: 500;
+    color: rgb(0, 255, 0);
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hire-employees {
+    background-color: rgb(5, 5, 7);
+    position: relative;
+    left: 2%;
+    top: 2%;
+    width: 95%;
+    display: none;
+    height: 75%;
+    border-radius: .5vh;
+    overflow-x: auto;
+}
+
+.hire-employees ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hire-employees li {
+    background-color: #FFF;
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-left: 18px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Style the employee information */
+
+.hire-employees li span {
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+.hire-employees li .position {
+    color: #888;
+}
+
+.hire-employees li .salary {
+    color: #00C853;
+    font-weight: bold;
+}
+
+
+/* Add some hover effects */
+
+.hire-employees li:hover {
+    background-color: #F1F1F1;
+    cursor: pointer;
+}
+
+.hire-employees li:hover .salary {
+    color: #009624;
+}
+
+.manager-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 44.2813vw;
+    height: 26.5208vw;
+    /* background: rgba(0, 0, 0, 0.83); */
+    border-radius: 0.4vw;
+    background: rgb(0 0 0 / 90%);
+}
+
+.kapsama {
+    position: relative;
+    top: 12vw;
+}
+
+.manager-header {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    width: 20vw;
+    height: 4vw;
+    transform: translate(-50%, -50%);
+    background-color: #31D45F;
+    border-radius: 0.3vw;
+}
+
+.manager-title {
+    position: absolute;
+    font-size: 1.3vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+    width: 20vw;
+    left: 50%;
+    top: 15%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.manager-photo {
+    position: absolute;
+    width: 14vw;
+    height: 18vw;
+    background-color: transparent;
+    border-radius: 0.5vw;
+    left: 23%;
+    top: 0.9vw;
+    transform: translate(-50%, -50%);
+}
+
+.manager-image {
+    width: 14vw;
+    height: 18vw;
+    border-radius: 0.5vw;
+}
+
+.housetype-title {
+    position: absolute;
+    top: -1vw;
+    left: 0vw;
+    font-size: 0.8vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+.theme-title {
+    position: absolute;
+    top: 3.6vw;
+    left: 0vw;
+    font-size: 0.8vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+.creation-title {
+    position: absolute;
+    top: 8.3vw;
+    left: 0vw;
+    font-size: 0.8vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+.manager-inputs {
+    position: absolute;
+    width: 24vw;
+    height: 17vw;
+    left: 69%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.manager-input-box {
+    position: relative;
+    top: 1.1vw;
+    width: 24vw;
+    height: 2.2vw;
+    background-color: #4A4A4D;
+    border-radius: 0.25vw;
+    margin-bottom: 2.5vw;
+}
+
+.manager-input-box2 {
+    position: relative;
+    top: 1.1vw;
+    width: 24vw;
+    height: 2.2vw;
+    background-color: #4A4A4D;
+    border-radius: 0.25vw;
+    margin-bottom: 0.5vw;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input-manag {
+    position: absolute;
+    background: #171717;
+    border: 1px solid #4a4a4d00;
+    outline: 1px solid #4a4a4d00;
+    padding-left: 0.4vw;
+    width: 395px;
+    height: 55px;
+    top: 0.4vw;
+    left: 0.4vw;
+    font-size: 0.7vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 2px;
+}
+
+select {
+    position: absolute;
+    background: transparent;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    left: 10.2vw;
+    width: 21.9vw;
+    height: 2.2vw;
+    font-size: 0.8vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    padding-left: 1vw;
+    border: 1px solid rgba(255, 0, 0, 0);
+}
+
+select * {
+    background-color: rgba(12, 12, 12, 0.785);
+}
+
+.fa-signature,
+.fa-house,
+.fa-hashtag,
+.fa-dollar-sign {
+    position: absolute;
+    text-align: center;
+    width: 2.2vw;
+    height: 2.2vw;
+    line-height: 2.2vw;
+    line-height: 2.2vw !important;
+    color: #fff;
+}
+
+.kare {
+    position: absolute;
+    width: 2.2vw;
+    height: 2.2vw;
+    background-color: #31D45F;
+    border-top-left-radius: 0.25vw;
+    border-bottom-left-radius: 0.25vw;
+}
+
+.manager-line {
+    position: absolute;
+    width: 0.1vw;
+    height: 1.5vw;
+    background-color: #646465;
+    left: 90%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bossMoneyManagementMenu {
+    width: 885px;
+    height: 484px;
+}
+
+.fa-chevron-down {
+    position: absolute;
+    left: 95%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+
+.manager-button-type {
+    position: relative;
+    text-align: center;
+    top: 23.5vw;
+    left: 2vw;
+    float: left;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    width: 10.5vw;
+    font-size: 0.9vw;
+}
+
+.boss-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 892px;
+    height: 464px;
+    background: linear-gradient(96.98deg, #313131 -2.15%, #1F1F1F 101.36%);
+    border-radius: 1.4vw;
+}
+
+.boss-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 892px;
+    height: 384px;
+    top: 22%;
+    background: linear-gradient(76.46deg, #00FE93 -3.44%, #0085FF 105.52%);
+    border-radius: 15px;
+}
+
+.bossContainer {
+    position: absolute;
+    left: 0.5%;
+    width: 885px;
+    height: 484px;
+    background: linear-gradient(96.98deg, #313131 -2.15%, #1F1F1F 101.36%);
+    border-radius: 15px;
+}
+
+.bossContainer h1 {
+    position: absolute;
+
+    top: 31%;
+    left: 35%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+}
+
+.bossContainer span {
+    position: absolute;
+    width: 95%;
+    top: 42%;
+    left: 2%;
+    text-align: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 25px;
+    
+    color: #FFFFFF;
+}
+
+.bossInputBox {
+
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+
+    width: 405px;
+    height: 121px;
+
+    background: #1E1E1E;
+    border-radius: 4px;
+}
+
+.bossMenuHeader {
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    width: 95%;
+}
+
+.bossMenuHeader p {
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 35px;
+    line-height: 42px;
+    
+    color: #FFFFFF;
+}
+
+.bossMenuButtons {
+    position: absolute;
+    top: 5%;
+    right: 0%;
+}
+
+#bossMoneyManagement {
+    width: 47px;
+    height: 47px;
+    border-radius: 30px;
+    background: url("./images/Money.png") center #FFFFFF;
+    background-repeat: no-repeat;
+    border: 2px solid rgba(255, 0, 0, 0);
+    transition: 0.3s all ease;
+    float: left;
+    margin-right: 10px;
+}
+
+#bossMoneyManagement:hover {
+    background: url("./images/Money.png") center #FFFFFF;
+    background-repeat: no-repeat;
+    border: 3px solid red;
+}
+
+#bossEmployeManagement {
+    width: 47px;
+    height: 47px;
+    border-radius: 30px;
+    background: url("./images/BlueRoundedUserIcon.png") center #FFFFFF;
+    background-repeat: no-repeat;
+    border: 2px solid rgba(255, 0, 0, 0);
+    transition: 0.3s all ease;
+    float: left;
+    margin-right: 10px;
+}
+
+#bossEmployeManagement:hover {
+    background: url("./images/BlueRoundedUserIcon.png") center #FFFFFF;
+    background-repeat: no-repeat;
+    border: 3px solid red;
+}
+
+#bossStashManagement {
+    width: 47px;
+    height: 47px;
+    border-radius: 30px;
+    background: url("./images/OrangeRoundedHouseIcon.png") center #FFFFFF;
+    background-repeat: no-repeat;
+    border: 2px solid rgba(255, 0, 0, 0);
+    transition: 0.3s all ease;
+    float: left;
+    margin-right: 10px;
+}
+
+#bossStashManagement:hover {
+    background: url("./images/OrangeRoundedHouseIcon.png") center #FFFFFF;
+    background-repeat: no-repeat;
+    border: 3px solid red;
+}
+
+#bossClose {
+    width: 47px;
+    height: 47px;
+    border-radius: 30px;
+    background: url("./images/BlackRoundedCloseIcon.png") center #000000;
+    background-repeat: no-repeat;
+    border: 2px solid rgba(255, 0, 0, 0);
+    transition: 0.3s all ease;
+    float: left;
+}
+
+#bossClose:hover {
+    background: url("./images/BlackRoundedCloseIcon.png") center #FFFFFF;
+    background-repeat: no-repeat;
+    border: 3px solid red;
+}
+
+.bossWithdrawBox {
+    display: inline-block;
+    position: relative;
+    top: 22%;
+    left: 1%;
+    width: 423px;
+    height: 368px;
+    background: #121212;
+    border-radius: 7px;
+}
+
+.bossRectangle {
+    position: absolute;
+    top: 24%;
+    left: 1.8%;
+}
+
+.employeeWrapper {
+    position: absolute;
+    width: 45.3125vw;
+    height: 19.8438vw;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.recruitmentContainer {
+    position: absolute;
+    top: 10%;
+    width: 45.5729vw;
+    height: 9.3229vw;
+}
+
+.fireContainer {
+    position: absolute;
+    top: 11.6vw;
+    width: 45.5729vw;
+    height: 8.3229vw;
+}
+
+.recruitmentTitle {
+    position: absolute;
+    top: -0.4vw;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: .7813vw;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+.recruitmentSubTitle {
+    position: absolute;
+    top: 0.85vw;
+    width: 44.0104vw;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: .5729vw;
+    color: #FFFFFF;
+    opacity: 0.16;
+}
+
+.employeeList {
+    position: absolute;
+    top: 3.5rem;
+    width: 45.2083vw;
+    height: 8rem;
+    float: left;
+    display: inline-flex;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.employeeBox {
+    position: relative;
+    float: left;
+    left: -0.5vw;
+    margin-left: 0.45vw;
+    min-width: 10.8333vw;
+    height: 5.9896vw;
+    background: #121212;
+    border-radius: 7px;
+}
+
+.playerPhoto {
+    position: absolute;
+    left: 1.7%;
+    top: 0.35vw;
+    width: 4.0104vw;
+    height: 5.3646vw;
+}
+
+.gradientLight {
+    position: absolute;
+    width: 6.3417vw;
+    height: 1.8229vw;
+    top: 2vw;
+    left: 4.3vw;
+    background: linear-gradient(180deg, rgba(54, 54, 54, 0) 0%, #363636 100%);
+    border-radius: .1563vw;
+}
+
+.employeeName {
+    position: absolute;
+    left: 5.5rem;
+    top: .4rem;
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    font-size: .7292rem;
+    color: #FFFFFF;
+}
+
+.benburdayim {
+    background: #2f2f2f;
+    width: 12rem;
+    font-family: Inter;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px;
+    position: absolute;
+    font-weight: 600;
+    border-radius: .5rem;
+    left: .5rem;
+    top: .5rem;
+    transition: .4s;
+    height: 6.2rem;
+    color: #c1c1c1;
+    text-align: center;
+    cursor: pointer;
+}
+
+.benburdayim:hover {
+    transition: .4s;
+    background-color: green;
+}
+
+#YeniCalisanlar {
+    background-color: #2a2a2a;
+    width: 26rem;
+    margin: auto;
+    display: none;
+    border-radius: .5rem;
+    position: relative;
+    top: 16rem;
+    height: 19rem;
+}
+
+.Calman {
+    background: #3e3e3e;
+    width: 97%;
+    height: 3rem;
+    position: relative;
+    cursor: pointer;
+    top: .5rem;
+    color: #c8c8c8;
+    transition: .4s;
+    margin: auto;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+}
+
+.Calman h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px;
+    margin: auto;
+}
+
+.Calman:hover {
+    transition: .4s;
+    background-color: #c8c8c8;
+    color: #3e3e3e;
+}
+
+.employeeJob {
+    position: absolute;
+    left: 5.5rem;
+    top: 1.2vw;
+    text-transform: uppercase;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: .5729vw;
+    color: #FFFFFF;
+    opacity: 0.25;
+}
+
+.plusButton {
+    position: absolute;
+    width: 7.5rem;
+    height: 1.6667vw;
+    left: .1rem;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1rem;
+    line-height: 1.9rem;
+    color: #FFFFFF;
+    background: #a82e2e;
+    border-radius: .1563vw;
+}
+
+.plusButton:hover {
+    background: #1fadff77;
+}
+
+.minusButton {
+    position: absolute;
+    left: 0.2vw;
+    width: 6.1167vw;
+    height: 1.6767vw;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1vw;
+    line-height: 1.5vw;
+    color: #FFFFFF;
+    background: #505050;
+    border-radius: .1563vw;
+}
+
+.minusButton:hover {
+    background: #68686877;
+}
+
+.employeeButtons {
+    position: absolute;
+    left: 4.3vw;
+    top: 4.1vw;
+    width: 6.4417vw;
+    height: 1.6667vw;
+}
+
+.fireButton {
+    position: absolute;
+    background: #FF5F5F;
+    width: 6.3417vw;
+    height: 1.6667vw;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1vw;
+    line-height: 1.7vw;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: .1563vw;
+}
+
+
+.bossDepositBox {
+    display: inline-block;
+    position: relative;
+    top: 22%;
+    right: -2%;
+    width: 423px;
+    height: 368px;
+    background: #121212;
+    border-radius: 7px;
+}
+
+.boss-title {
+    position: absolute;
+    font-size: 1.3vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+    width: 20vw;
+    left: 50%;
+    top: 45%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.boss-menus {
+    position: absolute;
+    width: 39vw;
+    height: 3.5vw;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.boss-button-type {
+    position: relative;
+    text-align: center;
+    top: 0.5vw;
+    left: 0.285vw;
+    float: left;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    width: 9vw;
+    height: 3vw;
+    top: 0vw;
+    background: rgba(0, 0, 0, 0.345);
+    border-radius: 0.3vw;
+    margin-left: 0.5vw;
+    font-size: 0.9vw;
+    transition: all 1s;
+}
+
+.boss-button-type:hover {
+    border-bottom: 1.5px solid #31D45F;
+    cursor: pointer;
+}
+
+.boss-button-type p {
+    position: absolute;
+    width: 6vw;
+    height: 2vw;
+    text-align: center;
+    left: 50%;
+    top: 33%;
+    transform: translate(-50%, -50%);
+}
+
+.boss-case-container {
+    position: absolute;
+    width: 39vw;
+    height: 18vw;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.withdraw-title {
+    position: absolute;
+    top: -1vw;
+    left: 1vw;
+    font-size: 0.8vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+.deposit-title {
+    position: absolute;
+    top: -1vw;
+    left: 20.2vw;
+    font-size: 0.8vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+.boss-input-box {
+    position: relative;
+    top: 1.1vw;
+    width: 18vw;
+    height: 2.2vw;
+    background-color: #4A4A4D;
+    border-radius: 0.25vw;
+    margin-bottom: 2.5vw;
+    float: left;
+    margin-left: 1vw;
+    left: 0.15vw;
+}
+
+.boss-money-actions-wrapper {
+    position: absolute;
+    top: 7vw;
+}
+
+.buttonRight {
+    position: absolute!important;
+    left: 218px!important;
+}
+
+.button-tip {
+    position: absolute;
+    top: 80px;
+    width: 162px;
+    height: 40px;
+    background: #50FF96;
+    border-radius: 2px;
+    text-align: center;
+    margin-bottom: 2.5vw;
+    float: left;
+    margin-left: 1vw;
+    left: -0.5vw;
+    padding-top: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 23px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.button-tip:hover {
+    transition: all 1s;
+    background: linear-gradient(90deg, #35ff6e 0%, #217037 90%);
+}
+
+.case-money {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    font-size: 1.1vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+    transform: translate(-50%, -50%);
+}
+
+.boss-manage-container {
+    position: absolute;
+    display: none;
+    width: 39vw;
+    height: 18vw;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.boss-manage-actions-wrapper {
+    position: absolute;
+    top: 1vw;
+}
+
+.manage-employee-box {
+    position: relative;
+    float: left;
+    margin-left: 1vw;
+    margin-bottom: 0.5vw;
+    width: 18vw;
+    height: 2.2vw;
+    background-color: #4A4A4D;
+    border-radius: 0.25vw;
+}
+
+.manage-employee-name {
+    position: absolute;
+    top: 0.59vw;
+    left: 1vw;
+    font-size: 0.7vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+.manage-employees-listbox {
+    position: absolute;
+    left: 23vw;
+    font-size: 0.65vw;
+}
+
+.hire-employee-box {
+    position: relative;
+    float: left;
+    top: 0.5vw;
+    margin-left: 1vw;
+    margin-bottom: 0.5vw;
+    width: 18vw;
+    height: 2.2vw;
+    background-color: #4A4A4D;
+    border-radius: 0.25vw;
+}
+
+.hire-employee-name {
+    position: absolute;
+    top: 0.6vw;
+    left: 1vw;
+    font-size: 0.7vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+.hire-button {
+    position: absolute;
+    width: 4vw;
+    height: 1.5vw;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    top: 0.5vw;
+    left: 14vw;
+    color: #fff;
+    font-size: 0.8vw;
+    cursor: pointer;
+    transition: all 1s;
+    z-index: 12937128312783217832173821;
+}
+
+.hire-button:hover {
+    transition: all 1s;
+    background: linear-gradient(90deg, #2C9F4C -9.09%, #2B5A38 109.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.hire-manage-container {
+    position: absolute;
+    width: 39vw;
+    height: 18vw;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.cardBox {
+    width: 892px;
+    height: 464px;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #00000069;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px, rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
+    top: 25%;
+    left: 30%;
+}
+
+.cardBoxBG {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* box-shadow: 5px 10px 20px black inset; */
+    background: rgba(0, 0, 0, 0.514);
+}
+
+ .card {
+     position: absolute;
+     width: 99%;
+     height: 98%;
+     background: linear-gradient(180deg, #313131 0%, #1F1F1F 100%);
+     border-radius: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     color: #ffffff;
+     padding: 20px;
+     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px, rgba(0, 0, 0, 0.5) 0px 18px 36px -18px;
+ }
+
+ .cardBox::before {
+     content: "";
+     position: absolute;
+     width: 892px;
+     height: 464px;
+     top: 1%;
+     background: linear-gradient(360deg, #00FE93 0%, rgba(0, 133, 255, 0) 82.08%);
+ }
+
+ .leftSide {
+     display: inline-block;
+     position: absolute;
+     width: 361px;
+     height: 454px;
+     left: 2px;
+     border-radius: 13px;
+ }
+
+ .rightSide {
+     display: inline-block;
+     position: absolute;
+     right: 0px;
+     width: 520px;
+     height: 454px;
+     border-radius: 13px;
+ }
+
+ .houseImg {
+     position: absolute;
+     width: 351px;
+     height: 234px;
+     left: 2px;
+     border-top-left-radius: 13px;
+     border-top-right-radius: 13px;
+ }
+
+ .houseInfo {
+     position: absolute;
+     left: 2px;
+     bottom: 5px;
+     background: url("./images/Icon.png");
+     width: 351px;
+     height: 212px;
+     border-bottom-left-radius: 13px;
+     border-bottom-right-radius: 13px;
+ }
+
+ .houseInfo h1 {
+     color: #00FF66;
+     position: absolute;
+     left: 30px;
+     top: 15px;
+ }
+
+ .loc {
+     position: absolute;
+     left: 30px;
+     margin-top: 20%;
+ }
+
+ .loc h4 {
+     display: inline-block;
+     position: absolute;
+     width: fit-content;
+     top: -1px;
+     left: 22px;
+     width: 280px;
+ }
+
+ .absoluteDesign {
+     position: absolute;
+     top: -1px;
+     left: -9px;
+     margin-top: 30%;
+ }
+
+ .houseInfoMulti {
+     display: inline-block;
+     margin-left: 40px
+ }
+
+ .houseInfoMulti h5 {
+     float: right;
+     margin-left: 10px;
+ }
+
+ .stars {
+     position: absolute;
+     margin-top: 40%;
+     left: 15px;
+     font-size: 25px;
+ }
+
+ .nostar {
+     background: #534b4b;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+
+ .star {
+     background: #F0AD01;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+
+ .rightSide h1 {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 35px;
+     line-height: 42px;
+     text-align: left;
+ }
+
+ .rightSide h5 {
+
+     width: 95%;
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 700;
+     font-size: 10px;
+     line-height: 12px;
+
+     color: #FFFFFF;
+
+     opacity: 0.28;
+     text-align: left;
+     margin: 5px;
+ }
+
+
+ .ownerInfo i {
+     font-size: 8px;
+ }
+
+ .ownerInfo p {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 8px;
+     line-height: 10px;
+ }
+
+ .houseOwnerInfo {
+
+     width: 494px;
+     height: 65px;
+     background: linear-gradient(89.02deg, #1A1A1A -0.7%, #0D0D0D 100%);
+     border-radius: 5px;
+ }
+
+ .player .playerImg {
+     border-radius: 30px;
+     position: absolute;
+     left: 3%;
+     margin-top: 8px;
+ }
+
+ .player h2 {
+     display: inline-block;
+     position: relative;
+     right: 25%;
+     margin-top: 15px;
+
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 17px;
+     line-height: 21px;
+     text-align: left;
+ }
+
+ .player h6 {
+
+     position: relative;
+     left: 9%;
+     width: 100px;
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 12px;
+     line-height: 10px;
+
+     color: #797979;
+ }
+
+ .alarmImageRes {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    position: absolute;
+    right: 7%;
+    top: 31%;
+ }
+
+ .map {
+     margin-top: 25px;
+     margin-bottom: 10px;
+     border-radius: 5px;
+     width: 495px;
+    height: 200px;
+ }
+
+
+.buyHouseBtn a {
+    width: 137px;
+    height: 34px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 18px;
+    color: #ffffff;
+
+    padding-top: 7px;
+
+    background: linear-gradient(94.59deg, #57FF54 0%, #277526 73.44%);
+    border: none;
+    border-radius: 5px;
+    float: right;
+    transition: 0.3s all ease;
+}
+
+ .buyHouseBtn a:hover {
+     color: #ffffff65;
+     cursor: pointer;
+ }
+
+ .enterHouse {
+     width: 34px;
+     height: 34px;
+     border-radius: 5px;
+     background: url("./images/HouseIcon.png") center #4791FF;
+     background-repeat: no-repeat;
+     border: none;
+     transition: 0.3s all ease;
+     float: left;
+     margin-right: 5px;
+ }
+
+ .enterHouse:hover {
+     background: url("./images/HouseIcon.png") center #4791ff77;
+     background-repeat: no-repeat;
+ }
+
+ .enterGarage {
+     width: 34px;
+     height: 34px;
+     border-radius: 5px;
+     background: url("./images/CarIconDark.png") center #FFFFFF;
+     background-repeat: no-repeat;
+     border: none;
+     transition: 0.3s all ease;
+     float: left;
+     margin-right: 5px;
+ }
+
+ .enterGarage:hover {
+     background: url("./images/CarIconDark.png") center #ffffff77;
+     background-repeat: no-repeat;
+ }
+
+ .friendsBtn {
+     width: 34px;
+     height: 34px;
+     border-radius: 5px;
+     background: url("./images/UserIcon.png") center #54FF65;;
+     background-repeat: no-repeat;
+     border: none;
+     transition: 0.3s all ease;
+     background-position: 8px 8px;
+     float: left;
+ }
+
+ .friendsBtn:hover {
+     background: url("./images/UserIcon.png") center #54FF6577;
+     background-repeat: no-repeat;
+ }
+
+.sellHouseBtn {
+
+    width: 137px;
+    height: 34px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #FFFFFF;
+
+    padding-top: 7px;
+
+    background: linear-gradient(94.59deg, #FF5454 0%, #6F2A2A 100%);
+    border: none;
+    border-radius: 5px;
+    float: right;
+    transition: 0.3s all ease;
+}
+
+ .sellHouseBtn:hover {
+     color: #ffffff65;
+     cursor: pointer;
+ }
+
+ .createHouseMenuBG {
+    width: 892px;
+    height: 464px;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.514);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px, rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
+    top: 25%;
+    left: 30%;
+}
+ .createHouseMenu {
+     position: absolute;
+     width: 99%;
+     height: 98%;
+     background: linear-gradient(180deg, #313131 0%, #1F1F1F 100%);
+     border-radius: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     color: #ffffff;
+     padding: 20px;
+     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px, rgba(0, 0, 0, 0.5) 0px 18px 36px -18px;
+ }
+
+ .createHouseMenuBG::before {
+     content: "";
+     position: absolute;
+     width: 892px;
+     height: 464px;
+     top: 1%;
+     background: linear-gradient(360deg, #00FE93 0%, rgba(0, 133, 255, 0) 82.08%);
+ }
+
+ .leftSideCreateHouse {
+     display: inline-block;
+     position: absolute;
+     width: 361px;
+     height: 454px;
+     left: 2px;
+     border-radius: 13px;
+ }
+
+ .rightSideCreateHouse {
+     display: inline-block;
+     position: absolute;
+     right: 0px;
+     width: 520px;
+     height: 454px;
+     border-radius: 13px;
+ }
+
+ .houseImgCreateHouse {
+     position: absolute;
+     width: 341px;
+     height: 442px;
+     top: 5px;
+     left: 4px;
+     border-radius: 10px;
+ }
+
+ .houseType {
+     display: inline-block;
+     position: relative;
+     width: 119px;
+     height: 119px;
+     margin-top: 10px;
+     margin-left: 5px;
+     right: 2%;
+     border-radius: 5px;
+ }
+
+ .houseType:hover {
+     border: 2px solid greenyellow;
+ }
+
+ .houseType:focus {
+     border: 2px solid red;
+ }
+
+ .houseType img {
+     position: absolute;
+     left: 5%;
+     top: 5%;
+ }
+
+ .houseType h1 {
+     position: absolute;
+
+
+     left: 20%;
+
+     font-weight: 900!important;
+     font-size: 89px!important;
+     line-height: 108px!important;
+     color: #FFFFFF;
+     opacity: 0.05;
+ }
+
+ .houseType h6 {
+     position: absolute;
+     left: 19%;
+     top: 35%;
+     width: 70px;
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 10px;
+     line-height: 12px;
+     color: #FFFFFF;
+ }
+
+ .rightSideCreateHouse h1 {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 35px;
+     line-height: 42px;
+     text-align: left;
+ }
+
+ .rightSideCreateHouse h5 {
+
+     width: 95%;
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 700;
+     font-size: 10px;
+     line-height: 12px;
+
+     color: #FFFFFF;
+
+     opacity: 0.28;
+     text-align: left;
+     margin: 5px;
+ }
+
+ .houses li {
+     position: relative;
+     display: inline-block;
+     width: 34px;
+     height: 34px;
+     border-radius: 30px;
+     margin-left: 5px;
+ }
+
+ .houses li:hover {
+    border: 2px solid greenyellow;
+}
+
+.houses li:focus {
+    border: 2px solid red;
+}
+
+ .houses p {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 8px;
+     line-height: 10px;
+ }
+
+ .input {
+     position: relative;
+     float: left;
+ }
+
+ .icon {
+     position: relative;
+     left: -4%;
+     width: 244px;
+     height: 40px;
+     background: #3F3F3F;
+     border-radius: 5px;
+     margin-top: 10px;
+     margin-left: 10px;
+ }
+
+ .icon img {
+     position: absolute;
+     left: 3%;
+     top: 20%;
+ }
+
+ .icon input {
+     position: relative;
+     top: 5%;
+     left: 7%;
+     width: 205px;
+     height: 36px;
+     background: #272727;
+     border: none;
+     border-radius: 3px;
+
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 300;
+     font-size: 19px;
+     line-height: 23px;
+     padding-left: 10px;
+     color: #FFFFFF;
+ }
+
+ .input a {
+     display: block;
+
+     width: 244px;
+     height: 40px;
+
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 15px;
+     line-height: 18px;
+     padding-top: 10px;
+     color: #FFFFFF;
+     text-align: center;
+     background: linear-gradient(94.59deg, #57FF54 0%, #277526 73.44%);
+     border: none;
+     border-radius: 5px;
+     float: right;
+     transition: 0.3s all ease;
+     margin-top: 10px;
+ }
+
+ .input a:hover {
+     color: #ffffff65;
+     cursor: pointer;
+ }
+
+
+ .openCamera {
+     width: 34px;
+     height: 34px;
+     border-radius: 5px;
+     background: url("./images/cameraIcon.png") center #FFFFFF;
+     background-repeat: no-repeat;
+     border: none;
+     transition: 0.3s all ease;
+     float: left;
+     margin-top: 5px;
+     margin-right: 5px;
+ }
+
+ .openCamera:hover {
+     background: url("./images/cameraIcon.png") center #FFFFFF77;
+     background-repeat: no-repeat;
+ }
+
+ .infoText {
+    width: 400px;
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900!important;
+     font-size: 11px!important;
+     line-height: 12px!important;
+     color: #FFFFFF;
+     opacity: 0.38;
+    margin-top: 10px;
+     float:right
+ }
+
+ .setHouseCoord {
+     width: 34px;
+     height: 34px;
+     border-radius: 5px;
+     background: url("./images/houseIcon.png") center #9CFF6D;
+     background-repeat: no-repeat;
+     border: none;
+     transition: 0.3s all ease;
+     float: left;
+     margin-top: 5px;
+
+ }
+
+ .setHouseCoord:hover {
+     background: url("./images/houseIcon.png") center #9CFF6D77;
+     background-repeat: no-repeat;
+ }
+
+ .setGarageCoord {
+     width: 34px;
+     height: 34px;
+     border-radius: 5px;
+     background: url("./images/carIcon.png") center #80C2FF;;
+     background-repeat: no-repeat;
+     border: none;
+     transition: 0.3s all ease;
+     background-position: 4px 8px;
+     margin-top: 5px;
+     margin-right: 5px;
+     float: left;
+ }
+
+ .setGarageCoord:hover {
+     background: url("./images/carIcon.png") center #80C2FF77;
+     background-repeat: no-repeat;
+ }
+
+ .createHouseBtn {
+
+     width: 137px;
+     height: 34px;
+
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 900;
+     font-size: 15px;
+     line-height: 18px;
+
+     color: #FFFFFF;
+
+     background: linear-gradient(94.59deg, #FF5454 0%, #6F2A2A 100%);
+     border: none;
+     border-radius: 5px;
+     float: right;
+     transition: 0.3s all ease;
+ }
+
+ .createHouseBtn:hover {
+     color: #ffffff65;
+     cursor: pointer;
+ }

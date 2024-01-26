@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s4-house</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' crossorigin='anonymous' />
+</head>
+
+<body style="display:block;">
+    <div id="YeniCalisanlar">
+        <div class="Calman">
+            <h1>Emir Kibar (ID: 5)</h1>
+        </div>
+    </div>
+    <div class="boss-wrapper" style="display:none;">
+
+        <div class="bossContainer">
+            <div class="bossMenuHeader">
+                <p><strong>BOSS</strong>MENU</p>
+                <div class="bossMenuButtons">
+                    <a id="bossMoneyManagement"></a>
+                    <a id="bossEmployeManagement"></a>
+                    <a id="bossStashManagement"></a>
+                    <a id="bossClose"></a>
+                </div>
+            </div>
+            <hr color="#454545" style="position: absolute; top: 20%; width: 95%; border-radius: 15px; left: 2%;">
+            
+            <div class="bossMoneyManagementMenu" style="display: block;">
+                <div class="bossWithdrawBox">
+                    <div class="bossInputBox">
+                        <input type="number" id="CekilenMiktar" class="input-manag" placeholder="Withdraw..">
+                        <div class="button-tip" id="ParaCek">Withdraw</div>
+                        <p style="width: 164px; position: absolute; top: 65%; left: 45%; text-align: left; font-family: 'Inter'; font-style: normal; font-weight: 900; font-size: 9px; line-height: 11px; color: #FFFFFF; opacity: 0.16;">Forem ipsum dolor sit amet,torquent
+                            per conubia nostra, per inceptos
+                            himenaeos. Curabitur tempus urna.</p>
+                    </div>
+                    <span style="position: absolute; width: 50%; left: -16%; top: 80%; color: #666666; font-family: 'Inter'; font-style: normal; font-weight: 900; font-size: 15px; line-height: 18px;">CASH</span>
+                    <hr color="#666666" style="position: absolute; width: 80%; top: 82.5%; right: 4%;">
+                </div>
+                <div class="bossDepositBox">
+                    <div class="bossInputBox">
+                        <input type="number" id="YatirilanMiktar" class="input-manag" placeholder="Deposit..">
+                        <div class="button-tip buttonRight" id="ParaYatir">Deposit</div>
+                        <p style="width: 164px; position: absolute; top: 65%; left: 15%; text-align: right; font-family: 'Inter'; font-style: normal; font-weight: 900; font-size: 9px; line-height: 11px; color: #FFFFFF; opacity: 0.16;">Forem ipsum dolor sit amet,torquent
+                            per conubia nostra, per inceptos
+                            himenaeos. Curabitur tempus urna.</p>
+                    </div>
+                    <span style="position: absolute; width: 50%; left: 66%; top: 80%; color: #666666; font-family: 'Inter'; font-style: normal; font-weight: 900; font-size: 15px; line-height: 18px;">CASH</span>
+                    <hr color="#666666" style="position: absolute; width: 80%; top: 82.5%; left: 4%;">
+                </div>
+                <img class="bossRectangle" src="./images/Rectangle.png"> 
+                <h1>SOCIETY MONEY</h1>
+                <span id="KasaPara">$150</span>
+            </div>
+
+            <div class="employeeWrapper" style="display: none;">
+                <div class="recruitmentContainer">
+                    <p class="recruitmentTitle">RECRITMENT</p>
+                    <p class="recruitmentSubTitle">Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus
+                        urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam.
+                    </p>
+                    <div id="myEmployers" class="employeeList">
+                        <div class="employeeBox"></div>
+                        <div class="employeeBox"></div>
+                        <div class="employeeBox"></div>
+                        <div class="employeeBox"></div>
+                    </div>
+                </div>
+                <div class="fireContainer">
+                    <p class="recruitmentTitle">RECRITMENT</p>
+                    <p class="recruitmentSubTitle">Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus
+                        urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam.
+                    </p>
+                    <div id="employeeList" class="employeeList">
+                        <div class="employeeBox"></div>
+                        <div class="employeeBox"></div>
+                        <div class="employeeBox"></div>
+                        <div class="employeeBox"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="bg" style="display:none;"></div>
+    <div class="props_menuResul" style="display: none;">
+        <div class="resul_category" style="display:block;">
+            <div class="ele" data-s4="showcat_" data-cat="all">
+                <i class="fas fa-box-full"></i>
+            </div>
+            <div class="ele" data-s4="showcat_" data-cat="all">
+                <i class="fas fa-box-full"></i>
+                </div>
+                <div class="ele" data-s4="showcat_" data-cat="all">
+                    <i class="fas fa-box-full"></i>
+                    </div>
+        </div>
+        <div class="container">
+            <div id="propsMenu_items" class="items">
+
+                <!-- <div class="wall" style="background: url(./items/${v.prop}.png) #ffffff26;background-size: cover;">
+                        <i class="fas fa-cube selector" data-s4="showprop_" data-prop="${v.prop}"></i>
+                        <h2>${v.label}</h2>
+                        <a data-s4="buyprop_" data-prop="${v.prop}" href="#">${v.price}$</a>
+                    </div>
+                    <div class="wall" style="background: url(./items/${v.prop}.png) #ffffff26;background-size: cover;">
+                        <i class="fas fa-cube selector" data-s4="showprop_" data-prop="${v.prop}"></i>
+                        <h2>${v.label}</h2>
+                        <a data-s4="buyprop_" data-prop="${v.prop}" href="#">${v.price}$</a>
+                    </div>
+                    <div class="wall" style="background: url(./items/${v.prop}.png) #ffffff26;background-size: cover;">
+                        <i class="fas fa-cube selector" data-s4="showprop_" data-prop="${v.prop}"></i>
+                        <h2>${v.label}</h2>
+                        <a data-s4="buyprop_" data-prop="${v.prop}" href="#">${v.price}$</a>
+                    </div>
+                    <div class="wall" style="background: url(./items/${v.prop}.png) #ffffff26;background-size: cover;">
+                        <i class="fas fa-cube selector" data-s4="showprop_" data-prop="${v.prop}"></i>
+                        <h2>${v.label}</h2>
+                        <a data-s4="buyprop_" data-prop="${v.prop}" href="#">${v.price}$</a>
+                    </div>
+                    <div class="wall" style="background: url(./items/${v.prop}.png) #ffffff26;background-size: cover;">
+                        <i class="fas fa-cube selector" data-s4="showprop_" data-prop="${v.prop}"></i>
+                        <h2>${v.label}</h2>
+                        <a data-s4="buyprop_" data-prop="${v.prop}" href="#">${v.price}$</a>
+                    </div>
+                    <div class="wall" style="background: url(./items/${v.prop}.png) #ffffff26;background-size: cover;">
+                        <i class="fas fa-cube selector" data-s4="showprop_" data-prop="${v.prop}"></i>
+                        <h2>${v.label}</h2>
+                        <a data-s4="buyprop_" data-prop="${v.prop}" href="#">${v.price}$</a>
+                    </div> -->
+
+                <!-- diğer öğeler buraya eklenebilir -->
+            </div>
+        </div>
+    </div>
+
+    <div class="createHouseMenuBG" style="display:none;">
+        <div class="createHouseMenu">
+            <div class="leftSideCreateHouse">
+                <img id="houseImgCreateHouse" class="houseImgCreateHouse" src="./images/House.png">
+            </div>
+            <div class="rightSideCreateHouse">
+                <h1>CREATE MENU</h1>
+                <h5>When looking for your dream home, pay attention to various criteria such as the size, location, features, and price of the house. The home category doesn't just specify the type of house, such as an apartment, detached house, farmhouse, or luxury villa, but also includes the environment in which the house is located, the material it is built from, and its unique features.</h5>
+                <hr style="width: 95%;" color="#454545">
+                <div class="houses">
+                    <div id="house_low" class="houseType" tabindex="-1" style="background: url(./images/lowHouseBG.png);">
+                        <h1>L</h1>
+                        <img src="./images/lowHouseIcon.png"></img>
+                        <h6>LOW HOUSE $7000</h6>
+                    </div>
+                    <div id="house_mid" class="houseType" tabindex="-1" style="background: url(./images/midHouseBG.png);">
+                        <h1>M</h1>
+                        <img src="./images/midHouseIcon.png"></img>
+                        <h6>MID HOUSE $12000</h6>
+                    </div>
+                    <div id="house_high" class="houseType" tabindex="-1" style="background: url(./images/highHouseBG.png);">
+                        <h1>H</h1>
+                        <img src="./images/highHouseIcon.png"></img>
+                        <h6>HIGH HOUSE $15000</h6>
+                    </div>
+                    <div id="apartment3" class="houseType" tabindex="-1" style="background: url(./images/apartmentBG.png);">
+                        <h1>A</h1>
+                        <img src="./images/apartmentIcon.png"></img>
+                        <h6>APARTMENT $10000</h6>
+                    </div>
+                    <hr style="width: 95%;" color="#454545">
+                    <div style="position: relative; left: -42%;">
+                        <i class="fa-solid fa-circle" style="color: #7C7C7C; font-size: 8px;"></i>
+                        <p style="display: inline-block;">HOUSE THEME</p>
+                    </div>
+                    <ul id="createHouseColors">
+                        <li id="1" style="background: #0075FF;"></li>
+                        <li id="2" style="background: #FF5C00;"></li>
+                        <li id="3" style="background: #70FF00;"></li>
+                        <li id="4" style="background: #FF0000;"></li>
+                        <li id="5" style="background: #FF00C7;"></li>
+                        <li id="6" style="background: #0038FF;"></li>
+                        <li id="5" style="background: #FF00C7;"></li>
+                        <li id="6" style="background: #0038FF;"></li>
+                    </ul>
+                    <div class="input">
+                        <div class="icon">
+                            <img src="./images/houseNameIcon.png">
+                            <input type="text" id="_createHouseName" placeholder="House Name..">
+                        </div>
+                        
+                    </div>
+                    <div class="input">
+                        <div class="icon">
+                            <img src="./images/houseURLIcon.png">
+                            <input type="text" id="_createHouseIMG" placeholder="House URL..">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="icon">
+                            <img src="./images/housePriceIcon.png">
+                            <input type="number" id="_createHousePrice" placeholder="House Price..">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <a data-s4="createhouse">CREATE HOUSE</a>
+                    </div>                    
+                </div>
+                <div class="actionButton">
+                    <a data-s4="takehouseimg" class="openCamera"></a>
+                    <a data-s4="setgaragecoord" class="setGarageCoord"></a>
+                    <a data-s4="sethousecoord" class="setHouseCoord"></a>
+                </div>
+                <p class="infoText">Set house coord and garage coord then you can create house. if you want you can take custom house image</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cardBoxBG" style="display: none;">
+        <div class="cardBox">
+            <div class="card">
+                <div class="leftSide">
+                    <img id="houseImg" class="houseImg" src="./images/House.png">
+                    <div class="houseInfo">
+                        <h1 id="h_price">$250,000</h1>
+                        <div class="loc">
+                            <img src="./images/Location.png">
+                            <h4>Winewood 223-442 A 22-31 street.</h4>
+                        </div>
+                        <div class="absoluteDesign">
+                            <div class="houseInfoMulti">
+                                <img src="./images/IconRoomCount.png">
+                                <h5>2+1</h5>
+                            </div>
+                            <div class="houseInfoMulti">
+                                <img src="./images/PoolLadderIcon.png">
+                                <h5 id="h_gp">None</h5>
+                            </div>
+                            <div class="houseInfoMulti">
+                                <img src="./images/CarIcon.png">
+                                <h5 id="h_gstock">5</h5>
+                            </div>
+                        </div> 
+                        <div class="stars">
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star star"></i>
+                            <i class="fa-solid fa-star nostar"></i>
+                            <i class="fa-solid fa-star nostar"></i>
+                            <i class="fa-solid fa-star nostar"></i>
+                            <i class="fa-solid fa-star nostar"></i>
+                        </div>  
+                    </div>
+                </div>
+                <div class="rightSide">
+                    <h1 id="house_ownerName">JOSH BERNSTEIN’S HOUSE</h1>
+                    <h5>When looking for your dream home, pay attention to various criteria such as the size, location, features, and price of the house. The home category doesn't just specify the type of house, such as an apartment, detached house, farmhouse, or luxury villa, but also includes the environment in which the house is located, the material it is built from, and its unique features.
+                    </h5>
+                    <hr style="width: 95%;" color="#454545">
+                    <div class="ownerInfo">
+                        <div style="position: relative; left: -42%;">
+                            <i class="fa-solid fa-circle" style="color: #7C7C7C;"></i>
+                            <p style="display: inline-block;">HOUSE OWNER</p>
+                        </div>
+                        <div class="houseOwnerInfo">
+                            <div class="player">
+                                <img class="playerImg" src="./images/Player.png">
+                                <h2 id="h_who">CABO SMILE</h2>
+                                <h6>Lawyer</h6>
+                                <img id="alarmImageRes" class="alarmImageRes" src="./images/AlarmDisabled.png">
+                            </div>
+                            <div class="map">
+                                <!-- <img src="./images/Map.png"> -->
+                                <div id="map1" style="height: 200px; "></div>
+                            </div>
+                            <div class="buyHouseBtn" style="display: none;">
+                                <a id="h_buy" data-s4="buy-house">BUY THE HOUSE</a>
+                            </div>
+                            <div class="sellHouseSection" style="display: block;">
+                                <a class="enterHouse" data-s4="home"></a>
+                                <a class="enterGarage" data-s4="garage"></a>
+                                <a class="friendsBtn" id="h_friends" data-s4="friends"></a>
+                                <a class="sellHouseBtn" id="h_sell" data-s4="sell-house">SELL THE HOUSE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="modal center" style="display:none;">
+        <div class="center">
+            <h1>Select Your <br>
+                <y>Payment Method</y>
+            </h1>
+            <br>
+            <a href="#" data-s4="with-bank">
+                <i class="fa-solid fa-credit-card"></i> Bank account </a>
+            <a href="#" data-s4="with-cash">
+                <i class="fa-solid fa-wallet"></i> cash money </a>
+            <a href="#" data-s4="close-modal">
+                <i class="fa-solid fa-chevron-left"></i>Back </a>
+            <br>
+            <br>
+            <br>
+            <a href="#">YOUR WEALTH</a>
+            <a href="#" class="active" id="u_bank"> 500.000$</a>
+            <a href="#" class="active" id="u_cash"> 500.000$</a>
+        </div>
+    </div>
+    <div class="friends center" style="display: none;">
+        <h1>who can use <br>
+            <y>your home</y>
+        </h1>
+        <div class="ic center">
+            <div class="players">
+                <h1>People Nearby</h1>
+                <div class="plylst" id="all">
+                    <a class="pl">Test Test <i class="fa-solid fa-plus"></i>
+                        </a>
+                </div>
+            </div>
+            <div class="players">
+                <h1>Friends</h1>
+                <div class="plylst" id="friends"></div>
+            </div>
+        </div>
+        <a href="#" class="xcd" data-s4="close-and-save">
+            <i class="fa-solid fa-chevron-left"></i>Back </a>
+    </div>
+    <div class="sellmodal center" style="display:none;">
+        <div class="center">
+            <h1>Select Your <br>
+                <y>Withdraw Method</y>
+            </h1>
+            <br>
+            <a href="#" data-s4="sell-with-bank">
+                <i class="fa-solid fa-credit-card"></i> Bank account </a>
+            <a href="#" data-s4="sell-with-cash">
+                <i class="fa-solid fa-wallet"></i> cash money </a>
+            <a href="#" data-s4="close-modal">
+                <i class="fa-solid fa-chevron-left"></i>Back </a>
+            <br>
+            <br>
+            <br>
+            <h1>Amount to be paid <br>
+                <y id="h_sell_price"></y>
+            </h1>
+        </div>
+    </div>
+    <div class="garagemodal center" style="display:none;">
+        <div class="icgm center">
+            <div style="position: relative;">
+                <h1>
+                    <w>Your</w> Garage
+                    <w class="w" data-s4="close-gm">
+                        <i class="fa-solid fa-xmark"></i>
+                    </w>
+                </h1>
+                <div class="cars">
+                    <div class="car">
+                        <center>
+                            <img src="https://raw.githubusercontent.com/MericcaN41/gta5carimages/main/images/adder.png" />
+                        </center>
+                        <div class="alt">
+                            <h2>Adder</h2>
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                    </div>
+                    <div class="car">
+                        <i class="fa-duotone fa-empty-set center"></i>
+                    </div>
+                    <div class="car">
+                        <i class="fa-duotone fa-empty-set center"></i>
+                    </div>
+                    <div class="car">
+                        <i class="fa-duotone fa-empty-set center"></i>
+                    </div>
+                    <div class="car">
+                        <i class="fa-duotone fa-empty-set center"></i>
+                    </div>
+                    <div class="car">
+                        <i class="fa-duotone fa-empty-set center"></i>
+                    </div>
+                    <div class="car">
+                        <i class="fa-duotone fa-empty-set center"></i>
+                    </div>
+                    <div class="car">
+                        <i class="fa-duotone fa-empty-set center"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="prop_yon center" style="display: none;">
+        <!-- Direction multiplier -->
+        <input id="multiplier" type="number" value="0.1">
+        <div class="yonler">
+            <i class="fas fa-chevron-up ust" onmousedown="move('forward')" onmouseup="stopMoving()"></i>
+            <i class="fas fa-chevron-left sol" onmousedown="move('left')" onmouseup="stopMoving()"></i>
+            <i class="fas fa-chevron-right sag" onmousedown="move('right')" onmouseup="stopMoving()"></i>
+            <i class="fas fa-chevron-down alt" onmousedown="move('back')" onmouseup="stopMoving()"></i>
+            <i class="fas fa-check ok" onmousedown="move('ok')" onmouseup="stopMoving()"></i>
+            <i class="fad fa-arrow-up ustt" onmousedown="move('up')" onmouseup="stopMoving()"></i>
+            <i class="fad fa-arrow-down altt" onmousedown="move('down')" onmouseup="stopMoving()"></i>
+            <i class="far fa-undo rot_left" onmousedown="move('rot_left')" onmouseup="stopMoving()"></i>
+            <i class="far fa-redo rot_right" onmousedown="move('rot_right')" onmouseup="stopMoving()"></i>
+            <i class="fas fa-sync-alt rot_up" onmousedown="move('rot_up')" onmouseup="stopMoving()"></i>
+            <i class="fad fa-arrow-up rot_yat_up" onmousedown="move('rot_yat_up')" onmouseup="stopMoving()"></i>
+            <i class="fad fa-arrow-down rot_yat_down" onmousedown="move('rot_yat_down')" onmouseup="stopMoving()"></i>
+            <i class="fas fa-power-off reset" onmousedown="move('reset')" onmouseup="stopMoving()"></i>
+        </div>
+    </div>
+
+    <div class="manage center" style="display:none;">
+        <div class="sgdiv">
+            <div class="ele" data-s4="walls_">
+                <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="ele" data-s4="garajbak_">
+                <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <div class="ele" data-s4="tables_">
+                <i class="fa-sharp fa-solid fa-image"></i>
+            </div>
+            <div class="ele" data-s4="name_">
+                <i class="fa-solid fa-file-signature"></i>
+            </div>
+            <div class="ele" data-s4="esyaal_">
+                <i class="fa-solid fa-box"></i>
+            </div>
+            <!-- <div class="ele" data-s4="house_">
+                <i class="fa-solid fa-eye"></i>
+            </div> -->
+            <div class="ele" data-s4="marker_">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+            <!-- <div class="ele" data-s4="lock_" id="lock_"><i class="fa-light fa-lock-open"></i></div> -->
+            <div class="ele" data-s4="alarm_">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="ele" data-s4="qr_">
+                <i class="fa-solid fa-qrcode"></i>
+            </div>
+            <div class="ele" data-s4="close_">
+                <i class="fa-sharp fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="icgm center">
+            <div style="position: relative;">
+                <h1>
+                    <w>MANAGE</w> YOUR HOUSE
+                    <div class="category" style="display:none;"></div>
+                </h1>
+                <div class="hname center" style="display:none;">
+                    <center>
+                        <h1>
+                            <w>Give your</w> house a name
+                        </h1>
+                    </center>
+                    <input type="text" max="10" maxlength="10" id="_hname" placeholder="Enter Name..." />
+                    <a data-s4="hname" href="#">Change</a>
+                </div>
+                <div class="walls">
+                    <div class="yar">
+                        <h2>Walls</h2>
+                    </div>
+                    <div class="scrl">
+                        <div class="wall" style="background: url(./interiors/modern.png);background-size: cover;"></div>
+                    </div>
+                </div>
+                <div class="garaj" style="display:none;">
+                    <div class="yar">
+                        <h2>Garage</h2>
+                    </div>
+                    <div class="scrl7">
+                        <div class="wall" style="background: url(./interiors/modern.png);background-size: cover;"></div>
+                    </div>
+                </div>
+                <div class="tables" style="display:none;">
+                    <div class="yar">
+                        <h2>Tables</h2>
+                    </div>
+                    <div class="scrl2">
+                        <div class="table" style="background: url(./interiors/t1.png);background-size: cover;">
+                            <input type="text" placeholder="Enter Url" id="u_1" />
+                            <a data-s4="table" data-theme="1" href="#">Change</a>
+                        </div>
+                        <div class="table" style="background: url(./interiors/t2.png);background-size: cover;">
+                            <input type="text" placeholder="Enter Url" id="u_2" />
+                            <a data-s4="table" data-theme="2" href="#">Change</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="esyaal" style="display:none;">
+                    <div class="yar">
+                        <h2>Furn</h2>
+                    </div>
+                    <div class="scrl3"></div>
+                </div>
+                <div class="house" style="display:none;">
+                    <div class="yar">
+                        <h2>House</h2>
+                    </div>
+                    <div class="scrl4">
+                    </div>
+                </div>
+                <div class="alarm" style="display:none;">
+                    <div class="yar">
+                        <h2>Alarm</h2>
+                    </div>
+                    <div class="scrl5">
+                        <h2> Cities with increasing population density and becoming crowded bring security problems with them. Many people do not feel safe even in their homes and workplaces due to the increasing theft incidents. People try to protect themselves
+                            from thieves by leaving their lights or televisions on as well as the locks. At this point, burglar alarm systems play a very effective role in deterring people who come to theft with their loud sirens. Even the appearance
+                            of the flashing alarm device in front of the doors of the house will cause the thief who will enter that house to think once more. In this article, you can find information about the burglar alarm and get an idea to choose
+                            the most suitable system for your home and workplace. <br>
+                            <p style="color:red;">if you remove the alarm system, there is no refund!</p>
+                        </h2>
+                        <img src="./items/security.png" />
+                        <h4 id="alarm_price">123123</h4>
+                        <a href="#" id="active_alarm" data-s4="buy_alarm_">Buy Alarm System</a>
+                        <a href="#" id="deactive_alarm" style="color:red;" data-s4="remove_alarm_">Remove Alarm System</a>
+                    </div>
+                </div>
+                <div class="qr" style="display:none;">
+                    <div class="yar">
+                        <h2>Qr</h2>
+                    </div>
+                    <div class="scrl6">
+                        <h3>Smart Home System</h3>
+                        <div id="qrcode"></div>
+                        <img id="ph" src="./items/phone.png" />
+                        <h2>Manage your home with a smartphone. <br>Change the style of your house, Update the tables, <br> Rename your house and view your garage. </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loading center" style="display:none;">
+        <i class="fa-solid fa-spinner fa-spin center"></i>
+    </div>
+    <div class="notif" style="display:none;">
+        <a href="#" data-s4="nbtn" data-type="gin_g"> Go Inside</a>
+        <a href="#" data-s4="nbtn" data-type="ginv">ENTER BY Vehicle</a>
+        <a href="#" data-s4="close_">Cancel</a>
+        <div class="door_handle">
+            <img src="./door_handle.png" />
+        </div>
+    </div>
+
+    <script src="s4.js"></script>
+</body>
+
+</html>
