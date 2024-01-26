@@ -64,7 +64,7 @@ Config.Mining = {
 }
 
 Config.PowerBills = {
-      blocks_mined = 2, --- How many blocks the warehouse can mine until next power bill
+      blocks_mined = 100, --- How many blocks the warehouse can mine until next power bill
       killowatCost = 1, --- Price of energy consumed
 }
 

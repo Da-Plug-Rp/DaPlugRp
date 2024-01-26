@@ -22,7 +22,7 @@ Config.ServerRequestsDelay = {
       chart = 10000  -- 10 seconds
 }
 
-Config.currency = 'EUR'                       -- Change this to custom currency if you want
+Config.currency = 'USA'                       -- Change this to custom currency if you want
 
 Config.NoTransferToAlternateCharacters = true -- Set to true if you don't want players to transfer crypto to their other characters | Default = true
 
