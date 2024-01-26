@@ -12308,8 +12308,8 @@ return {
 		stack = true,
 		close = true,
 	},
-	["black_toe_1"] = {
-		label = "black Toe",
+	["retro_1"] = {
+		label = "Retro",
 		weight = 1,
 		stack = true,
 		close = true,
@@ -19625,5 +19625,96 @@ client = {
 		weight = 1,
 		stack = true,
 		close = true,
+	},
+
+	["vil_gummy"] = {
+		label = 'vil_gummy',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["wig_dye"] = {
+		label = 'wig_dye',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["Prada_Bag2"] = {
+		label = 'Prada Bag2',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["Prada_Bag"] = {
+		label = 'Prada Bag',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["Prada_Betty_Boop"] = {
+		label = 'Prada Betty Boop',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["Red_bottoms"] = {
+		label = 'Red bottoms',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["Balenciaga"] = {
+		label = 'Balenciaga',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["playstation5"] = {
+		label = 'playstation5',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["LV_nails"] = {
+		label = 'LV nails',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["purple_nails"] = {
+		label = 'purple nails',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["Hello_Kitty"] = {
+		label = 'Hello Kitty',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["GANJAORGANICS"] = {
+		label = 'GANJAORGANICS',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["Eye_lashes"] = {
+		label = 'Eye_lashes',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["LV_BAG"] = {
+		label = 'LV BAG',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
+	},
+	["Blue_Dream"] = {
+		label = 'Blue Dream',
+		weight = 1,
+		stack = true,
+		description = "" --Put what ever u want
 	},
 }
