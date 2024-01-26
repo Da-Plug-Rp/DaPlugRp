@@ -1,0 +1,11 @@
+{
+    "notifyTitle": "Storage",
+    "blipLabel": "Storage",
+    "searchTEXTUI": "Press [E] to search",
+    "searchTarget": "Search",
+    "SearchingProgress": "Searching...",
+    "failnotify": "You failed!",
+    "chanceNotinfavour": "This storage is empty",
+    "cooldownON": "Wait a minute there is a cooldown",
+    "notenoughPolice": "The city does not have enough police online"
+}

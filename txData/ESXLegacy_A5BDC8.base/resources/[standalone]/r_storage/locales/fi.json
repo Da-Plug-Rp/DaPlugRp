@@ -1,0 +1,11 @@
+{
+    "notifyTitle": "Varasto",
+    "blipLabel": "Varasto",
+    "searchTEXTUI": "Paina [E] tutkiaksesi",
+    "searchTarget": "Tutki",
+    "SearchingProgress": "Tutkitaan...",
+    "failnotify": "Epäonnistuit!",
+    "chanceNotinfavour": "Tämä varasto on tyhjä",
+    "cooldownON": "Odota hetki tässä on cooldown",
+    "notenoughPolice": "Ei tarpkeesi poliiseja paikalla"
+}
