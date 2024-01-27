@@ -19762,4 +19762,75 @@ client = {
 ['minismg'] =                         {label = 'Mini SMG Model',            weight = 5, stack = true, close = false, description = "Nice Model?",        image = "minismg.png"},
 ['sawnoffshotgun'] =                  {label = 'Sawnoff Shotgun Model',     weight = 5, stack = true, close = false, description = "Nice Model?",        image = "sawnoffshotgun.png"},
 ['assaultrifle'] =                    {label = 'Assault Rifle Model',       weight = 5, stack = true, close = false, description = "Nice Model?",        image = "assaultrifle.png"},
+
+	["weed_skunk"] = {
+		label = "Weed skunk",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["cokebaggy"] = {
+		label = "Coke baggy",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["testosterone"] = {
+		label = "Testosterone",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["bitcoin"] = {
+		label = "Bitcoin",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["protein"] = {
+		label = "Protein",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["preworkout"] = {
+		label = "Pre-Workout",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["coke_small_brick"] = {
+		label = "Coke small brick",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["weed_purplehaze"] = {
+		label = "Weed Purple Haze",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["creatine"] = {
+		label = "Creatine",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["tablet"] = {
+		label = "tablet",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
 }

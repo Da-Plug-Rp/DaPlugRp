@@ -94,7 +94,7 @@ Config.codemBilling = false --Set the value to true if you use the product codem
 
 
 --Banking
-Config.okokBanking = true' --Set the value to true if you use the product okokBanking. ( Make sure you are on the latest okokBanking! )
+Config.okokBanking = true --Set the value to true if you use the product okokBanking. ( Make sure you are on the latest okokBanking! )
 
 Config.CarDebug = false 
 
