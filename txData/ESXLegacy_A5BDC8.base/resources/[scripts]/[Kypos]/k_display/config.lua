@@ -3,7 +3,7 @@ Config.Variables = {
     Debug = false,
     Framework = 'ESX', -- QB/ESX/None 
     Notify = 'ESX', -- QB/ESX/Custom -- custom function below
-    UsingTarget = true, TargetResourceName = 'ox_target',
+    UsingTarget = false, TargetResourceName = 'ox_target',
     EnableJobRestrictFeature = true, --Disable job requirements fully (no menu to select a job)
     UseCommand = false,
     InteractionRange = 4.0

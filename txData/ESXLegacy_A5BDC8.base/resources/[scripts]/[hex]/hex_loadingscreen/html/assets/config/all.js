@@ -60,9 +60,9 @@ const Config = {
     ],
 
     YOUTUBE: {
-        id: 'CWoKyzW6elA',
+        id: 'oxJ1d0KFpLmgEwz_',
         loop: 2,
-        autoplay: 1,
+        autoplay: 2,
         volume: 15
     }
 }
