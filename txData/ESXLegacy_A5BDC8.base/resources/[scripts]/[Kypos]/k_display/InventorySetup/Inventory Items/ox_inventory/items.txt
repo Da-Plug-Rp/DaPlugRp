@@ -1,0 +1,9 @@
+add to items.lua in ox_inventory! 
+    
+    ['display_stand'] = {
+		label = 'Display Stand',
+		weight = 10,
+		stack = true,
+		close = true,
+		description = nil
+	},

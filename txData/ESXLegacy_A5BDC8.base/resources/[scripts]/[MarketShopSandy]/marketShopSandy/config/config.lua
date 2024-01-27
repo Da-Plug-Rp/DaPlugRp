@@ -20,7 +20,7 @@
 
 
 
-FrameWork = "qb"    				-- qb or esx or other
+FrameWork = "esx"    				-- qb or esx or other
 Lang = "EN"          				-- Traduction are located to Lang folder.
 Targetting = "OX"					-- OX or QB for ox_target or qb-target
 JobManagement = "esx_society"		-- esx_society or bcs_companymanager ONLY FOR ESX

@@ -19840,4 +19840,12 @@ client = {
 		close = true,
 	},
 
+	['display_stand'] = {
+		label = 'Display Stand',
+		weight = 10,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
 }
