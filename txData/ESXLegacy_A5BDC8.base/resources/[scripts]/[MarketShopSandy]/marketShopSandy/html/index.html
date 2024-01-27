@@ -1,0 +1,2899 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Titre</title>
+		<link rel="stylesheet" href="style.css">
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Cabin" rel="stylesheet">
+		<link rel="preload" href="./img/CashReg.png" as="image">
+		<link rel="preload" href="./img/CashRegGreen.png" as="image">
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<script src="debug.js"></script>
+		<script src="ItemPicture.js"></script>
+		<script src="app.js"></script>
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Cabin" rel="stylesheet"> -->
+		
+		<!-- <link rel="preload" href="./font/Cyberspace.woff2" as="font" type="font/woff2" crossorigin> -->
+	</head>
+	<body class="noselect">
+		<audio id="beep">
+		  <source src="./audio/beep.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="ticketprint">
+		  <source src="./audio/TicketPrint.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="paid">
+		  <source src="./audio/paid.mp3" type="audio/mpeg">
+		</audio>
+		<img class="FakeImage" src ="./img/CashReg.png"/ style="display: none;">
+		<img class="FakeImage" src ="./img/CashRegGreen.png"/ style="display: none;">
+			<div class="CashRegister" style="display: none;">
+			<!-- <div class="CashRegister"> -->
+				<div class="CashRegMenuGlob">
+				
+					<div class="CashRegMenu">
+						
+						<div class="CashRegLeft">
+							<div class="CashRegLeftItemList">
+								<table>
+									<thead>
+										<tr>
+											<th><i class="fas fa-hamburger"></i> <span id="Trad-Item">Item</span></th>
+											<th><i class="fas fa-box-open"></i> <span id="Trad-Quantity">Quantity</span></th>
+											<th><i class="fas fa-dollar-sign"></i> <span id="Trad-Price">Price</span></th>
+										</tr>
+									</thead>
+									
+									<tbody class="tbodyMenuCashRegList">
+										<tr class="CashRegListStock" id="IDaLaCon" hidden>
+											<td class="Name">Banane super belle</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon" >
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+										<tr class="CashRegListStock" id="IDaLaCon">
+											<td class="Name">Banane 5</td>
+											<td class="Quantity">5</td>
+											<td class="SellingPrice">2$</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="CashRegLeftButton">
+								<!-- <input class="CashRegbuttonStyle" type="button" id="Trad-NewCustomer" value="New Customer" onclick="NewCustomer()"> -->
+								<input class="CashRegbuttonStyle" type="button" id="Trad-Ticket" value="Ticket" onclick="CashRegTicket()">
+								<!-- <input class="CashRegbuttonStyle" type="button" id="Trad-Paiement" value="Paiement" onclick="CashRegPaiement()"> -->
+							</div>
+						</div>
+						<div class="CashRegRight">
+							<div class="CashRegRightUp">
+								
+								<div class="CashRegRightUpImg">
+									<img class="CashRegRightUpImgFiles" src ="./itemIMG/poire.png"/>
+								</div>
+								<div class="CashRegRightUpName">
+									<!-- <img class="CashRegRightUpImgFiles" src ="./itemIMG/noimage.png"/> -->
+									<div class="CashRegRightUpNameText"> 5 - Patate </div>
+								</div>
+							</div>
+							<div class="CashRegRightDown">
+								<div class="CashRegRightDownLeft">
+									<img class = "ArrowLeft" src ="./img/arrow.png"/>
+								</div>
+								
+								<div class="CashRegRightDownRight">
+									<img class = "ArrowRight" src ="./img/arrow1.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="CashRegScan" onmouseover="OverScan()" onmouseleave="NotOverScan()" id="ui-droppable2">
+				
+					</div>
+					
+					
+					
+					<div class="CashRegBagRight">
+						<div class="CashRegBagRightImg" id="ui-draggable">
+						
+						</div>
+					</div>
+					<div class="CashRegBagLeft" id="ui-droppable">
+				
+					</div>
+					<div class="CashRegTicket">
+						<div class="GlobalTicket">
+							<img class="CashRegTicketIMG" src ="./img/ticket.png"/>
+							<div class="CashRegTicketPrice"> 50€ </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="MenuStockGlobal" style="display: none;">
+			<!-- <div class="MenuStockGlobal"> -->
+				<div class="MenuStock">
+					<h1 id="Trad-Stock" class="titre" >Stock</h1>
+					<div class="StockSearch"><input type="text" value ="" placeholder="Search" class="StockSearchInput" onkeyup="StockSearch(this.value)"></div>
+					<div class="MenuStockList" >
+						<table>
+							<thead>
+								<tr>
+									<th><i class="fas fa-hamburger"></i> <span id="Trad-Item">Item</span></th>
+									<th><i class="fas fa-box-open"></i> <span id = "Trad-Quantity">Quantity</span></th>
+									<th><i class="fas fa-dollar-sign"></i> <span id = "Trad-BuyingPrice">Buying Price</span></th>
+									<th><i class="fas fa-redo-alt"></i> <span id = "Trad-Action">Action</span></th>
+									<th><i class="fas fa-dollar-sign"></i> <span id = "Trad-SellingPrice">Selling Price</span></th>
+								</tr>
+							</thead>
+							
+							<tbody class="tbodyMenuStockList">
+								<tr class="eachListStock" id="IDaLaCon" >
+									<td class="Name">Banane</td>
+									<td class="Quantity">5/50</td>
+									<td class="BuyingPrice">3$</td>
+									<td class="Action">
+										<input class="buttonStyle" type="button" id="Trad-Take" value="Take" onclick="TakeFromStock()">
+										<input class="buttonStyle" type="button" id="Trad-Put"  value="Put" onclick="PutInStock()">
+										<input class="buttonStyle" type="button" id="Trad-Order" value="Order" onclick="OrderForStock()">
+										<input class="buttonStyle" type="button" id="Trad-Desc" value="Desc" onclick="DefineProducts()">
+									</td>
+									<td class="SellingPrice">2$</td>
+								</tr>
+								<tr class="eachListStock" id="IDaLaCon">
+									<td class="Name">Banane</td>
+									<td class="Quantity">5/50</td>
+									<td class="BuyingPrice">3$</td>
+									<td class="Action">
+										<input class="buttonStyle" type="button" value="Take" onclick="TakeFromStock()">
+										<input class="buttonStyle" type="button" value="Put" onclick="PutInStock()">
+										<input class="buttonStyle" type="button" value="Order" onclick="OrderForStock()">
+										<input class="buttonStyle" type="button" value="Desc" onclick="DefineProducts()">
+									</td>
+									<td class="SellingPrice">2$</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+				</div>
+			
+				<div class="MenuStockBox">
+					<h1 id="Trad-Box" class="titre">Box</h1>
+					<div class="MenuStockBoxList" >
+						<table>
+							<thead>
+								<tr>
+									<th><i class="fas fa-hamburger"></i> <span id="Trad-Item">Item</span></th>
+									<th><i class="fas fa-box-open"></i> <span id="Trad-Quantity">Quantity</span></th>
+									<th><i class="fas fa-redo-alt"></i> <span id="Trad-Price">Action</span></th>
+								</tr>
+							</thead>
+							
+							<tbody class="tbodyMenuStockBoxList">
+								<!-- <tr class="eachListBoxStock" id="IDaLaCon" > -->
+									<!-- <td class="Name">Banane</td> -->
+									<!-- <td class="Quantity">5</td> -->
+									<!-- <td class="Action"> -->
+										<!-- <input class="buttonStyle" type="button" value="Remove" onclick="TakeFromStock()"> -->
+									<!-- </td> -->
+								<!-- </tr> -->
+								<!-- <tr class="eachListBoxStock" id="IDaLaCon" > -->
+									<!-- <td class="Name">Banane</td> -->
+									<!-- <td class="Quantity">5</td> -->
+									<!-- <td class="Action"> -->
+										<!-- <input class="buttonStyle" type="button" value="Remove" onclick="TakeFromStock()"> -->
+									<!-- </td> -->
+								<!-- </tr> -->
+							</tbody>
+						</table>
+					</div>
+					<div  class="MenuStockBoxButton">
+						<i class="fa-solid fa-cart-flatbed MenuStockBoxGenerate" onclick="ValidateBoxList()"></i>
+						<i class="fa-solid fa-trash MenuStockBoxReset" onclick="ResetBoxList()"></i>
+					</div>
+				</div>
+			</div>
+			
+			<div class="MenuPopupQTE"  style="display: none;">
+				<i class="fas fa-times closeItemDescMenu" onclick="CancelQTE()"></i>
+				<i class="fas fa-check ValidateItemDescMenu" onclick="ValidateQTE()"></i>
+				<h1 class="MenuPopupQTETitre" id="Trad-Quantity">Quantité</h1>
+				
+				<div class="MenuPopupInput">
+					<!-- <h1>Quantity</h1> -->
+					<input type="number" step = "1" min="0" name="" placeholder="1" class="PopupQTEVal" id="TitleText-1">
+				</div>
+				<!-- <div class="MenuStockList"> -->
+					<!-- <input class="buttonStylePopup" type="button" value="Take" onclick="TakeFromStock()"> -->
+					<!-- <input class="buttonStylePopup" type="button" value="Put" onclick="PutInStock()"> -->
+				<!-- </div> -->
+			</div>
+			
+			<div class="MenuPopupInfoValidate" style="display: none;">
+				<i class="fas fa-times closeItemDescMenu" onclick="CancelINFO()"></i>
+				<i class="fas fa-check ValidateItemDescMenu" onclick="ValidateINFO()"></i>
+				<h1 class="MenuPopupInfoValidateTitre" id="Trade-Sure">Are you sure ?</h1>
+				
+				<div class="MenuPopupInfoValidateInput">
+					<h1>Info</h1>
+					<textarea name="Text1" cols="40" rows="5" class="MenuPopupInfoValidateTextInput" placeholder="Wonderfull Description &#10Multiline !"></textarea>
+					<!-- <input type="number" step = "1" min="0" name="" placeholder="1" class="PopupQTEVal" id="TitleText-1" style="outline: none; border: none; text-align: left; color:#000000;"> -->
+				</div>
+				<!-- <div class="MenuStockList"> -->
+					<!-- <input class="buttonStylePopup" type="button" value="Take" onclick="TakeFromStock()"> -->
+					<!-- <input class="buttonStylePopup" type="button" value="Put" onclick="PutInStock()"> -->
+				<!-- </div> -->
+			</div>
+			
+			<div class="MenuPopupStock"  style="display: none;">
+				<i class="fas fa-times closeItemDescMenu" onclick="CancelPopupStock()"></i>
+				<i class="fas fa-check ValidateItemDescMenu" onclick="ValidatePopupStock()"></i>
+				<h1 class="MenuPopupInfoValidateTitre" id="Trad-ItemSel">Item Selection</h1>
+				<div class="hiddenDataStock" hidden style="display: none;"></div>
+				<div class="MenuPopupStockInput">
+					<h1 id="Trad-Stock">Stock</h1>
+					<select class= "MenuPopupStockSelect">
+						<option class="MenuPopupStockValue" id="Trad-None" value="none">None</option>
+						<option class="MenuPopupStockValue" id="Trad-Large" value="large">Large</option>
+						<option class="MenuPopupStockValue" id="Trad-Medium" value="medium">Medium</option>
+					</select>
+					<!-- <textarea name="Text1" cols="40" rows="5" class="MenuPopupInfoValidateTextInput" placeholder="Wonderfull Description &#10Multiline !"></textarea> -->
+					<!-- <input type="number" step = "1" min="0" name="" placeholder="1" class="PopupQTEVal" id="TitleText-1" style="outline: none; border: none; text-align: left; color:#000000;"> -->
+				</div>
+				<!-- <div class="MenuStockList"> -->
+					<!-- <input class="buttonStylePopup" type="button" value="Take" onclick="TakeFromStock()"> -->
+					<!-- <input class="buttonStylePopup" type="button" value="Put" onclick="PutInStock()"> -->
+				<!-- </div> -->
+			</div>
+			
+			
+			<div class="MenuItemDesc" style="display: none;">
+				<h1 class="MenuItemDescTitre" id="Trad-ItemDesc">Item Description</h1>
+				<i class="fas fa-times closeItemDescMenu"></i>
+				<i class="fas fa-check ValidateItemDescMenu"></i>
+				<div class="MenuItemName">
+					<h1 id="Trad-ItemName">Item Name</h1>
+					<input type="text" name="" placeholder="Banana" class="MenuItemNameInputItemName" id="TitleText-1" readonly="readonly">
+				</div>
+				<div class="MenuItemPrice">
+					<h1 id="Trad-ItemPrice">Item Price</h1>
+					<input type="number" step = "0.05" name="" placeholder="1.0" class="MenuItemNameInputItemPrice" id="TitleText-1" style="outline: none; border: none; text-align: left; color:#FFFFFF;">
+				</div>
+				<div class="MenuItemImage">
+					<h1 id="Trad-ImagePath">Image Path</h1>
+					<input type="text" name="" placeholder="https://www.referenseo.com/wp-content/uploads/2019/03/image-attractive.jpg" class="MenuItemNameInputItemImage" id="TitleText-1" style="outline: none; border: none; text-align: left;">
+				</div>
+				
+				<div class="MenuItemDescDesc">
+					<h1 id="Trad-ItemDesc">Item Desription</h1>
+					<textarea name="Text1" cols="40" rows="5" class="InputItemDesc" style="outline: none; border: none; text-align: left;" placeholder="Wonderfull Description &#10Multiline !"></textarea>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			<div class="ProductContainer" style="display: none;">
+				<!-- <h1></h1>  -->
+				<div class="ProductContainerTitle">ProductContainer</div>
+				<div class="ProductCardContainer">
+				
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">5$</div></div>
+							<div class="ProductAvailableCard"><div class="ProductAvailableText">Stock : 55</div></div>
+							<img src ="./img/aze.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText" id="Trad-Take">Take</div></div>
+								<!-- <input class="ProductValidate" type="button" value="Take" onclick="TakeFromStock()"> -->
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="ProductCard">
+						<div class="ProductCardTitle">ProductName</div> 
+						<div class="ProductCardImage">
+							<div class="ProductPriceCard"><div class="ProductPrice">95.5$</div></div>
+							<img src ="./img/aze2.jpg"/>
+						</div> 
+						<!-- <div class="ProductDesc">Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete Une bouteille de vin aphrodisiaque qui baise des ponney sauvage de couleurs grise avec des petits voirt qui font la fete </div> -->
+						<div class="ProductButtonHeader">
+							<div class="ProductButton1"> 
+								<div class="ProductMinus">-</div>
+								<div class="ProductQte">5</div>
+								<div class="ProductPlus">+</div>
+							</div>
+							<div class="ProductButton2"> 
+								<div class="ProductValidate"><div class="ProductValidateText">Take</div></div>
+								
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			
+			
+			<div class="MenuItemDescInStall" style="display: none;">
+				<h1 id="Trad-AvailItem" class="MenuItemDescInStallTitre">Available Item</h1>
+				<div class="hiddenData" hidden style="display: none;"></div>
+				<i class="fas fa-times closeItemDescMenuInStall" onclick="CloseMenuItemDescInStall()"></i>
+				<i class="fa-solid fa-circle-plus addItemDescMenuInStall" id="a-0" onclick="AddMenuItemDescInStall(this)"></i>
+				<div class="AisleCatA" id ="food">a</div>
+				<div class="AisleCatB" id ="food" style="display: none;">b</div>
+				<div class="AisleCatC" id ="food" style="display: none;">c</div>
+				<div class="AisleCatD" id ="food" style="display: none;">d</div>
+				<!-- <i class="fa-solid fa-circle-plus"></i> -->
+				<select class= "AisleDescInStall" onchange="AisleDescInStallChange(this)">
+					<option class="AisleDescInStallValue" value="a" id="Trad-ShelveTypeA">Aisle A</option>
+					<option class="AisleDescInStallValue" value="b" id="Trad-ShelveTypeB">Aisle B</option>
+					<option class="AisleDescInStallValue" value="c" id="Trad-ShelveTypeC">Aisle C</option>
+					<option class="AisleDescInStallValue" value="d" id="Trad-ShelveTypeD">Aisle D</option>
+				</select>
+				<div class="AisleScroll">
+					<table class="AisleDescInStallAisleA">
+						<thead>
+							<tr>
+								<th><i class="fas fa-hamburger"></i> <span id ="Trad-Item">Item</span></th>
+								<th><i class="fas fa-box-open"></i> <span id ="Trad-QteShelves">Quantity in Shelves</span></th>
+								<th><i class="fas fa-box"></i> <span id ="Trad-QteStock">Quantity in Stock</span></th>
+								<th><i class="fas fa-redo-alt"></i> <span id ="Trad-Action">Action</span></th>
+							</tr>
+						</thead>
+						<tbody class="tbodyMenuItemDescInStallA">
+							<tr class="eachListInStallA" id="IDaLaCon">
+								<td class="ItemName">Banane</td>
+								<td class="ItemQteInShelves">5/50</td>
+								<td class="ItemQteInStock">110</td>
+								<td class="Action">
+									<input class="buttonStyle" type="button" value="Remove" id = "Trad-Remove" onclick="RemoveFromStall(this)">
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<table class="AisleDescInStallAisleB" style="display: none;">
+						<thead>
+							<tr>
+								<th><i class="fas fa-hamburger"></i> <span>Item</span></th>
+								<th><i class="fas fa-box-open"></i> <span>Quantity in Shelves</span></th>
+								<th><i class="fas fa-box"></i> <span>Quantity in Stock</span></th>
+								<th><i class="fas fa-redo-alt"></i> <span>Action</span></th>
+							</tr>
+						</thead>
+						<tbody class="tbodyMenuItemDescInStallB">
+							<tr class="eachListInStallB" id="IDaLaCon">
+								<td class="ItemName">Pomme</td>
+								<td class="ItemQteInShelves">5/50</td>
+								<td class="ItemQteInStock">110</td>
+								<td class="Action">
+									<input class="buttonStyle" type="button" value="Remove" onclick="RemoveFromStall()">
+									<!-- <input class="buttonStyle" type="button" value="Buy" onclick="OpenMenuItemDescInShop()"> -->
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<table class="AisleDescInStallAisleC" style="display: none;">
+						<thead>
+							<tr>
+								<th><i class="fas fa-hamburger"></i> <span>Item</span></th>
+								<th><i class="fas fa-box-open"></i> <span>Quantity in Shelves</span></th>
+								<th><i class="fas fa-box"></i> <span>Quantity in Stock</span></th>
+								<th><i class="fas fa-redo-alt"></i> <span>Action</span></th>
+							</tr>
+						</thead>
+						<tbody class="tbodyMenuItemDescInStallC">
+							<tr class="eachListInStallC" id="IDaLaCon">
+								<td class="ItemName">Poire</td>
+								<td class="ItemQteInShelves">5/50</td>
+								<td class="ItemQteInStock">110</td>
+								<td class="Action">
+									<input class="buttonStyle" type="button" value="Remove" onclick="RemoveFromStall()">
+									<!-- <input class="buttonStyle" type="button" value="Buy" onclick="OpenMenuItemDescInShop()"> -->
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					<table class="AisleDescInStallAisleD" style="display: none;">
+						<thead>
+							<tr>
+								<th><i class="fas fa-hamburger"></i> <span>Item</span></th>
+								<th><i class="fas fa-box-open"></i> <span>Quantity in Shelves</span></th>
+								<th><i class="fas fa-box"></i> <span>Quantity in Stock</span></th>
+								<th><i class="fas fa-redo-alt"></i> <span>Action</span></th>
+							</tr>
+						</thead>
+						<tbody class="tbodyMenuItemDescInStallD">
+							<tr class="eachListInStallD" id="IDaLaCon">
+								<td class="ItemName">Peche</td>
+								<td class="ItemQteInShelves">5/50</td>
+								<td class="ItemQteInStock">110</td>
+								<td class="Action">
+									<input class="buttonStyle" type="button" value="Remove" onclick="RemoveFromStall()">
+									<!-- <input class="buttonStyle" type="button" value="Buy" onclick="OpenMenuItemDescInShop()"> -->
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			
+			<div class="PlanContainer" style="display: none;">
+			<!-- <div class="PlanContainer"> -->
+				<div class="PlanContainerTitle" id="Trad-AisleManag">Aisle Management</div>
+				<div class="PlanSubContainer">
+					<div class="PlanLeft">
+					
+					
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-1"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 1</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-1" onclick="SaveAisle(this)"></i>
+							<!-- <i class="fa-solid fa-floppy-disk" id="Aisle-1" onclick="SaveAisle(this)"></i> -->
+							<i class="fa-solid fa-cart-plus Aisle-1" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-1" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-1">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-1A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-1A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-1A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-1B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-1B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-1B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-1C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-1C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-1C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-1D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-1D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-1D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						   
+						   
+						   
+						   
+						   
+						   
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-2"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 2</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-2" onclick="SaveAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-2" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-2" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-2">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-2A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-2A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-2A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-2B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-2B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-2B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-2C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-2C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-2C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-2D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-2D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-2D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						   
+						   
+						   
+						   
+						   
+						   
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-3"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 3</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-3" onclick="SaveAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-3" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-3" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-3">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-3A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-3A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-3A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-3B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-3B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-3B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-3C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-3C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-3C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-3D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-3D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-3D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						   
+						   
+						   
+						   
+						   
+						   
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-4"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 4</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-4" onclick="SaveAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-4" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-4" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-4">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-4A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-4A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-4A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-4B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-4B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-4B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-4C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-4C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-4C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-4D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-4D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-4D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						   
+						   
+						   
+						   
+						   
+						   
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-5"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 5</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-5" onclick="SaveRegularAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-5" onclick="DefineRegularAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-5" onchange="AisleSizeChange(this)" disabled>
+									<option class="AisleSizeValue" value="none">None Configurable</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-5" disabled>
+									<option class="AisleSizeColor" value="none">None Configurable</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-5A" onchange="shelveSizeChange(this)" disabled> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-5A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-5A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-5B" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-5B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-5B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-5C" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-5C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-5C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-5D" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-5D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-5D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						   
+						   
+						   
+						   
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-6"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 6</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-6" onclick="SaveRegularAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-6" onclick="DefineRegularAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-6" onchange="AisleSizeChange(this)" disabled>
+									<option class="AisleSizeValue" value="none">None Configurable</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-6" disabled>
+									<option class="AisleSizeColor" value="none">None Configurable</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-6A" onchange="shelveSizeChange(this)" disabled> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-6A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-6A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-6B" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-6B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-6B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-6C" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-6C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-6C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-6D" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-6D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-6D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->   
+						   
+						   
+						   
+						   
+						   
+						
+						<!-- AISLE PARTS 
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-7"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 7</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-7" onclick="SaveAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-7" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-7" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-7">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS 
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-7A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-7A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-7A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS 
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-7B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-7B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-7B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS 
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-7C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-7C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-7C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS 
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-7D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-7D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-7D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						   
+						   
+						   
+						   
+						   
+						   
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-8"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 8</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-8" onclick="SaveAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-8" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-8" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-8">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-8A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-8A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-8A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-8B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-8B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-8B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-8C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-8C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-8C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-8D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-8D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-8D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						   
+						   
+						   
+						   
+						   
+						   
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-9"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 9</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-9" onclick="SaveAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-9" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-9" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-9">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-9A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-9A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-9A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-9B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-9B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-9B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-9C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-9C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-9C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-9D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-9D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-9D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-10"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 10</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-10" onclick="SaveAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-10" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-10" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-10">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-10A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-10A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-10A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-10B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-10B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-10B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-10C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-10C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-10C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-10D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-10D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-10D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						   
+						   
+						   
+						   
+						   
+						   
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-11"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 11</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-11" onclick="SaveAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-11" onclick="DefineAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-11" onchange="AisleSizeChange(this)">
+									<option class="AisleSizeValue" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-11">
+									<option class="AisleSizeColor" id="Trad-None" value="none">None</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-11A" onchange="shelveSizeChange(this)"> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-11A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-11A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-11B" onchange="shelveSizeChange(this)">
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-11B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-11B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-11C" onchange="shelveSizeChange(this)">
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-11C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-11C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-11D" onchange="shelveSizeChange(this)">
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "shelveType" id="Aisle-11D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-11D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-12"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 12</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-12" onclick="SaveRegularAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-12" onclick="DefineRegularAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-12" onchange="AisleSizeChange(this)" disabled>
+									<option class="AisleSizeValue" value="none">None Configurable</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-12" disabled>
+									<option class="AisleSizeColor" value="none">None Configurable</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-12A" onchange="shelveSizeChange(this)" disabled> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-12A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-12A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-12B" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-12B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-12B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-12C" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-12C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-12C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-12D" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-12D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-12D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-13"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 13</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-13" onclick="SaveRegularAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-13" onclick="DefineRegularAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-13" onchange="AisleSizeChange(this)" disabled>
+									<option class="AisleSizeValue" value="none">None Configurable</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-13" disabled>
+									<option class="AisleSizeColor" value="none">None Configurable</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-13A" onchange="shelveSizeChange(this)" disabled> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-13A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-13A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-13B" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-13B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-13B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-13C" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-13C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-13C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-13D" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-13D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-13D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-14"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 14</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-14" onclick="SaveRegularAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-14" onclick="DefineRegularAisle(this)"></i>
+							<div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div>
+							
+							<div class="AisleParam">
+								<select class= "AisleSize" id="AisleSize-14" onchange="AisleSizeChange(this)" disabled>
+									<option class="AisleSizeValue" value="none">None Configurable</option>
+									<option class="AisleSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="AisleSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "AisleColor" id="AisleColor-14" disabled>
+									<option class="AisleSizeColor" value="none">None Configurable</option>
+									<option class="AisleSizeColor" id="Trad-Blue" value="blue">Blue</option>
+									<option class="AisleSizeColor" id="Trad-Orange" value="orange">Orange</option>
+								</select>
+							</div>
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id="Trad-ShelveTypeA">Allée A</div> 
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam">
+								<select class= "shelveSize" id="Aisle-14A" onchange="shelveSizeChange(this)" disabled> 
+									<option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option>
+									<option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-14A" onchange="shelveTypeChange(this)">
+									<option class="Shelve1ASizeType" value="none">None</option> 
+									<option class="Shelve1ASizeType" value="food">food</option>
+									<option class="Shelve1ASizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-14A">0</div>
+								
+							</div>
+							
+							
+							<!-- SHELVES B PARTS -->
+							<div class="shelveBTypeName" id="Trad-ShelveTypeB">Allée B</div> 
+							<div class="shelveBParam">
+								<select class= "shelveSize" id="Aisle-14B" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1BSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1BSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1BSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-14B" onchange="shelveTypeChange(this)">
+									<option class="Shelve1BSizeType" value="none">None</option> 
+									<option class="Shelve1BSizeType" value="food">food</option>
+									<option class="Shelve1BSizeType" value="water">water</option>
+								</select>
+								<div class="shelveBStockSizeValue" id="Aisle-14B">0</div>
+							</div>
+							
+							<!-- SHELVES C PARTS -->
+							<div class="shelveCTypeName" id="Trad-ShelveTypeC">Allée C</div> 
+							<div class="shelveCParam">
+								<select class= "shelveSize" id="Aisle-14C" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1CSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1CSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1CSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-14C" onchange="shelveTypeChange(this)">
+									<option class="Shelve1CSizeType" value="none">None</option> 
+									<option class="Shelve1CSizeType" value="food">food</option>
+									<option class="Shelve1CSizeType" value="water">water</option>
+								</select>
+								<div class="shelveCStockSizeValue" id="Aisle-14C">0</div>
+							</div>
+							
+							<!-- SHELVES D PARTS -->
+							<div class="shelveDTypeName" id="Trad-ShelveTypeD">Allée D</div> 
+							<div class="shelveDParam">
+								<select class= "shelveSize" id="Aisle-14D" onchange="shelveSizeChange(this)" disabled>
+									<option class="Shelve1DSizeValue" id="Trad-None" value="none">None</option> 
+									<option class="Shelve1DSizeValue" id="Trad-Large" value="large">Large</option>
+									<option class="Shelve1DSizeValue" id="Trad-Medium" value="medium">Medium</option>
+								</select>
+								<select class= "RegularshelveType" id="Aisle-14D" onchange="shelveTypeChange(this)">
+									<option class="Shelve1DSizeType" value="none">None</option> 
+									<option class="Shelve1DSizeType" value="food">food</option>
+									<option class="Shelve1DSizeType" value="water">water</option>
+								</select>
+								<div class="shelveDStockSizeValue" id="Aisle-14D">0</div>
+							</div>
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-15"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 15</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-15" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-15" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-15X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-15X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-15A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-16"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 16</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-16" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-16" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-16X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-16X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-16A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-17"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 17</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-17" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-17" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-17X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-17X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-17A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-18"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 18</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-18" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-18" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-18X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-18X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-18A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-19"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 19</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-19" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-19" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-19X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-19X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-19A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-20"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 20</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-20" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-20" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-20X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-20X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-20A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-21"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 21</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-21" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-21" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-21X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-21X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-21A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-22"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 22</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-22" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-22" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-22X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-22X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-22A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-23"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 23</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-23" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-23" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-23X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-23X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-23A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-24"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 24</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-24" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-24" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-24X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-24X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-24A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-25"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 25</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-25" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-25" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-25X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-25X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-25A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-26"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 26</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-26" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-26" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-26X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-26X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-26A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-27"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 27</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-27" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-27" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-26X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-27X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-27A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-28"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 28</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-28" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-28" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-26X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-28X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-28A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-29"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 29</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-29" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-29" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-26X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-29X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-29A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-30"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 30</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-30" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-30" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-26X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-30X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-30A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+						
+						<!-- AISLE PARTS -->
+						<div class="AisleCard2" onmouseover="Overlay(this)" onmouseleave="NotOverlay(this)" id="Aisle-31"> 
+							<div class="AisleName" id="Trad-AisleName">Allée 31</div>
+							<i class="fa-solid fa-floppy-disk" id="Aisle-31" onclick="SaveFixedAisle(this)"></i>
+							<i class="fa-solid fa-cart-plus Aisle-31" onclick="DefineFixedAisle(this)"></i>
+							<!-- <div class="AisleParamName" id="Trad-AisleSizeColor">Aisle Size & Color</div> -->
+							
+							
+							<!-- SHELVES A PARTS -->
+							<div class="shelveATexte">
+								<div class="shelveATypeName" id ="Trad-AisleNameNoConf">Allée</div>
+								<div class="shelveAStockSize" id="Trad-StockSize">Stock Max Size</div>
+							</div>
+							
+							<div class="shelveAParam2">
+								<!-- <select class= "shelveSize" id="Aisle-26X" onchange="shelveSizeChange(this)" disabled>  -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-None" value="none">None</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Large" value="large">Large</option> -->
+									<!-- <option class="Shelve1ASizeValue" id="Trad-Medium" value="medium">Medium</option> -->
+								<!-- </select> -->
+								<select class= "shelveType" id="Aisle-31X" onchange="FixedShelveTypeChange(this)">
+									<option class="ShelveSizeType" value="none">None</option> 
+									<option class="ShelveSizeType" value="food">food</option>
+									<option class="ShelveSizeType" value="water">water</option>
+								</select>
+								<div class="shelveAStockSizeValue" id="Aisle-31A">0</div>
+								
+							</div>
+							
+							
+						</div>
+						
+						<!-- END AISLE PARTS -->
+					</div>
+					<div class="PlanRight">
+						<div class="PlanRightImg">
+							<img class ="ImagePlan" src ="./img/Plan.png"/>
+							<img class ="ImageOverlay" src ="./img/overlayAisle/r1.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- </div> -->
+			<div class="TrolleyItemList" style="display:none;">
+			<!-- <div class="TrolleyItemList"> -->
+				<div class="TrolleyItemListTitleBG"> 
+					<div class="TrolleyItemListTitle" id="Trad-ItemInTrolley">Item in Trolley</div>
+				</div>
+				<div class="TrolleyItemListTable"> 
+					<table>
+						<thead>
+							<tr>
+								<th><i class="fas fa-hamburger"></i> <span id="Trad-Item">Item</span></th>
+								<th><i class="fas fa-box-open"></i> <span id="Trad-Quantity">Quantity</span></th>
+								<th><i class="fas fa-dollar-sign"></i> <span id="Trad-Price">Price</span></th>
+							</tr>
+						</thead>
+						
+						<tbody class="tbodyTrolleyListItem">
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="TrolleyItemListKEY"> 
+					<div class="TrolleyItemListKEYLeft"> <img src ="./img/ArrowDown.png"/> </div>
+					<div class="TrolleyItemListKEYCenter"> <div id="Trad-Scroll">Scroll </div></div>
+					<div class="TrolleyItemListKEYRight"> <img src ="./img/ArrowUP.png"/> </div>
+				</div>
+			</div>
+			<div class="BoxItemList" style="display:none;">
+			<!-- <div class="BoxItemList"> -->
+				<div class="BoxItemListTitleBG"> 
+					<div class="BoxItemListTitle" id="Trad-ItemInBox">Item in Box </div>
+				</div>
+				<div class="BoxItemListTable"> 
+					<table>
+						<thead>
+							<tr>
+								<th><i class="fas fa-hamburger"></i> <span id="Trad-Item">Item</span></th>
+								<th><i class="fas fa-box-open"></i> <span id="Trad-Quantity">Quantity</span></th>
+							</tr>
+						</thead>
+						
+						<tbody class="tbodyBoxListItem">
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+							<tr class="BoxListItem" id="IDaLaCon" >
+								<td class="Name">Banane</td>
+								<td class="Quantity">5/50</td>
+								<td class="BuyingPrice">3$</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="BoxItemListKEY"> 
+					<div class="BoxItemListKEYLeft"> <img src ="./img/ArrowDown.png"/> </div>
+					<div class="BoxItemListKEYCenter"> <div id="Trad-Scroll">Scroll </div></div>
+					<div class="BoxItemListKEYRight"> <img src ="./img/ArrowUP.png"/> </div>
+				</div>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+QBCore 
+ox_lib
+ox_target
+oxmysql
+qb-management
+
+ESX
+ox_lib
+ox_target
+oxmysql
+esx_society

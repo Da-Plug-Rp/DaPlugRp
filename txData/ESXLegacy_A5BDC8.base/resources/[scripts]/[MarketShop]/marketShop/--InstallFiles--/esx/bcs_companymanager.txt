@@ -1,0 +1,32 @@
+bcs_companymanager/config/billing.lua
+supermarket = {
+		company_grade = 1,
+		min_grade = 1,
+		cancel_bill = 1,
+		employeecut = 0,
+		deposit = 1,
+		withdraw = 1,
+	},
+
+bcs_companymanager/config/bossmenu.lua
+supermarket = {
+		job_manager = 1,
+		deposit = 1,
+		hire = 1,
+		demote = 1,
+		fire = 1,
+		promote = 1,
+		withdraw = 1,
+		payCompanyBill = 1,
+		access = 1,
+		salary = 10000,
+	},
+
+bcs_companymanager/config/config.lua
+MaxRanks = { 
+        ['police'] = 10,
+        ['ambulance'] = 8,
+        ['mechanic'] = 6,
+        ['mafia'] = 10,
+        ['supermarket'] = 1 -- <=====
+    },

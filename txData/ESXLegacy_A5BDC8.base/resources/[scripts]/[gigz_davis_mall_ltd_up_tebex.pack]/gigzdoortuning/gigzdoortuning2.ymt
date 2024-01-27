@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDoorTuningFile>
+  <NamedTuningArray>
+    <Item>
+      <Name>GigzDefaultStandardLatchShut</Name>
+      <Tuning>
+        <AutoOpenVolumeOffset x="0.000000" y="0.000000" z="0.000000" />
+        <Flags>DelayDoorClosingForPlayer</Flags>
+        <AutoOpenRadiusModifier value="1.000000" />
+        <AutoOpenRate value="0.500000" />
+        <AutoOpenCosineAngleBetweenThreshold value="-1.000000" />
+        <AutoOpenCloseRateTaper value="false" />
+        <UseAutoOpenTriggerBox value="false" />
+        <CustomTriggerBox value="false" />
+        <TriggerBoxMinMax>
+          <min x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+          <max x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+        </TriggerBoxMinMax>
+        <BreakableByVehicle value="false" />
+        <BreakingImpulse value="0.000000" />
+        <ShouldLatchShut value="true" />
+        <MassMultiplier value="1.000000" />
+        <WeaponImpulseMultiplier value="1.000000" />
+        <RotationLimitAngle value="0.000000" />
+        <TorqueAngularVelocityLimit value="5.000000" />
+        <StdDoorRotDir>StdDoorOpenBothDir</StdDoorRotDir>
+      </Tuning>
+    </Item>
+    <Item>
+      <Name>GigzSlidingHorizontalExtendedRange</Name>
+      <Tuning>
+        <AutoOpenVolumeOffset x="0.000000" y="0.000000" z="0.000000" />
+        <Flags />
+        <AutoOpenRadiusModifier value="4.800000" />
+        <AutoOpenRate value="4.200000" />
+        <AutoOpenCosineAngleBetweenThreshold value="-1.000000" />
+        <AutoOpenCloseRateTaper value="false" />
+        <UseAutoOpenTriggerBox value="false" />
+        <CustomTriggerBox value="false" />
+        <TriggerBoxMinMax>
+          <min x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+          <max x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+        </TriggerBoxMinMax>
+        <BreakableByVehicle value="false" />
+        <BreakingImpulse value="0.000000" />
+        <ShouldLatchShut value="false" />
+        <MassMultiplier value="1.000000" />
+        <WeaponImpulseMultiplier value="1.000000" />
+        <RotationLimitAngle value="0.000000" />
+        <TorqueAngularVelocityLimit value="5.000000" />
+        <StdDoorRotDir>StdDoorOpenBothDir</StdDoorRotDir>
+      </Tuning>
+    </Item>
+    <Item>
+      <Name>Gigzcustomvertical</Name>
+      <Tuning>
+        <AutoOpenVolumeOffset x="0.000000" y="0.000000" z="0.000000" />
+        <Flags />
+        <AutoOpenRadiusModifier value="0.800000" />
+        <AutoOpenRate value="8.000000" />
+        <AutoOpenCosineAngleBetweenThreshold value="-1.000000" />
+        <AutoOpenCloseRateTaper value="true" />
+        <UseAutoOpenTriggerBox value="true" />
+        <CustomTriggerBox value="false" />
+        <TriggerBoxMinMax>
+          <min x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+          <max x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+        </TriggerBoxMinMax>
+        <BreakableByVehicle value="false" />
+        <BreakingImpulse value="0.000000" />
+        <ShouldLatchShut value="false" />
+        <MassMultiplier value="1.000000" />
+        <WeaponImpulseMultiplier value="1.000000" />
+        <RotationLimitAngle value="0.000000" />
+        <TorqueAngularVelocityLimit value="5.000000" />
+        <StdDoorRotDir>StdDoorOpenBothDir</StdDoorRotDir>
+      </Tuning>
+    </Item>
+    <Item>
+      <Name>Gigzcustomverticalbig</Name>
+      <Tuning>
+        <AutoOpenVolumeOffset x="0.000000" y="0.000000" z="0.000000" />
+        <Flags />
+        <AutoOpenRadiusModifier value="1.000000" />
+        <AutoOpenRate value="2.000000" />
+        <AutoOpenCosineAngleBetweenThreshold value="-1.000000" />
+        <AutoOpenCloseRateTaper value="true" />
+        <UseAutoOpenTriggerBox value="true" />
+        <CustomTriggerBox value="false" />
+        <TriggerBoxMinMax>
+          <min x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+          <max x="0.000000" y="0.000000" z="0.000000" w="0.000000" />
+        </TriggerBoxMinMax>
+        <BreakableByVehicle value="false" />
+        <BreakingImpulse value="0.000000" />
+        <ShouldLatchShut value="false" />
+        <MassMultiplier value="1.000000" />
+        <WeaponImpulseMultiplier value="1.000000" />
+        <RotationLimitAngle value="0.000000" />
+        <TorqueAngularVelocityLimit value="5.000000" />
+        <StdDoorRotDir>StdDoorOpenBothDir</StdDoorRotDir>
+      </Tuning>
+    </Item>
+  </NamedTuningArray>
+  <ModelToTuneMapping>
+    <Item>
+      <ModelName>gigz_mall_doorsl_r</ModelName>
+      <TuningName>GigzSlidingHorizontalExtendedRange</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_mall_doorsl_l</ModelName>
+      <TuningName>GigzSlidingHorizontalExtendedRange</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_big_door_01</ModelName>
+      <TuningName>Gigzcustomvertical</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_big_door_ext_02</ModelName>
+      <TuningName>Gigzcustomvertical</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_big_intdoor_002</ModelName>
+      <TuningName>Gigzcustomvertical</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_warehouse_rolldoor_01</ModelName>
+      <TuningName>Gigzcustomvertical</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_warehouse_rolldoor_02</ModelName>
+      <TuningName>Gigzcustomverticalbig</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_storage_ext_secdoor_01</ModelName>
+      <TuningName>GigzDefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_storage_ext_secdoor_002</ModelName>
+      <TuningName>GigzDefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_storage_int_door01</ModelName>
+      <TuningName>GigzDefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_ltd_door_ext</ModelName>
+      <TuningName>GigzDefaultStandardLatchShut</TuningName>
+    </Item>
+    <Item>
+      <ModelName>gigz_ltd_door01</ModelName>
+      <TuningName>GigzDefaultStandardLatchShut</TuningName>
+    </Item>
+  </ModelToTuneMapping>
+</CDoorTuningFile>

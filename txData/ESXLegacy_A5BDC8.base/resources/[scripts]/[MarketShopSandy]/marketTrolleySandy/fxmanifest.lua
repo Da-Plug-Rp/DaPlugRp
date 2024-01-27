@@ -1,0 +1,11 @@
+fx_version 'cerulean'
+game 'gta5'
+lua54 'yes'
+this_is_a_map 'yes'
+creator 'Patatichette for PataMods'
+
+data_file 'DLC_ITYP_REQUEST' 'stream/pata_shopbag.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/pata_shopbasket.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/pata_trolleySandy.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/pata_paperbag.ytyp'
+dependency '/assetpacks'
