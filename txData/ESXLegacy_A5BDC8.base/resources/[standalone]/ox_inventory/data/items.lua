@@ -19833,4 +19833,11 @@ client = {
 		close = true,
 	},
 
+	["roadpods"] = {
+		label = "roadpods",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
 }
