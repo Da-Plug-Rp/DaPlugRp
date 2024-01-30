@@ -44,7 +44,8 @@
                 flex-direction: column;
                 gap: 10px;
                 overflow-y: auto;
-                padding-right: 5px;
+                padding: 1vw;
+                border-radius: 0.5vw;
             }
 
             .center {
@@ -70,11 +71,11 @@
                 grid-template-columns: 30px calc(100% - 30px);
                 padding: 15px 10px;
                 border-radius: 5px;
-                background: var(--item-main);
+                border: 0.1vw solid transparent;
             }
 
             .item:hover {
-                background: var(--item-hover);
+                border-color: transparent;
             }
 
             .item > i {
@@ -107,21 +108,19 @@
             input {
                 position: relative;
                 width: auto;
-                padding: 5px;
-                margin: 0;
-                border: none;
-                border: none;
-                background: transparent;
+                padding: 10px;
+                margin: 0; outline: none;
+                border: 0.1vw solid transparent;
             }
 
             .unselectable {
-                background: var(--item-unselectable);
+                border: 0.1vw solid transparent;
                 pointer-events: none;
             }
 
             .disabled {
                 pointer-events: none;
-                background: var(--item-disabled);
+                border: 0.1vw solid transparent;
             }
 
             * {
@@ -240,7 +239,7 @@
                 return e;
             };
 
-            function Open(eles, position = "right") {
+            function Open(eles, position = "right", config) {
                 container.innerHTML = "";
                 container.className = position;
 
@@ -354,11 +353,19 @@
                     }
                 }
 
+                $('#container').css('background', config.Style.background);
+                $('<style>.item { background: '+config.Style.secondary+'; border-color: '+config.Style.borderSecondary+'; }  .item:hover { background: '+config.Style.primary+'; border-color: '+config.Style.borderPrimary+'; }</style>').appendTo('head');
+                $('input').css({ 'background': config.Style.secondary, 'border-color': config.Style.borderSecondary });
+                $('.unselectable').css({ 'background': config.Style.unselectable, 'border-color': config.Style.unselectableBorder });
+                $('.disabled').css({ 'background': config.Style.unselectable, 'border-color': config.Style.unselectableBorder });
+
                 document.body.style.display = "block";
+
+                $('body').hide().fadeIn(500);
             }
 
             function Closed() {
-                document.body.style.display = "none";
+                $('body').fadeOut(500);
             }
 
             function Close() {

@@ -1,11 +1,11 @@
 (function () {
     let MenuTpl =
         '<div id="menu_{{_namespace}}_{{_name}}" class="dialog {{#isBig}}big{{/isBig}}">' +
-        '<div class="head"><span>{{title}}</span></div>' +
+        '<div class="head"><span>{{title}}</span><div class="line"></div></div>' +
         '{{#isDefault}}<input type="text" name="value" id="inputText"/>{{/isDefault}}' +
         '{{#isBig}}<textarea name="value"/>{{/isBig}}' +
-        '<button type="button" name="submit">Submit</button>' +
-        '<button type="button" name="cancel">Cancel</button>' +
+        '<div class="row"><button type="button" name="submit"><i class="fa-solid fa-circle-check"></i><span>Confirm</span></button>' +
+        '<button type="button" name="cancel"><i class="fa-solid fa-circle-xmark"></i><span>Cancel</span></button></div>' +
         "</div>" +
         "</div>";
     window.ESX_MENU = {};
@@ -13,6 +13,8 @@
     ESX_MENU.opened = {};
     ESX_MENU.focus = [];
     ESX_MENU.pos = {};
+
+    let Config = null;
 
     ESX_MENU.open = function (namespace, name, data) {
         if (typeof ESX_MENU.opened[namespace] === "undefined") {
@@ -139,8 +141,15 @@
             }
         }
 
-        $(menuContainer).show();
+        $('.dialog').css('background', Config.Style.background);
+        $('input').css({ 'background': Config.Style.secondary, 'border-color': Config.Style.borderSecondary });
+        $('.dialog > .row > button').css({ 'background': Config.Style.secondary, 'border-color': Config.Style.borderSecondary });
+        $('.dialog > .row > button:first-child').css({ 'background': Config.Style.primary, 'border-color': Config.Style.borderPrimary });
+        $('.line').css('background', `linear-gradient(to right, ${Config.Style.primary}, transparent)`);
+
+        $(menuContainer).fadeIn(500);
         $("#inputText").focus();
+
     };
 
     ESX_MENU.submit = function (namespace, name, data) {
@@ -162,12 +171,16 @@
     window.onData = (data) => {
         switch (data.action) {
             case "openMenu": {
+                Config = data.config;
                 ESX_MENU.open(data.namespace, data.name, data.data);
                 break;
             }
 
             case "closeMenu": {
-                ESX_MENU.close(data.namespace, data.name);
+                $($("#menus")[0]).fadeOut(500);
+                setTimeout(() => {
+                    ESX_MENU.close(data.namespace, data.name);
+                }, 500);
                 break;
             }
         }

@@ -11,7 +11,8 @@ local function openMenu(namespace, name, data)
 		action = 'openMenu',
 		namespace = namespace,
 		name = name,
-		data = data
+		data = data,
+		config = Config
 	})
 
 	local timeoutId = ESX.SetTimeout(200, function()

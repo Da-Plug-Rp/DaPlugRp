@@ -9,7 +9,7 @@ end
 Config.OpenWardrobe = function()
      TriggerEvent('illenium-appearance:client:openOutfitMenu') -- for illenium-appearance
     --TriggerEvent('qb-clothing:client:openOutfitMenu') -- for qb-clothing
-    TriggerEvent('ox_appearance:wardrobe') -- for ox_appearance
+    --TriggerEvent('ox_appearance:wardrobe') -- for ox_appearance
     -- TriggerEvent('ex_clothingstore:wardrobe') -- for bp_clothing v3
     -- TriggerEvent("rcore_clothes:openOutfits") -- rcore clothes
 end

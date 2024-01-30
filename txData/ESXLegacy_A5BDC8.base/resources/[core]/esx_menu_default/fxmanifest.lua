@@ -7,8 +7,10 @@ version '1.10.2'
 
 client_scripts { '@es_extended/imports.lua', 'client/main.lua' }
 
+shared_scripts { 'shared/*' }
+
 ui_page { 'html/ui.html' }
 
-files { 'html/ui.html', 'html/css/app.css', 'html/js/mustache.min.js', 'html/js/app.js' }
+files { 'html/ui.html', 'html/img/*', 'html/css/app.css', 'html/js/mustache.min.js', 'html/js/app.js' }
 
 dependencies { 'es_extended' }

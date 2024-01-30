@@ -15,6 +15,7 @@ description ''
 ui_page 'web/index.html'
 
 shared_scripts {
+	'shared/*',
 	'@ox_lib/init.lua',
 }
 

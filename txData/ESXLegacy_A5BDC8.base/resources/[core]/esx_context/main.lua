@@ -23,7 +23,7 @@ function Open(position, eles, onSelect, onClose, canClose)
 
 	LocalPlayer.state:set("context:active", true)
 
-	Post("Open", eles, position)
+	Post("Open", eles, position, Config)
 end
 
 function Closed()
@@ -69,7 +69,7 @@ exports("Refresh", function(eles, position)
 	activeMenu.eles = eles or activeMenu.eles
 	activeMenu.position = position or activeMenu.position
 
-	Post("Open", activeMenu.eles, activeMenu.position)
+	Post("Open", activeMenu.eles, activeMenu.position, Config)
 end)
 
 -- NUI Callbacks

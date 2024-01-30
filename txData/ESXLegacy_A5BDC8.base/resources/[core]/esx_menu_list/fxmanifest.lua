@@ -5,6 +5,7 @@ description 'ESX Menu List'
 lua54 'yes'
 version '1.10.2'
 
+shared_scripts { 'shared/*' }
 
 client_scripts {
 	'@es_extended/imports.lua',

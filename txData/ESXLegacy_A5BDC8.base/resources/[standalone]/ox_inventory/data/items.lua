@@ -6601,27 +6601,10 @@ return {
 ['WEAPON_AKS74'] 		 	= { label = 'AK-S74', 		    weight = 1000,	durability = 0.0,	ammoname = 'ammo-rifle',}, 
 ['WEAPON_GLOCK18C'] 	= { label = 'Glock 18C', 	    weight = 1000,	durability = 0.0,	ammoname = 'ammo-45',},    
 ['WEAPON_GLOCK22'] 			  = { label = 'Glock 22',         weight = 1000,	durability = 0.0,	ammoname = 'ammo-45',},    
-['WEAPON_MP5'] 				 	= { label = 'H&K MP5', 		    weight = 1000,	durability = 0.0,	ammoname = 'ammo-9',},     
-['WEAPON_COLBATON'] 			= { label = 'PD Baton',         weight = 1000,	durability = 0.0},
+['WEAPON_MP5'] 				 	= { label = 'H&K MP5', 		    weight = 1000,	durability = 0.0,	ammoname = 'ammo-9',},  
 
---CUSTOM knifes
-['WEAPON_PERFORATOR']            = {label = 'The Perforator',    weight = 500,   durability = 0.1,},
-['WEAPON_BAYONETKNIFE']          = {label = 'Bayonet Knife',     weight = 300,durability = 0.1,},
-['WEAPON_BLUEBFKNIFE']           = {label = 'Blue Steel Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_BFKNIFE']               = {label = 'Vanilla Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_CHBFKNIFE']             = {label = 'Case Hardened Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_CRIMSONBFKNIFE']        = {label = 'Crimson Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_FADEBFKNIFE']           = {label = 'Fade Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_FLIPKNIFE']             = {label = 'Flip Knife',        weight = 300,durability = 0.1,},
-['WEAPON_FORESTBFKNIFE']         = {label = 'Forest Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_GUTKNIFE']              = {label = 'Gut Knife',         weight = 300,durability = 0.1,},
-['WEAPON_HUNTSMANKNIFE']         = {label = 'Huntsman Knife',    weight = 300,durability = 0.1,},
-['WEAPON_KARAMBITKNIFE']         = {label = 'Karamabit Knife',   weight = 300,durability = 0.1,},
-['WEAPON_SAFARIBFKNIFE']         = {label = 'Safari Mesh Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_SCORCHEDBFKNIFE']       = {label = 'Scorched Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_SLAUGHTERBFKNIFE']      = {label = 'Slaughter Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_STAINEDRBFKNIFE']       = {label = 'Stained Butterfly Knife',weight = 300,durability = 0.1,},
-['WEAPON_URBANRBFKNIFE']         = {label = 'Urban Masked Butterfly Knife',weight = 300,durability = 0.1,},
+['WEAPON_VALFM'] 		 	= { label = 'AS-Val', 		    weight = 1000,	durability = 0.0,	ammoname = 'ammo-rifle',},
+
     ----------------
     -----Pearl------
     ----------------

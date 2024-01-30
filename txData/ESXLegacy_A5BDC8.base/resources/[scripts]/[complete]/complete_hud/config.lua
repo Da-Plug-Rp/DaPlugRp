@@ -3,7 +3,6 @@ Config = {}
 
 -- === GENERAL ===
 Config.PauseMenu           = false
-Config.MoneyType           = 'bank'
 Config.MoneyCurrency       = '$'
 Config.CreateAnnouncement  = 'create-announcement' -- command name (to use this you need to have the 'command.commandName' ACL object allowed to one of yours identifiers)
 Config.HideHudCommand      = 'hud-hide' -- command name
@@ -12,9 +11,16 @@ Config.TimeZonesDifference = 1 -- in hours, add or remove hours to the UTC time
 Config.BdamageOnlyHurted   = true -- if true, the body damage will only be displayed when the player is hurted
 
 -- === HUD CUSTOMIZATION ===
-Config.ServerDisplayText  = 'discord.gg/daplugrp' -- text to display on the left of the server image
-Config.LogoImgName        = 'logo.png' -- make sure to add the image in ./html/img
-Config.LastValueIcon      = 'fa-brain'
+Config.ServerDisplayText   = 'DaPlugRoleplay' -- text to display on the left of the server image
+Config.LogoImgName         = 'logo.png' -- make sure to add the image in ./html/img
+Config.LastValueIcon       = 'fa-brain'
+                           -- ESX: money, bank | QBCore: cash, bank
+Config.MoneyType           = 'bank'
+Config.MoneyIcon           = 'fa-building-columns'
+Config.ShowSecondMoneyType = true -- if true, the second money type will be displayed
+Config.SecondMoneyType     = 'money'
+Config.SecondMoneyIcon     = 'fa-money-bill'
+Config.ShowJob             = true -- if true, the job will be displayed
 
 -- === RADIO ===
 Config.RadioUsing         = 'pma-voice' -- name of the voip using: mumble-voip, pma-voice, tokovoip_script 
@@ -25,9 +31,11 @@ Config.OpenKeyMenuCommand    = "key"
 Config.KeyMappingDescription = "Menu to see the server keys"
 Config.KeyMenu = {
     ['T']  = 'Talk',
-    ['f1']  = 'phone',
+    ['M']  = 'Telephone',
     ['K']  = 'Carplay',
     ['F']  = 'Inventory',
+    ['U']  = 'Radio',
+    ['-']  = 'Radial menu',
     ['F2'] = 'License menu',
     ['F3'] = 'Police menu'
 } -- Max recommended keys to add is 10
@@ -37,7 +45,8 @@ Config.Stress             = false
 Config.NoStressJobs       = {
     ['ambulance'] = true
 }
-Config.StressOnVehicle    = false
+Config.StressOnVehicle    = true
+Config.StressSpeed        = 100 -- km speed to increase the stress when driving
 Config.TimeIncreaseDriving  = 2000 -- time to wait after the stress increase when driving
 Config.TimeIncreaseShooting = 2000 -- time to wait after the stress increase when driving
 Config.IncreaseChance     = 0.2 -- 0.2 = 20% chance to increase the stress every shot or drive
@@ -46,16 +55,20 @@ Config.IncreaseMaxValue   = 3 -- max value to increase the stress, random value 
 Config.DecreaseMinValue   = 1 -- max value to decrease the stress, random value between this value and max value
 Config.DecreaseMaxValue   = 3 -- max value to decrease the stress, random value between this value and min value
 Config.DecreaseStressTime = 10000 -- in ms, every tick will decrease the stress by random value between 1 and 3 
+Config.ItemsToDecrease    = {
+    ['coffee'] = 10,
+    ['water'] = 5
+}
 
 -- === SETTINGS ===
 Config.DefaultSettings = {
     alwaysOnMap = true,
     timeAboveMap = true,
     streetAboveMap = false,
-    showBodyHealth = false,
+    showBodyHealth = true,
     showRadioPlayers = true,
     showMoney = false,   
-    showStreet = true,
+    showStreet = false,
     showCompass = true,
     showLogoLink = true,
     mainColor = '#0099e1',

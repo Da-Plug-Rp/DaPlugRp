@@ -8,7 +8,8 @@ local function openMenu(namespace, name, data)
         action = 'openMenu',
         namespace = namespace,
         name = name,
-        data = data
+        data = data,
+        config = Config
     })
 end
 
@@ -45,6 +46,7 @@ end)
 
 RegisterNUICallback('menu_cancel', function(data, cb)
     local menu = ESX.UI.Menu.GetOpened(MenuType, data._namespace, data._name)
+    print(menu)
 
     if menu.cancel ~= nil then
         menu.cancel(data, menu)

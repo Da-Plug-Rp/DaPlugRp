@@ -700,6 +700,74 @@ return {
 			weight = 600,
 			throwable = true,
 		},
+
+		['WEAPON_VALFM'] = {
+			label = 'AS-Val',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_DEAGLE'] = {
+			label = 'Deset Eagle',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_GLOCK19GEN4'] = {
+			label = 'Glock 19 Gen 4',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_GLOCK20'] = {
+			label = 'WEAPON_GLOCK20',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_M6IC'] = {
+			label = 'LWRC M6IC',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_FM1_M16A4'] = {
+			label = 'M16A4',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_FM1_M16A4'] = {
+			label = 'M16A4',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_MK47FM'] = {
+			label = 'Mk47 Mutant',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_TOZ'] = {
+			label = 'Toz',
+			weight = 600,
+			throwable = true,
+		},
+
+		['compactsmg'] = {
+			label = 'Smg',
+			weight = 600,
+			throwable = true,
+		},
+
+		['WEAPON_SCARSC'] = {
+			label = 'Scar SC',
+			weight = 600,
+			throwable = true,
+		},
+        
+		
 	},
 
 	Components = {

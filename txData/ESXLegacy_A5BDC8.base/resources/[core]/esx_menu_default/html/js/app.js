@@ -1,7 +1,10 @@
 (function () {
+
+    let Config = null;
+
     let MenuTpl =
         '<div id="menu_{{_namespace}}_{{_name}}" class="menu{{#align}} align-{{align}}{{/align}}">' +
-        '<div class="head"><span>{{{title}}}</span></div>' +
+        '<div class="head"><span>{{{title}}}</span><div class="line"></div></div>' +
         '<div class="menu-items">' +
         "{{#elements}}" +
         '<div class="menu-item {{#selected}}selected{{/selected}}">' +
@@ -61,7 +64,7 @@
             name: name,
         });
 
-        ESX_MENU.render();
+        ESX_MENU.render(true);
         $("#menu_" + namespace + "_" + name)
             .find(".menu-item.selected")[0]
             .scrollIntoView();
@@ -77,10 +80,17 @@
             }
         }
 
-        ESX_MENU.render();
+        if (ESX_MENU.focus.length == 0) {
+            $(document.getElementById("menus")).fadeOut(500);
+            setTimeout(() => {
+                ESX_MENU.render();
+            }, 500);
+        } else {
+            ESX_MENU.render();
+        }
     };
 
-    ESX_MENU.render = function () {
+    ESX_MENU.render = function (fade) {
         let menuContainer = document.getElementById("menus");
         let focused = ESX_MENU.getFocused();
         menuContainer.innerHTML = "";
@@ -124,7 +134,16 @@
             $("#menu_" + focused.namespace + "_" + focused.name).show();
         }
 
-        $(menuContainer).show();
+        $('.menu').css('background', Config.Style.background);
+        $('.menu-item').css({ 'background': Config.Style.secondary, 'border-color': Config.Style.borderSecondary });
+        $('.menu-item.selected').css({ 'background': Config.Style.primary, 'border-color': Config.Style.borderPrimary });
+        $('.line').css('background', `linear-gradient(to right, ${Config.Style.primary}, transparent)`);
+
+        if (fade) {
+            $(menuContainer).fadeIn(500);
+        } else {
+            $(menuContainer).show();
+        }
     };
 
     ESX_MENU.submit = function (namespace, name, data) {
@@ -168,6 +187,7 @@
     window.onData = (data) => {
         switch (data.action) {
             case "openMenu": {
+                Config = data.config;
                 ESX_MENU.open(data.namespace, data.name, data.data);
                 break;
             }

@@ -43,12 +43,12 @@ const Config = {
     },
     USERs: [
         {
-            avatar: "https://cdn.aaecc.store/avatars/AAECC.jpg",
+            avatar: "https://media.discordapp.net/attachments/1117655949189070881/1147728057877151814/ezgif.com-video-to-gif.gif?ex=65c8388c&is=65b5c38c&hm=7b81803d606d89d536de1f70a666bc5ec2f0cfd03a9cd16100e25f4545a6e371&",
             role: "Owner",
             name: "KINGGOCRAZII"
         },
         {
-            avatar: "https://cdn.aaecc.store/avatars/AAECC.jpg",
+            avatar: "https://cdn.discordapp.com/attachments/1117655949189070881/1201429546017230858/Unknown_Development_logo.png?ex=65c9c975&is=65b75475&hm=0f2af63d1f98865c13b8350b858fca47312f2b0cdf0ec7b00eab87eccc262394&",
             role: "Co-owner",
             name: "Unknown Developement"
         },

@@ -12,7 +12,7 @@ function state.setActive(value)
     isActive = value
 
     if value then
-        SendNuiMessage('{"event": "visible", "state": true}')
+        SendNuiMessage(json.encode({ event = 'visible', state = true, config = Config }))
     end
 end
 

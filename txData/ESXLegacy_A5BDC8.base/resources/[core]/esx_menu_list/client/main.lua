@@ -9,7 +9,8 @@ CreateThread(function()
 			action    = 'openMenu',
 			namespace = namespace,
 			name      = name,
-			data      = data
+			data      = data,
+			config = Config
 		})
 		SetTimeout(200, function()
 			SetNuiFocus(true, true)

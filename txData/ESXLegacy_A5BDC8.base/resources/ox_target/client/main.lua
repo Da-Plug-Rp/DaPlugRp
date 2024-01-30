@@ -343,7 +343,7 @@ local function startTargeting()
     end
 
     state.setNuiFocus(false)
-    SendNuiMessage('{"event": "visible", "state": false}')
+    SendNuiMessage(json.encode({ event = 'visible', state = false, config = Config }))
     table.wipe(currentTarget)
     table.wipe(options)
 

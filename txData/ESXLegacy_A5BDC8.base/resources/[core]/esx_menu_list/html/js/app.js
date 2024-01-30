@@ -22,6 +22,8 @@
     ESX_MENU.focus = [];
     ESX_MENU.data = {};
 
+    let Config = null;
+
     ESX_MENU.open = function (namespace, name, data) {
         if (typeof ESX_MENU.opened[namespace] === "undefined") {
             ESX_MENU.opened[namespace] = {};
@@ -131,7 +133,14 @@
             $("#menu_" + focused.namespace + "_" + focused.name).show();
         }
 
-        $(menuContainer).show();
+        $('.menu').css('background', Config.Style.background);
+        $('thead').css({ 'background': Config.Style.secondary });
+        $('.menu tbody tr:nth-child(even)').css({ 'background': Config.Style.secondary });
+        $('.menu tbody tr:nth-child(odd)').css({ 'background': Config.Style.secondary });
+        $('button').css({ 'background': Config.Style.secondary, 'border-color': Config.Style.borderSecondary });
+        $('button:nth-child(odd)').css({ 'background': Config.Style.primary, 'border-color': Config.Style.borderPrimary });
+
+        $(menuContainer).fadeIn(500);
     };
 
     ESX_MENU.submit = function (namespace, name, data) {
@@ -163,12 +172,16 @@
     window.onData = (data) => {
         switch (data.action) {
             case "openMenu": {
+                Config = data.config;
                 ESX_MENU.open(data.namespace, data.name, data.data);
                 break;
             }
 
             case "closeMenu": {
-                ESX_MENU.close(data.namespace, data.name);
+                $(document.getElementById("menus")).fadeOut(500);
+                setTimeout(() => {
+                    ESX_MENU.close(data.namespace, data.name);
+                }, 500);
                 break;
             }
         }
