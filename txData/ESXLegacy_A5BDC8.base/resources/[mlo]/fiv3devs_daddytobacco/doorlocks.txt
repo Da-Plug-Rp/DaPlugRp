@@ -1,0 +1,63 @@
+Thank you for purchasing our first map, the Daddy Tobacco farm!
+
+If you're using a farming script, you might want to remove the plants prop on the farm. To do that, you'll simply need to remove prop: "prop_tabaccopianta.ydr" from the stream folder.
+
+Doorlocks:
+
+Outside gates:
+
+- prop_daddygate - 0x451F4EF1 - X:-25.56233 Y:2875.418 Z:59.19504
+
+- prop_daddygate - 0x451F4EF1 - X:-18.38101 Y:2888.667 Z:59.19504
+
+Main doors:
+
+- v_ilev_ph_door002 - 0x13196BFD - X:-37.34109 Y:2888.577 Z:60.2455
+
+- v_ilev_ph_door002 - 0x13196BFD - X:-36.10101 Y:2890.862 Z:60.2455
+
+Rear garage door:
+
+- daddy_garagedoor - 0xB42A6AA1 - X:-54.1508 Y:2917.398 Z:60.51987
+
+Laboratory:
+
+- ch_prop_casino_door_01d - 0x17E6D59F - X:-47.42923 Y:2904.917 Z:60.23989
+
+- ch_prop_casino_door_01d - 0x17E6D59F - X:-46.1879 Y:2907.203 Z:60.23989
+
+Changing room (from the hall):
+
+- ch_prop_casino_door_01d - 0x17E6D59F - X:-55.49014 Y:2882.45 Z:60.24606
+
+Stairs room (from the hall):
+
+- xm_prop_x17_l_door_frame_01 - 0x3417DD44 - X:-56.77655 Y:2887.898 Z:60.24482
+
+Changing room (from the stairs room):
+
+- ch_prop_casino_door_01d - 0x17E6D59F - X:-61.00808 Y:2885.458 Z:60.24778
+
+Recreation room (first floor):
+
+- xm_prop_x17_l_door_frame_01 - 0x3417DD44 - X:-69.13457 Y:2901.488 Z:63.35662
+
+Terrace (from recreation room):
+
+- xm_prop_x17_l_door_frame_01 - 0x3417DD44 - X:-49.1657 Y:2902.04 Z:63.3614
+
+- xm_prop_x17_l_door_frame_01 - 0x3417DD44 - X:-47.92467 Y:2904.325 Z:63.3614
+
+Office:
+
+- ex_p_mp_door_office_door01 - 0x61B712F2 - X:-65.55022 Y:2912.141 Z:63.35445
+
+Secret door 1:
+
+- portasegretadaddy - 0x62A67E33 - X:-72.23843 Y:2903.168 Z:63.35953
+
+Secret door 2:
+
+- portasegretatubi - 0x65EE8A3F - X:-80.70187 Y:2907.756 Z:60.24945
+
+

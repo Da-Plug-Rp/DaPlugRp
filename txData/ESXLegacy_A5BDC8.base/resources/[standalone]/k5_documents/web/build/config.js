@@ -20,6 +20,11 @@ const AVAILABLE_JOBS = [
     templateGrades: [4],
     logo: '/web/build/mechaniclogo.jpg',
   },
+  {
+    job: 'ammunition',
+    templateGrades: [1],
+    logo: 'https://forum.cfx.re/uploads/default/original/4X/9/6/a/96ae205da671e791b9c9930cc18f63144ea92dce.jpeg',
+  },
 ]
 
 // These templates are visible to all players. If you don't want

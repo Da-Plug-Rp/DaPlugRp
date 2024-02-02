@@ -133,6 +133,28 @@ return {
 		}
 	},
 
+	BackpackShop = {
+		name = 'Backpack Shop',
+		blip = {
+			id = 381, colour = 3, scale = 1.0
+		}, inventory = {
+			{ name = 'backpack1', price = 15000 },
+			{ name = 'backpack2', price = 30000 },
+			{ name = 'backpack3', price = 50000 },
+			{ name = 'backpack4', price = 100000 },
+			{ name = 'backpack5', price = 1000 },
+			{ name = 'backpack6', price = 1000 },
+			{ name = 'backpack7', price = 1000 },
+
+		}, locations = {
+			vec3(398.2151, 97.0851, 101.4882),
+
+			
+		}, targets = {
+
+		}
+	},
+
 	Farming = {
 		name = 'Farming Supply',
 		blip = {
@@ -180,92 +202,6 @@ return {
 			vec3(303.7350, -600.5740, 43.2841),
 		}, targets = {
 
-		}
-	},
-
-	Ammunation = {
-		name = 'Ammunation',
-		blip = {
-			id = 567, colour = 81, scale = 0.7
-		}, inventory = {
-			{ name = 'WEAPON_CERAMICPISTOL', price = 1000, 
-			metadata = { registered = true }, license = 'weapon' },
-			{ name = 'WEAPON_PISTOLXM3', price = 1000, 
-			metadata = { registered = true }, license = 'weapon' },
-			{ name = 'WEAPON_PISTOL', price = 1000, 
-			metadata = { registered = true }, license = 'weapon' },
-			{ name = 'WEAPON_KNIFE', price = 200 },
-			{ name = 'WEAPON_BAT', price = 100 },
-
-			{ name = 'ammo-9', price = 6 },
-			
-		}, locations = {
-			vec3(14.3587, -1104.4902, 29.1093),
-			vec3(813.623, -2155.137, 28.619),
-			vec3(841.186, -1028.662, 27.194),
-			vec3(247.151, -51.427, 68.941),         
-			vec3(-659.184, -939.488, 20.829),
-			vec3(-3167.201, 1087.492, 19.838),
-			vec3(-326.272, 6081.345, 30.454),
-			vec3(1697.47, 3757.832, 33.705),
-			vec3(-1112.706, 2697.395, 17.554),
-			
-		}, targets = {
-			{
-                ped = 'u_m_y_gunvend_01',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(18.577, -1108.187, 28.797),
-                heading = 161.055,
-            },
-			{
-                ped = 'cs_russiandrunk',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(813.623, -2155.137, 28.619),
-                heading =  1.295,
-            },
-			{
-                ped = 'cs_old_man1a',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(841.186, -1028.662, 27.194),
-                heading =  268.666,
-            },
-			{
-                ped = 'a_m_y_busicas_01',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(247.151, -51.427, 68.941),
-                heading =   336.691,
-            },
-			{
-                ped = 'a_m_o_ktown_01',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(-659.184, -939.488, 20.829),
-                heading = 93.863,
-            },
-			{
-                ped = 'a_m_y_beachvesp_01',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(-3167.201, 1086.952, 19.838),
-                heading = 154.013,
-            },
-			{
-                ped = 'a_m_y_hasjew_01',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(-326.272, 6081.345, 30.454),
-                heading = 135.463,
-            },
-			{
-                ped = 'a_m_y_salton_01',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(1697.47, 3757.832, 33.705),
-                heading = 137.834,
-            },
-			{
-                ped = 'a_m_y_stlat_01',
-                scenario = 'WORLD_HUMAN_STAND_IMPATIENT_FACILITY',
-                loc = vec3(-1112.706, 2697.395, 17.554),
-                heading = 136.716,
-            },
-			
 		}
 	},
 

@@ -1,1 +1,0 @@
-AddTextEntry("WEAPON_FM1_M16A4", "M16A4")

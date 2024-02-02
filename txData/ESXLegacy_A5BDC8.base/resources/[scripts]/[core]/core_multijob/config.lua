@@ -42,7 +42,7 @@ JobsThatCanUseOffduty = { -- Jobs that can use offduty if option above is false
 DefaultJobsInJobCenter = { -- Jobs that can be added by going to the job center. For icons use https://fontawesome.com/
 	
 	{job = 'scammer', label = "Scammer", icon = "fa-thin fa-print", description = "Criminal World Into Scamming"},
-	--{job = 'fisherman', label = "Fisherman", icon = "fas fa-fish", description = "You get fish and sell it"}
+	{job = 'taxi', label = "Taxi", icon = "fa-solid fa-joint", description = "Uber"}
 
 },
 

@@ -197,7 +197,7 @@ Config = {
         -- For cops
 
         Duty = {
-            Use = true,
+            Use = false,
             Command = 'aduty', 
             Suggestion = 'Entering/Exiting duty'
         },

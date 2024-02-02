@@ -13,7 +13,7 @@ Config.RealeStateJobGradeLevel = 2
 
 Config.PhotoWebhook = "https://discord.com/api/webhooks/1130674484299436052/Q4V2rtMU9215BqW0zn1VJlOU6A80XLfJ56tmbY8gwAb8-fVK80dou5t3F3TVoXsr7AYr" -- Discord Webhook
 
-Config.MoneyIsItem = false
+Config.MoneyIsItem = true
 
 Config.DefaultJob = {'unemployed', 0}
 

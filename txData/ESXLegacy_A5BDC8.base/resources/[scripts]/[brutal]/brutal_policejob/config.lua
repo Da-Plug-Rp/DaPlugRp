@@ -95,20 +95,19 @@ Config = {
 
             Shop = {
                 -- minGrade = The minimum grade to access to buy the item.
-                {item = 'radio', label = 'Radio', price = 500, minGrade = 0},
-                {item = 'police_bulletproof', label = 'Bullet Proof', price = 500, minGrade = 0},
-                {item = 'weapon_flashlight', label = 'Flash Light', price = 10, minGrade = 0},
-                {item = 'weapon_nightstick', label = 'Nightstick', price = 10, minGrade = 0},
-                {item = 'weapon_stungun', label = 'Tazer', price = 500, minGrade = 0},
-                {item = 'weapon_pistol', label = 'Pistol', price = 500, minGrade = 1},
-                {item = 'weapon_smg', label = 'SMG', price = 500, minGrade = 2},
-                {item = 'weapon_carbinerifle', label = 'Carbinerifle', price = 500, minGrade = 2},
-                {item = 'weapon_pumpshotgun', label = 'Pumpshotgun', price = 500, minGrade = 3},
+                {item = 'police_bulletproof', label = 'Bullet Proof', price = 0, minGrade = 0},
+                {item = 'weapon_flashlight', label = 'Flash Light', price = 0, minGrade = 0},
+                {item = 'weapon_nightstick', label = 'Nightstick', price = 0, minGrade = 0},
+                {item = 'weapon_stungun', label = 'Tazer', price = 0, minGrade = 0},
+                {item = 'weapon_pistol', label = 'Pistol', price = 0, minGrade = 1},
+                {item = 'weapon_smg', label = 'SMG', price = 0, minGrade = 2},
+                {item = 'weapon_carbinerifle', label = 'Carbinerifle', price = 0, minGrade = 2},
+                {item = 'weapon_pumpshotgun', label = 'Pumpshotgun', price = 0, minGrade = 3},
 
                 -- ESX Basic Items --
-                {item = 'ammo-9', label = 'Ammo-9', price = 10, minGrade = 1},
-                {item = 'ammo-shotgun', label = 'Ammo-Shotgun', price = 20, minGrade = 3},
-                {item = 'ammo-rifle', label = 'Ammo-Rifle', price = 20, minGrade = 2},
+                {item = 'ammo-9', label = 'Ammo-9', price = 0, minGrade = 1},
+                {item = 'ammo-shotgun', label = 'Ammo-Shotgun', price = 0, minGrade = 3},
+                {item = 'ammo-rifle', label = 'Ammo-Rifle', price = 0, minGrade = 2},
 
                 -- QB Basic Items --
                 --{item = 'pistol_ammo', label = 'Pistol Ammo', price = 10, minGrade = 1},
@@ -117,6 +116,194 @@ Config = {
                 --{item = 'shotgun_ammo', label = 'Shotgun Ammo', price = 20, minGrade = 3},
             },
         },
+        
+            ['Los Santos Park Ranger'] = {
+                Job = 'police', -- Job name
+                MenuColors = {'rgb(15, 100, 210)', 'rgb(9, 43, 88)'}, -- Job panel color
+    
+                Blip = {color = 38, sprite = 60, size = 1.0}, -- Job blip
+                Marker = {use = true, marker = 20, rgb = {15, 100, 210}, bobUpAndDown = true, rotate = false},
+                
+                Duty = vector3(388.2265, 795.1496, 187.9361), -- Duty ON / OFF coords
+                DutyBlips = true, -- With this the cops can see the other cops in the map.
+    
+                Cloakrooms = {
+                    vector3(386.9937, 799.8085, 187.4615),
+                    -- You can add more...
+                },
+    
+                Armorys = {
+                    vector3(385.3070, 799.8455, 190.4902),
+                    -- You can add more...
+                },
+    
+                BossMenu = {
+                    grades = {4},
+                    coords = {
+                        vector3(387.6438, 799.0188, 189.9910),
+                        -- You can add more...
+                    }
+                },
+    
+                Garages = {
+                    {
+                        Label = 'Garage I.', -- Gargae Label
+                        menu = vector3(370.9684, 793.4346, 187.5562), -- Garage menu open coords
+                        spawn = vector4(385.6037, 780.2621, 185.8645, 116.0403), -- Vehicle spawn coords
+                        deposit = vector3(385.6037, 780.2621, 185.8645), -- Vehicle deposit place
+    
+                        vehicles = {
+                            --['MODEL'] = {
+                            --    Label = 'VEHICLE-LABEL',
+                            --    minRank = MINIMUM-GRADE
+                            --},
+    
+                            ['police'] = {
+                                Label = 'Police Vehicle',
+                                minRank = 1
+                            },
+            
+                            ['police2'] = {
+                                Label = 'Police2 Vehicle',
+                                minRank = 2
+                            },
+                        }
+                    },
+    
+                    {
+                        Label = 'Helicopter Garage',
+                        menu = vector3(-334.0604, -260.2177, 43.2367),
+                        spawn = vector4(-326.4256, -270.5482, 43.2367, 69.8326),
+                        deposit = vector3(-326.4256, -270.5482, 43.2367),
+    
+                        vehicles = {
+                            ['polmav'] = {
+                                Label = 'Police Helicopter',
+                                minRank = 3
+                            },
+                        }
+                    },
+    
+                    -- You can add more...
+                },
+    
+                Shop = {
+                    -- minGrade = The minimum grade to access to buy the item.
+                    {item = 'police_bulletproof', label = 'Bullet Proof', price = 500, minGrade = 0},
+                    {item = 'weapon_flashlight', label = 'Flash Light', price = 10, minGrade = 0},
+                    {item = 'weapon_nightstick', label = 'Nightstick', price = 10, minGrade = 0},
+                    {item = 'weapon_stungun', label = 'Tazer', price = 500, minGrade = 0},
+                    {item = 'weapon_pistol', label = 'Pistol', price = 500, minGrade = 1},
+                    {item = 'weapon_smg', label = 'SMG', price = 500, minGrade = 2},
+                    {item = 'weapon_carbinerifle', label = 'Carbinerifle', price = 500, minGrade = 2},
+                    {item = 'weapon_pumpshotgun', label = 'Pumpshotgun', price = 500, minGrade = 3},
+    
+                    -- ESX Basic Items --
+                    {item = 'ammo-9', label = 'Ammo-9', price = 10, minGrade = 1},
+                    {item = 'ammo-shotgun', label = 'Ammo-Shotgun', price = 20, minGrade = 3},
+                    {item = 'ammo-rifle', label = 'Ammo-Rifle', price = 20, minGrade = 2},
+    
+                    -- QB Basic Items --
+                    --{item = 'pistol_ammo', label = 'Pistol Ammo', price = 10, minGrade = 1},
+                    --{item = 'smg_ammo', label = 'SMG Ammo', price = 15, minGrade = 2},
+                    --{item = 'rifle_ammo', label = 'Rifle Ammo', price = 20, minGrade = 2},
+                    --{item = 'shotgun_ammo', label = 'Shotgun Ammo', price = 20, minGrade = 3},
+                },
+            },
+
+            ['Sandy Police Department'] = {
+                Job = 'police', -- Job name
+                MenuColors = {'rgb(15, 100, 210)', 'rgb(9, 43, 88)'}, -- Job panel color
+    
+                Blip = {color = 38, sprite = 60, size = 1.0}, -- Job blip
+                Marker = {use = true, marker = 20, rgb = {15, 100, 210}, bobUpAndDown = true, rotate = false},
+                
+                Duty = vector3(1822.6527, 3666.3169, 34.2010), -- Duty ON / OFF coords
+                DutyBlips = true, -- With this the cops can see the other cops in the map.
+    
+                Cloakrooms = {
+                    vector3(1842.3588, 3678.8467, 34.1893),
+                    -- You can add more...
+                },
+    
+                Armorys = {
+                    vector3(1836.3881, 3686.7566, 34.1893),
+                    -- You can add more...
+                },
+    
+                BossMenu = {
+                    grades = {4},
+                    coords = {
+                        vector3(1830.1149, 3670.3477, 34.1981),
+                        -- You can add more...
+                    }
+                },
+    
+                Garages = {
+                    {
+                        Label = 'Garage I.', -- Gargae Label
+                        menu = vector3(1824.1588, 3682.9663, 33.9747), -- Garage menu open coords
+                        spawn = vector4(1818.1703, 3682.5671, 33.9746, 29.5829), -- Vehicle spawn coords
+                        deposit = vector3(1818.1703, 3682.5671, 33.9746), -- Vehicle deposit place
+    
+                        vehicles = {
+                            --['MODEL'] = {
+                            --    Label = 'VEHICLE-LABEL',
+                            --    minRank = MINIMUM-GRADE
+                            --},
+    
+                            ['police'] = {
+                                Label = 'Police Vehicle',
+                                minRank = 1
+                            },
+            
+                            ['police2'] = {
+                                Label = 'Police2 Vehicle',
+                                minRank = 2
+                            },
+                        }
+                    },
+    
+                    {
+                        Label = 'Helicopter Garage',
+                        menu = vector3(1869.2811, 3691.8799, 33.9333),
+                        spawn = vector4(1853.4706, 3706.2837, 33.9746, 123.8741),
+                        deposit = vector3(1853.4706, 3706.2837, 33.9746),
+    
+                        vehicles = {
+                            ['polmav'] = {
+                                Label = 'Police Helicopter',
+                                minRank = 3
+                            },
+                        }
+                    },
+    
+                    -- You can add more...
+                },
+    
+                Shop = {
+                    -- minGrade = The minimum grade to access to buy the item.
+                    {item = 'police_bulletproof', label = 'Bullet Proof', price = 500, minGrade = 0},
+                    {item = 'weapon_flashlight', label = 'Flash Light', price = 10, minGrade = 0},
+                    {item = 'weapon_nightstick', label = 'Nightstick', price = 10, minGrade = 0},
+                    {item = 'weapon_stungun', label = 'Tazer', price = 500, minGrade = 0},
+                    {item = 'weapon_pistol', label = 'Pistol', price = 500, minGrade = 1},
+                    {item = 'weapon_smg', label = 'SMG', price = 500, minGrade = 2},
+                    {item = 'weapon_carbinerifle', label = 'Carbinerifle', price = 500, minGrade = 2},
+                    {item = 'weapon_pumpshotgun', label = 'Pumpshotgun', price = 500, minGrade = 3},
+    
+                    -- ESX Basic Items --
+                    {item = 'ammo-9', label = 'Ammo-9', price = 10, minGrade = 1},
+                    {item = 'ammo-shotgun', label = 'Ammo-Shotgun', price = 20, minGrade = 3},
+                    {item = 'ammo-rifle', label = 'Ammo-Rifle', price = 20, minGrade = 2},
+    
+                    -- QB Basic Items --
+                    --{item = 'pistol_ammo', label = 'Pistol Ammo', price = 10, minGrade = 1},
+                    --{item = 'smg_ammo', label = 'SMG Ammo', price = 15, minGrade = 2},
+                    --{item = 'rifle_ammo', label = 'Rifle Ammo', price = 20, minGrade = 2},
+                    --{item = 'shotgun_ammo', label = 'Shotgun Ammo', price = 20, minGrade = 3},
+                },
+            },
 
         -----------------------------------------------------------
         -------------------| Sheriff Department |------------------
@@ -194,20 +381,19 @@ Config = {
 
             Shop = {
                 -- minGrade = The minimum grade to access to buy the item.
-                {item = 'radio', label = 'Radio', price = 500, minGrade = 0},
-                {item = 'sheriff_bulletproof', label = 'Bullet Proof', price = 500, minGrade = 0},
-                {item = 'weapon_flashlight', label = 'Flash Light', price = 10, minGrade = 0},
-                {item = 'weapon_nightstick', label = 'Nightstick', price = 10, minGrade = 0},
-                {item = 'weapon_stungun', label = 'Tazer', price = 500, minGrade = 0},
-                {item = 'weapon_pistol', label = 'Pistol', price = 500, minGrade = 1},
-                {item = 'weapon_smg', label = 'SMG', price = 500, minGrade = 2},
-                {item = 'weapon_carbinerifle', label = 'Carbinerifle', price = 500, minGrade = 2},
-                {item = 'weapon_pumpshotgun', label = 'Pumpshotgun', price = 500, minGrade = 3},
+                {item = 'sheriff_bulletproof', label = 'Bullet Proof', price = 0, minGrade = 0},
+                {item = 'weapon_flashlight', label = 'Flash Light', price = 0, minGrade = 0},
+                {item = 'weapon_nightstick', label = 'Nightstick', price = 0, minGrade = 0},
+                {item = 'weapon_stungun', label = 'Tazer', price = 0, minGrade = 0},
+                {item = 'weapon_pistol', label = 'Pistol', price = 0, minGrade = 1},
+                {item = 'weapon_smg', label = 'SMG', price = 0, minGrade = 2},
+                {item = 'weapon_carbinerifle', label = 'Carbinerifle', price = 0, minGrade = 2},
+                {item = 'weapon_pumpshotgun', label = 'Pumpshotgun', price = 0, minGrade = 3},
 
                 -- ESX Basic Items --
-                {item = 'ammo-9', label = 'Ammo-9', price = 10, minGrade = 1},
-                {item = 'ammo-shotgun', label = 'Ammo-Shotgun', price = 20, minGrade = 3},
-                {item = 'ammo-rifle', label = 'Ammo-Rifle', price = 20, minGrade = 2},
+                {item = 'ammo-9', label = 'Ammo-9', price = 0, minGrade = 1},
+                {item = 'ammo-shotgun', label = 'Ammo-Shotgun', price = 0, minGrade = 3},
+                {item = 'ammo-rifle', label = 'Ammo-Rifle', price = 0, minGrade = 2},
 
                 -- QB Basic Items --
                 --{item = 'pistol_ammo', label = 'Pistol Ammo', price = 10, minGrade = 1},

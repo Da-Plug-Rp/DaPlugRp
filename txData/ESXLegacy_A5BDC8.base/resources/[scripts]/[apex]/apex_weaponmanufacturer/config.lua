@@ -28,7 +28,7 @@ Config.Debug = false
 Config.Access = {
     job = { -- Recommended for job limitations
         enabled = true,
-        job = "weaponmaker",
+        job = "ammunition",
     },
     gang = { -- Recommended for gang limitations
         enabled = false,
@@ -45,9 +45,9 @@ Config.Blips = {
         enabled = true, point = vector3(-54.85, 6428.31, 31.29),
         sprite = 478, scale = 0.8, colour = 78, title = "Paleto Bay - Weapon Manufacturer",
     },
-    -- Strawberry
+    -- Los Santos
     {
-        enabled = true, point = vector3(-307.63, -1345.20, 31.19),
+        enabled = true, point = vector3(9.2028, -1103.1265, 29.0955),
         sprite = 478, scale = 0.8, colour = 78, title = "Strawberry - Weapon Manufacturer",
     },
     -- Cypress Flats
@@ -495,9 +495,9 @@ Config.AdditionalTargets = {
             minZ = 31.29-0.1,
             maxZ = 31.29+0.3,
         },
-        -- Strawberry
+        -- Los Santos
         {
-            Coords = vector3(-307.63, -1345.20, 31.19),
+            Coords = vector3(4.2564, -1105.7578, 29.1093),
             Heading = 0.0,
             Size = {0.5, 0.5},
             Distance = 2.0,
@@ -524,9 +524,9 @@ Config.AdditionalTargets = {
             minZ = 31.29-1,
             maxZ = 31.29+1,
         },
-        -- Strawberry
+        -- Los Santos
         {
-            Coords = vector3(-310.81, -1354.43, 31.19),
+            Coords = vector3(30.0367, -1075.0641, 27.7234),
             Heading = 0.0,
             Size = {1.2, 3.0},
             Distance = 2.0,
@@ -553,9 +553,9 @@ Config.AdditionalTargets = {
             minZ = 31.29-1,
             maxZ = 31.29+1,
         },
-        -- Strawberry
+        -- los Santos
         {
-            Coords = vector3(-320.01, -1357.63, 31.19),
+            Coords = vector3(34.2832, -1076.6072, 27.7232),
             Heading = 0.0,
             Size = {1.2, 3.0},
             Distance = 2.0,
@@ -582,9 +582,9 @@ Config.AdditionalTargets = {
             minZ = 31.29-1,
             maxZ = 31.29+1,
         },
-        -- Strawberry
+        -- Los Santos
         {
-            Coords = vector3(-322.83, -1355.63, 31.19),
+            Coords = vector3(12.1369, -1102.1755, 29.1145),
             Heading = 0.0,
             Size = {2.0, 1.0},
             Distance = 2.0,
@@ -611,9 +611,9 @@ Config.AdditionalTargets = {
             minZ = 31.29-1,
             maxZ = 31.29+1,
         },
-        -- Strawberry
+        -- Los Santos
         {
-            Coords = vector3(-318.03, -1355.15, 31.19),
+            Coords = vector3(32.1443, -1075.8372, 27.7232),
             Heading = 0.0,
             Size = {1.0, 1.0},
             Distance = 2.0,
@@ -640,9 +640,9 @@ Config.AdditionalTargets = {
             minZ = 31.29-1,
             maxZ = 31.29+1,
         },
-        -- Strawberry
+        -- Los Santos
         {
-            Coords = vector3(-315.40, -1357.77, 31.19),
+            Coords = vector3(13.6126, -1109.7456, 29.1159),
             Heading = 0.0,
             Size = {1.0, 4.0},
             Distance = 2.0,
@@ -669,9 +669,9 @@ Config.AdditionalTargets = {
             minZ = 31.49-1,
             maxZ = 31.49+1,
         },
-        -- Strawberry
+        -- Los Santos
         {
-            Coords = vector3(-305.93, -1355.26, 31.39),
+            Coords = vector3(28.2552, -1079.6049, 27.7232),
             Heading = 0.0,
             Size = {1.8, 3.0},
             Distance = 2.0,
