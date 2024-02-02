@@ -18,12 +18,12 @@ Config.PossibleFishs = { -- List of possible fish appear on fishingnet
 Config.FishingnetZones = {
     [1] = {
         coords = vector3(-1817.0, -951.94, 1.31),
-        radius = 20,
+        radius = 200,
         blip = { enable = true, sprite = 148, colour = 3, scale = 0.8, transparency = 75, name = "Fishingnet Zone" }
     },
     [2] = {
         coords = vector3(81.31, 682.62, 197.04),
-        radius = 20,
+        radius = 200,
         blip = { enable = true, sprite = 148, colour = 3, scale = 0.8, transparency = 75, name = "Fishingnet Zone" }
     },
 }

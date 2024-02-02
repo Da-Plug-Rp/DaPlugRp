@@ -27,8 +27,8 @@ Config.adminRanks = {
 
 -- Fishing Shop
 Config.FishingShopBlip = { enable = true, sprite = 88, colour = 3, scale = 0.8, name = "Fishing Shop" }
-Config.FishingShopPed = vector3(-1686.99, -1072.08, 13.15) -- Location of the ped fishing shop
-Config.FishingShopPedHeading = 50.54 -- Heading of the ped
+Config.FishingShopPed = vector3(-1593.9785, 5196.8677, 4.3589) -- Location of the ped fishing shop
+Config.FishingShopPedHeading = 16.6833 -- Heading of the ped
 Config.FishingShopPedModel = "a_m_y_runner_01" -- Ped model https://docs.fivem.net/docs/game-references/ped-models/
 Config.FishingShopItems = { -- Items people can buy on shop
     [1] = { name = "fishbait",      price = 5, amount = 10, info = {}, type = "item", slot = 1 },
@@ -42,8 +42,8 @@ Config.FishingShopItems = { -- Items people can buy on shop
 
 -- Selling Legal Fishg
 Config.FishingSellBlip = { enable = true, sprite = 108, colour = 3, scale = 0.8, name = "Sell Fish" }
-Config.FishingSellPed = vector3(-1816.37, -1193.29, 14.3) -- Location of the ped fishing shop
-Config.FishingSellPedHeading = 327.94 -- Heading of the ped
+Config.FishingSellPed = vector3(-1611.8198, 5263.0576, 3.9741) -- Location of the ped fishing shop
+Config.FishingSellPedHeading = 209.2150 -- Heading of the ped
 Config.FishingSellPedModel = "a_m_m_hillbilly_01" -- Ped model https://docs.fivem.net/docs/game-references/ped-models/
 Config.FishingSellType = "cash" -- "cash" or "bank"
 Config.SettingsSell = {
@@ -59,11 +59,11 @@ Config.SettingsSell = {
 
 -- Rent a Boat
 Config.RentBoatBlip = { enable = true, sprite = 404, colour = 3, scale = 0.8, name = "Rent a Boat" }
-Config.RentBoatPed = vector3(-1815.52, -956.16, 1.45) -- Location of the ped fishing shop
-Config.RentBoatPedHeading = 101.93 -- Heading of the ped
+Config.RentBoatPed = vector3(-813.9567, -1368.7310, 5.1783) -- Location of the ped fishing shop
+Config.RentBoatPedHeading = 323.6019 -- Heading of the ped
 Config.RentBoatPedModel = "a_m_y_runner_01" -- Ped model https://docs.fivem.net/docs/game-references/ped-models/
-Config.SpawnBoat = vector3(-1829.92, -958.59, -0.3) -- Locationto spawn the boat
-Config.SpawnBoatHeading = 101.62 -- Heading of the boat
+Config.SpawnBoat = vector3(-847.9957, -1363.6979, -0.4749) -- Locationto spawn the boat
+Config.SpawnBoatHeading = 104.3258 -- Heading of the boat
 Config.Boats = {
     [1] = {boat = "dinghy", experience = 0 },
     [2] = {boat = "jetmax", experience = 50 },

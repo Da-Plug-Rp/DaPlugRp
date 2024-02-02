@@ -27,7 +27,7 @@ Config.Debug = false
 
 Config.Access = {
     job = { -- Recommended for job limitations
-        enabled = true,
+        enabled = false,
         job = "ammunition",
     },
     gang = { -- Recommended for gang limitations

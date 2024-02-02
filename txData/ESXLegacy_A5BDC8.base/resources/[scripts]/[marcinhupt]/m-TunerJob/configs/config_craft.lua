@@ -173,6 +173,13 @@ Craft = {
                 [1] = { item = "rubber",    amount = 1, label = "Rubber" },
             }
         },
+        ["carplay"] = { 
+            hash = "carplay", 
+            label = "Carplay",
+            materials = {
+                [1] = { item = "steel",    amount = 1, label = "Steel" },
+            }
+        },
     },
     ["PublicLocation"] = {
         ["craft"] = {

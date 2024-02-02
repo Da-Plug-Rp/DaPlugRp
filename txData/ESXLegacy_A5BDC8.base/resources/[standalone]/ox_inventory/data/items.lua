@@ -20306,4 +20306,8 @@ client = {
 ['sawnoffshotgun'] =                  {label = 'Sawnoff Shotgun Model',     weight = 5, stack = true, close = false, description = "Nice Model?",        image = "sawnoffshotgun.png"},
 ['assaultrifle'] =                    {label = 'Assault Rifle Model',       weight = 5, stack = true, close = false, description = "Nice Model?",        image = "assaultrifle.png"},
 
+['keys'] = {
+    label = "Vehicle Key",
+    weight = 15,
+},
 }

@@ -3,3 +3,8 @@ AddEventHandler('esx_engine_toggle:toggleEngine', function(state)
     local player = source
     TriggerClientEvent('esx_engine_toggle:startOrStopEngine', player, state)
 end)
+
+AddEventHandler('esx:onPlayerLeaveVehicle', function(vehicle)
+    local player = source
+    TriggerClientEvent('esx_engine_toggle:startOrStopEngine', player, false)
+end)

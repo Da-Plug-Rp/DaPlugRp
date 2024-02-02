@@ -285,7 +285,7 @@ CampShop = {
     enableShop = true, -- If enabled, a ped will spawn at the PedCoords with all the items listed in Stock.
     PedModel = `a_m_y_hiker_01`,
     Scenario = 'WORLD_HUMAN_TOURIST_MAP',
-    PedCoords = { coords = vector3(-1490.91, 4981.61, 63.33), heading = 83.96 }, -- Will also be the location of the blip if enabled below.
+    PedCoords = { coords = vector3(-679.6490, 5839.1128, 17.3314), heading = 230.8339 }, -- Will also be the location of the blip if enabled below.
 
     enableBlip = true, -- Must enable shop above first.
     blipLabel = "Camping Store",

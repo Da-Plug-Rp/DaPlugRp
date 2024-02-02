@@ -118,7 +118,7 @@ return {
 		}, inventory = {
 			{ name = 'phone', price = 1000 },
 			{ name = 'laptop', price = 100000 },
-			{ name = 'carplay', price = 10000 },
+			{ name = 'tablet', price = 100000 },
 			{ name = 'remotecontrol', price = 500 },
 			{ name = 'powerbank', price = 1000 },
 
