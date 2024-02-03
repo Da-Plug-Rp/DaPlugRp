@@ -29,6 +29,54 @@ Config.Dealerships = {
             coords = {x = -46.62, y = -1094.36, z = 27.3}
         }
     },
+    ['luxuary Autos'] = { -- dealership key index, should be unique for each dealership.
+    job = false, -- Job ("string") or false
+    garage = "Legion Square", -- Where the vehicle will be stored.
+    money_account = "bank", -- Account used for purchase.
+    money_sign = "$", -- For price display of the vehicle: $, €, £, ¥, etc... or leave it empty ""
+    categories = {"super"}, -- Categories the dealership can sell.
+    test_vehicles = true, -- False if you don't want players be able to test vehicles... prevent trolls from testing helicopters and crashing?.
+    test_coords = {x = 151.9082, y = -120.4674, z = 54.8260, h = 147.6277}, -- Where the test vehicle spawns.
+    text_zones = { -- Zones where clients can access the catalogue.
+        {x = 126.6416, y = -143.9712, z = 54.8001, distance = 2.0},   
+    },
+    preview_vehicle_coords = {x = 137.9162, y = -149.7049, z = 55.0500, h = 105.1593}, -- Spawn coords for vehicle preview (x, y, z, heading) 
+    preview_vehicle_camera = {x = 133.4337, y = -1083.3295, z = -151.3341, rotation = 180.0, fov = 50.0}, -- Camera coords, rotation and field of view 
+    buy_vehicle = false, -- Enable/Disable the buy vehicle option... maybe you just want a dealership to display vehicles and not sell them?
+    purchased_vehicle_spawn = {x = 111.5689, y = -127.6865, z = 54.7473, h = 69.5225}, -- Where the vehicle/player will be spawned after purchased a vehicle.
+    av_vip = false, -- True = If player has VIP the Buy Vehicle button will be enabled, false = you don't need VIP. Requires: https://av-scripts.tebex.io/package/4422968
+    blip = {
+        label = "luxuary Autos",
+        icon = 227, -- https://docs.fivem.net/docs/game-references/blips/#blips
+        color = 5, -- https://docs.fivem.net/docs/game-references/blips/#blip-colors
+        scale = 1.0,
+        coords = {x = 124.9317, y = -152.3213, z = 54.8001,}
+    }
+},
+['Sanders Motorcycles'] = { -- dealership key index, should be unique for each dealership.
+job = false, -- Job ("string") or false
+garage = "Legion Square", -- Where the vehicle will be stored.
+money_account = "bank", -- Account used for purchase.
+money_sign = "$", -- For price display of the vehicle: $, €, £, ¥, etc... or leave it empty ""
+categories = {"cycle"}, -- Categories the dealership can sell.
+test_vehicles = true, -- False if you don't want players be able to test vehicles... prevent trolls from testing helicopters and crashing?.
+test_coords = {x = 337.4831, y = -1156.8979, z = 29.2920, h =  89.6681}, -- Where the test vehicle spawns. 
+text_zones = { -- Zones where clients can access the catalogue.
+    {x =  288.4178, y = -1163.6416, z = 29.2729, distance = 2.0},  
+},
+preview_vehicle_coords = {x = 287.5910, y = -1155.7148, z = 29.2728, h = 176.9707}, -- Spawn coords for vehicle preview (x, y, z, heading)
+preview_vehicle_camera = {x = 287.9727, y = -1159.6130, z =  29.2729, rotation = 180.0, fov = 50.0}, -- Camera coords, rotation and field of view 
+buy_vehicle = false, -- Enable/Disable the buy vehicle option... maybe you just want a dealership to display vehicles and not sell them?
+purchased_vehicle_spawn = {x = 111.5689, y = -127.6865, z = 54.7473, h = 69.5225}, -- Where the vehicle/player will be spawned after purchased a vehicle.
+av_vip = false, -- True = If player has VIP the Buy Vehicle button will be enabled, false = you don't need VIP. Requires: https://av-scripts.tebex.io/package/4422968
+blip = {
+    label = "Sanders Motorcycles",
+    icon = 227, -- https://docs.fivem.net/docs/game-references/blips/#blips
+    color = 5, -- https://docs.fivem.net/docs/game-references/blips/#blip-colors
+    scale = 1.0,
+    coords = {x = 287.9704, y = -1159.5381, z = 29.2729,}
+}
+},
     ['boat_dealership'] = { -- dealership key index, should be unique for each dealership.
         job = false, -- Job ("string") or false
         garage = "millars", -- Where the vehicle will be stored.
