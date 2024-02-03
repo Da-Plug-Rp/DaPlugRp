@@ -16,7 +16,7 @@ Config.Dealerships = {
             {x = -51.38, y = -1094.86, z = 27.27, distance = 2.0},
             {x = -51.21, y = -1087.35, z = 27.27, distance = 2.0},
         },
-        preview_vehicle_coords = {x = -1333.68, y = 144.24, z = -99.51, h = 268.77}, -- Spawn coords for vehicle preview (x, y, z, heading)
+        preview_vehicle_coords = {x = -49.8425, y = -1084.1154, z = 27.3023, h = 160.0492}, -- Spawn coords for vehicle preview (x, y, z, heading)
         preview_vehicle_camera = {x = -49.6597, y = -1083.3295, z = 27.3023, rotation = 180.0, fov = 50.0}, -- Camera coords, rotation and field of view
         buy_vehicle = true, -- Enable/Disable the buy vehicle option... maybe you just want a dealership to display vehicles and not sell them?
         purchased_vehicle_spawn = {x = -33.82, y = -1080.45, z = 27.04, h = 68.2}, -- Where the vehicle/player will be spawned after purchased a vehicle.
