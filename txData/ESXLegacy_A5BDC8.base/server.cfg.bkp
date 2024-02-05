@@ -108,6 +108,8 @@ start es_extended
 start 0r_lib
 start 0r_motels
 ensure spawn-selector
+ensure apex_lib
+ensure [apex]
 # ESX Legacy Core
 ensure [core]
 # ----------
@@ -128,8 +130,7 @@ ensure [clothing]
 ensure [guns]
 ensure keep-harmony 
 ensure [standalone]
-ensure cdev_lib
-ensure cdev_vehicleshop
+ensure [un-scripts]
 ensure [dependency]
 # Additional Resource
 # -------------------
