@@ -331,6 +331,18 @@ body {
   animation: flash 5s infinite !important;
 }
 
+.job-h4 {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end; 
+  color: #ebebeb; 
+  font-size: 20px; 
+  font-weight: 700; 
+  transition: color 0.3s ease-in-out;
+  font-feature-settings: 'tnum' 1 !important;
+}
+
 /* COMPASS */
 
 .compass-container {

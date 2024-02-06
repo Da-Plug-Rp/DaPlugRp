@@ -1,0 +1,43 @@
+@media(max-width:1920px){
+    .main-pages {
+            width: 140vh;
+            height: 81vh;
+            background: linear-gradient(12deg, rgba(41, 41, 41, 0.801) 0%, rgba(37, 37, 37, 0.801) 54%, rgba(54, 54, 54, 0.801) 100%);
+            border: 0.5vh solid #222831;
+            border-bottom-right-radius: 4vh;
+            border-top-right-radius: 4vh;
+            position: absolute;
+            bottom: 15vh;
+            left: 18vh;
+            overflow: hidden;
+        }
+    
+        .navbar {
+            display: inline-block;
+            height: 81vh;
+            width: 10vh;
+            background-color: rgba(41, 41, 41, 0.801);
+            border-top-left-radius: 4vh;
+            border-bottom-left-radius: 4vh;
+            position: fixed;
+            bottom: -4vh;
+            left: 8vh;
+            border: 0.5vh solid;
+    
+        }
+    
+        .navbar ul li {
+            padding: 3.0vh 0;
+            cursor: pointer;
+            transition: all ease-out 120ms;
+            display: inline-block;
+            height: 102%;
+            margin-top: 2.5vh;
+    
+        }
+
+    .card-custom-height {
+        height: 32vh;
+    }
+}
+

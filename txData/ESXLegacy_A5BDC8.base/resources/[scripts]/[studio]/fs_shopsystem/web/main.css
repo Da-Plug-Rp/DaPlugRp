@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap");
+body { min-width: 1100px;}
+    /* Tablet Design */
+        #tablet {
+            width: 960px; /* Set the width and height of the tablet */
+            height: 950px;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            border: 30px solid #7c7c7c;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative;    
+            font-family: kalam;
+          }
+     /* Scrollbar Design */
+     body {
+  margin: 0;
+  padding: 0;
+  padding-top: 2.5%;
+}
+
+.scroll-container {
+  width: 880px;
+  height: 855px;
+  overflow-y: scroll;
+  
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 10px; /* For Chrome, Safari, and Opera */
+  height: 10px;
+  border-radius: 2px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);;
+  border-radius: 2px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color:  rgb(119, 119, 119);
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background-color:  rgb(114, 114, 114);
+  border-radius: 3px;
+}
+.container{
+    width: 870px;
+    margin: auto;
+    transition: 0.5s;
+}
+/* Add these styles to your existing CSS */
+
+header {
+  display: flex; /* Change from grid to flex */
+  align-items: center; /* Vertically align items */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#faarrow{
+  font-size: 23px;cursor: pointer;color: var(--secondary-color);border-radius: 5px;
+}
+ h1{
+  font-size: 30px;font-weight: 700; padding-left: 40%;
+  color: var(--secondary-color);
+}
+
+header .iconcart {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+header .iconcart img {
+  width: 30px;
+  cursor: pointer;
+}
+
+header .totalQuantity {
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  color: var(--primary-color);;
+  font-size: 10px;
+  padding: 3px 7px; /* Adjust padding for a better fit */
+  margin-left: -5px; /* Add some spacing between icon and quantity */
+}
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+    
+  }
+.listProduct .item{
+    position: relative;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    top: 20px;
+    padding: 20px;
+    box-shadow: 3px 3px 3px gray;
+    border: solid 12x #00000069;
+    border-radius: 30px;
+    
+  }
+.listProduct .item img{
+    width: 110%;
+    margin-top: -15px;
+    margin-left: -15px;
+    
+    margin-right: -15px;
+    border-radius: 25px;
+    border: solid rgba(0, 0, 0, 0.212) 1px;
+    background-color:rgba(99, 96, 96, 0.103);
+    padding: 35px;
+  }
+.listProduct .item h2{
+  font-size: 1.0rem;
+  float: left;
+  padding-left: 5%;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding-bottom: 10px;
+  margin-left: -8px;
+  }
+.listProduct .item .price{
+    padding-left: 80%;
+    justify-content: right;
+    margin-top: 0.5rem;
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+  }
+  .listProduct .item button {
+    background-color: #000000;
+    color: #f1f1f1;
+    padding-top: 2px;
+    font-weight: bold;
+    height: 35px;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.listProduct .item button:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-weight: bold;
+}
+.card{
+    position: fixed;
+    top: 50px;
+    left: 100%;
+    width: 400px;
+    background-color:rgb(255, 255, 255);
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    gap:15px;
+    height: 56vh;
+    transition: 0.5s;
+    border: #000000 solid 5px;
+    border-radius: 30px;
+  }
+.card h2{
+    color: black;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+
+  }
+.card .listCard .item{
+    display: grid;
+    grid-template-columns:50px 1fr 70px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+.card .listCard img{
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+.card .listCard .item .name{
+    font-weight: 700;
+    font-family: kalam;
+    color: black;
+}
+.card .listCard .item .price{
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+.card .listCard .item .quantity{
+   display: flex;
+   align-items: center;
+}
+.card .listCard .item .quantity button{
+  text-align: center;
+  border-radius: 5px;
+  }
+.card .listCard .item span{
+    display: block;
+    width: 20px;
+    text-align: center;
+}
+.card .listCard{
+padding: 20px;
+overflow: auto;
+}
+.card .listCard::-webkit-scrollbar{
+  width: 0;
+}
+.card .button{
+  display: grid;
+  height: 50%;
+  border-radius: 10px;
+  grid-template-columns: repeat(2,2fr);
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+.card .button div{
+  color:rgb(0, 0, 0);
+  font-size: 20px;
+  display: flex;
+  opacity: 10;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card .button a{
+  color:rgb(0, 0, 0);
+  text-decoration: none;
+}
+.active .card{
+  left:calc(66% - 250px);
+}
+.active .container{
+  transform: translateX(-150px);
+}
+.category-tabs{
+  display: flex;
+  position: relative;
+  overflow: flex;
+  max-width: 150%;
+  background-color: #fff;
+  padding: 0px 80px;
+  border-radius: 40px;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  font-family: kalam;
+}
+
+.category-tab {
+  color: #000000;
+  padding: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-family: kalam;
+  margin: 0 6px;
+  z-index: 1;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+}
+
+
+.category-tab-indicator{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  transition: 0.4s;
+  height: 5px;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+}
+
+@media (max-width: 1100px) {
+}
+
+.pc{
+    width: 40%;
+    height: 60%;
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    color: black;
+    opacity: 10;
+    margin-top: 15px;
+    margin-left: 110px;
+    
+}
+
+.checkoutlayout{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 50px;
+  padding: 20px;
+  padding-top: 50px;
+}
+.checkoutlayout .right{
+  background-color:white;
+  border-radius: 10px;
+  padding: 40px;
+  color:black;
+  font-weight: 600;
+}
+.checkoutlayout .list img{
+  height: 70px;
+}
+.checkoutlayout .right .form{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:10px;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+.checkoutlayout .form .group:nth-child(-n+3){
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.checkoutlayout .form input,
+.checkoutlayout .form select{
+  width: 100%;
+  padding:10px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.checkoutlayout .row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  
+}
+.checkoutlayout .row div:nth-child(2){
+  font-weight: bold;
+}
+.buttonCheckout{
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  color:#000000;
+  background-color: var(--primary-color);
+}
+.container a{
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+h4{
+  border-top: 3px solid #aa0476;
+  border-bottom: 3px solid #aa0476;
+  color: var(--secondary-color);
+  padding: 10px;
+  font-size: 25px; 
+}
+
+:root{
+  --primary-color:#ffffff;
+  --secondary-color: #000000;
+}
+
+

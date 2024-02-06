@@ -21,6 +21,7 @@ local function checkAllowedActions()
     while not config do Citizen.Wait(100) end
     
     canDoAnyAction = false
+    canPlaceAnyObject = false
 
     JobsCreator.activeActions = TriggerServerPromise(Utils.eventsPrefix .. ':checkAllowedActions')
     

@@ -1,0 +1,48 @@
+{
+    "commands": {
+        "zone": {
+            "jobs": [
+                "police",
+                "ambulance"
+            ],
+            "command": "wipezone",
+            "defaultradius": 50.0,
+            "zonecolor": 1,
+            "groups": [
+                "admin",
+                "mod"
+            ],
+            "maxradius": 100.0,
+            "zonecoloralpha": 100
+        },
+        "adminmenu": {
+            "groups": [
+                "admin"
+            ],
+            "command": "carwipeadminmenu"
+        },
+        "instantwipe": {
+            "groups": [
+                "admin",
+                "mod"
+            ],
+            "command": "carwipe"
+        }
+    },
+    "onlybroken": false,
+    "autowipetime": 60,
+    "blacklist": {
+        "model": [
+            "police",
+            "ambulance"
+        ],
+        "plate": [
+            "ADMINCARWIPE",
+            "POLICE"
+        ],
+        "class": [
+            "Military",
+            "Emergency"
+        ]
+    }
+}

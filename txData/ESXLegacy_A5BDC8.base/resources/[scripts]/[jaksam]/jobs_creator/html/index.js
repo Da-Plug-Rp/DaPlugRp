@@ -3992,6 +3992,7 @@ $("#settings").submit(async function(event) {
 
 		handcuffRequireItem: $("#settings_handcuffRequireItem").prop("checked"),
 		handcuffsItemName: $("#settings_handcuffsItemName").val(),
+		handcuffsRemoveOnUse: $("#settings_handcuffsRemoveOnUse").prop("checked"),
 
 		lockpickCarRequireItem: $("#settings_lockpickCarRequireItem").prop("checked"),
 		lockpickItemName: $("#settings_lockpickItemName").val(),
@@ -4122,6 +4123,7 @@ async function loadSettings(fullConfig) {
 	// Handcuffs
 	toggleSettingsHandcuffsRequireItem(fullConfig.handcuffRequireItem);
 	$("#settings_handcuffsItemName").val(fullConfig.handcuffsItemName)
+	$("#settings_handcuffsRemoveOnUse").prop("checked", fullConfig.handcuffsRemoveOnUse)
 
 	$("#settings_freezeWhenSoftHandcuffed").prop("checked", fullConfig.freezeWhenSoftHandcuffed);
 	$("#settings_freezeWhenHardHandcuffed").prop("checked", fullConfig.freezeWhenHardHandcuffed);
@@ -4282,6 +4284,8 @@ function toggleSettingsHandcuffsRequireItem(enable) {
 
 	$("#settings_handcuffsItemName").prop("disabled", !enable);
 	$("#settings_handcuffsItemName").prop("required", enable);
+
+	$("#settings_handcuffsRemoveOnUse").prop("disabled", !enable);
 }
 
 $("#settings_handcuffRequireItem").change(function() {

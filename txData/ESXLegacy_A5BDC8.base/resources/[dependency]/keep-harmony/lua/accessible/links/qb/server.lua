@@ -62,10 +62,10 @@ local function giveItem_ox(source, PlayerObject, item_name, amount, slot, info, 
 end
 
 local giveItem
-if current_inventory == 'qb-inventory' then
-    giveItem = giveItem_qb
-elseif current_inventory == 'ox_inventory' then
+if current_inventory == 'ox_inventory' then
     giveItem = giveItem_ox
+elseif current_inventory == 'qb-inventory' or current_inventory == 'ps-inventory' then
+    giveItem = giveItem_qb
 end
 
 function Player.GiveItem(source, PlayerObject, item_name, amount, slot, info, success, fail, hideItemBox)
@@ -83,10 +83,10 @@ local function removeItem_ox(source, PlayerObject, item_name, amount, slot, meta
 end
 
 local removeItem
-if current_inventory == 'qb-inventory' then
-    removeItem = removeItem_qb
-elseif current_inventory == 'ox_inventory' then
+if current_inventory == 'ox_inventory' then
     removeItem = removeItem_ox
+elseif current_inventory == 'qb-inventory' or current_inventory == 'ps-inventory' then
+    removeItem = removeItem_qb
 end
 
 function Player.RemoveItem(source, PlayerObject, item_name, amount, slot, metadata)
@@ -102,11 +102,11 @@ function Player.TakeMoney(PlayerObject, method, amount)
 end
 
 function Player.SearchItemByName(PlayerObject, item_name)
-    if current_inventory == 'qb-inventory' then
-        return PlayerObject.Functions.GetItemsByName(item_name)
-    elseif current_inventory == 'ox_inventory' then
+    if current_inventory == 'ox_inventory' then
         local source = Player.GetSource(PlayerObject)
         return exports['ox_inventory']:Search(source, 1, item_name)
+    elseif current_inventory == 'qb-inventory' or current_inventory == 'ps-inventory' then
+        return PlayerObject.Functions.GetItemsByName(item_name)
     end
 end
 

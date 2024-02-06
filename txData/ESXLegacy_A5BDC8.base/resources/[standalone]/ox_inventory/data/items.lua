@@ -20310,4 +20310,1200 @@ client = {
     label = "Vehicle Key",
     weight = 15,
 },
+
+["bullet_casing"] = {
+	label = "Bullet casing",
+	weight = 1,
+	stack = false,
+	buttons = {
+		{
+			label = 'Copy serial',
+			action = function(slot)
+				exports['esx_tk_evidence']:CopyItemSerial(slot)
+			end
+		},
+		{
+			label = 'Set tag',
+			action = function(slot)
+				exports['esx_tk_evidence']:SetItemTag(slot)
+			end
+		}
+	},
+},
+
+["bullet_fragment"] = {
+	label = "Bullet fragment",
+	weight = 1,
+	stack = false,
+	buttons = {
+		{
+			label = 'Copy serial',
+			action = function(slot)
+				exports['esx_tk_evidence']:CopyItemSerial(slot)
+			end
+		},
+		{
+			label = 'Set tag',
+			action = function(slot)
+				exports['esx_tk_evidence']:SetItemTag(slot)
+			end
+		}
+	},
+},
+
+["blood_sample"] = {
+	label = "Blood sample",
+	weight = 1,
+	stack = false,
+	buttons = {
+		{
+			label = 'Set tag',
+			action = function(slot)
+				exports['esx_tk_evidence']:SetItemTag(slot)
+			end
+		}
+	},
+},
+
+["fingerprint_sample"] = {
+	label = "Fingerprint sample",
+	weight = 1,
+	stack = false,
+	buttons = {
+		{
+			label = 'Set tag',
+			action = function(slot)
+				exports['esx_tk_evidence']:SetItemTag(slot)
+			end
+		}
+	},
+},
+
+["evidence"] = {
+	label = "Evidence",
+	weight = 1,
+	stack = false,
+	buttons = {
+		{
+			label = 'Set tag',
+			action = function(slot)
+				exports['esx_tk_evidence']:SetItemTag(slot)
+			end
+		}
+	},
+},
+
+	["gsr_cloth"] = {
+		label = "GSR cloth",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["gsr_test_kit"] = {
+		label = "GSR test kit",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["uv_light"] = {
+		label = "UV Flashlight",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["fs_ricechicken"] = {
+		label = "Rice Chicken",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_hotdog"] = {
+		label = "Hotdog",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_7up1"] = {
+		label = "7up",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_cola1"] = {
+		label = "cola",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_cola3"] = {
+		label = "Cola Zero",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_corona1"] = {
+		label = "Corona",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_cupcake"] = {
+		label = "cupcake",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_doritos"] = {
+		label = "Doritos",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_fanta1"] = {
+		label = "fanta",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_steak"] = {
+		label = "Steak",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_soup"] = {
+		label = "Soup",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_starbucks1"] = {
+		label = "Starbuck can",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_rollcake"] = {
+		label = "rollcake",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_lays"] = {
+		label = "lays",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_monstere1"] = {
+		label = "monster",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_frenchfries"] = {
+		label = "FrenchFries",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_drpepper1"] = {
+		label = "Drpepper",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_drpepper2"] = {
+		label = "Drpepper Diet",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_minutem1"] = {
+		label = "Minutem Maid",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_nosdrink1"] = {
+		label = "Nos Drink",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_mntdew"] = {
+		label = "Dew",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice3"] = {
+		label = "Mango juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice1"] = {
+		label = "Apple juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice2"] = {
+		label = "Guava juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice4"] = {
+		label = "Orange juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice5"] = {
+		label = "Pineapple juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice6"] = {
+		label = "Grape juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice7"] = {
+		label = "Strawberry juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime1"] = {
+		label = "Prime Tropical Punch",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_redbull1"] = {
+		label = "redbull",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_redwine"] = {
+		label = "RedWine",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_whtwine"] = {
+		label = "WhiteWine",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_rum"] = {
+		label = "Rum",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_beer"] = {
+		label = "beer",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_nuget"] = {
+		label = "Nuget",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_ramen"] = {
+		label = "Ramen",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime2"] = {
+		label = "Prime Blue Raspberry",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime3"] = {
+		label = "Prime Lemon Lime",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime4"] = {
+		label = "Prime Grape",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime5"] = {
+		label = "Prime Ice Pop",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime6"] = {
+		label = "PRIME STRAWBERRY WATERMELON",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["fs_ricechicken"] = {
+		label = "Rice Chicken",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_hotdog"] = {
+		label = "Hotdog",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_7up1"] = {
+		label = "7up",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_cola1"] = {
+		label = "cola",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_cola3"] = {
+		label = "Cola Zero",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_corona1"] = {
+		label = "Corona",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_cupcake"] = {
+		label = "cupcake",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_doritos"] = {
+		label = "Doritos",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_fanta1"] = {
+		label = "fanta",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_steak"] = {
+		label = "Steak",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_soup"] = {
+		label = "Soup",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_starbucks1"] = {
+		label = "Starbuck can",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_rollcake"] = {
+		label = "rollcake",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_lays"] = {
+		label = "lays",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_monstere1"] = {
+		label = "monster",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_frenchfries"] = {
+		label = "FrenchFries",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_drpepper1"] = {
+		label = "Drpepper",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_drpepper2"] = {
+		label = "Drpepper Diet",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_minutem1"] = {
+		label = "Minutem Maid",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_nosdrink1"] = {
+		label = "Nos Drink",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_mntdew"] = {
+		label = "Dew",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice3"] = {
+		label = "Mango juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice1"] = {
+		label = "Apple juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice2"] = {
+		label = "Guava juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice4"] = {
+		label = "Orange juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice5"] = {
+		label = "Pineapple juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice6"] = {
+		label = "Grape juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_juice7"] = {
+		label = "Strawberry juice",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime1"] = {
+		label = "Prime Tropical Punch",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_redbull1"] = {
+		label = "redbull",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_redwine"] = {
+		label = "RedWine",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_whtwine"] = {
+		label = "WhiteWine",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_rum"] = {
+		label = "Rum",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_beer"] = {
+		label = "beer",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_nuget"] = {
+		label = "Nuget",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_ramen"] = {
+		label = "Ramen",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime2"] = {
+		label = "Prime Blue Raspberry",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime3"] = {
+		label = "Prime Lemon Lime",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime4"] = {
+		label = "Prime Grape",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime5"] = {
+		label = "Prime Ice Pop",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+	
+	["fs_prime6"] = {
+		label = "PRIME STRAWBERRY WATERMELON",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	['wigphone'] = {
+		label = 'Wig Phone',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	
+	['wigtable'] = {
+		label = 'Wig Table',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	['sewinkit'] = {
+		label = 'Sew in Kit',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	['wigcap'] = {
+		label = 'Wig Cap',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	['hairbundles'] = {
+		label = 'Hair Bundles',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	['wigphone'] = {
+		label = 'Wig Phone',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	
+	--wigs
+	
+	['fortyinchwig'] = {
+		label = '40 inch Wig',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	['braidswig'] = {
+		label = 'Braids Wig',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	['curlywig'] = {
+		label = 'Curly Wig',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+	['bangwig'] = {
+		label = 'Bang Wig',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	["fs_trapphone"] = {
+		label = "Trap Phone",
+		weight = 1,
+		stack = true,
+		close = true,
+		description = 'Secure Phone for Drug sell'
+	},
+
+	["fs_redswitch"] = {
+		label = "Red Switch",
+		weight = 1,
+		stack = true,
+		close = true,
+		allowArmed = true,
+		description = 'Red Weapon Switch',
+		client = {
+			export = 'fs_switch.fs_redswitch'
+		},
+},
+
+["fs_blueswitch"] = {
+	label = "Blue Switch",
+	weight = 1,
+	stack = true,
+	close = true,
+	allowArmed = true,
+	description = 'Blue Weapon Switch',
+	client = {
+		export = 'fs_switch.fs_blueswitch'
+	},
+},
+
+["fs_greenswitch"] = {
+	label = "Green Switch",
+	weight = 1,
+	stack = true,
+	close = true,
+	allowArmed = true,
+	description = 'Green Weapon Switch',
+	client = {
+		export = 'fs_switch.fs_greenswitch'
+	},
+},
+
+["chain_medal"] = {
+    label = "Chain Medal",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["chain_ls"] = {
+    label = "Chain LS",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["chain_is"] = {
+    label = "Chain IS",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["chain_triangle"] = {
+    label = "Chain Triangle",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["chain_dogtag"] = {
+    label = "Chain Dogtag",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["chain_richman"] = {
+    label = "Chain Richman",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["chain_m"] = {
+    label = "Chain M",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["casino_earrings"] = {
+    label = "Casino Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["diagold_earrings"] = {
+    label = "Diagold Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["diaplatinum_earrings"] = {
+    label = "Diaplatinum Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["earrings_sgold"] = {
+    label = "Earrings SGold",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["goldak_earrings"] = {
+    label = "GoldAK Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["goldhex_earrings"] = {
+    label = "GoldHex Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["goldstone_earrings"] = {
+    label = "Goldstone Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["hex4you_earrings"] = {
+    label = "Hex4You Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["hexdia_earrings"] = {
+    label = "HexDia Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["karaoke_earrings"] = {
+    label = "Karaoke Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["platbox_earrings"] = {
+    label = "Platbox Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["rectdia_earrings"] = {
+    label = "RectDia Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["skull_earrings"] = {
+    label = "Skull Earrings",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["skull_bracelet"] = {
+    label = "Skull Bracelet",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["necklace_family"] = {
+    label = "Necklace Family",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["necklace_dogtag"] = {
+    label = "Necklace Dogtag",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["covgari_gold"] = {
+    label = "Covgari Gold",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["crowex_black"] = {
+    label = "Crowex Black",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["crowex_brown"] = {
+    label = "Crowex Brown",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["hex_gold"] = {
+    label = "Hex Gold",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["kronos_black"] = {
+    label = "Kronos Black",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["kronos_gold"] = {
+    label = "Kronos Gold",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["pendulus_platinum"] = {
+    label = "Pendulus Platinum",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["diamond"] = {
+    label = "Diamond",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["gold_bar"] = {
+    label = "Gold Bar",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["platinum_bar"] = {
+    label = "Platinum Bar",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["watch_material"] = {
+    label = "Watch Material",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["blue_stone"] = {
+    label = "Blue Stone",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["green_stone"] = {
+    label = "Green Stone",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["red_stone"] = {
+    label = "Red Stone",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["white_stone"] = {
+    label = "White Stone",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["pearl"] = {
+    label = "Pearl",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["fs_chain"] = {
+    label = "Chain",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["black_stone"] = {
+    label = "Black Stone",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+["earring_material"] = {
+    label = "Earring Base",
+    weight = 1,
+    stack = true,
+    close = true,
+},
+
+	["fs_blankcard"] = {
+		label = "Blank Card",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["fs_bonnet"] = {
+		label = "Scrap Bonnet",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["fs_boot"] = {
+		label = "Scrap Boot",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["fs_clonnedcard"] = {
+		label = "Cloned Card",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["fs_door"] = {
+		label = "Scap Door",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["fs_forgedcheque"] = {
+		label = "Forged Check",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["fs_generator"] = {
+		label = "Generator",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["fs_laptop"] = {
+		label = "Laptop",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["fs_printer"] = {
+		label = "Printer",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["fs_skimmer"] = {
+		label = "Skimmer",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["fs_stolencard"] = {
+		label = "Stolencard",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["fs_usb"] = {
+		label = "Info Usb",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["fs_whiteslip"] = {
+		label = "White Slip",
+		weight = 10,
+		stack = true,
+		close = true,
+	},
+
+	["yellow_shoes"] = {
+		label = "Yellow Shoes",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["threequarter_raglan_sleeve"] = {
+		label = "Three Quarter Raglan Sleeve",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["black_bag"] = {
+		label = "Black Bag",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["black_glass"] = {
+		label = "Black Glass",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["black_hat"] = {
+		label = "Black Hat",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["black_jeans"] = {
+		label = "Black Jeans",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["monkey_mask"] = {
+		label = "Monkey Mask",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
+
+	["black_vest"] = {
+		label = "Black Vest",
+		weight = 1,
+		stack = true,
+		close = true,
+	},
 }

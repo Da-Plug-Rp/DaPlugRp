@@ -365,6 +365,8 @@ const app2 = Vue.createApp({
             showLogoLink: true,
             showBodyHealth: true,
             display_money: true,
+            display_second_money: false,
+            display_job: false,
             display_minimap: true,
             display_key: false,
             display_pause: false,
@@ -413,6 +415,11 @@ const app2 = Vue.createApp({
             money_number: 0,
             stat: null,
             body_damage_on_hurted: false,
+            money_icon: "fa-building-columns",
+            money_icon2: "fa-dollar-sign",
+            second_money: 0,
+            job: "",
+            job_grade: "",
         };
     },
     mounted() {
@@ -430,6 +437,10 @@ const app2 = Vue.createApp({
 
                 this.name = data.name
                 this.currency = data.currency
+                this.display_second_money = data.second_money
+                this.money_icon = data.money_icon
+                this.money_icon2 = data.money_icon2
+                this.display_job = data.job
                 this.pause_info1 = data.info1
                 this.pause_info2 = data.info2
                 this.pause_info3 = data.info3
@@ -487,6 +498,9 @@ const app2 = Vue.createApp({
                 this.total_players = data.total_players
                 this.current_street = data.street
                 this.ping = data.ping
+                this.job = data.job
+                this.job_grade = data.job_grade
+                this.second_money = data.second_money
 
                 if (!this.display_pause) {
                     if (this.money == null) {
@@ -544,11 +558,24 @@ const app2 = Vue.createApp({
             } else if (data.type == "hide_ui") {
                 $("#main_hud").fadeOut();
             } else if (data.type == "show_weapon") {
-                var group = data.group 
-                var name = data.name 
-                this.weapon_loaded_ammo = data.current_ammo
-                this.weapon_total_ammo = data.total_ammo 
+                var group = data.group
+                var name = data.name
+                if (group != "melee") {
+                    if (group == "pistol") {
+                        $('#weapon_ammo_container').css('right', '4.0%');
+                    } else {
+                        $('#weapon_ammo_container').css('right', '6.5%');
+                    }
+
+                    this.weapon_loaded_ammo = data.current_ammo
+                    this.weapon_total_ammo = data.total_ammo 
+                    this.weapon_img = "./img/weapons/" + name
+                    this.weapon_name = name
+                } else {
+                    this.weapon_name = null
+                }
                 
+                /*
                 if (this.weapon_name != name) {
                     if (group != "melee") {                
                         if (group == "pistol") {
@@ -565,21 +592,20 @@ const app2 = Vue.createApp({
                         $('#weapon_ammo_container').toggleClass('animate__fadeOutRight animate__fadeInRight');
                         $("#weapon_img_container").fadeIn();
                         $("#weapon_ammo_container").fadeIn();
+
+                        this.weapon_name = name
                     } else {
                         $('#weapon_img_container').toggleClass('animate__fadeInRight animate__fadeOutRight');
                         $('#weapon_ammo_container').toggleClass('animate__fadeInRight animate__fadeOutRight');
                         $("#weapon_img_container").fadeOut();
                         $("#weapon_ammo_container").fadeOut();
+
+                        this.weapon_name = null
                     }
-                    
-                    this.weapon_name = name
                 }
+                */
             } else if (data.type == "hide_weapon") {
-                if (this.weapon_name != null) {
-                    $('#weapon_img_container').toggleClass('animate__fadeInRight animate__fadeOutRight');
-                    $('#weapon_ammo_container').toggleClass('animate__fadeInRight animate__fadeOutRight');
-                    this.weapon_name = null
-                }
+                this.weapon_name = null
             } else if (data.type == "show_mimimap") {
                 this.display_minimap = true
                 $("#time_div_moved").fadeOut();
@@ -665,14 +691,15 @@ const app2 = Vue.createApp({
             } else if (data.type == "server_announcement") {
                 this.createAnnouncement(data.title, data.text, data.time)
             } else if (data.type == "show_key_menu") {
+                var ref = this
                 if (this.display_key == false) {
                     this.display_key = true
-                    $('#key_container').toggleClass('animate__fadeOutRight animate__fadeInRight');
-                    $("#key_container").fadeIn();
+                    $('#key_container').removeClass('animate__fadeOutRight');
+                    $('#key_container').addClass('animate__fadeInRight');
                     setTimeout(function () {
-                        $('#key_container').toggleClass('animate__fadeInRight animate__fadeOutRight');
-                        $("#key_container").fadeOut();
-                        this.display_key = false
+                        $('#key_container').removeClass('animate__fadeInRight');
+                        $('#key_container').addClass('animate__fadeOutRight');
+                        ref.display_key = false
                     }, 6000);
                 }
             } else if (data.type == "pause_menu") {

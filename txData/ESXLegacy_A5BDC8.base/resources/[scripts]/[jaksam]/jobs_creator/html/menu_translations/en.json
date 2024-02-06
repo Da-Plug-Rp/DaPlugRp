@@ -516,5 +516,7 @@
     "menu:controls_dialog:info_3": "Changing the key here won't update the translations. Edit them manually in the script files",
 
     "menu:enable_toggle_drag": "Enable toggle drag",
-    "menu:default_toggle_drag_key": "Default toggle drag key"
+    "menu:default_toggle_drag_key": "Default toggle drag key",
+
+    "menu:settings:lose_handcuffs_on_use": "Lose handcuffs on use"
 }

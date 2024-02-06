@@ -13,7 +13,7 @@ games { 'gta5' }
 
 name 'keep-harmony'
 description 'A powerful Fivem library to enhance my development (^.^)'
-version '3.0.3-alpha'
+version      '3.0.5'
 author "swkeep"
 repository 'https://swkeep.tebex.io'
 
@@ -69,6 +69,9 @@ escrow_ignore {
     'lua/accessible/*.lua',
     -- links
     'lua/accessible/links/**/*.lua',
+    'lua/client/essential/stash.lua',
+    'lua/server/add-on/stash.lua',
+    'lua/locale/*.lua'
 }
 
 files {

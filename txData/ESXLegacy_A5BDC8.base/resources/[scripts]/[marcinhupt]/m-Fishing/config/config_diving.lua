@@ -35,7 +35,7 @@ Config.TreasureChest = {
 }
 
 Config.DivingLocations = {
-    [1] = {
+    --[[[1] = {
         coords = vector3(-1887.41, -1187.53, -21.05), -- Location where prop has gona be spawned
         prop = "prop_m_coral_01", -- Prop spawned
         searched = false, -- Don't touch
@@ -88,5 +88,5 @@ Config.DivingLocations = {
         reward = { -- List of possible drops on this location
             "red_coral"
         }
-    },
+    },--]]
 }

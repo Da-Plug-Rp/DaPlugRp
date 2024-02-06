@@ -1,0 +1,2 @@
+-- BACKUP FOR IDENTIFIER char1:d37bd8bf5b1bf416f8bfa1143e8a6de635cb3315, PROPERTY #329, UNIQUE PROPERTY ID BY-9340
+INSERT INTO `loaf_properties` (`shell`, `propertyid`, `id`, `last_entered`, `owner`, `furniture`) VALUES ("no shell set", 329, "BY-9340", 1704596333000.0, "char1:d37bd8bf5b1bf416f8bfa1143e8a6de635cb3315", "[]");

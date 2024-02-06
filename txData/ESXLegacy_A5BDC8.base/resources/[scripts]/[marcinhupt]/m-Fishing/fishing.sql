@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `m_fishing` (
-  `identifier` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
+  `identifier` varchar(55) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
   `experience` int DEFAULT NULL,
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

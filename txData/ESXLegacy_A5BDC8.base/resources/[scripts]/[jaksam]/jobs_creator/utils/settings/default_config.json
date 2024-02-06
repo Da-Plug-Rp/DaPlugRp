@@ -43,6 +43,7 @@
         "unemployedJob": "unemployed",
         "handcuffRequireItem": false,
         "handcuffsItemName": "handcuffs",
+        "handcuffsRemoveOnUse": false,
         "lockpickCarRequireItem": false,
         "lockpickItemName": "lockpick",
         "lockpickRemoveOnUse": false,

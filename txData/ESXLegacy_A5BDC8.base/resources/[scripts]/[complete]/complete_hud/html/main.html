@@ -134,15 +134,33 @@
                                 <img id="server_logo" :src="'./img/' + logo_img" style="max-width: 100; max-height: 50px;">
                             </div>
                         </div>
-                        <div v-if="showMoney" class="card mt-4" style="background-color: transparent; box-shadow: none; border: none;">
-                            <h4 class="d-flex animate__animated money-h4" id="money_h4">
-                                {{currency}}<span id="money_container"></span>
-                            </h4>
+                        <div class="mt-4">
+                            <div v-if="display_job" class="card mt-0" style="background-color: transparent; box-shadow: none; border: none;">
+                                <h4 class="d-flex animate__animated job-h4 align-items-center" style="color: #ebebeb;">
+                                    <div class="d-flex" style="align-items: flex-end;">
+                                        {{job_grade}} <div style="color: rgba(255, 255, 255, 0.55); margin-left: 0.5vh; margin-right: 0.5vh;">|</div> {{job}}
+                                    </div>
+                                    
+                                    <i class="fa-solid fa-briefcase" style="color: rgba(255, 255, 255, 0.55); margin-left: 0.5vh; font-size: 1rem;"></i>
+                                </h4>
+                            </div>
+                            <div v-if="showMoney" class="card mt-0" style="background-color: transparent; box-shadow: none; border: none;">
+                                <h4 class="d-flex animate__animated money-h4 align-items-center" id="money_h4">
+                                    {{currency}}<span id="money_container"></span>
+                                    <i :class="['fa-solid', money_icon]" style="color: rgba(255, 255, 255, 0.55); margin-left: 0.5vh; font-size: 1rem;"></i>
+                                </h4>
+                            </div>
+                            <div v-if="showMoney && display_second_money" class="card mt-0" style="background-color: transparent; box-shadow: none; border: none;">
+                                <h4 class="d-flex animate__animated money-h4 align-items-center">
+                                    {{currency}}{{second_money}}
+                                    <i :class="['fa-solid', money_icon2]" style="color: rgba(255, 255, 255, 0.55); margin-left: 0.5vh; font-size: 1rem;"></i>
+                                </h4>
+                            </div>
                         </div>
-                        <div id="weapon_img_container" class="mt-4 animate__animated animate__fadeOutRight" style="display: none;">
+                        <div v-if="weapon_name" id="weapon_img_container" class="mt-4 animate__animated animate__fadeInRight">
                             <div style="display: flex;justify-content: flex-end;flex-direction: column;align-items: flex-end;">
-                                <img id="weapon_img" src="" style="height: 40px !important; transform: scaleX(-1); width: fit-content;">
-                                <h4 id="weapon_ammo_container" class="card-title mb-0 animate__animated animate__fadeOutRight" style="width: 200px; text-align: right; right: 6.5%; margin-right: calc(10%); display: none;">
+                                <img id="weapon_img" :src="weapon_img" style="height: 40px !important; transform: scaleX(-1); width: fit-content;">
+                                <h4 id="weapon_ammo_container" class="card-title mb-0 animate__animated animate__fadeInRight" style="width: 200px; text-align: right; right: 6.5%; margin-right: calc(10%);">
                                     <strong id="weapon_loaded_ammo" :style="`color: ${mainColor}; font-size: 1.6rem; font-weight: 700; letter-spacing: -1.5px; text-align: right; width: 100px; margin-right: 0.25rem;`">{{weapon_loaded_ammo}}</strong>
                                     <strong style="opacity: 50%; font-size: 1.1rem; font-weight: 400; color: #ebebeb; margin-right: 0.1rem;">/</strong>
                                     <strong id="weapon_total_ammo" style="color: #ebebeb; opacity: 80%; font-size: 1.1rem; font-weight: 600; text-align: right; width: 100px;">{{weapon_total_ammo}}</strong>
@@ -258,7 +276,7 @@
                 </ul>
             </div>
             <div class="card middle-right" style="margin-right: 20px; background-color: transparent; box-shadow: none; border: none; filter: drop-shadow(rgba(0, 0, 0, 0.247) 0px 4px 4px);">
-                <div id="key_container" class="animate__animated animate__fadeOutRight" style="display: none;">
+                <div id="key_container" class="animate__animated animate__fadeOutRight">
                     <ul class="list-unstyled space-y-1 mb-0" id="key_list"></ul>
                 </div>
             </div>

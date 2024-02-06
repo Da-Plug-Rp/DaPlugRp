@@ -10,9 +10,9 @@
 
 -- Configuration settings for the Discord bot
 Config.Bot = {
-    enabled = true,              -- Set this to true to activate the bot
+    enabled = false,              -- Set this to true to activate the bot
     reconnection_interval = 60,   -- The interval (in seconds) for the bot to attempt reconnecting
-    token = 'MTE4ODQ4NjgwNzM4NjYwNzc1OA.GZRv93.UxiKOfr-mZGiusfYmwjSk6Q0uerULQJVDSiWYw',                   -- The Discord bot token (replace with your own token)
+    token = '',                   -- The Discord bot token (replace with your own token)
     guild_id = 988158464276693012 -- The ID of the Discord guild the bot will operate on
 }
 
@@ -32,7 +32,7 @@ Config.webhook = {
     },
     hooks = {
         -- List of webhook URLs to send the message to
-        ['default'] = 'https://discord.com/api/webhooks/1193559972617916537/P9F3C8EX6R-qqIAXx72Mqvn_pJLFItYeOjcKNoHYy4maL7jtMWzU3E8Y1drKILzan07F'
+        ['default'] = ''
     }
 }
 

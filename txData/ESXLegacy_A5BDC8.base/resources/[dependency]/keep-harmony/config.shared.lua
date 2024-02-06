@@ -27,8 +27,8 @@ Config.inventory = 'ox_inventory' -- [qb-inventory / ox_inventory]
 Config.target = 'ox_target'       -- [qb-target / ox_target]
 Config.menu = 'ox_lib'          -- [built-in / qb-menu / keep-menu / ox_lib]
 Config.input = 'ox_lib'         -- [built-in / qb-input /keep-input / ox_lib]
-Config.progressbar = ' ox_lib'         -- [qb / ox_lib]
-Config.notification = 'esx'        -- [built-in / qb / esx / ox_lib / custom
+Config.progressbar = 'ox_lib'         -- [qb / ox_lib]
+Config.notification = 'ox_lib'        -- [built-in / qb / esx / ox_lib / custom
 Config.emote = 'dpemotes'         -- [dpemotes / rpemotes / scully_emotemenu]
 
 -- Resource Name Mapping
@@ -40,7 +40,7 @@ Config.resource_names = {
     -- It should be es_extended instead!
     framework = 'es_extended',
     inventory = 'ox_inventory',
-    target = 'ox-target',
+    target = 'ox_target',
     menu = 'ox_lib', -- leave it empty when using built-in
     input = 'ox_lib' -- leave it empty when using built-in
 }

@@ -1,0 +1,51 @@
+lang = {
+ 
+    ['cloned_card_alert'] = { text = 'Cloned Card Alert' },
+    ['forged_bank_check_alert'] = {text = 'Forged Bank Check Alert'},
+    ['shops_title'] = {black_market = 'Black Market' , electronic_shop = 'Electrnoic Shop', slipseller_shop = 'Slip Seller' },
+    ['input_box'] = {title = 'Quantity', label = 'Enter Quantity', icon = 'hashtag' },
+    ['open_this_shop'] = {text = '[~g~E~w~] to open this shop' },
+    ['sell_to_banker'] = {text = '[~g~E~w~] Sell check to banker' },
+    --notifications
+    ['not_enough_space'] = {title = 'Fraud System', description = "You don't have enough space in your inventory", type = 'error', icon = ''},
+    ['not_enough'] = {title = 'Fraud System', description = "You don't have enough", type = 'error', icon = ''},
+    ['atm_ate_card'] = { title = 'Fraud System', description = "ATM: Ate card.", type = 'error', icon = '' },
+    ['nothing_to_sell'] = { title = 'Fraud System', description = "You have nothing to sell", type = 'error', icon = '' },
+    ['cloning_card'] = { title = 'Fraud System', description = 'Copying data and cloning to Blank Card', type = 'success', icon = '' },
+    ['card_been_clonned'] = { title = 'Fraud System', description = 'Card has been clonned head toward Skimmer', type = 'success', icon = '' },
+    ['process_failed_blank_card'] = { title = 'Fraud System', description = 'Process failed no Blank Card found in Skimmer', type = 'error', icon = '' },
+    ['no_usb_info'] = { title = 'Fraud System', description = "You don't have info USB", type = 'error', icon = '' },
+    ['printer_infor_inserted'] = { title = 'Fraud System', description = 'Information has been inserted head toward printer', type = 'success', icon = '' },
+    ['process_failed_no_slip'] = { title = 'Fraud System', description = 'Process failed not whiteslip found in Printer', type = 'error', icon = '' },
+    ['no_stolen_card'] = { title = 'Fraud System', description = "You don't have Stolen Card", type = 'error', icon = '' },
+    ['head_toward_laptop'] = { title = 'Fraud System', description = "Head toward laptop", type = 'error', icon = '' },
+    ['no_white_slip'] = { title = 'Fraud System', description = "You don't have a white slip", type = 'error', icon = '' },
+    ['checque_has_been_removed'] = { title = 'Fraud System', description = "Forged Cheque has been removed", type = 'success', icon = '' },
+    ['whiteslip_has_been_removed'] = { title = 'Fraud System', description = "White Slip has been removed", type = 'success', icon = '' },
+    ['blank_card_removed'] = { title = 'Fraud System', description = "You need a blank Card", type = 'error', icon = '' },
+    ['full_fuel'] = { title = 'Fraud System', description = "Generator is Already Full with fuel", type = 'error', icon = '' },
+
+
+    ['laptop_texts'] = {poweroff = '~r~Laptop Power Off',ready = '~g~Laptop Ready'},
+    ['pickup_item'] = { text = '[~y~H~w~] Pickup Item' },
+    ['move_location'] = {text = 'Move [~g~G~w~] Location'},
+    ['no_close_power_source'] = {text = '~r~Not Closed to any power source'},
+    ['clone_from_usb'] = {text = '[~g~E~w~] Clone From USB'},
+    ['clonning_text'] = { text = "Cloning: " },
+    ['insert_data_cheque'] = { text = "[~g~E~w~] Insert Data into Cheque" },
+    ['inserting_data'] = { text = "Inserting Data: " },
+    ['printing_data'] = { text = "Printing Data: " },
+    ['connected_to_laptop'] = { text = '~g~Connected to Laptop' },
+    ['laptop_needed'] = { text = '~r~Laptop Needed' },
+    ['skimmer_text'] = { poweroff = '~r~Skimmer Power Off' , ready ='~g~Skimmer Ready' },
+    ['insert_blank_card'] = { text = '[~g~E~w~] Insert Blank Card'},
+    ['remove_blank_card'] = { text = '[~r~E~w~] Remove Card'},
+    ['remove_clonned_card'] = { text = '[~g~E~w~] Get Clonned Card'},
+    ['no_fuel'] = { text = '~r~No Fuel' },
+    ['generator_text'] = { name = '~r~Generator: ',movelocation = 'Move [~g~G~w~] Location',fueling = 'Start [~y~E~w~] Fueling',start = 'Start [~g~E~w~]',stop = 'Stop [~r~E~w~]' , on = 'Generator: ~g~on'},
+    ['remove_from_printer'] =  {whiteslip = '[~r~E~w~] Remove White Slip' , cheque = '[~g~E~w~] Remove Forged Cheque'},
+    ['printer_text'] = {off = '~r~Printer Power Off', ready = '~g~Printer Ready' , insertslip = '[~g~E~w~] Insert White Slip'},
+
+}
+
+
