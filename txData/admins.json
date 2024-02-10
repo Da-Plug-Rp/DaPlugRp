@@ -99,15 +99,7 @@
       }
     },
     "permissions": [
-      "menu.viewids",
-      "players.message",
-      "players.warn",
-      "players.kick",
-      "players.ban",
-      "players.freeze",
-      "players.heal",
-      "players.playermode",
-      "players.spectate"
+      "all_permissions"
     ]
   },
   {

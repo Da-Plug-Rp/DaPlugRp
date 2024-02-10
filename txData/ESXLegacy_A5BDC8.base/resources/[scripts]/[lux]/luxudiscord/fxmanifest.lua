@@ -5,7 +5,7 @@ skipYarn 'true'
 
 author 'Luxu#0001 <luxu@luxu.gg>'
 description "Luxu.gg Discord Bot"
-version "1.0.7"
+version "1.0.8"
 lua54 'yes'
 
 ui_page "nui/index.html"

@@ -9,8 +9,8 @@ Config.Dispatch = 'ps-dispatch' -- "ps-dispatch" or "cd_dispatch" or "qs-dispatc
 Config.InventoryLink = "ox_inventory/web/images/"
 Config.Minigame = false -- Enable minigame?
 Config.MinigameType = "ps-ui" -- "ps-ui" or "bl_ui" or "ox_lib" ( open code on config_functions.lua )
-Config.Fuel = "LegacyFuel" -- "LegacyFuel" or "okokFuel" or "ox_fuel" or "ti_fuel" or "qs-fuel" ( open code on config_functions.lua )
-Config.Debug = true -- If true, some prints happen on console
+Config.Fuel = "okokFuel" -- "LegacyFuel" or "okokFuel" or "ox_fuel" or "ti_fuel" or "qs-fuel" ( open code on config_functions.lua )
+Config.Debug = false -- If true, some prints happen on console
 
 Config.License = {
     enable = true, -- If true, the script check if player have license to fishing

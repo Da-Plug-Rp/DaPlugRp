@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CMapTypes>
+  <extensions />
+  <archetypes>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="17841700" />
+      <flags value="" />
+      <specialAttribute value="0" />
+      <bbMin x="-0.05485260" y="-0.02033900" z="-0.08867340" />
+      <bbMax x="0.05961430" y="0.02345790" z="0.09765070" />
+      <bsCentre x="0.00238090" y="0.00155940" z="0.00448860" />
+      <bsRadius value="0.11151000" />
+      <hdTextureDist value="11597105" />
+      <name>gray</name>
+      <textureDictionary>gray</textureDictionary>
+      <clipDictionary />
+      <drawableDictionary />
+      <physicsDictionary />
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>gray</assetName>
+      <extensions />
+    </Item>
+  </archetypes>
+  <name>
+  </name>
+  <dependencies />
+  <compositeEntityTypes />
+  <CreatedBy>Skylumz YTYP Generator</CreatedBy>
+</CMapTypes>

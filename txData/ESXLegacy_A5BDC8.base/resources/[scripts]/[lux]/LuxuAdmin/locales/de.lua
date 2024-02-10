@@ -18,6 +18,7 @@ Locales['de'] = {
             NotAllowedToUse = "Dazu hast du keine Berechtigung.",
             IsNowOnDuty = "%s ist jetzt in Betrieb 🟢",
             IsNotOnDuty = "%s ist nicht mehr in Betrieb 🔴",
+            confirm = "Confirm",
       },
       navbar = {
             players = "Einwohner",
@@ -264,6 +265,7 @@ Locales['de'] = {
             GoTo = "Go to",
             Remove = "Remove",
             EntityModelName = "Entity Model Name",
+            Plate = "Plate",
       },
       resources = {
             ResourceList     = "Resource List",

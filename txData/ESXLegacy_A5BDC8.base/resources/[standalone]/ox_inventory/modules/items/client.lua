@@ -188,12 +188,7 @@ end)
 
 -----------------------------------------------------------------------------------------------
 
-Item('motelcard', function(data, slot)
-    TriggerEvent('0R:Motels:Client:OpenDoorNotTeleport', slot)
-end)
-
 exports('Items', function(item) return getItem(nil, item) end)
 exports('ItemList', function(item) return getItem(nil, item) end)
-
 
 return Items

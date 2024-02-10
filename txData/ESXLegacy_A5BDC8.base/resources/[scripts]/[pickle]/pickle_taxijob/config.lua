@@ -51,7 +51,7 @@ Config.Businesses = {
 
 Config.Missions = {
     loop = false, -- Keep doing missions until /taxijob is used.
-    reward = {name = "money", min = 100, max = 500, miles = 2.0}, -- multiples reward by miles traveled.
+    reward = {name = "money", min = 2000, max = 5000, miles = 2.0}, -- multiples reward by miles traveled.
     models = {
         `s_m_m_cntrybar_01`,
         `u_f_y_comjane`,

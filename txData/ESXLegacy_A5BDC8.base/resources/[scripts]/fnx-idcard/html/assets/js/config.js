@@ -5,12 +5,12 @@ var bg2 = "./assets/image/img2.png";
 var bg3 = "./assets/image/img3.png";
 
 
-var genderMale = "M"; // in your db you will have "M" or "m" put here the right configuration 
-var genderFemale = "F"; // in your db you will have "F" or "f" put here the right configuration 
+var genderMale = "m"; // in your db you will have "M" or "m" put here the right configuration 
+var genderFemale = "f"; // in your db you will have "F" or "f" put here the right configuration 
 
-var dateSeparator = "-"; // in your db you will have "-" or "/" put here the right configuration 
+var dateSeparator = "/"; // in your db you will have "-" or "/" put here the right configuration 
 
-var dateFormat = 'yyyy/mm/gg'; // in your db you will have 1) mm/gg/yyyy OR 2) gg/mm/yyyy OR 3) yyyy/mm/gg put here the right configuration 
+var dateFormat = 'gg/mm/yyyy'; // in your db you will have 1) mm/gg/yyyy OR 2) gg/mm/yyyy OR 3) yyyy/mm/gg put here the right configuration 
 
 var config= {
     logo:"./assets/image/logo.png", // to change this logo in the varius documents https://prnt.sc/mkBmA73vZ4HS

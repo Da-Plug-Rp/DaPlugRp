@@ -420,8 +420,8 @@ Config = {
         },
 
         MDT = {
-            Use = true, -- if false here you can add your custom MDT >> cl_utils
-            Command = 'mdt', 
+            Use = false, -- if false here you can add your custom MDT >> cl_utils
+            Command = '', 
             Control = '',  -- Controls list:  https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
             Suggestion = 'Open MDT Menu'
         },

@@ -1,0 +1,51 @@
+ <html>
+
+<head>
+    <title>S5 Market</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="nui://game/ui/jquery.js" type="text/javascript"></script> -->
+    <script src="main.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+
+<body>
+    <div id="stg-gameboy">
+        <img id="gameboy-photo" src="images/bg/green.png">
+        <div id="gameboy-screen">
+            <div id="gameboy-battery">
+                <i class="fa-solid fa-battery-three-quarters"></i>
+            </div>
+            <div id="stg_games">
+                <div onclick="selectGame('metal')" class="gameboy-games">
+                    <img class="games" src="images/games/metal.jpg">
+                </div>
+                <div onclick="selectGame('mario')" class="gameboy-games">
+                    <img class="games" src="images/games/mario.png">
+                </div>
+                <div onclick="selectGame('kart')" class="gameboy-games">
+                    <img class="games" src="images/games/kart.png">
+                </div>
+                <div onclick="selectGame('monkey')" class="gameboy-games">
+                    <img class="games" src="images/games/monkey.jpg">
+                </div>
+                <div onclick="selectGame('sonic')" class="gameboy-games">
+                    <img class="games" src="images/games/sonic.png">
+                </div>
+                <div onclick="selectGame('mortal')" class="gameboy-games">
+                    <img class="games" src="images/games/mortal.jpg">
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</body>
+
+</html>

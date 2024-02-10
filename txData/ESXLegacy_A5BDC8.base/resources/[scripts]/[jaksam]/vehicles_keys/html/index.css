@@ -1,0 +1,25 @@
+#ui {
+    user-select: none;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.vehicle-plate {
+    cursor: pointer;
+}
+
+.script-name {
+    color: #a6ff00;
+    
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2.5rem!important;
+
+    line-height: 10vh
+}

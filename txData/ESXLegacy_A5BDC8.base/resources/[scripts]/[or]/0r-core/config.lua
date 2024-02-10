@@ -2,9 +2,9 @@ Config = {}
 
 Config.Multichar = false
 
-Config.Framework = 'Hello Everyone'
+Config.Framework = 'esx'
 
-Config.OldFramework = false
+Config.OldFramework = true
 -- If you are using legacy ESX or legacy Qbus infrastructure, mark true.
 
 Config.CoreName = {
@@ -16,7 +16,7 @@ Config.Mysql = "oxmysql" -- ghmattimysql or mysql-async or oxmysql
 
 Config.MoneyIsItem = true 
 
-Config.ItemMoneyName = "cash"
+Config.ItemMoneyName = "money"
 
 Config.PrimaryIdentifier = "license" -- or steam -- discord -- live like
 

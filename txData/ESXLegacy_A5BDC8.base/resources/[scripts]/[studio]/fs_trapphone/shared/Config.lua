@@ -5,12 +5,62 @@ local seconds = 1000
 Config.Drugs = {
     -- { name = 'drugname', quantity = max quantity can sell, price = price of single drug}
     { name = 'water', quantity = math.random(1, 2), price = math.random(10, 100) }, -- for random quantity or price
-    { name = 'bread', quantity = 2,                 price = 10 },                   -- for exect quantity or price
-
+    { name = 'weed_pooch', quantity = 1,                 price = 150 },
+    { name = 'coke_pooch', quantity = 1,                 price = 170 },
+    { name = 'opium_pooch', quantity = 1,                 price = 310 },
+    { name = 'meth_pooch', quantity = 1,                 price = 360 },
+    { name = 'black_toe_1', quantity = 1,                 price = 450 },
+    { name = 'vil_gummy', quantity = 1,                 price = 250 },
+    { name = 'blacktar', quantity = 1,                 price = 70 },
+    { name = 'breads_11', quantity = 1,                 price = 500 },
+    { name = 'spice_pooch', quantity = 1,                 price = 100 },
+    { name = 'wig_dye', quantity = 1,                 price = 150 },
+    { name = 'xpills', quantity = 1,                 price = 150 },
+    { name = 'xtc_baggy', quantity = 1,                 price = 150 },
+    { name = 'blacklightning', quantity = 1,                 price = 450 },
+    { name = 'crack_pooch', quantity = 1,                 price = 300 },
+    { name = 'fentanyl_pill', quantity = 1,                 price = 450 }, 
+    { name = 'angeldust', quantity = 1,                 price = 240 },  
+    { name = 'magic_musroom_paradise', quantity = 1,                 price = 700 },  
+    { name = 'magic_musroom_skyzone', quantity = 1,                 price = 550 },  
+    { name = 'Nightmare-Cookies', quantity = 1,                 price = 450 },  
+    { name = 'peach-pie-edibles', quantity = 1,                 price = 250 },  
+    { name = 'Sour-starwberry-edibles', quantity = 1,                 price = 270 },  
+    { name = 'butter_finger_thc', quantity = 1,                 price = 350 },  
+    { name = 'Red_bottoms', quantity = 1,                 price = 1500 },              
+    { name = 'Balenciaga', quantity = 1,                 price = 1500 }, 
+    { name = 'dom_perignon', quantity = 1,                 price = 500 },
+    { name = 'moon_rock', quantity = 1,                 price = 500 },
+    { name = 'lean_bottle', quantity = 1,                 price = 300 },
+    { name = 'acid', quantity = 1,                 price = 125 },
+    { name = 'codeine', quantity = 1,                 price = 900 },
+    { name = 'adderall', quantity = 1,                 price = 70 },
+    { name = 'meth_shot', quantity = 1,                 price = 320 },
+    { name = 'flakka', quantity = 1,                 price = 650 },
+    { name = 'bathsalts', quantity = 1,                 price = 170 },
+    { name = 'dab', quantity = 1,                 price = 350 },
+    { name = 'fentanyl_pills', quantity = 1,                 price = 1500 },
+    { name = 'lsd', quantity = 1,                 price = 160 },
+    { name = 'molly', quantity = 1,                 price = 175 }, 
+    { name = 'oxycodone', quantity = 1,                 price = 230 },
+    { name = 'perc_pooch', quantity = 1,                 price = 600 },
+    { name = 'perc', quantity = 1,                 price = 450 },
+    { name = 'speedball', quantity = 1,                 price = 500 },
+    { name = 'steroids', quantity = 1,                 price = 200 },
+    { name = 'xanax', quantity = 1,                 price = 80 },
+    { name = 'xanax_box', quantity = 1,                 price = 1500 },
+    { name = 'lcwhite_lighting', quantity = 1,                 price = 400 },
+    { name = 'playstation5', quantity = 1,                 price = 450 },
+    { name = 'Purple_nails', quantity = 1,                 price = 350 },
+    { name = 'Blue_Dream', quantity = 1,                 price = 350 },
+    { name = 'lcsour_watermelon', quantity = 1,                 price = 800 },
+    { name = 'lcmountain_java', quantity = 1,                 price = 700 },
+    { name = 'lcstrawberry_shine', quantity = 1,                 price = 725 },
+    { name = 'lcblkberry_shine', quantity = 1,                 price = 750 },
 }
 
 Config.Dispatch = {
-    enable = true,-- if u want to use it then put your export into /shared/utils.lua line 21 --its a client side function
+    enable = false,-- if u want to use it then put your export into /shared/utils.lua line 21 --its a client side function
     --any dispach call work only if you configure it 
     notifyOnMakingCall = false, -- this notify when player will choose any option to sell
     --in case of custom edit in client/utils.lua
@@ -34,14 +84,14 @@ Config.LimitedCalls = {
     command = 'checklimit', --command to check how many calls you made out of total limit
 }
 
-Config.Account = 'money' -- money,bank,black_money
+Config.Account = 'black_money' -- money,bank,black_money
 
 
 --can ped reject
 Config.Reject = {
     enable = true,
     perentage = 25,
-    notifyOnReject = true, -- if your want to enable it please configure dispach function first put your export into /shared/utils.lua line 21 --its a client side function
+    notifyOnReject = false, -- if your want to enable it please configure dispach function first put your export into /shared/utils.lua line 21 --its a client side function
 }
 
 -- if job needed to sell --

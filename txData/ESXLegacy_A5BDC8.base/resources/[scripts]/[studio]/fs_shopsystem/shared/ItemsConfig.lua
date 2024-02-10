@@ -229,9 +229,123 @@ ItemsConfig.detail = {
             name = 'fs_prime6',
             price = 200,
             category = 'Beverage',
+        }, 
+        {
+            label = 'adobada_pringles',
+            name = 'Adobada Pringles',
+            price = 200,
+            category = 'Food',
+        }, 
+        {
+            label = 'bbq_pringles',
+            name = 'Bbq Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'adobada_pringles',
+            name = 'Chililime Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'cheddarsourcream_pringles',
+            name = 'Cheddarsourcream Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'cheddarcheese_pringles',
+            name = 'Cheddarcheese Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'frenchoniondip_pringles',
+            name = 'Frenchoniondip Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'hothoney_pringles',
+            name = 'Hothoney Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'lightlysalted_pringles',
+            name = 'Lightlysalted Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'original_pringles',
+            name = 'Original Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'originalreductedfat_pringles',
+            name = 'Originalreductedfat Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'paprika_pringles',
+            name = 'Paprika Pringles',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'WEAPON_PETROLCAN',
+            name = 'Gas Can',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'scratchcard01',
+            name = 'Scratch Card',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'scratchcard02',
+            name = 'Scratch Card',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'scratchcard03',
+            name = 'Scratch Card',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'scratchcard04',
+            name = 'Scratch Card',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'scratchcard05',
+            name = 'Scratch Card',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'rapsnack_barbquinwithmyhoney',
+            name = 'Scratch Card',
+            price = 200,
+            category = 'Food',
+        },
+        {
+            label = 'rapsnack_barbquinwithmyhoneyb',
+            name = 'Scratch Card',
+            price = 200,
+            category = 'Food',
         },
 
-       
+        
 
 
     },

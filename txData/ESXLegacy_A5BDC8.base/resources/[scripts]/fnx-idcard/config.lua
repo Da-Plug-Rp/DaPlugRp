@@ -1,13 +1,13 @@
 Config = {}
 
-Config.Core = 'QB' -- 'ESX' or 'QB'
+Config.Core = 'ESX' -- 'ESX' or 'QB'
 Config.meta = false
-Config.Inventory = 'qb' -- 'ox' or 'qs' or 'qb' ox == ox_invnentory, qs == qs-inventory , qb == qb-inventory
+Config.Inventory = 'ox' -- 'ox' or 'qs' or 'qb' ox == ox_invnentory, qs == qs-inventory , qb == qb-inventory
 
 Config.UseEsxMenuDefault = false --only esx, if false the used menu is ox_lib 
 
 Config.DriverLicenseTrigger = 'esx_dmvschool:addLicense' ---ONLY ESX
-Config.webhooks = 'https://discord.com/api/webhooks/1111200973306740757/dNZJMbIEuvLHCJhR7PXFz0N5ewSjvkjV8bVqyIdJ3R0jn0WdnPG-M2HSWFrmAiApF5BD' -- IMPORTANT SET YOUR WEBHOOK HERE, the script will not work without a webhook! Create a webhook guide: https://www.youtube.com/watch?v=fKksxz2Gdnc&t
+Config.webhooks = 'https://discord.com/api/webhooks/1204530948016963644/2UoeUdDlp0IPLGC4i0RM_wMdrt8q1bR-cDCIPVY1hYwOHnblfik8rmlnO_K1obaYnJks' -- IMPORTANT SET YOUR WEBHOOK HERE, the script will not work without a webhook! Create a webhook guide: https://www.youtube.com/watch?v=fKksxz2Gdnc&t
 Config.align = 'top-right'
 Config.MarkerCoords = vec3(-260.123077, -965.248352, 31.217529) -- if you want more points create it by yourself according to the documentation: https://peppesess.gitbook.io/fenix-development-documentation/resources/fnx-idcard
 Config.PayInCash = true

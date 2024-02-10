@@ -1,0 +1,70 @@
+{
+    "server": {
+        "acePermission": "vehicles_keys",
+        "vehicleAlarmsItems": {
+            "1": "vehicle_alarm_1",
+            "2": "vehicle_alarm_2",
+            "3": "vehicle_alarm_3",
+            "4": "vehicle_alarm_4"
+        },
+        "probabilityPoliceAlertNpcStolenVehicles": 35,
+        "vehicleTransferContractItemName": "vehicle_transfer_contract",
+        "jobsThatCanInstallAlarms": false
+    },
+
+    "shared": {
+        "locale": "en",
+        "alarmRadarBlip": {
+            "sprite": 225,
+            "color": 1,
+            "scale": 1.0,
+            "interval": 2,
+            "duration": 60
+        },
+
+        "lockpick": {
+            "itemName": "lockpick",
+            "loseOnUse": true,
+            "timeToLockpick": 5
+        }
+    },
+
+    "client": {
+        "vehicleLockAnim": {
+            "dict": "anim@mp_player_intmenu@key_fob@",
+            "name": "fob_click",
+            "duration": 800
+        },
+        "defaultVehiclelockKey": "u",
+        "allowAutoCloseDoorsOnVehicleLock": true,
+        "allowAutoOpenDriverDoorOnUnlock": true,
+        "timeToHotwire": 5,
+        "hotwireAnimDict": "veh@std@ds@base",
+        "hotwireAnimName": "hotwire",
+        "hotwireProbabilityOfSuccess": 100,
+        "menuPosition": "right",
+        "alarmSecondsDuration": 25,
+        "alarmBlip": {
+            "sprite": 161,
+            "scale": 1.0,
+            "color": 1,
+            "duration": 15
+        },
+        "secondsToInstallAlarm": 5,
+        "allowBreakingWindowsOfPlayersOwnedVehicles": false,
+        "isHotwireRequired": true,
+        "defaultVehiclekeysMenuKey": "comma",
+        "use3Dtext": true,
+        "canPlayersShareKeys": true,
+        "autoStartEngineIfTheVehicleIsOwned": true,
+        "defaultToggleEngineKey": "G",
+        "lockDrivingVehiclesNPC": false,
+        "completelyDisableWindowDestroy": false,
+        "canSearchForKeys": true,
+        "secondsToSearchForKeys": 3,
+        "chancesToFindKeys": 50,
+        "canTargetDrivingNPCs": true,
+        "enableKeyToToggleEngine": false,
+        "canMoveVisualWithKeysMenuOpened": true
+    }
+}

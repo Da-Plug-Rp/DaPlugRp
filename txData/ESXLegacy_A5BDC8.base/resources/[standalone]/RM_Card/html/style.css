@@ -1,0 +1,15 @@
+body {
+    overflow: hidden;
+}
+
+.miranda-container {
+    position: absolute;
+    bottom: -20vw;
+    right: 1vw;
+    width: 20vw;
+    height: calc(20vw * 0.598);
+    background-image: url(miranda.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

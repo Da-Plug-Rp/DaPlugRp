@@ -1,6 +1,6 @@
 Config = {}
 
-Config.DeletePermanent = true -- on choping player owned vehicle it will be permanently removed from player data
+Config.DeletePermanent = false -- on choping player owned vehicle it will be permanently removed from player data
 
 Config.AnimTime = 5 --in seconds -- animation time of removing parts in seconds
 
@@ -65,37 +65,37 @@ Config.blacklistplates = {
 }
 
 Config.Business = {
-    ['scraper'] = { -- jobname  scraper
-        Blip = { enable = true, coords = vector3(-425.2217, -1688.1985, 19.0291) , title = 'Scapper Chop Shop' , id = 527, color = 31 , scale = 0.7},
-        Allowed = { -- what vehicles can be chopped in this location
-            npcvehicles = true, 
-            playervehicles = true,
-        },
-        ScapPoints = {  -- configuration points
-            startpoint = vector3(-425.2217, -1688.1985, 19.0291) , --starting process on vehicle at this point 
-            doordrop = vector3(-422.5697, -1674.4823, 19.0291 ),   --store door
-            bootdrop = vector3(-419.3865, -1675.4242, 19.0291),   --store boot
-            bonnetdrop = vector3(-415.8058, -1676.7914, 19.0291), --store bonnets
+    --['scraper'] = { -- jobname  scraper
+        --Blip = { enable = true, coords = vector3(-425.2217, -1688.1985, 19.0291) , title = 'Scapper Chop Shop' , id = 527, color = 31 , scale = 0.7},
+        --Allowed = { -- what vehicles can be chopped in this location
+            --npcvehicles = true, 
+           -- playervehicles = true,
+        --},
+       -- ScapPoints = {  -- configuration points
+            --startpoint = vector3(-425.2217, -1688.1985, 19.0291) , --starting process on vehicle at this point 
+           -- doordrop = vector3(-422.5697, -1674.4823, 19.0291 ),   --store door
+            --bootdrop = vector3(-419.3865, -1675.4242, 19.0291),   --store boot
+           -- bonnetdrop = vector3(-415.8058, -1676.7914, 19.0291), --store bonnets
             
             
-            sellSiemon = vector3(-429.5168, -1685.5092, 19.0291), -- point where to call Ped to take vehicle
-            SiemonSpawn = vector3(-435.7994, -1672.0447, 19.0291),  --ped spawn location that will take vehicle and run away
-        },
+            --sellSiemon = vector3(-429.5168, -1685.5092, 19.0291), -- point where to call Ped to take vehicle
+            --SiemonSpawn = vector3(-435.7994, -1672.0447, 19.0291),  --ped spawn location that will take vehicle and run away
+        --},
         
         Management = {
 
-            scap = { --sell or collect scap
+            --scap = { --sell or collect scap
                 coords = vector3(-412.1544, -1678.1622, 19.0291), --location to collect or sell scap
-            },
-            stash = {
-                minrank = 2, -- min rank that can access stash
-                coords = vector3(-484.6925, -1730.6196, 19.5493), --stash marker position
-            },
-            boss = {
-                moneywash = false,
-                coords = vector3(-499.3454, -1714.1659, 19.8992)   
-            }
-        }
+            --},
+            --stash = {
+                --minrank = 2, -- min rank that can access stash
+               -- coords = vector3(-484.6925, -1730.6196, 19.5493), --stash marker position
+            --},
+           -- boss = {
+                --moneywash = false,
+                --coords = vector3(-499.3454, -1714.1659, 19.8992)   
+            --}
+        --}
     },
 
 --- Add more here same like above
@@ -109,22 +109,22 @@ Config.NonBusiness = {
     --uncomment to make non business money will go to player directly
 
 
-    -- {    
-    --     Blip = { enable = true, coords = vector3(352.8318, -1157.5365, 29.2919) , title = 'Chop Shop' , id = 527, color = 31, scale = 0.7},
-    --     Allowed = {
-    --         npcvehicles = true,
-    --         playervehicles = true,
-    --     },
-    --     coords = {
-    --         startpoint = vector3(352.8318, -1157.5365, 29.2919) , --starting process on vehicle at this point 
-    --         doordrop = vector3(359.0726, -1166.1667, 29.2918 ),   --store door
-    --         bootdrop = vector3(359.2379, -1163.0635, 29.2918 ),   --store boot
-    --         bonnetdrop = vector3(359.0126, -1159.7523, 29.2918 ), --store bonnets
-    --         SellScap = vector3(359.4843, -1157.0326, 29.2919 ), -- collect or sell scap that store in door boot or bonnets
+     {    
+     Blip = { enable = false, coords = vector3(352.8318, -1157.5365, 29.2919) , title = 'Chop Shop' , id = 527, color = 31, scale = 0.7},
+         Allowed = {
+             npcvehicles = true,
+             playervehicles = true,
+         },
+         coords = {
+             startpoint = vector3(352.8318, -1157.5365, 29.2919) , --starting process on vehicle at this point 
+             doordrop = vector3(359.0726, -1166.1667, 29.2918 ),   --store door
+             bootdrop = vector3(359.2379, -1163.0635, 29.2918 ),   --store boot
+            bonnetdrop = vector3(359.0126, -1159.7523, 29.2918 ), --store bonnets
+             SellScap = vector3(359.4843, -1157.0326, 29.2919 ), -- collect or sell scap that store in door boot or bonnets
          
-    --         sellSiemon = vector3(359.2225, -1154.1404, 29.2919 ), -- point where to call Ped to take vehicle
-    --         SiemonSpawn = vector3(359.1487, -1150.1786, 29.2918 ) , --ped spawn location that will take vehicle and run away
-    --     }
-    -- },
+             sellSiemon = vector3(359.2225, -1154.1404, 29.2919 ), -- point where to call Ped to take vehicle
+             SiemonSpawn = vector3(359.1487, -1150.1786, 29.2918 ) , --ped spawn location that will take vehicle and run away
+         }
+     },
  
 }

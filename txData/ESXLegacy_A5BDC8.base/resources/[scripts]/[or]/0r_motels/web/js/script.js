@@ -2520,6 +2520,7 @@ $(document).on('click', '#GirKat', function(){
     $('#ElevatorMenu').fadeOut(200);
     $.post('http://0r_motels/Cal', JSON.stringify({}))
     elevatorMenuIn = false
+    console.log($(this).attr("kat"), $(this).attr("hayk"), $(this).attr("mayk"), SecilenMotelMCode)
     $.post('http://0r_motels/SetPlayerKat', JSON.stringify({
         asd: $(this).attr("kat"),
         between: $(this).attr("hayk"),

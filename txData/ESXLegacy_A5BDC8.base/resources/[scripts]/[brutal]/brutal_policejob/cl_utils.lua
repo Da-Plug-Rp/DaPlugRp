@@ -143,7 +143,30 @@ function HandCuffedEvent(cuffed)
 end
 
 function CustomMDT()
-    -- You can open another MDT here
+    TriggerServerEvent('qs-dispatch:server:CreateDispatchCall', {
+        job = { 'police', 'sheriff', 'traffic', 'patrol' },
+        callLocation = vector3(0,0,0),
+        callCode = { code = '<CALL CODE>', snippet = '<CALL SNIPPED EX: 10-10>' },
+        message = "Call Message",
+        flashes = false, -- you can set to true if you need call flashing sirens...
+        image = "URL", -- Url for image to attach to the call 
+        --you can use the getSSURL export to get this url
+        blip = {
+            sprite = 488, --blip sprite
+            scale = 1.5, -- blip scale
+            colour = 1, -- blio colour
+            flashes = true, -- blip flashes
+            text = 'Hight Speed', -- blip text
+            time = (20 * 1000), --blip fadeout time (1 * 60000) = 1 minute
+        },
+        otherData = {
+            exports['qs-dispatch']:GetPlayerInfo()
+           {
+               text = 'Red Obscure', -- text of the other data item (can add more than one)
+               icon = 'fas fa-user-secret', -- icon font awesome https://fontawesome.com/icons/
+           }
+         }
+    })
 end
 
 function BulletProofVest()

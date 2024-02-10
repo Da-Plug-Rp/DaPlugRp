@@ -35,7 +35,7 @@ Config = {
 
 
     --- @param Payments: Use built in event for charging at cash registers or add here your own.
-    PayEvent = '', -- Add your client side billing event here for the registers.
+    PayEvent = 'TriggerEvent("billing_ui:activateBillingMode")', -- Add your client side billing event here for the registers.
 
     DutyToggleEvent = '', -- Add your duty toggle event here if using one.
 

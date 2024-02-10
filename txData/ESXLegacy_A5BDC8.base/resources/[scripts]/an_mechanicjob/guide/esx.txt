@@ -1,0 +1,38 @@
+INSERT INTO `jobs` (name, label) VALUES
+	('mechanic', 'Mechanic');
+
+INSERT INTO `addon_account` (name, label, shared) VALUES
+	('society_mechanic', 'Mechanic', 1)
+;
+
+INSERT INTO `addon_inventory` (name, label, shared) VALUES
+	('society_mechanic', 'Mechanic', 1)
+;
+
+INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
+	('mechanic',0,'recrue','Recruit',200,'{}','{}'),
+	('mechanic',1,'mechanic','echanic',300,'{}','{}'),
+	('mechanic',2,'manager','Manager',400,'{}','{}'),
+	('mechanic',3,'boss',"Boss",600,'{}','{}')
+;
+
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
+    ('repairkit2', 'Repair Kit', 5, 0, 1),
+    ('advancedrepairkit2', 'Adv Repair Kit', 5, 0, 1),
+    ('toolbox', 'Car Jack', 5, 0, 1),
+    ('carjack', 'Car Jack', 5, 0, 1),
+    ('car_hood', 'Car Hood', 3, 0, 1),
+    ('car_trunk', 'Car Trunk', 3, 0, 1),
+    ('car_window', 'Car Door', 2, 0, 1),
+    ('car_door', 'Car Door', 2, 0, 1),
+    ('car_wheel', 'Car Wheel', 2, 0, 1),
+    ('car_engine', 'Car Engine', 5, 0, 1),
+    ('metalscrap', 'Scrap Metal', 1, 0, 1),
+    ('rubber', 'Rubber', 1, 0, 1),
+    ('plastic', 'Plastic', 1, 0, 1),
+    ('electric_scrap', 'Electric Scrap', 1, 0, 1),
+    ('glass', 'Glass', 1, 0, 1),
+    ('aluminum', 'Aluminium', 1, 0, 1),
+    ('copper', 'Copper', 1, 0, 1),
+    ('steel', 'Steel', 1, 0, 1)
+;

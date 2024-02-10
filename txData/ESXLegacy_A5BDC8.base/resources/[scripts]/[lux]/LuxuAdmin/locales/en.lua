@@ -19,6 +19,7 @@ Locales['en'] = {
             NotInsideVehicle = "You are not inside a vehicle",
             IsNowOnDuty = "%s is now on duty 🟢",
             IsNotOnDuty = "%s is no longer on duty 🔴",
+            confirm = "Confirm",
       },
       navbar = {
             players = "Players",
@@ -269,6 +270,7 @@ Locales['en'] = {
             EntityModelName = "Entity Model Name",
             Rotation = "Rotation",
             Clone = "Clone",
+            Plate = "Plate",
       },
       resources = {
             ResourceList     = "Resource List",

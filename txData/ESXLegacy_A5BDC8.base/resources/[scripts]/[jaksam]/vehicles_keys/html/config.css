@@ -1,0 +1,9 @@
+:root
+{
+    --textcolor: rgb(255, 255, 255);        /* Text Color */
+    --checkmark_color: rgba(0, 0, 0, 1.0);  /* Checkmark Color*/
+    --icon_size: 2rem;                        /* Size of the Icons */
+    --icon_color: rgb(255, 255, 255);       /* Icon Colors */
+    --main-background: linear-gradient(to bottom right, rgb(8, 8, 8), rgb(25, 25, 25)); /* Menu Background Color */
+    --menu-opacity: 100%;                     /* Opacity of the menu */
+}

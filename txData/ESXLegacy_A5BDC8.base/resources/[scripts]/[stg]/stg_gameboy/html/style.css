@@ -1,0 +1,76 @@
+#stg-gameboy{
+    width: 25%;
+    height: 80%;
+    position: relative;
+    left: 40%;
+    top: 12%;
+
+    display: none;
+    transform: scale(0.6);
+    transition: 1s;
+}
+#gameboy-photo{
+    width: 100%;
+    height: 100%;
+}
+#gameboy-screen{
+    width: 89%;
+    height: 50%;
+    background-color: rgb(39, 39, 39);
+    position: absolute;
+    top: 3%;
+    left: 5.8%;
+    border-radius: 7%;
+    overflow: hidden;
+}
+
+#stg_games{
+    width: 100%;
+    height: 100%;
+}
+
+.gameboy-games{
+    width: 35%;
+    height: 25%;
+    background-color: rgb(90, 86, 86);
+    position: relative;
+    left: 3.5%;
+    top: 10%;
+    border-radius: 20px;
+    float: left;
+    margin-left: 8%;
+    margin-top: 3%;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.gameboy-games:hover{
+    transform: scale(0.9)
+}
+
+#gameboy-battery{
+    width: 15%;
+    height: 7%;
+    border-radius: 20px;
+    position: absolute;
+    left: 46%;
+    top: 4%;
+}
+.fa-battery-three-quarters{
+    color: green;
+    position: absolute;
+    font-size: 1.7vw;
+    left: 7%;
+}
+
+.games{
+    width: 100%;
+    height: 100%;
+}
+
+.game{
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    border-radius: 7%;
+}

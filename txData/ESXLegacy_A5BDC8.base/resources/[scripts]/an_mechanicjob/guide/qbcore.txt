@@ -1,0 +1,151 @@
+1_ Replace this with the existing mechanic job in your qb-core/shared/jobs.lua
+
+['mechanic'] = {
+    label = 'Mechanic',
+    defaultDuty = true,
+    offDutyPay = false,
+    grades = {
+        ['0'] = {
+            name = 'Trainee',
+            payment = 50
+        },
+        ['1'] = {
+            name = 'Mechanic',
+            payment = 75
+        },
+        ['2'] = {
+            name = 'Manager',
+            payment = 100
+        },
+        ['3'] = {
+            name = 'Boss',
+	    isboss = true,
+            payment = 125
+        },
+    },
+},
+
+
+2_ Add this to your qb-core/shared/items.lua
+
+	-- AN Mechanic Job
+	['car_wheel']  = {
+		['name'] = 'car_wheel', 
+		['label'] = 'Wheel', 				
+		['weight'] = 1000, 		
+		['type'] = 'item', 		
+		['image'] = 'car_wheel.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A multipurpose wheel'
+	},
+	['repairkit2']  = {
+		['name'] = 'repairkit2', 
+		['label'] = 'Repair Kit', 				
+		['weight'] = 500, 		
+		['type'] = 'item', 		
+		['image'] = 'repairkit2.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A Special Repair Kit crafted by a Professional Mechanic.'
+	},
+	['advancedrepairkit2']  = {
+		['name'] = 'advancedrepairkit2', 
+		['label'] = 'Advanced Repair Kit', 				
+		['weight'] = 800, 		
+		['type'] = 'item', 		
+		['image'] = 'advancedrepairkit2.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A Special & Advanced Repair Kit crafted by a Professional Mechanic.'
+	},
+	['car_door']  = {
+		['name'] = 'car_door', 
+		['label'] = 'Car Door', 				
+		['weight'] = 1500, 		
+		['type'] = 'item', 		
+		['image'] = 'car_door.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A car door.'
+	},
+	['car_trunk']  = {
+		['name'] = 'car_trunk', 
+		['label'] = 'Car Trunk', 				
+		['weight'] = 1500, 		
+		['type'] = 'item', 		
+		['image'] = 'car_trunk.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A car trunk.'
+	},
+	['car_hood']  = {
+		['name'] = 'car_hood', 
+		['label'] = 'Car Hood', 				
+		['weight'] = 1500, 		
+		['type'] = 'item', 		
+		['image'] = 'car_hood.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A car hood.'
+	},
+	['car_window']  = {
+		['name'] = 'car_window', 
+		['label'] = 'Car Window', 				
+		['weight'] = 1500, 		
+		['type'] = 'item', 		
+		['image'] = 'car_window.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A car window.'
+	},
+	['toolbox']  = {
+		['name'] = 'toolbox', 
+		['label'] = 'Tool Box', 				
+		['weight'] = 500, 		
+		['type'] = 'item', 		
+		['image'] = 'toolbox.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A special Mechanic Tool box.'
+	},
+	['carjack']  = {
+		['name'] = 'carjack', 
+		['label'] = 'Car Jack', 				
+		['weight'] = 1500, 		
+		['type'] = 'item', 		
+		['image'] = 'carjack.png', 		
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'A car jack used to elevate the car from the ground for quick repairs.'
+	},
+	['car_engine'] = {
+		['name'] = 'car_engine', 			
+		['label'] = 'Engine', 				
+		['weight'] = 1500, 		
+		['type'] = 'item', 		
+		['image'] = 'car_engine.png',
+		['unique'] = true, 		
+		['useable'] = true, 	
+		['shouldClose'] = true,	   
+		['combinable'] = nil,   
+		['description'] = 'An Engine that can be placed inside vehicles to make them run ig?'
+	},

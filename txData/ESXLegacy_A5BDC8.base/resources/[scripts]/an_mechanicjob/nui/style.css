@@ -1,0 +1,283 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    overflow-y: hidden; 
+  }
+
+  .container {
+    align-items: center;
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    margin-top: -30%;
+    background-color:#2e3532;
+    width: 35%;
+    height: 30%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+  }
+
+  .menu {
+    z-index: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .item {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: #898a85;
+      color: #E0E2DB;
+      padding: 20px;
+      margin: 5px;
+      cursor: pointer;
+      transition: all 0.09s ease-in-out;
+      border-radius: 15px;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+    }
+
+    .item:active {
+      transform: scale(0.98);
+    }
+  .materials {
+    margin-top: 10px;
+    position: relative;
+    z-index: -1; 
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    display: none;
+    margin-bottom: 20px;
+    font-size: 18px;
+    background-color: #8b2635;
+    color:#E0E2DB;
+    padding: 20px;
+    border-radius: 10px;
+  }
+.craftButton {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 15px 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  background-color: #238587;
+  color: #D3EFBD;
+  cursor: pointer;
+  display: none;
+    margin: auto;
+    font-weight: 700;
+}
+
+.craftButton:hover {
+      transform: scale(1.02);
+  background-color:#218081;
+      transition: all 0.15s ease-in-out;
+}
+
+    .craftButton:active {
+      transform: scale(0.97);
+    }
+
+.ingredients {
+  margin: 0 auto;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFF;
+}
+
+.ingredient {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  margin: 0 auto;
+  margin-bottom: 7px;
+  font-size: 15px;
+  background-color: #641521;
+  border-radius: 5px;
+  color: #ECD3D7;
+  max-width: 30%;
+  padding: 5px;
+}
+
+.ingredient:hover {
+  background-color: #4e111a;
+  border-radius: 7px;
+      transition: all 0.3s ease-in-out;
+}
+
+#menuTitle {
+  height: 15%;
+  margin-top: 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+/* Vehicle Spawner */
+.spawnerMenu {
+  display: none;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #E0E2DB;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-shadow: 1px 1px #333;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 0%;
+  color: #f3f0f0;
+  text-align: center;
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: inline-block;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: -5%;
+  margin-bottom: 1%;
+  color: #7cffa3;
+  text-align: center;
+  font-weight: 700;
+}
+
+li {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #ECD3D7;
+  background-color: #238587;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+li:hover {
+  background-color: #8b2635;
+  transition: all 0.2s ease-in-out;
+}
+li:active {
+  background-color: #661925;
+  transition: all 0.2s ease-in-out;
+}
+/* Mechanic Boss Menu */
+
+#bossmenu {
+    display: none;
+    margin-top: -10%;
+}
+
+.boss-header {
+    display: block;
+}
+
+.boss-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+  width: 320px;
+  height: 400px;
+  margin: 10px;
+  text-align: center;
+  background-color: rgba(35, 133, 135, 0.774);
+  border-radius: 10px;
+  padding: 20px;
+  color: #f5eaeb;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.boss-button {
+  width: 60%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #8b2635;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+  .boss-button:hover {
+    background-color: #6b1d29;
+  }
+  /* Dropdown menu styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 6px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Input form styling */
+.input-form {
+  padding: 5px 3px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  height: 40px;
+}
+
+option {
+  font-family: 'Roboto', sans-serif;
+}

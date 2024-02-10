@@ -25,14 +25,14 @@ Config.WeaponsNoShells = { -- Weapons that shouldn't drop shells
     --[`WEAPON_STUNGUN`] = true,
 }
 
-Config.GetRPName = false -- true / false, set to true if the script isn't returning player charnames but you'd wan't it to (should return RP names by default)
+Config.GetRPName = true -- true / false, set to true if the script isn't returning player charnames but you'd wan't it to (should return RP names by default)
 Config.WeaponToSeeEvidence = 'WEAPON_FLASHLIGHT' -- Weapon needed to see evidence on ground, leave to blank if you want players to always see evidence on ground
 Config.UseEvidenceText = true -- Should there be a text above evidence that isn't the closest to you (true / false, test both for better understanding)
 Config.ShellRandomness = true -- Should shells be a bit randomly placed when shot (the shell "flies out" of the gun so it's a bit random)
 
 Config.ShootingWait = 10 -- How many milliseconds to wait before checking again if player is shooting, bigger = better performance
 Config.UpdateEvidenceTime = 1000 * 60 * 10 -- How often should server check whether an evidence should be deleted, bigger = better performance (last number = time in minues)
-Config.UpdateGSRTime = 1000 * 60 * 5 -- How often should server check whether a gsr should be deleted, bigger = better performance (last number = time in minues)
+Config.UpdateGSRTime = 1000 * 60 * 60 -- How often should server check whether a gsr should be deleted, bigger = better performance (last number = time in minues)
 
 Config.SeeDistance = 8 -- Distance to see evidence on ground (smaller = better performance)
 Config.InteractDistance = 2 -- Distance at which you can interact with the evidence on ground
@@ -40,7 +40,7 @@ Config.InteractDistance = 2 -- Distance at which you can interact with the evide
 Config.MaxEvidence = 0 -- Max amount of evidence a police can carry, set to 0 for unlimited
 Config.SaveEvidence = true -- Should evidence the player has picked up save in their inventory until they get rid of it
 Config.AnalyzeCoords = { -- Coords where you can analyze evidence
-    vector3(483.54, -987.9, 30.69),
+    vector3(-316.5824, -266.9948, 39.8663),
 }
 Config.SeeAnalyzeText = 2 -- Distance at which you will see the 'analyze' text
 Config.AnalyzeTime = 1000 -- How long it takes to analyze evidence, how many shells you are carrying * this (eg. You have 5 shells --> 5 * 1000 = 5000ms = 5s)
