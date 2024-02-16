@@ -2,7 +2,7 @@ fx_version 'adamant'
 games { 'gta5' }
 
 mod 'ap-court'
-version '1.2.1'
+version '1.2'
 
 lua54 'yes'
 
@@ -19,7 +19,7 @@ files {
 }
 
 shared_scripts {
-  '@ox_lib/init.lua', -- UNCOMMENT THIS IF YOUR USING OX LIBS
+  --'@ox_lib/init.lua', -- UNCOMMENT THIS IF YOUR USING OX LIBS
   'config.lua',
   'language.lua'
 }

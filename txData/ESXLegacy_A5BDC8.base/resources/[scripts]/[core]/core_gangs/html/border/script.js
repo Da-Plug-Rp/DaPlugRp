@@ -62,7 +62,7 @@ function populateGangs(data) {
         if (value <= 0 || totalScore <= 0) {
             continue
         }
-        var percentage = (value / totalScore) * 100;
+        var percentage = ((value / totalScore) * 100).toFixed(0);
 
         if (percentage > lead) {
             winning = key;

@@ -20,7 +20,7 @@ Config.Corridor = {
     }
 }
 
-Config.Apartment = false
+Config.Apartment = true
 -- If you activate this setting, the player will be allocated a hotel room when registering to the server.
 
 -- This information allows the player to be given a motel room when they first enter the server. Here is the motel room information:
@@ -36,7 +36,7 @@ Config.Blip = {
 }
 -- Blip Settings
 
-Config.CustomShowerSystem = false
+Config.CustomShowerSystem = true
 -- If you want to your shower system, you should open config_functions.lua than you should edit it.
 
 Config.MetaDataSystem = true
@@ -48,7 +48,7 @@ Config.MotelGarages = true
 Config.TargetedRevenueValue = 150000 
 -- The maximum income value that can appear in the Boss Menu.
 
-Config.GarageVehiclesLock = false
+Config.GarageVehiclesLock = true
 -- It ensures that the vehicles in the garage are locked.
 
 Config.AutoLock = true 
@@ -288,7 +288,7 @@ Config.DueDate = 3
 -- The number of days entered into this variable ensures that the player's room will be canceled if he does not pay the room rent within the specified day.
 
 Config.MotelAdminMenuAccessible = { -- Enter the license IDs of the players you want to be able to access the /moteladmin menu here.
-    "license:80877aca6164d3df0a469fe3c96f2524127ab052",
+    "license:788fb9df9334249865ed81c278804e8180a10ebf",
     "license:62f00dc3b8e577187d9588808140bb8b1daa20eb",
     "license:fd581068d91ab38fe0150add0df96e651c3b6d5c"
 }

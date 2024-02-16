@@ -82,28 +82,4 @@ end
 
 
 TriggerEvent('chat:addSuggestion', '/miranda', 'RM / Open Miranda Card')
-
-
-print("AUTHORIZED - RM - Discord.gg/redrum")
-print("AUTHORIZED - Version 1.0.0 - Discord.gg/redrum")
-
-
-
-                                                                                                                                     
-                                                                                                                                     
-print("RRRRRRRRRRRRRRRRR   EEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDDDDD      RRRRRRRRRRRRRRRRR   UUUUUUUU     UUUUUUUUMMMMMMMM               MMMMMMMM")
-print("R::::::::::::::::R  E::::::::::::::::::::ED::::::::::::DDD   R::::::::::::::::R  U::::::U     U::::::UM:::::::M             M:::::::M")
-print("R::::::RRRRRR:::::R E::::::::::::::::::::ED:::::::::::::::DD R::::::RRRRRR:::::R U::::::U     U::::::UM::::::::M           M::::::::M")
-print("RR:::::R     R:::::REE::::::EEEEEEEEE::::EDDD:::::DDDDD:::::DRR:::::R     R:::::RUU:::::U     U:::::UUM:::::::::M         M:::::::::M")
-print("  R::::R     R:::::R  E:::::E       EEEEEE  D:::::D    D:::::D R::::R     R:::::R U:::::U     U:::::U M::::::::::M       M::::::::::M")
-print("  R::::R     R:::::R  E:::::E               D:::::D     D:::::DR::::R     R:::::R U:::::D     D:::::U M:::::::::::M     M:::::::::::M")
-print("  R::::RRRRRR:::::R   E::::::EEEEEEEEEE     D:::::D     D:::::DR::::RRRRRR:::::R  U:::::D     D:::::U M:::::::M::::M   M::::M:::::::M")
-print("  R:::::::::::::RR    E:::::::::::::::E     D:::::D     D:::::DR:::::::::::::RR   U:::::D     D:::::U M::::::M M::::M M::::M M::::::M")
-print("  R::::RRRRRR:::::R   E:::::::::::::::E     D:::::D     D:::::DR::::RRRRRR:::::R  U:::::D     D:::::U M::::::M  M::::M::::M  M::::::M")
-print("  R::::R     R:::::R  E::::::EEEEEEEEEE     D:::::D     D:::::DR::::R     R:::::R U:::::D     D:::::U M::::::M   M:::::::M   M::::::M")
-print("  R::::R     R:::::R  E:::::E               D:::::D     D:::::DR::::R     R:::::R U:::::D     D:::::U M::::::M    M:::::M    M::::::M")
-print("  R::::R     R:::::R  E:::::E       EEEEEE  D:::::D    D:::::D R::::R     R:::::R U::::::U   U::::::U M::::::M     MMMMM     M::::::M")
-print("RR:::::R     R:::::REE::::::EEEEEEEE:::::EDDD:::::DDDDD:::::DRR:::::R     R:::::R U:::::::UUU:::::::U M::::::M               M::::::M")
-print("R::::::R     R:::::RE::::::::::::::::::::ED:::::::::::::::DD R::::::R     R:::::R  UU:::::::::::::UU  M::::::M               M::::::M")
-print("R::::::R     R:::::RE::::::::::::::::::::ED::::::::::::DDD   R::::::R     R:::::R    UU:::::::::UU    M::::::M               M::::::M")
-print("RRRRRRRR     RRRRRRREEEEEEEEEEEEEEEEEEEEEEDDDDDDDDDDDDD      RRRRRRRR     RRRRRRR      UUUUUUUUU      MMMMMMMM               MMMMMMMM")
+                                                                                                                                

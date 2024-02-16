@@ -2,7 +2,7 @@ fx_version "adamant"
 
 game "gta5"
 
-version '2.0'
+version '2.1'
 
 description 'FwB Studio'
 
@@ -29,7 +29,6 @@ client_script {
 }
 
 server_script {
-	'@mysql-async/lib/MySQL.lua',
 	'config.lua',
 	'server/*.lua',
 

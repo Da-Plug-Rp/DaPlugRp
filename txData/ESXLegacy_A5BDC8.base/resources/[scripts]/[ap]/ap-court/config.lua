@@ -5,7 +5,7 @@ Config = {
 	},
 	DiscordWebhook = true, -- Set this too true if you want the cases to be posted in your discord channel, make sure to edit webhook in your server folder.
 	CourtLocationName = "San Andres District Court", -- This is preset, Change name to suit your server.
-	Blip = {Active = true, Coords = vector3(-549.1404, -197.2340, 39.2198), Label = "Court", Sprite = 176, Display = 4, Scale = 0.60, Color = 0}, -- Blip settings for court.
+	Blip = {Active = true, Coords = vector3(239.8431, -1097.4856, 29.2943), Label = "Court", Sprite = 176, Display = 4, Scale = 0.60, Color = 0}, -- Blip settings for court.
 	BarLicensePrice = 8000, -- Set this to the cost you would like to charge for the bar license exam.
 	NewIDCardCost = 5000, -- Set this to the cost you want players to pay if they require a new ID Card.
 	JoinJuryPayment = 1000, -- Set this to the amount you would like to give when a player signs up to the jury.
@@ -15,10 +15,10 @@ Config = {
 	Currency = '$', -- Set this to the currency your server uses.
 	CourtJob = 'court', -- Set this to the job that you want to use for the court script.
 	lawyerID = 'lawyerid', -- Set this to the item players need in order to show there ID Card.
-	Phone = {GKSPhone = false, GCPhone = false, QuasarPhone = true, HighPhone = false, RoadPhone = false, LBPhone = false, Custom = false}, -- Set to the phone you use to true, if you set Custom to true edit the function at the bottom of webhook.lua.
+	Phone = {GKSPhone = false, GCPhone = false, QuasarPhone = true, QSPRO = false, HighPhone = false, RoadPhone = false, LBPhone = false, Custom = false}, -- Set to the phone you use to true, if you set Custom to true edit the function at the bottom of webhook.lua.
 	Interactions = {fivem_target = false, qTarget = false, ox_target = true, drawText = false},
-	Context = {ZF = false, NH = false, OX = true}, -- Set the context menu you have to true, make sure the others are false.
-	Dialog = {ZF = false, NH = false, OX = true}, -- Set the dialog input you have to true, make sure the others are false.
+	Context = {ZF = false, NH = true, OX = false}, -- Set the context menu you have to true, make sure the others are false.
+	Dialog = {ZF = false, NH = true, OX = false}, -- Set the dialog input you have to true, make sure the others are false.
 	GCPhoneBug = false, -- Set this too true if the player does not recive a message.
 	useID_UI = true, -- Set to true if you want too use the UI Lawyer ID Card or false to use Advanced Notification.
 	CriminalRecordArchives = true -- Set this too true if you want to use the intergrated criminal record archives.
@@ -26,7 +26,7 @@ Config = {
 
 Config.LawyerIDMetaData = {
   Enable = false, -- Enable if you have the latest version of the inventorys below.
-  Inventory = {MF = false, OX = true, QS = false} -- Set the inventory you use to true.
+  Inventory = {MF = false, OX = false, QS = false} -- Set the inventory you use to true.
 }
 
 Config.Target = {

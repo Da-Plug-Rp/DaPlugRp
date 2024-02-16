@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'fs_ChopShop'
-version '1.1'
+version '1.2'
 lua54 'yes'
 
 author "Team FwB Studio"

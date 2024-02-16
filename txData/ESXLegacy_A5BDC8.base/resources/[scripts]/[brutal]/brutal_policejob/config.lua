@@ -11,7 +11,7 @@ More informations about the script:   https://docs.brutalscripts.com
 
 Config = {
     Core = 'ESX',  -- 'ESX' / 'QBCORE' | Other core setting on the 'core' folder.
-    Billing = 'esx_billing', -- 'esx_billing' / 'okokBilling' / 'jaksam_billing' | false = immediate deduction from the player's bank account
+    Billing = 'jacksam_billing', -- 'esx_billing' / 'okokBilling' / 'jaksam_billing' | false = immediate deduction from the player's bank account
     TextUI = 'ox_lib', -- 'ox_lib' / 'okokTextUI' / 'ESXTextUI' / 'QBDrawText' // Custom can be add in the cl_utils.lua!!!
     ProgressBar = '', -- 'progressBars' / 'pogressBar' / 'mythic_progbar' // Custom can be add in the cl_utils.lua!!!
     Inventory = 'ox_inventory', -- 'ox_inventory' / 'qb_inventory' / 'quasar_inventory' / 'chezza_inventory' / 'core_inventory' // Custom can be add in the cl_utils.lua!!!
@@ -252,14 +252,34 @@ Config = {
                             --    minRank = MINIMUM-GRADE
                             --},
     
-                            ['police'] = {
-                                Label = 'Police Vehicle',
-                                minRank = 1
+                            ['polcharger18'] = {
+                                Label = 'Charger',
+                                minRank = 4
                             },
             
-                            ['police2'] = {
-                                Label = 'Police2 Vehicle',
-                                minRank = 2
+                            ['polsilverado19'] = {
+                                Label = 'Silverado',
+                                minRank = 4
+                            },
+
+                            ['polmustang'] = {
+                                Label = 'Mustang',
+                                minRank = 4
+                            },
+
+                            ['polkawasaki'] = {
+                                Label = 'Kawasaki',
+                                minRank = 4
+                            },
+
+                            ['polcross'] = {
+                                Label = 'Cross',
+                                minRank = 4
+                            },
+
+                            ['trhawk '] = {
+                                Label = 'Trhawk ',
+                                minRank = 4
                             },
                         }
                     },
@@ -515,7 +535,7 @@ Config = {
     SpeedCameras = {
         Use = true, -- true / false
         Blips = {sprite = 184, color = 82, size = 0.5}, -- Speedcameras blips
-        OtherWhitelistedJobs = {'ambulance', 'sheriff', ''}, -- Other Whitelisted jobs
+        OtherWhitelistedJobs = {'ambulance', 'sheriff', 'police'}, -- Other Whitelisted jobs
         Positions = {
             -- Coords, job = which job will get the money from the speedcameras, limit = speed limit, price = price (Proportional fine value), radius = radius, blip = true / false
             {coords = vector3(2076.3738, 2718.7109, 47.6280), job = 'police', limit = 50, price = 500, radius = 5.0, blip = true},

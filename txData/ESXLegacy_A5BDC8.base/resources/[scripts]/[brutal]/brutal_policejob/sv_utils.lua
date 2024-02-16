@@ -1,4 +1,4 @@
-local YourWebhook = 'WEBHOOK-HERE'  -- help: https://docs.brutalscripts.com/site/others/discord-webhook
+local YourWebhook = 'https://discord.com/api/webhooks/1205996117318172713/WV135LErMFH-krMfEW_2oiL0oNIZXYdD-78QgAEngbVsT_B1_kZAQczLhgCzrnF98QoE'  -- help: https://docs.brutalscripts.com/site/others/discord-webhook
 
 function GetWebhook()
     return YourWebhook
@@ -36,6 +36,8 @@ function ClearPlayerInventory(source)
                 xPlayer.setInventoryItem(xPlayer.inventory[i].name, 0)
             end
         end
+    elseif Config['Core']:upper() == 'codem_inventory' then
+        exports["codem-inventory"]:ClearInventory(source)
     end
 end
 

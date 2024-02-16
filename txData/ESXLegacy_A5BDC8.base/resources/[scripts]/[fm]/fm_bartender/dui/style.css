@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "Gincu";
+    src: url("./Gincu.ttf");
+}
+
+body {
+    background: transparent;
+    overflow: hidden;
+}
+
+.header {
+    font-family: "Gincu";
+    color: white;
+    text-align: center;
+    font-size: 6rem;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+}
+
+.drink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    font-family: "Gincu";
+    color: white;
+    
+    height: 210px;
+    width: 100%;
+
+    animation: fadeIn 1s;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.ingredients {
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: rgba(255, 255, 255, 0.712);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

@@ -38,7 +38,14 @@ Config.Language = {
     noFishingKey = "You dont have the fishing key",
     youFound = "You found:",
     nothingInside = "You didn't find anything inside",
-
+    tournamentName = "Tournament Name:",
+    timeClosing = "Time until closing:",
+    minutes = "minute(s)",
+    minutesJoin = "minute(s)<br>[E] - Join Tournament",
+    time = "Time:",
+    seconds = "second(s)",
+    yourXp = "Your fishing XP:",
+    noXp = "You have no fishing XP.",
     -- Progressbars
     progGetFish = "Trying to get some fish...",
     progIllegalBait = "Making illegal bait...",

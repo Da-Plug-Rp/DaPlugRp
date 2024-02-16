@@ -12,13 +12,13 @@ More informations about the script:   https://docs.brutalscripts.com
 Config = {
     Core = 'ESX',  -- 'ESX' / 'QBCORE' | Other core setting on the 'core' folder.
     Inventory = 'ox_inventory', -- 'ox_inventory' / 'qb_inventory' / 'quasar_inventory' / 'chezza_inventory' / 'core_inventory' // Custom can be add in the cl_utils.lua!!!
-    Billing = false, -- 'okokBilling' / 'esx_billing' / 'jaksam_billing' | false = immediate deduction from the player's bank account
+    Billing = 'jaksam_billing', -- 'okokBilling' / 'esx_billing' / 'jaksam_billing' | false = immediate deduction from the player's bank account
     TextUI = 'ox_lib', -- 'ox_lib' / 'okokTextUI' / 'ESXTextUI' / 'QBDrawText' // Custom can be add in the cl_utils.lua!!!
     ProgressBar = '', -- 'progressBars' / 'pogressBar' / 'mythic_progbar' // Custom can be add in the cl_utils.lua!!!
     BrutalNotify = true, -- Buy here: (4€+VAT) https://store.brutalscripts.com | Or set up your own notify >> cl_utils.lua
     SteamName = false, -- true = Steam name | false = character name
     DateFormat = '%d/%m/%Y', -- Date format
-    CustomOutfitMenu = false, -- If it's true, it will open a custom outfit menu, what you can edit in the cl_utils.lua line 103.
+    CustomOutfitMenu = true, -- If it's true, it will open a custom outfit menu, what you can edit in the cl_utils.lua line 103.
 
     Bleeding = true,
     InjuredWalk = true,
@@ -197,7 +197,7 @@ Config = {
         -- For cops
 
         Duty = {
-            Use = false,
+            Use = true,
             Command = 'aduty', 
             Suggestion = 'Entering/Exiting duty'
         },
@@ -214,7 +214,7 @@ Config = {
         },
 
         MDT = {
-            Use = true, -- if false here you can add your custom MDT >> cl_utils
+            Use = false, -- if false here you can add your custom MDT >> cl_utils
             Command = 'emsmdt', 
             Control = '',  -- Controls list:  https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
             Suggestion = 'Open MDT Menu'

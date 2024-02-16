@@ -1,0 +1,66 @@
+-- ox_inventory
+["cocktail"] = {
+	label = "Cocktail",
+	weight = 1,
+	stack = true,
+	close = true
+},
+["ecola_rum"] = {
+	label = "eCola Rum",
+	weight = 1,
+	stack = true,
+	close = true
+},
+["spritz-bee"] = {
+	label = "Spritz Bee",
+	weight = 1,
+	stack = true,
+	close = true
+},
+["spritz-cumpa"] = {
+	label = "Spritz Cumpa",
+	weight = 1,
+	stack = true,
+	close = true
+},
+["americano"] = {
+	label = "Americano",
+	weight = 1,
+	stack = true,
+	close = true,
+},
+["mojito"] = {
+	label = "Mojito",
+	weight = 1,
+	stack = true,
+	close = true
+},
+["sex_on_the_beach"] = {
+	label = "Sex on the beach",
+	weight = 1,
+	stack = true,
+	close = true
+},
+["moscow_mule"] = {
+	label = "Moscow mule",
+	weight = 1,
+	stack = true,
+	close = true
+},
+["margarita"] = {
+	label = "Margarita",
+	weight = 1,
+	stack = true,
+	close = true
+},
+
+-- qb-core\shared\items
+cocktail                     = { name = 'cocktail', label = 'Cocktail', weight = 100, type = 'item', image = 'cocktail.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },
+ecola_rum                    = { name = 'ecola_rum', label = 'eCola Rum', weight = 100, type = 'item', image = 'ecola_rum.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },
+spritz-bee                   = { name = 'spritz-bee', label = 'Spritz Bee', weight = 100, type = 'item', image = 'spritz-bee.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },
+spritz-cumpa                 = { name = 'spritz-cumpa', label = 'Spritz Cumpa', weight = 100, type = 'item', image = 'spritz-cumpa.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },
+americano                    = { name = 'americano', label = 'Americano', weight = 100, type = 'item', image = 'americano.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },
+mojito                       = { name = 'mojito', label = 'Mojito', weight = 100, type = 'item', image = 'mojito.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },
+sex_on_the_beach             = { name = 'sex_on_the_beach', label = 'Sex on the beach', weight = 100, type = 'item', image = 'sex_on_the_beach.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },
+moscow_mule                  = { name = 'moscow_mule', label = 'Moscow mule', weight = 100, type = 'item', image = 'moscow_mule.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },
+margarita                    = { name = 'margarita', label = 'Margarita', weight = 100, type = 'item', image = 'margarita.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A cocktail' },

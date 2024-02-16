@@ -16,12 +16,12 @@ Config.Cops = {
     }
 }
 Config.SellCoralsSetgins = {
-    [1] = { item = "babyblue_coral", priceMin = 120, priceMax = 360 },
-    [2] = { item = "blue_coral", priceMin = 120, priceMax = 360 },
-    [3] = { item = "green_coral", priceMin = 120, priceMax = 360 },
-    [4] = { item = "pink_coral", priceMin = 120, priceMax = 360 },
-    [5] = { item = "red_coral", priceMin = 120, priceMax = 360 },
-    [6] = { item = "yellow_coral", priceMin = 120, priceMax = 360 },
+    [1] = { item = "babyblue_coral", label = "Baby Blue Coral", priceMin = 120, priceMax = 360 },
+    [2] = { item = "blue_coral", label = "Blue Coral", priceMin = 120, priceMax = 360 },
+    [3] = { item = "green_coral", label = "Green Coral", priceMin = 120, priceMax = 360 },
+    [4] = { item = "pink_coral", label = "Pink Coral", priceMin = 120, priceMax = 360 },
+    [5] = { item = "red_coral", label = "Red Coral", priceMin = 120, priceMax = 360 },
+    [6] = { item = "yellow_coral", label = "Yellow Coral", priceMin = 120, priceMax = 360 },
 }
 
 Config.DivingAnimation = {

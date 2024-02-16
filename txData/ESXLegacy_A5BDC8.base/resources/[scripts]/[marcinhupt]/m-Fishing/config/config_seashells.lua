@@ -27,8 +27,8 @@ Config.SeashellsPedHeading = 50.39 -- Heading of the ped
 Config.SeashellsPedModel = "a_m_m_hillbilly_01" -- Ped model https://docs.fivem.net/docs/game-references/ped-models/
 Config.SeashellsType = "cash" -- "cash" or "bank"
 Config.SeashellsSell = {
-    [1] = { item = "conch", priceMin = 2, priceMax = 4 },
-    [2] = { item = "shell", priceMin = 2, priceMax = 4 },
-    [3] = { item = "sea_snail", priceMin = 2, priceMax = 4 },
-    [4] = { item = "starfish", priceMin = 2, priceMax = 4 },
+    [1] = { item = "conch", label = "Conch", priceMin = 2, priceMax = 4 },
+    [2] = { item = "shell", label = "Shell", priceMin = 2, priceMax = 4 },
+    [3] = { item = "sea_snail", label = "Sea Snail", priceMin = 2, priceMax = 4 },
+    [4] = { item = "starfish", label = "Starfish", priceMin = 2, priceMax = 4 },
 }

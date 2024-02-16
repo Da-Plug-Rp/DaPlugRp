@@ -5,7 +5,7 @@ game 'gta5'
 
 author 'C8re dev team'
 description 'Core Gangs war'
-version '1.1.2'
+version '1.2.1'
 
 lua54 'yes'
 

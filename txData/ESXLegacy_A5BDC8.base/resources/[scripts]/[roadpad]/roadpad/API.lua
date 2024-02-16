@@ -2,7 +2,7 @@ Cfg = {}
 
 --REQUIRED
 
-Cfg.PhotoWebhook = 'https://discord.com/api/webhooks/1200588266689286184/ShSm1TG0yl22PNpyHoCwB5C-wpU7ZJb9E4io46a8mtShTlYngY9l3F8t20LvH2UQkWd1'
+Cfg.PhotoWebhook = 'https://discord.com/api/webhooks/1188528928005029968/Bhh16xx6iLUISvQ1SzAU1MSISnjPO-hX8UHfHL5PMM9LfuzXlEYaDbQN8hAAWoJWQNBT'
 
 
 --OPTIONAL

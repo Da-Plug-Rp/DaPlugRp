@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<timecycle_modifier_data version="1.000000">
+    <modifier name="quadria_loft" numMods="27" userFlags="0">
+        <light_directional_amb_col_r>0.000 0.000</light_directional_amb_col_r>
+        <light_directional_amb_col_g>0.000 0.000</light_directional_amb_col_g>
+        <light_directional_amb_col_b>0.000 0.000</light_directional_amb_col_b>
+        <light_amb_down_wrap>1.000 0.000</light_amb_down_wrap>
+        <light_natural_push>0.150 0.000</light_natural_push>
+        <light_artificial_int_down_col_r>1.000 1.000</light_artificial_int_down_col_r>
+        <light_artificial_int_down_col_g>0.859 1.000</light_artificial_int_down_col_g>
+        <light_artificial_int_down_col_b>0.545 1.000</light_artificial_int_down_col_b>
+        <light_artificial_int_down_intensity>0.150 0.000</light_artificial_int_down_intensity>
+        <light_artificial_int_up_col_r>1.000 1.000</light_artificial_int_up_col_r>
+        <light_artificial_int_up_col_g>0.804 1.000</light_artificial_int_up_col_g>
+        <light_artificial_int_up_col_b>0.545 1.000</light_artificial_int_up_col_b>
+        <light_artificial_int_up_intensity>0.600 0.000</light_artificial_int_up_intensity>
+        <ssao_inten>4.000 0.000</ssao_inten>
+        <postfx_exposure>0.000 0.000</postfx_exposure>
+        <postfx_exposure_min>0.000 0.000</postfx_exposure_min>
+        <postfx_exposure_max>1.000 0.000</postfx_exposure_max>
+        <postfx_intensity_bloom>0.050 0.000</postfx_intensity_bloom>
+        <postfx_desaturation>1.610 0.000</postfx_desaturation>
+        <postfx_grad_bottom_col_r>1.000 0.000</postfx_grad_bottom_col_r>
+        <bokeh_brightness_min>5.000 0.000</bokeh_brightness_min>
+        <bokeh_brightness_max>10.000 0.000</bokeh_brightness_max>
+        <temperature>25.000 0.000</temperature>
+        <natural_ambient_multiplier>0.150 0.000</natural_ambient_multiplier>
+        <artificial_int_ambient_multiplier>0.500 0.000</artificial_int_ambient_multiplier>
+        <no_gpu_fx>1.000 0.000</no_gpu_fx>
+        <no_rain>1.000 0.000</no_rain>
+    </modifier>
+</timecycle_modifier_data>

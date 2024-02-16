@@ -1,7 +1,7 @@
 Config = {}
 
 Config.Display = "target" -- "target" or "showHelpText"
-Config.Inventory = "ox" -- "ox" or "qs" ( open code on s.utils.lua )
+Config.Inventory = "ox" -- "ox" or "qs" 
 Config.Notify = "ox" -- "okok" or "ox" ( open code on config_functions.lua )
 Config.EmoteMenu = "rp" -- "rp" or "dp" ( open code on config_functions.lua )
 Config.VehicleKeys = "none" -- "none" or "qs" or "renewed" ( open code on config_functions.lua )
@@ -9,11 +9,11 @@ Config.Dispatch = 'ps-dispatch' -- "ps-dispatch" or "cd_dispatch" or "qs-dispatc
 Config.InventoryLink = "ox_inventory/web/images/"
 Config.Minigame = false -- Enable minigame?
 Config.MinigameType = "ps-ui" -- "ps-ui" or "bl_ui" or "ox_lib" ( open code on config_functions.lua )
-Config.Fuel = "okokFuel" -- "LegacyFuel" or "okokFuel" or "ox_fuel" or "ti_fuel" or "qs-fuel" ( open code on config_functions.lua )
-Config.Debug = false -- If true, some prints happen on console
+Config.Fuel = "LegacyFuel" -- "LegacyFuel" or "okokFuel" or "ox_fuel" or "ti_fuel" or "qs-fuel" ( open code on config_functions.lua )
+Config.Debug = true -- If true, some prints happen on console
 
 Config.License = {
-    enable = true, -- If true, the script check if player have license to fishing
+    enable = false, -- If true, the script check if player have license to fishing
     cost = 1000, -- Cost of license
     type = "cash", -- "cash" or "bank"
 }
@@ -47,14 +47,16 @@ Config.FishingSellPedHeading = 327.94 -- Heading of the ped
 Config.FishingSellPedModel = "a_m_m_hillbilly_01" -- Ped model https://docs.fivem.net/docs/game-references/ped-models/
 Config.FishingSellType = "cash" -- "cash" or "bank"
 Config.SettingsSell = {
-    [1] = { item = "catfish", priceMin = 2, priceMax = 4 },
-    [2] = { item = "cod", priceMin = 2, priceMax = 4 },
-    [3] = { item = "mackerel", priceMin = 2, priceMax = 4 },
-    [4] = { item = "monkfish", priceMin = 2, priceMax = 4 },
-    [5] = { item = "salmon", priceMin = 2, priceMax = 4 },
-    [6] = { item = "sardine", priceMin = 2, priceMax = 4 },
-    [7] = { item = "stingray", priceMin = 2, priceMax = 4 },
-    [8] = { item = "tunafish", priceMin = 2, priceMax = 4 },
+    [1] = { item = "catfish", label = "Catfish", priceMin = 2, priceMax = 4 },
+    [2] = { item = "cod", label = "Cod", priceMin = 2, priceMax = 4 },
+    [3] = { item = "mackerel", label = "Mackerel", priceMin = 2, priceMax = 4 },
+    [4] = { item = "monkfish", label = "Monkfish", priceMin = 2, priceMax = 4 },
+    [5] = { item = "salmon", label = "Salmon", priceMin = 2, priceMax = 4 },
+    [6] = { item = "sardine", label = "Sardine", priceMin = 2, priceMax = 4 },
+    [7] = { item = "stingray", label = "Stingray", priceMin = 2, priceMax = 4 },
+    [8] = { item = "tunafish", label = "Tunafish", priceMin = 2, priceMax = 4 },
+    [9] = { item = "sole", label = "Sole", priceMin = 2, priceMax = 4 },
+    [10] = { item = "seabass", label = "Seabass", priceMin = 2, priceMax = 4 },
 }
 
 -- Rent a Boat
@@ -71,6 +73,7 @@ Config.Boats = {
 }
 
 -- Experience system
+Config.CommandCheckXP = "fishingxp"
 Config.ExperienceSettings = {
     Legal_Fishing = {
         min = 1, -- min experience player earn when fishing 

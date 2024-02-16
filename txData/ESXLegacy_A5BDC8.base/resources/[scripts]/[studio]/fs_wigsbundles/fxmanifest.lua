@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'fs_wigsbundles'
-version '1.3'
+version '1.4'
 lua54 'yes'
 
 author "Team FwB Studio"

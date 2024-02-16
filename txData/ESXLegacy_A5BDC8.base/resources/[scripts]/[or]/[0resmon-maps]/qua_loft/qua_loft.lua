@@ -3,7 +3,7 @@ Citizen.CreateThread(function()
 
   RequestIpl("qua_loft_milo")
   
-      interiorID = GetInteriorAtCoords(-220.37213100, -840.17486600, 104.39260000)
+      interiorID = GetInteriorAtCoords(-239.999, -834.9958, 155.3540)
       if IsValidInterior(interiorID) then      
               -- EnableInteriorProp(interiorID, "normal")
               -- EnableInteriorProp(interiorID, "red")
@@ -21,7 +21,7 @@ Citizen.CreateThread(function()
 
     RequestIpl("qua_corridor_milo")
     
-        interiorID = GetInteriorAtCoords(-243.98768600, -826.93790000, 94.23494000)
+        interiorID = GetInteriorAtCoords(-235.6501, -834.8258, 139.7790)
         if IsValidInterior(interiorID) then      
                 -- EnableInteriorProp(interiorID, "normal")
                 -- EnableInteriorProp(interiorID, "red")
@@ -52,7 +52,7 @@ Citizen.CreateThread(function()
         DisableInteriorProp(interiorID, type)
         RefreshInterior(interiorID)
       end)
-  end)
+    end)
 
 
   Citizen.CreateThread(function()

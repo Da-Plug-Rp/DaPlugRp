@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'Keres & Dév'
 description 'Brutal Police Job - store.brutalscripts.com'
-version '1.2.7'
+version '1.2.8'
 
 data_file 'DLC_ITYP_REQUEST' 'stream/clamp.ytyp'
 

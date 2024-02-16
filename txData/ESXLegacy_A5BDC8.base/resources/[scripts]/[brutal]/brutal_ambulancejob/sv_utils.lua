@@ -1,4 +1,4 @@
-local YourWebhook = 'webhook-here'  -- help: https://docs.brutalscripts.com/site/others/discord-webhook
+local YourWebhook = 'https://discord.com/api/webhooks/1205996193340063834/9oEFauySbsj1GVlk6pOM5ycHBdcJI_9seMcyqVdmMRF2a3JjjU_AqOhm8ekTPwruToXm'  -- help: https://docs.brutalscripts.com/site/others/discord-webhook
 
 function GetWebhook()
     return YourWebhook

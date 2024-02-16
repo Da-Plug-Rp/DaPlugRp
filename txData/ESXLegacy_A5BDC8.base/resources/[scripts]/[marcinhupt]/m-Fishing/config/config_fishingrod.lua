@@ -5,15 +5,28 @@ Config.FishingZones = {
         coords = vector3(-1817.0, -951.94, 1.31),
         radius = 50,
         type = "legal", -- "legal" | "illegal" | "all"
+        blip = { enable = true, sprite = 148, colour = 3, scale = 5.0, transparency = 75, name = "Fishing Zone" },
     },
-
-    -- Example on how to add another location
-    --[1] = {
-    --    coords = vector3(-1817.0, -951.94, 1.31), -- Change to the area you want
-    --    radius = 50, -- Radius of the zone
-    --    type = "all", -- "legal" | "illegal" | "all"
-    --},
+    [2] = {
+        coords = vector3(-348.1313, -3946.0527, 0.7608),
+        radius = 50,
+        type = "legal", -- "legal" | "illegal" | "all" 
+        blip = { enable = true, sprite = 148, colour = 3, scale = 5.0, transparency = 75, name = "Fishing Zone" },
+    },
+    [3] = {
+        coords = vector3(4377.8867, 4887.9336, 4.0352),
+        radius = 50,
+        type = "legal", -- "legal" | "illegal" | "all"
+        blip = { enable = true, sprite = 148, colour = 3, scale = 5.0, transparency = 75, name = "Fishing Zone" },
+    },
+    [4] = {
+        coords = vector3(-970.3435, 7019.8716, 0.5698),
+        radius = 50,
+        type = "illegal", -- "legal" | "illegal" | "all" 
+        blip = { enable = true, sprite = 148, colour = 3, scale = 5.0, transparency = 75, name = "Fishing Zone" },
+    },
 }
+
 
 -- Settings for the fishingrods
 Config.FishingrodSettings = {

@@ -85,16 +85,16 @@ add_ace identifier.license:dd56b3d2f6672999c695ba13bd8e2307e592b473 jobcreator a
 
 ## Robbery Creator
 add_ace identifier.license:788fb9df9334249865ed81c278804e8180a10ebf robberies_creator allow #Unknown
-add_ace identifier.license:dd56b3d2f6672999c695ba13bd8e2307e592b473 robberies_creator allow # Add permission to 'thenewwxw' Rockstar license
+add_ace identifier.license:dd56b3d2f6672999c695ba13bd8e2307e592b473 robberies_creator allow #thenewwxw
 
 ##Door creator
 add_ace identifier.license:788fb9df9334249865ed81c278804e8180a10ebf doors_creator allow # Unknown
-add_ace identifier.license:59eeca7796e103fa95670f17246cf763c51173be doors_creator allow # Add permission to 'KingGoCrazii' Rockstar license
-add_ace identifier.license:dd56b3d2f6672999c695ba13bd8e2307e592b473 doors_creator allow # Add permission to 'thenewwxw' Rockstar license
+add_ace identifier.license:59eeca7796e103fa95670f17246cf763c51173be doors_creator allow # KingGoCrazii
+add_ace identifier.license:dd56b3d2f6672999c695ba13bd8e2307e592b473 doors_creator allow # thenewwxw
 
 ##Vehicle keys
  add_ace identifier.license:788fb9df9334249865ed81c278804e8180a10ebf vehicles_keys allow # Unknown
- add_ace identifier.license:59eeca7796e103fa95670f17246cf763c51173be vehicles_keys allow # Add permission to 'KingGoCrazii' Rockstar license
+ add_ace identifier.license:59eeca7796e103fa95670f17246cf763c51173be vehicles_keys allow # KingGoCrazii
 # pma-voice Config
 # ----------------
 setr voice_enableRadioAnim 1
@@ -107,7 +107,6 @@ setr esx:locale "en"
 
 # Default & Standalone Resources
 # ------------------------------
-ensure oxmysql
 ensure es_extended
 ensure esx_menu_default
 ensure esx_menu_list
@@ -115,13 +114,11 @@ ensure esx_menu_dialog
 ensure hardcap
 ensure ox_lib
 ensure ox_target
+ensure oxmysql
+ensure [dependency]
 ensure bob74_ipl
-start es_extended
 start 0r_lib
 start 0r_motels
-ensure spawn-selector
-ensure apex_lib
-ensure [apex]
 # ESX Legacy Core
 ensure [core]
 # ----------
@@ -147,7 +144,7 @@ ensure [dependency]
 stop fs_dutysystem
 stop fs_fraud
 stop pickle_payment
-stop apex_weaponmanufacturer
+stop bodyguard
 # Additional Resource
 # -------------------
 ensure pma-voice

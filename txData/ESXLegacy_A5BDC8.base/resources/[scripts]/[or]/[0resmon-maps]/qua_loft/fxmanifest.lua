@@ -6,6 +6,9 @@ client_script {
     "qua_loft.lua"
 }
 
+files {
+    'data/qua_loft_timecycle.xml'
+}
 
                   -- Created by Quadria --
 --   ________                    .___      .__           --

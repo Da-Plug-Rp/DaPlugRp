@@ -16,7 +16,7 @@ files{
 }
 
 shared_scripts {
-  '@ox_lib/init.lua', -- If you use OX Dialog uncomment this.
+  --'@ox_lib/init.lua', -- If you use OX Dialog uncomment this.
   'config.lua',
   'language.lua'
 }

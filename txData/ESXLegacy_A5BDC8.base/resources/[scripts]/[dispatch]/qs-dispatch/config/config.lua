@@ -4,7 +4,7 @@ Config.Framework = "esx"                                                        
 Config.Language = 'en'                                                                                                                        -- Set the language in which you want to have the script [en, en].
 Config.Debug = false                                                                                                         -- Enable debug mode by setting this to true (Multiple console prints showing debug information and enabling color shapes for zones). -- true make the script very slow
 Config.AllowImages = true                                                                                                   -- this option can delay the alert
-Config.DiscordWebHook = '' -- Discord webhook to upload new images
+Config.DiscordWebHook = 'https://discord.com/api/webhooks/1205996117318172713/WV135LErMFH-krMfEW_2oiL0oNIZXYdD-78QgAEngbVsT_B1_kZAQczLhgCzrnF98QoE' -- Discord webhook to upload new images
 Config.vehiclesTable = "player_vehicles"
 Config.useLogo = true                                                                                                       -- Use logo in the Dispatch
 Config.plateImage = 'https://www.quasar-store.com/static/5012-AT_6_x_12.png'
@@ -436,8 +436,8 @@ Config.DispatchBodyCamZones = {
     }, -- Jobs allowed to use bodycam
     zones = {
         [1] = {
-            label = "Zone 1",
-            coords = vector3(456.6222, -985.9254, 30.6832),
+            label = "Rock Ford",
+            coords = vector3(-329.2801, -276.3484, 39.8663),
             width = 30,
         },
         [2] = {

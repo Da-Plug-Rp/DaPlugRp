@@ -183,7 +183,7 @@ Config.VoiceScriptName = 'pma-voice'
     'okokBanking'    IBAN of okokBanking
 ]]
 
-Config.BankSystem = 'id'
+Config.BankSystem = 'okokBanking'
 
 --██████╗░██╗██╗░░░░░██╗░░░░░██╗███╗░░██╗░██████╗░
 --██╔══██╗██║██║░░░░░██║░░░░░██║████╗░██║██╔════╝░
@@ -214,7 +214,7 @@ Config.billingSystem = 'billing_ui'
     False if you are not using one
 ]]
 
-Config.billingpayBillEvent = 'billing_ui:payInvoice'
+Config.billingpayBillEvent = 'billing_ui'
 
 
 --░██████╗░░█████╗░██████╗░░█████╗░░██████╗░███████╗░██████╗
@@ -255,12 +255,14 @@ Config.GarageScript = 'loaf_garage'
 ---@param plate Return the plate of vehicle
 ---@param model Give the model IsNamedRendertargetLinked
 function VehicleKeys(vehicle, hash, plate, model)
-    if GetResourceState('qs-vehiclekeys') == 'started' then     -- QS VEHICLEKEYS
+    if GetResourceState('qs-vehiclekeys') == 'started' then
         exports['qs-vehiclekeys']:GiveKeys(plate, model)
-    elseif GetResourceState('qb-vehiclekeys') == 'started' then -- QB VEHICLEKEYS
+    elseif GetResourceState('qb-vehiclekeys') == 'started' then
         TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(vehicle))
-    elseif GetResourceState('vehicles_keys') == 'started' then  -- JAKSAM VEHICLEKEYS
+    elseif GetResourceState('vehicles_keys') == 'started' then
         TriggerServerEvent('vehicles_keys:selfGiveVehicleKeys', plate)
+    elseif GetResourceState('mono_carkeys') == 'started' then
+        exports.mono_carkeys:ClientInventoryKeys('add', plate)
     else
         print('^4[QS Smartphone] ^3[Debug]^0: If you have any vehiclekeys remember to add your vehiclekeys event in config.lua line 1249...') -- You can remove this.
     end
@@ -276,7 +278,7 @@ end
 Config.WetPhone = true                  -- Being in the water, the phone will break and will give you the same item but with the prefix "wet_".
 Config.RepairWetPhone = 'phone_module'   -- With said item, we can repair the wet phone.
 Config.RepairWetPhoneNpc = true          -- Be able to repair your phone with the NPC Telephone Technician.
-Config.RepairWetPhoneNpcPrice = 100      -- Price to repair a wet phone in the Technician.
+Config.RepairWetPhoneNpcPrice = 500      -- Price to repair a wet phone in the Technician.
 Config.RepairWetPhoneNpcAccount = 'bank' -- Choose here the account to pay the technician for repairing the wet phone.
 
 
@@ -480,7 +482,7 @@ Config.BatteryPersistData = true   -- Persist data on battery.json
 Config.TimeSavePersistData = 20000 -- x 20 sec - less than this number is not recommended
 
 Config.PowerBank = 'powerbank'     -- Item name?
-Config.RemoveItemPowerBank = false  -- Do you want the powerbank to be removed once used?
+Config.RemoveItemPowerBank = true  -- Do you want the powerbank to be removed once used?
 
 -- Usage /adminbattery id ammount
 Config.AdminCommand = true -- Recharge the batery for admins?
@@ -755,10 +757,10 @@ Config.ResetPassword = {
 -- ██████╔╝██║███████║██║     ██║  ██║   ██║   ╚██████╗██║  ██║
 -- ╚═════╝ ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝   ╚═╝    ╚═════╝╚═╝  ╚═╝
 
-Config.CustomDispatch = false -- Use a custom dispatch script? (Jobs message only)
+Config.CustomDispatch = true -- Use a custom dispatch script? (Jobs message only)
 --[[
     'client' excute on client side go to (qs-smartphone/client/custom/misc/dispatch.lua 'qs-smartphone:client:CustomClientDispatch')
-    'server' excute on server side go to (qs-smartphone/server/custom/misc/dispatch.lua 'qs-smartphone:sever:CustomServerDispatch')
+    'server' excute on server side go to (qs-smartphone/server/custom/misc/dispatch.lua 'qs-smartphone:server:CustomServerDispatch')
 ]]
 Config.CustomDispatchSide = 'client'
 

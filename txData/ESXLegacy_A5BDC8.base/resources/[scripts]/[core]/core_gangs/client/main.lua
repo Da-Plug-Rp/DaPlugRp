@@ -57,6 +57,7 @@ local damageIndex = {
 local cam = nil
 local cam2 = nil
 
+-- Player load
 if Config.Framework == 'qb-core' then
     RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
         TriggerServerEvent("core_gangs:server:updateData")
@@ -69,9 +70,34 @@ elseif Config.Framework == 'esx' then
     end)
 end
 
--- HELPER FUNCTIONS
+----------------------
+-- HELPER FUNCTIONS --
+----------------------
 
-function getIndexFromLatLng(lat, lng)
+-- Zone / index / coords helpers
+local function getCoordsFromIndex(index)
+    local northwest = {
+        lat = 8396.62,
+        lng = -4129.82
+    }
+    local southeast = {
+        lat = -5105.48,
+        lng = 4851.53
+    }
+
+    local offset = 115
+    local numCols = math.ceil((southeast.lng - northwest.lng) / offset)
+
+    local latIndex = math.floor((index - 1) / numCols) + 1
+    local lngIndex = (index - 1) % numCols + 1
+
+    local lat = northwest.lat - (latIndex - 0.5) * offset
+    local lng = northwest.lng + (lngIndex - 0.5) * offset
+
+    return lat, lng
+end
+
+local function getIndexFromLatLng(lat, lng)
     local northwest = {
         lat = 8396.62,
         lng = -4129.82
@@ -93,7 +119,8 @@ function getIndexFromLatLng(lat, lng)
     return cellIndex
 end
 
-function isPlayerInZone(playerCoords, zoneCenterCoords, radius)
+-- Player helpers
+local function isPlayerInZone(playerCoords, zoneCenterCoords, radius)
     local xDiff = math.abs(playerCoords[1] - zoneCenterCoords[1])
     local yDiff = math.abs(playerCoords[2] - zoneCenterCoords[2])
     if xDiff <= radius and yDiff <= radius then
@@ -103,11 +130,12 @@ function isPlayerInZone(playerCoords, zoneCenterCoords, radius)
     end
 end
 
-function IsDowned()
+local function IsDowned()
     local PlayerData = framework:GetPlayerData()
     return framework:IsPlayerDown(PlayerData)
 end
 
+-- Target / props / storage helpers
 local function SetEntityTargetOpenStorage(entity, zone, storage, data)    
     if Config.UsingCoreInventory or Config.UsingOxInventory then
         exports["qb-target"]:AddTargetEntity(entity, {
@@ -149,7 +177,7 @@ local function SetEntityTargetOpenStorage(entity, zone, storage, data)
     end
 end
 
-function createProp(zone, storage, data)
+local function createProp(zone, storage, data)
     local obj = CreateObject(GetHashKey(data.Prop), data.Coords, false, true, false)
     table.insert(SpawnedStuff, obj)
     SetEntityHeading(obj, data.Rotation)
@@ -158,13 +186,7 @@ function createProp(zone, storage, data)
     SetEntityTargetOpenStorage(obj, zone, storage, data)
 end
 
-local function CreateStorageNpc(zone, storageName, data)
-    local npc = createNPC(data.Npc, data)
-    SetEntityTargetOpenStorage(npc, zone, storageName, data)
-end
-
-
-function createNPC(model, data)    
+local function createNPC(model, data)    
     RequestModel(GetHashKey(model))
     while not HasModelLoaded(GetHashKey(model)) do
         Wait(1)
@@ -204,48 +226,12 @@ function createNPC(model, data)
     return npc
 end
 
-RegisterNetEvent('core_gang:client:releaseNPCFighter', function(zone, npcNetworkId)
-
-    local pedFromNetwork = NetworkGetEntityFromNetworkId(npcNetworkId)
-
-    if Config.NPCStopAttackingOnWarEnd then
-        RemoveAllPedWeapons(pedFromNetwork, true)
-        SetCurrentPedWeapon(pedFromNetwork, GetHashKey('weapon_unarmed'), true)
-
-        SetPedRelationshipGroupHash(pedFromNetwork, GetHashKey('PLAYER'))
-
-        SetRelationshipBetweenGroups(1, GetHashKey('PLAYER'), GetPedRelationshipGroupHash(GetPlayerPed(-1)))
-        SetRelationshipBetweenGroups(1, GetPedRelationshipGroupHash(GetPlayerPed(-1)), GetHashKey('PLAYER'))
-
-        SetPedCombatAttributes(pedFromNetwork, 46, false)
-        SetPedCombatAttributes(pedFromNetwork, 5, false)
-    end
-
-    SetEntityAsMissionEntity(pedFromNetwork, false, false)
-    if SpawnedNPCS[zone] then
-        for k, v in pairs(SpawnedNPCS[zone]) do
-            if v == pedFromNetwork then
-                table.remove(SpawnedNPCS[zone], k)
-                break
-            end
-        end
-    end
-end)
-
-function manageSpawnNpcFighter(zone, count)
-    if Organization and Organization ~= '' then
-        for i = 1, count do
-            local npc = createNPCFighter(zone)
-            if npc then
-                SpawnedNPCS[zone] = SpawnedNPCS[zone] or {}
-                table.insert(SpawnedNPCS[zone], npc)
-                TriggerServerEvent("core_gangs:server:registerNPC", zone, NetworkGetNetworkIdFromEntity(npc))
-            end
-        end
-    end
+local function CreateStorageNpc(zone, storageName, data)
+    local npc = createNPC(data.Npc, data)
+    SetEntityTargetOpenStorage(npc, zone, storageName, data)
 end
 
-function createNPCFighter(zone)
+local function createNPCFighter(zone)
     local zoneId = zone
     local zone = Zones[zone]
 
@@ -382,6 +368,47 @@ function createNPCFighter(zone)
     end
 end
 
+local function manageSpawnNpcFighter(zone, count)
+    if Organization and Organization ~= '' then
+        for i = 1, count do
+            local npc = createNPCFighter(zone)
+            if npc then
+                SpawnedNPCS[zone] = SpawnedNPCS[zone] or {}
+                table.insert(SpawnedNPCS[zone], npc)
+                TriggerServerEvent("core_gangs:server:registerNPC", zone, NetworkGetNetworkIdFromEntity(npc))
+            end
+        end
+    end
+end
+
+RegisterNetEvent('core_gang:client:releaseNPCFighter', function(zone, npcNetworkId)
+
+    local pedFromNetwork = NetworkGetEntityFromNetworkId(npcNetworkId)
+
+    if Config.NPCStopAttackingOnWarEnd then
+        RemoveAllPedWeapons(pedFromNetwork, true)
+        SetCurrentPedWeapon(pedFromNetwork, GetHashKey('weapon_unarmed'), true)
+
+        SetPedRelationshipGroupHash(pedFromNetwork, GetHashKey('PLAYER'))
+
+        SetRelationshipBetweenGroups(1, GetHashKey('PLAYER'), GetPedRelationshipGroupHash(GetPlayerPed(-1)))
+        SetRelationshipBetweenGroups(1, GetPedRelationshipGroupHash(GetPlayerPed(-1)), GetHashKey('PLAYER'))
+
+        SetPedCombatAttributes(pedFromNetwork, 46, false)
+        SetPedCombatAttributes(pedFromNetwork, 5, false)
+    end
+
+    SetEntityAsMissionEntity(pedFromNetwork, false, false)
+    if SpawnedNPCS[zone] then
+        for k, v in pairs(SpawnedNPCS[zone]) do
+            if v == pedFromNetwork then
+                table.remove(SpawnedNPCS[zone], k)
+                break
+            end
+        end
+    end
+end)
+
 -- DATA RETRIEVAL
 
 RegisterNetEvent("core_gangs:client:updateCurrency", function(currency)
@@ -517,7 +544,7 @@ RegisterNetEvent("core_gangs:client:endWar", function(zone, winner)
 
     if Config.DisplayWarWall then
         if Config.DisplayWallWarForEveryone or (Organization and Organization ~= '') then
-            if (Borders[zone].dui) then
+            if Borders[zone] and (Borders[zone].dui) then
                 DestroyDui(Borders[zone].dui)
                 Borders[zone] = nil
             end
@@ -552,20 +579,30 @@ RegisterNetEvent("core_gangs:client:updateWar", function(zone, data, timeleft)
 
     if Config.DisplayWarWall then
         if Config.DisplayWallWarForEveryone or (Organization and Organization ~= '') then
-            if Borders[zone] then
-                if IsDuiAvailable(Borders[zone].dui) then
-                    SendDuiMessage(Borders[zone].dui, json.encode({
-                        type = "updateWarBorder",
-                        data = data,
-                        zone = zone,
-                        timeleft = timeleft
-                    }))
-                else
-                    print('[Core Gangs] Border hologram failed to load')
+            local playerCoords = GetEntityCoords(PlayerPedId())
+            local zoneCoords = getCoordsFromIndex(zone)
+            if playerCoords and zoneCoords then
+                local distance =  #(zoneCoords - playerCoords);
+                if distance <= 1200.0 then -- (after 1190.0 DUI isn't display so it's useless to create / display it)
+                    if Borders[zone] then
+                        if IsDuiAvailable(Borders[zone].dui) then
+                            SendDuiMessage(Borders[zone].dui, json.encode({
+                                type = "updateWarBorder",
+                                data = data,
+                                zone = zone,
+                                timeleft = timeleft
+                            }))
+                        else
+                            print('[Core Gangs] Border hologram failed to load')
+                        end
+                    else
+                        createWallBorder(zone)
+                    end
+                elseif distance > 1250.0 and Borders[zone] and Borders[zone].dui then
+                    DestroyDui(Borders[zone].dui)
+                    Borders[zone] = nil    
                 end
-            else
-                createWallBorder(zone)
-            end
+            end            
         end
     end
 end)
@@ -710,7 +747,9 @@ Citizen.CreateThread(function()
                                 waitingCallback = false
                             end, { zone = k })
 
-                            while waitingCallback do
+                            local callLimit = 500
+                            while waitingCallback and callLimit > 0 do
+                                callLimit = callLimit - 1
                                 Wait(10)
                             end
                         end
@@ -805,8 +844,8 @@ end
 function createWallBorder(zone)
 
     local txd, txm = 'border' .. zone, 'holo' .. zone
-    textureDict = CreateRuntimeTxd(txd)
-    local duiObj = CreateDui(string.format("nui://%s/html/border/border.html", "core_gangs"), 1500, 1500)
+    local textureDict = CreateRuntimeTxd(txd)
+    local duiObj = CreateDui(string.format("nui://%s/html/border/border.html", GetCurrentResourceName()), 1500, 1500)
 
     local dui = GetDuiHandle(duiObj)
     local tx = CreateRuntimeTextureFromDuiHandle(textureDict, txm, dui)

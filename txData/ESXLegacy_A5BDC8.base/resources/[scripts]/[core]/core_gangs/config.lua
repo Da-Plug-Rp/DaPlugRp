@@ -72,9 +72,9 @@ Config = {
     DefaultNPCValue = 0, -- Default number of npcs that will spawn to protect the zone (Performance Heavy if set to high)
     NPCValuePrice = 100, -- Default price for one more npc that will spawn to protect the zone
     MaxNPCValue = 5, -- Maximum number of npcs that can be spawned to protect the zone
-    NPCSpawnWithWeaponInHand = true, -- Weapon of the npc is display in his hand when he wnader in area
+    NPCSpawnWithWeaponInHand = false, -- Weapon of the npc is display in his hand when he wnader in area
     NPCAttackOnlyWhenWarOnNPCZone = true, -- Npc only attack if a war is start in the zone, else, won't attack anymore (even if you are another organization / player without organization)
-    NPCAttackOtherDefaultGroup = true, -- Allow NPC to attack other NPC group like VAGOS / LOST / F4L / COP
+    NPCAttackOtherDefaultGroup = false, -- Allow NPC to attack other NPC group like VAGOS / LOST / F4L / COP
     NPCRevertAfterCapture = true, -- Will revert npc value to default after zone is captured, existing npc will stop attacking and will be release / surrender
     NPCStopAttackingOnWarEnd = true, -- NPC will stop attacking on war end (even if enemy take or don't take the zone)
     NPCModels = {"g_m_m_chicold_01", "csb_brucie2", "g_m_y_korean_02", "csb_vincent"}, -- Setup the npc model name (Can be retrieve here : https://docs.fivem.net/docs/game-references/ped-models/)
@@ -116,10 +116,9 @@ Config = {
     CanCreateOrganizations = true, -- Allow player to create organizaiton from UI (if false, you will need to use the command to create it)
     OrganizationCreationPrice = 500, -- Price for creating organization
     BlacklistedJob = { -- job that are not allow to open the UI of the script (keybind / command won't open the UI)
-         ['police'] = true,
-         ['sheriff'] = true,
-         ['gouvernment'] = true,
-         ['ambulance'] = true,
+        -- ['police'] = true,
+        -- ['sheriff'] = true,
+        -- ['gouvernment'] = true,
     },
 
     -- SPECIAL CURRENCY (Inventory Item)
@@ -248,7 +247,7 @@ Config = {
 
         -- key return by the command /currentzone
         -- /!\ Make sure every time you change the coords you check the zone with /currentzone command and update the table key if needed to change the location on the map too /!\
-        [3687] = {
+        [5164] = {
             Title = 'COCAINE SALES',
             Picture = 'https://i.imgur.com/5ZQJ6Xs.png',
             Description = {
@@ -261,7 +260,7 @@ Config = {
             Storages = {
                 ['sales-storage01'] = {
                     InventoryType = 'stash',
-                    Coords = vector3(1997.4465, 3039.4001, 47.0267- (2 * 0.98)),
+                    Coords = vector3(-798.5649, 884.4944, 203.5953- (2 * 0.98)),
                     Rotation = 287.7923,        
                     Npc = 's_m_y_dealer_01',    -- NPC model that will handle target to open storage                                   
                     animDict = 'amb@code_human_in_bus_passenger_idles@male@sit@base',
@@ -291,7 +290,7 @@ Config = {
         },
     },
 
-    HouseZoneCapture = true, -- false : unable to get house zone (center), need ot be set via setzone command, true : enable start war on house zone
+    HouseZoneCapture = false, -- false : unable to get house zone (center), need ot be set via setzone command, true : enable start war on house zone
     HouseZones = {
         -- key return by the command /currentzone 
         [7067] = {

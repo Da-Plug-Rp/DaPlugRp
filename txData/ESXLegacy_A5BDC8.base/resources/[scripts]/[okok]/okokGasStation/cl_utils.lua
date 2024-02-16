@@ -61,13 +61,25 @@ AddEventHandler(Config.EventPrefix..':setFuelAmmoMetadata', function(fuelToVehic
 	if Config.MetadataInventory == 'qs-inventory' then
 
 		local jerrycan = exports['qs-inventory']:GetCurrentWeapon()
-
+		if not jerrycan.info.ammo then jerrycan.info.ammo = 0 end
 		newAmmo = 100 - fuelToVehicle
 		local fuel = jerrycan.info.ammo
 
 		fuel = fuel + fuelToVehicle
 
 		TriggerServerEvent(Config.EventPrefix..':UpdateWeaponAmmoMetadata', fuel)
+
+	elseif Config.MetadataInventory == 'ox_inventory' then
+
+		local jerrycan = exports.ox_inventory:getCurrentWeapon()
+		if not jerrycan.metadata.ammo then jerrycan.metadata.ammo = 0 end
+		newAmmo = 100 - fuelToVehicle
+		local fuel = jerrycan.metadata.ammo
+
+		fuel = fuel + fuelToVehicle
+
+		TriggerServerEvent(Config.EventPrefix..':UpdateWeaponAmmoMetadata', fuel)
+
 	else
 		-- Add your own ammo metadata system here
 	end
@@ -78,8 +90,19 @@ function getFuelAmmoMetadata()
     local jerryFuel = 0
 
 	if Config.MetadataInventory == 'qs-inventory' then
+
 		local weapon = exports['qs-inventory']:GetCurrentWeapon()
+		if not weapon.info.ammo then weapon.info.ammo = 0 end
 		jerryFuel = weapon.info.ammo
+
+	elseif Config.MetadataInventory == 'ox_inventory' then
+
+		local weapon = exports.ox_inventory:getCurrentWeapon()
+		if not weapon.metadata.ammo then weapon.metadata.ammo = 0 end
+		jerryFuel = weapon.metadata.ammo
+
+	else
+		-- Add your own ammo metadata system here
 	end
 
     return jerryFuel

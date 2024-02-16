@@ -254,7 +254,7 @@ Config.BossDutyMenu = {
 --Target zone for tobacco making supplies
 Config.TobaccoSupplies = {
   ['TobaccoSupplies'] = { -- Top Cabinet
-    coords = vector3(-49.3, 2902.8, 62.3),
+    coords = vector3(-48.0381, 2909.5120, 60.0992),
     size = vector3(4.5, 0.4, 0.8),
     rotation = 61,
     label = 'Grab Supplies',

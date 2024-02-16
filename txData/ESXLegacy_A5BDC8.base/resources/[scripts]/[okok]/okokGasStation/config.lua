@@ -32,11 +32,11 @@ Config.HireDistance = 3 -- How close a player needs to be to be in the hiring ra
 
 Config.MaxGasPrice = 10 -- The max price a player can set the gas price to
 
-Config.ShowOwnerBlip = false -- Activate/Deactivate owner blips
+Config.ShowOwnerBlip = true -- Activate/Deactivate owner blips
 
 Config.ShowBuyGasStationBlip = true -- Activate/Deactivate buy store blip
 
-Config.ShowGasStationBlip = true -- Activate/Deactivate the normal blips if you set Config.ShowBuyGasStationBlip = false
+Config.ShowGasStationBlip = false -- Activate/Deactivate the normal blips if you set Config.ShowBuyGasStationBlip = false
 
 Config.SellBusinessReceivePercentage = 50 -- How much % a player will receive for selling his business (in percentage, 50 = 50%)
 
@@ -73,6 +73,14 @@ Config.TurnOnEngineWhenFuel = false -- The engine will turn on when the vehicle 
 Config.DaysToRemoveGasStation = 15 -- How many days will take after a gas station has no stock to remove the owner
 
 Config.RefuelTime = 1000 -- Time in ms per liter to refuel a vehicle
+
+Config.UseMetadataItem = false -- true = You will need the item to refuel the vehicle | false = You can refuel the vehicle without the item
+
+Config.MetadataInventory = 'ox_inventory' -- The inventory script you are using ( qs-inventory / ox_inventory )
+
+Config.FreezePedWhileFueling = false -- true = The player will be frozen while refueling | false = The player will be able to move while refueling
+
+Config.DistanceBetweenPumpAndVehicle = 5 -- The distance between the vehicle and the pump to refuel
 
 Config.Ranks = {  -- These are the ranks available on the gas station stores, you can add or remove as many as you want but leave at least 1
 	{ rank = 1, label = "Newbie" },
@@ -125,7 +133,7 @@ Config.Stores = {
 		 },
 		radius = 1, -- Interaction radius for the markers
 		pumpRadius = 15, -- Interaction radius for the pumps
-		price = 1000000, -- Price of the Gas Station
+		price = 20000, -- Price of the Gas Station
 		startStock = 500, -- The stock of fuel the business starts with
 		blip = { blipId = 415, blipColor = 3, blipScale = 0.8, blipText = "Gas Station" }, -- Blip informations for gas station blip
 		ownerBlip = { blipId = 415, blipColor = 2, blipScale = 0.8, blipText = "Gas Station Panel" }, -- Blip informations for shops your own/work gas station
@@ -163,7 +171,7 @@ Config.Stores = {
 		 },
 		radius = 1, -- Interaction radius for the markers
 		pumpRadius = 15, -- Interaction radius for the pumps
-		price = 1000000, -- Price of the Gas Station
+		price = 20000, -- Price of the Gas Station
 		startStock = 500, -- The stock of fuel the business starts with
 		blip = { blipId = 415, blipColor = 3, blipScale = 0.8, blipText = "Gas Station" }, -- Blip informations for gas station blip
 		ownerBlip = { blipId = 415, blipColor = 2, blipScale = 0.8, blipText = "Gas Station Panel" }, -- Blip informations for shops your own/work gas station
@@ -205,7 +213,7 @@ Config.Stores = {
 		 },
 		radius = 1, -- Interaction radius for the markers
 		pumpRadius = 15, -- Interaction radius for the pumps
-		price = 1000000, -- Price of the Gas Station
+		price = 20000, -- Price of the Gas Station
 		startStock = 500, -- The stock of fuel the business starts with
 		blip = { blipId = 415, blipColor = 3, blipScale = 0.8, blipText = "Gas Station" }, -- Blip informations for gas station blip
 		ownerBlip = { blipId = 415, blipColor = 2, blipScale = 0.8, blipText = "Gas Station Panel" }, -- Blip informations for shops your own/work gas station
@@ -247,7 +255,7 @@ Config.Stores = {
 		 },
 		radius = 1, -- Interaction radius for the markers
 		pumpRadius = 15, -- Interaction radius for the pumps
-		price = 1000000, -- Price of the Gas Station
+		price = 20000, -- Price of the Gas Station
 		startStock = 500, -- The stock of fuel the business starts with
 		blip = { blipId = 415, blipColor = 3, blipScale = 0.8, blipText = "Gas Station" }, -- Blip informations for gas station blip
 		ownerBlip = { blipId = 415, blipColor = 2, blipScale = 0.8, blipText = "Gas Station Panel" }, -- Blip informations for shops your own/work gas station
@@ -289,7 +297,7 @@ Config.Stores = {
 		 },
 		radius = 1, -- Interaction radius for the markers
 		pumpRadius = 15, -- Interaction radius for the pumps
-		price = 1000000, -- Price of the Gas Station
+		price = 25000, -- Price of the Gas Station
 		startStock = 500, -- The stock of fuel the business starts with
 		blip = { blipId = 415, blipColor = 3, blipScale = 0.8, blipText = "Gas Station" }, -- Blip informations for gas station blip
 		ownerBlip = { blipId = 415, blipColor = 2, blipScale = 0.8, blipText = "Gas Station Panel" }, -- Blip informations for shops your own/work gas station
@@ -331,7 +339,7 @@ Config.Stores = {
 		 },
 		radius = 1, -- Interaction radius for the markers
 		pumpRadius = 15, -- Interaction radius for the pumps
-		price = 1000000, -- Price of the Gas Station
+		price = 20000, -- Price of the Gas Station
 		startStock = 500, -- The stock of fuel the business starts with
 		blip = { blipId = 415, blipColor = 3, blipScale = 0.8, blipText = "Gas Station" }, -- Blip informations for gas station blip
 		ownerBlip = { blipId = 415, blipColor = 2, blipScale = 0.8, blipText = "Gas Station Panel" }, -- Blip informations for shops your own/work gas station
@@ -373,47 +381,7 @@ Config.Stores = {
 		 },
 		radius = 1, -- Interaction radius for the markers
 		pumpRadius = 15, -- Interaction radius for the pumps
-		price = 1000000, -- Price of the Gas Station
-		startStock = 500, -- The stock of fuel the business starts with
-		blip = { blipId = 415, blipColor = 3, blipScale = 0.8, blipText = "Gas Station" }, -- Blip informations for gas station blip
-		ownerBlip = { blipId = 415, blipColor = 2, blipScale = 0.8, blipText = "Gas Station Panel" }, -- Blip informations for shops your own/work gas station
-		buyBlip = { blipId = 415, blipColor = 1, blipScale = 0.8, blipText = "Purchasable Gas Station" }, -- Blip informations for shop on sale
-		marker = { id = 20, color = { r = 31, g = 94, b = 255, a = 90 }, size = { x = 0.5, y = 0.5, z = 0.5 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 }, -- Marker informations for the gas station
-		ownerMarker = { id = 21, color = { r = 31, g = 94, b = 255, a = 90 }, size = { x = 0.5, y = 0.5, z = 0.5 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 }, -- Marker informations for the owning menu
-		refuelMarker = { id = 21, color = { r = 31, g = 94, b = 255, a = 90 }, size = { x = 0.5, y = 0.5, z = 0.5 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 }, -- Marker informations for the owning menu
-		id = "gasstation7", -- ID of the shop, it's used to get what shop is opened | needs to be DIFFERENT for each shop
-	 },
-	 {
-		name = "Gas Station", -- Name of the gas station
-		currency = "bank", -- Used to buy/sell the business
-		hasOwner = true, -- If true, the gas station will have an owner
-		coords = { x = 814.3704, y = -787.9024, z = 26.1918}, -- Marker/Shop position
-		ownerCoords = { x = 810.2244, y = -785.0223, z = 26.3430 }, -- Marker/Shop position for owner/employees
-		spawnMissionVehicle = { x = 832.3190, y = -789.0974, z = 26.2758, h =  117.1642 }, -- Where the vehicles are spawned for the missions
-		refuelLocations = { -- Locations where players can refuel their vehicle ( should be close to a pump )
-			{ x = 814.5285, y = -790.1999, z = 26.3108 },
-			{ x = 813.0022, y = -789.0527, z = 26.3108 },
-			{ x = 807.1320, y = -790.2201, z = 26.3106 },
-			{ x = 805.4811, y = -789.0740, z = 26.3108 }
-		 },
-		smallVehiclesGetFuel = {  -- Locations where someone who accepted an order will have to go (it is random) and it is for small vehicles
-			{ x = 1524.23, y = -2113.95, z = 76.6, h = 93.54 }, 
-			{ x = 865.68, y = -3206.11, z = 5.9, h = 2.46 },
-			{ x = -356.36, y = 6068.12, z = 31.5, h = 228.11 },
-		 },
-		longVehiclesGetFuel = {  -- Locations where someone who accepted an order will have to go (it is random) and it is for trucks with trailers
-			{ x = 168.38, y = 6432.32, z = 31.28, h = 75.94 },
-			{ x = 1712.04, y = -1573.69, z = 112.6, h = 271.11 },
-			{ x = 1271.91, y = -3191.07, z = 5.9, h = 93.71 },
-		 },
-		vehicles = {  -- Inserted on the database after the gas station purchase, then you can't change this info
-			{ label ='Rumpo', vehicleid = 'rumpo', price = 32000, capacity = 500, orderPrice = 1200, owned = false, longTruck = false },
-			{ label ='Mule', vehicleid = 'mule', price = 54000, capacity = 1500, orderPrice = 2500, owned = false, longTruck = false },
-			{ label ='Phantom', vehicleid = 'phantom', price = 180000, capacity = 10000, orderPrice = 7000, owned = false, longTruck = true },
-		 },
-		radius = 1, -- Interaction radius for the markers
-		pumpRadius = 15, -- Interaction radius for the pumps
-		price = 1000000, -- Price of the Gas Station
+		price = 20000, -- Price of the Gas Station
 		startStock = 500, -- The stock of fuel the business starts with
 		blip = { blipId = 415, blipColor = 3, blipScale = 0.8, blipText = "Gas Station" }, -- Blip informations for gas station blip
 		ownerBlip = { blipId = 415, blipColor = 2, blipScale = 0.8, blipText = "Gas Station Panel" }, -- Blip informations for shops your own/work gas station

@@ -79,14 +79,14 @@ end
 AddEventHandler('brutal_ambulancejob:client:onPlayerDeath', function()
     -- this event run when the player died.
 
-    --exports['qs-smartphone']:canUsePhone(false)
+    exports['qs-smartphone']:canUsePhone(false)
     --exports["lb-phone"]:ToggleDisabled(false)
 end)
 
 AddEventHandler('brutal_ambulancejob:revive', function()
     -- this event run when the player revived.
 
-    --exports['qs-smartphone']:canUsePhone(true)
+    exports['qs-smartphone']:canUsePhone(true)
     --exports["lb-phone"]:ToggleDisabled(true)
 
     if Config['Core']:upper() == 'ESX' then
@@ -111,11 +111,11 @@ RegisterNetEvent('txcl:heal', function()
 end)
 
 function CustomMDT()
-    -- You can open another MDT here
+    ExecuteCommand('openmdt')
 end
 
 function OpenCloakroomMenuEvent()
-    TriggerEvent('qb-clothing:client:openOutfitMenu')
+    TriggerEvent("illenium-appearance:client:openClothingShop")
 end
 
 function CitizenWear()

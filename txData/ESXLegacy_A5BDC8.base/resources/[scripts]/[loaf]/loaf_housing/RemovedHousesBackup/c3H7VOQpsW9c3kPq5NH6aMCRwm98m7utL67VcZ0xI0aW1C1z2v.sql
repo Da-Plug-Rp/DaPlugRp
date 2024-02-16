@@ -1,0 +1,2 @@
+-- BACKUP FOR IDENTIFIER char1:553fce1fc9ee2a0906bc3918e6ed2fa2760b2ad2, PROPERTY #331, UNIQUE PROPERTY ID NA-8757
+INSERT INTO `loaf_properties` (`furniture`, `last_entered`, `shell`, `owner`, `id`, `propertyid`) VALUES ("[]", 1705163819000.0, "Mansion 1", "char1:553fce1fc9ee2a0906bc3918e6ed2fa2760b2ad2", "NA-8757", 331);

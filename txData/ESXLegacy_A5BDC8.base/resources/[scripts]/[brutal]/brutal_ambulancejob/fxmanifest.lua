@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'Keres & Dév'
 description 'Brutal Ambulance Job - store.brutalscripts.com'
-version '1.2.1'
+version '1.2.3'
 
 client_scripts { 
 	'config.lua',

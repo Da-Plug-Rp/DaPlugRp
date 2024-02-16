@@ -26,7 +26,7 @@ function OpenSellFishing()
         local priceMin = fishInfo.priceMin
         local priceMax = fishInfo.priceMax
         SellFishing.options[#SellFishing.options + 1] = {
-            title = itemName,
+            title = fishInfo.label,
             description = "Sell Price Range: $" .. priceMin .. " - $" .. priceMax,
             icon = "nui://" .. Config.InventoryLink .. itemName..".png",
             serverEvent = 'm-Fishing:Server:SellLegalFish',
@@ -55,7 +55,7 @@ function OpenSeashellsSells()
         local priceMin = seashellInfo.priceMin
         local priceMax = seashellInfo.priceMax
         SellSeashell.options[#SellSeashell.options + 1] = {
-            title = itemName,
+            title = seashellInfo.label,
             description = "Sell Price Range: $" .. priceMin .. " - $" .. priceMax,
             icon = "nui://" .. Config.InventoryLink .. itemName..".png",
             serverEvent = 'm-Fishing:Server:SellSeashell',
@@ -84,7 +84,7 @@ function OpenSellCorals()
         local priceMin = coralInfo.priceMin
         local priceMax = coralInfo.priceMax
         SellFishing.options[#SellFishing.options + 1] = {
-            title = itemName,
+            title = coralInfo.label,
             description = "Sell Price Range: $" .. priceMin .. " - $" .. priceMax,
             icon = "nui://" .. Config.InventoryLink .. itemName..".png",
             serverEvent = 'm-Fishing:Server:SellCorals',

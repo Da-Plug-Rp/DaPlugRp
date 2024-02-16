@@ -107,13 +107,21 @@ end)
 RegisterServerEvent(Config.EventPrefix..':UpdateWeaponAmmoMetadata')
 AddEventHandler(Config.EventPrefix..':UpdateWeaponAmmoMetadata', function(fuel)
 	local src = source
-	local jerrycan = exports['qs-inventory']:GetItemByName(source, 'weapon_petrolcan')
-
+	local Player = ESX.GetPlayerFromId(src)
+	local jerrycan = Player.getInventoryItem('weapon_petrolcan')
 	if Config.MetadataInventory == 'qs-inventory' then
+
+		jerrycan = exports['qs-inventory']:GetItemByName(source, 'weapon_petrolcan')
 		local slot = jerrycan.slot
 		jerrycan.info.ammo = fuel
-
 		exports['qs-inventory']:SetItemMetadata(src, slot, jerrycan.info)
+
+	elseif Config.MetadataInventory == 'ox_inventory' then
+		jerrycan = exports.ox_inventory:Search(source, 1, 'weapon_petrolcan')
+		jerrycan = jerrycan["WEAPON_PETROLCAN"][1]
+		local slot = jerrycan.slot
+		jerrycan.metadata.ammo = fuel
+		exports.ox_inventory:SetMetadata(src, slot, jerrycan.metadata)
 
 	else
 		-- Add your setItemMetadata here
